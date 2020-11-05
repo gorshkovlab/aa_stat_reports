@@ -16,4 +16,4 @@ This page hosts example output of [AA_stat tool](https://github.com/SimpleNumber
 13. [PXD014565 SILAC subset 22200](PXD014565/SILAC/22200/os_step_2/report.html)
 14. [PXD014565 SILAC subset 22204](PXD014565/SILAC/22204/os_step_2/report.html)
 15. [PXD014565 SILAC subset 22208](PXD014565/SILAC/22208/os_step_2/report.html)
-16. [CPTAC colon cancer data from study S037](01_CPTAC_COprospective_Proteome_VU_20150901/os_step_2/report.html)
+16. [CPTAC colon cancer data from study S037 (sample 01)](01_CPTAC_COprospective_Proteome_VU_20150901/os_step_2/report.html)
