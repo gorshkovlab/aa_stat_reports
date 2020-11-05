@@ -1,0 +1,3050 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AA_stat report</title>
+    <style type="text/css">
+        #steps {
+          text-align: center;
+        }
+        .steplink {
+          margin: 3vw 3vw;
+        }
+        #mods_outer {
+          text-align: center;
+        }
+        #fixmod {
+          display: flex;
+          margin-top: 1vh;
+          margin-bottom: 1vh;
+          /*text-align: center;*/
+          justify-content: center;
+          align-items: center;
+        }
+        .modtable {
+          width: 30vw;
+        }
+        .modtable table {
+          border-collapse: collapse;
+        }
+        .modtable td, th {
+          border: 1px solid;
+          padding: 0.3rem;
+          text-align: center;
+        }
+        #aa_stat {
+          text-align: center;
+        }
+        #pic_container {
+          max-height: 80vh;
+          max-width: 85vw;
+          min-height: 25vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          overflow-x: auto;
+        }
+        #pic {
+          max-height: 80vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .figure {
+          max-width: 70vw;
+        }
+        #legend {
+          display: none;
+          overflow: auto;
+          margin: 0 auto;
+          width: 81vw;
+        }
+        table {
+          border: 1px solid black;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .legend.peptides {
+          color: #FF6600;
+        }
+        .legend.freq {
+          color: #88AA00;
+        }
+        .legend.localized {
+          color: #006688;
+        }
+        .loc {
+          color: #FF0000;
+        }
+        #legend p {
+          max-width: 25vw;
+          margin-left: 1vw;
+          margin-right: 1vw;
+          float: left;
+          text-align: justify;
+        }
+        #legend h2, #peptides h2 {
+          text-align: center;
+        }
+        .peptide_table {
+          display: none;
+          text-align: center;
+          width: fit-content;
+        }
+    </style>
+</head>
+<body>
+<div id="steps"><a class="prev steplink" href="../os_step_1/report.html">Previous step</a>
+<a class="next steplink" href="../os_step_3/report.html">Next step</a></div>
+<div id="mods_outer">
+  <h3>Modifications</h3>
+  <div id="fixmod">
+    <div id="set_mods" class="modtable">
+    <style  type="text/css" >
+</style><table id="T_set_fix_mod_table" ><caption>Configured, fixed</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >N</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_set_fix_mod_tablelevel0_row0" class="row_heading level0 row0" >value</th>
+                        <td id="T_set_fix_mod_tablerow0_col0" class="data row0 col0" >+0.9845</td>
+            </tr>
+    </tbody></table>
+    </div>
+    <div id="rec_mods" class="modtable">
+    <style  type="text/css" >
+</style><table id="T_rec_fix_mod_table" ><caption>Recommended, fixed</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >M</th>        <th class="col_heading level0 col1" >C</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_rec_fix_mod_tablelevel0_row0" class="row_heading level0 row0" >value</th>
+                        <td id="T_rec_fix_mod_tablerow0_col0" class="data row0 col0" >+15.9950</td>
+                        <td id="T_rec_fix_mod_tablerow0_col1" class="data row0 col1" >+57.0215</td>
+            </tr>
+    </tbody></table>
+    </div>
+    <div id="rec_var_mods" class="modtable">
+    <style  type="text/css" >
+    #T_rec_var_mod_table th.col_heading {
+          display: none;
+    }    #T_rec_var_mod_table th.blank {
+          display: none;
+    }    #T_rec_var_mod_table .data.row0 {
+          font-weight: bold;
+    }</style><table id="T_rec_var_mod_table" ><caption>Recommended, variable</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >0</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_rec_var_mod_tablelevel0_row0" class="row_heading level0 row0" ></th>
+                        <td id="T_rec_var_mod_tablerow0_col0" class="data row0 col0" >N</td>
+            </tr>
+            <tr>
+                        <th id="T_rec_var_mod_tablelevel0_row1" class="row_heading level0 row1" >value</th>
+                        <td id="T_rec_var_mod_tablerow1_col0" class="data row1 col0" >-0.9844</td>
+            </tr>
+    </tbody></table>
+    </div>
+  </div>
+</div>
+<div id="aa_stat">
+  <h3>Amino acid statistics</h3>
+  <style  type="text/css" >
+    #T_aa_stat_table tr:hover {
+          background-color: lightyellow;
+    }    #T_aa_stat_table td, th {
+          text-align: center;
+    }    #T_aa_stat_table td, th {
+          border: 1px solid black;
+    }#T_aa_stat_tablerow0_col1{
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 6.0%, transparent 6.0%);
+        }#T_aa_stat_tablerow0_col16{
+            background-color:  yellow;
+        }#T_aa_stat_tablerow1_col0,#T_aa_stat_tablerow1_col2,#T_aa_stat_tablerow1_col3,#T_aa_stat_tablerow1_col4,#T_aa_stat_tablerow1_col5,#T_aa_stat_tablerow1_col6,#T_aa_stat_tablerow1_col7,#T_aa_stat_tablerow1_col8,#T_aa_stat_tablerow1_col9,#T_aa_stat_tablerow1_col10,#T_aa_stat_tablerow1_col11,#T_aa_stat_tablerow1_col12,#T_aa_stat_tablerow1_col13,#T_aa_stat_tablerow1_col14,#T_aa_stat_tablerow1_col15,#T_aa_stat_tablerow1_col16,#T_aa_stat_tablerow1_col17,#T_aa_stat_tablerow1_col18,#T_aa_stat_tablerow1_col19,#T_aa_stat_tablerow1_col20,#T_aa_stat_tablerow1_col21,#T_aa_stat_tablerow1_col22,#T_aa_stat_tablerow1_col23,#T_aa_stat_tablerow1_col24,#T_aa_stat_tablerow1_col25,#T_aa_stat_tablerow1_col26,#T_aa_stat_tablerow1_col27,#T_aa_stat_tablerow1_col28{
+            background-color:  #cccccc;
+        }#T_aa_stat_tablerow1_col1{
+            background-color:  #cccccc;
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 100.0%, transparent 100.0%);
+        }#T_aa_stat_tablerow2_col1{
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 2.3%, transparent 2.3%);
+        }#T_aa_stat_tablerow3_col1{
+            width:  10em;
+             height:  80%;
+        }</style><table id="T_aa_stat_table" ><thead>    <tr>        <th class="col_heading level0 col0" ><a id="binh" href="#">mass shift</a></th>        <th class="col_heading level0 col1" ># peptides in bin</th>        <th class="col_heading level0 col2" >M</th>        <th class="col_heading level0 col3" >D</th>        <th class="col_heading level0 col4" >Q</th>        <th class="col_heading level0 col5" >C</th>        <th class="col_heading level0 col6" >L</th>        <th class="col_heading level0 col7" >H</th>        <th class="col_heading level0 col8" >S</th>        <th class="col_heading level0 col9" >R</th>        <th class="col_heading level0 col10" >A</th>        <th class="col_heading level0 col11" >W</th>        <th class="col_heading level0 col12" >Y</th>        <th class="col_heading level0 col13" >P</th>        <th class="col_heading level0 col14" >F</th>        <th class="col_heading level0 col15" >V</th>        <th class="col_heading level0 col16" >N</th>        <th class="col_heading level0 col17" >T</th>        <th class="col_heading level0 col18" >E</th>        <th class="col_heading level0 col19" >G</th>        <th class="col_heading level0 col20" >I</th>        <th class="col_heading level0 col21" >K</th>        <th class="col_heading level0 col28" >info</th>    </tr></thead><tbody>
+                <tr>
+                                <td id="T_aa_stat_tablerow0_col0" class="data row0 col0" ><a href="#">-0.9844</a></td>
+                        <td id="T_aa_stat_tablerow0_col1" class="data row0 col1" ><a href="#">93</a></td>
+                        <td id="T_aa_stat_tablerow0_col2" class="data row0 col2" >0.000</td>
+                        <td id="T_aa_stat_tablerow0_col3" class="data row0 col3" >0.991</td>
+                        <td id="T_aa_stat_tablerow0_col4" class="data row0 col4" >1.215</td>
+                        <td id="T_aa_stat_tablerow0_col5" class="data row0 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow0_col6" class="data row0 col6" >0.862</td>
+                        <td id="T_aa_stat_tablerow0_col7" class="data row0 col7" >0.911</td>
+                        <td id="T_aa_stat_tablerow0_col8" class="data row0 col8" >1.015</td>
+                        <td id="T_aa_stat_tablerow0_col9" class="data row0 col9" >0.756</td>
+                        <td id="T_aa_stat_tablerow0_col10" class="data row0 col10" >1.021</td>
+                        <td id="T_aa_stat_tablerow0_col11" class="data row0 col11" >0.830</td>
+                        <td id="T_aa_stat_tablerow0_col12" class="data row0 col12" >0.727</td>
+                        <td id="T_aa_stat_tablerow0_col13" class="data row0 col13" >0.934</td>
+                        <td id="T_aa_stat_tablerow0_col14" class="data row0 col14" >0.964</td>
+                        <td id="T_aa_stat_tablerow0_col15" class="data row0 col15" >0.828</td>
+                        <td id="T_aa_stat_tablerow0_col16" class="data row0 col16" >1.748</td>
+                        <td id="T_aa_stat_tablerow0_col17" class="data row0 col17" >0.898</td>
+                        <td id="T_aa_stat_tablerow0_col18" class="data row0 col18" >1.112</td>
+                        <td id="T_aa_stat_tablerow0_col19" class="data row0 col19" >0.927</td>
+                        <td id="T_aa_stat_tablerow0_col20" class="data row0 col20" >0.963</td>
+                        <td id="T_aa_stat_tablerow0_col21" class="data row0 col21" >0.955</td>
+                                                                        <td id="T_aa_stat_tablerow0_col28" class="data row0 col28" ><a href="http://www.unimod.org/modifications_view.php?editid1=561">Glu->Gln</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=2">Amidated</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=555">Asp->Asn</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=1827">Glu->pyro-Glu+Methyl:2H(2)13C(1)</a></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow1_col0" class="data row1 col0" ><a href="#">+0.0000</a></td>
+                        <td id="T_aa_stat_tablerow1_col1" class="data row1 col1" ><a href="#">342</a></td>
+                        <td id="T_aa_stat_tablerow1_col2" class="data row1 col2" >0.000</td>
+                        <td id="T_aa_stat_tablerow1_col3" class="data row1 col3" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col4" class="data row1 col4" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col5" class="data row1 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow1_col6" class="data row1 col6" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col7" class="data row1 col7" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col8" class="data row1 col8" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col9" class="data row1 col9" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col10" class="data row1 col10" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col11" class="data row1 col11" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col12" class="data row1 col12" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col13" class="data row1 col13" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col14" class="data row1 col14" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col15" class="data row1 col15" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col16" class="data row1 col16" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col17" class="data row1 col17" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col18" class="data row1 col18" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col19" class="data row1 col19" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col20" class="data row1 col20" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col21" class="data row1 col21" >1.000</td>
+                                                                        <td id="T_aa_stat_tablerow1_col28" class="data row1 col28" ></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow2_col0" class="data row2 col0" ><a href="#">+15.9950</a></td>
+                        <td id="T_aa_stat_tablerow2_col1" class="data row2 col1" ><a href="#">83</a></td>
+                        <td id="T_aa_stat_tablerow2_col2" class="data row2 col2" >0.000</td>
+                        <td id="T_aa_stat_tablerow2_col3" class="data row2 col3" >1.084</td>
+                        <td id="T_aa_stat_tablerow2_col4" class="data row2 col4" >0.849</td>
+                        <td id="T_aa_stat_tablerow2_col5" class="data row2 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow2_col6" class="data row2 col6" >0.965</td>
+                        <td id="T_aa_stat_tablerow2_col7" class="data row2 col7" >1.118</td>
+                        <td id="T_aa_stat_tablerow2_col8" class="data row2 col8" >0.949</td>
+                        <td id="T_aa_stat_tablerow2_col9" class="data row2 col9" >0.967</td>
+                        <td id="T_aa_stat_tablerow2_col10" class="data row2 col10" >1.113</td>
+                        <td id="T_aa_stat_tablerow2_col11" class="data row2 col11" >1.147</td>
+                        <td id="T_aa_stat_tablerow2_col12" class="data row2 col12" >0.788</td>
+                        <td id="T_aa_stat_tablerow2_col13" class="data row2 col13" >1.027</td>
+                        <td id="T_aa_stat_tablerow2_col14" class="data row2 col14" >0.881</td>
+                        <td id="T_aa_stat_tablerow2_col15" class="data row2 col15" >0.882</td>
+                        <td id="T_aa_stat_tablerow2_col16" class="data row2 col16" >0.962</td>
+                        <td id="T_aa_stat_tablerow2_col17" class="data row2 col17" >0.880</td>
+                        <td id="T_aa_stat_tablerow2_col18" class="data row2 col18" >0.920</td>
+                        <td id="T_aa_stat_tablerow2_col19" class="data row2 col19" >0.943</td>
+                        <td id="T_aa_stat_tablerow2_col20" class="data row2 col20" >0.741</td>
+                        <td id="T_aa_stat_tablerow2_col21" class="data row2 col21" >0.907</td>
+                                                                        <td id="T_aa_stat_tablerow2_col28" class="data row2 col28" ><a href="http://www.unimod.org/modifications_view.php?editid1=569">Phe->Tyr</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=35">Oxidation</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=540">Ala->Ser</a></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow3_col0" class="data row3 col0" ><a href="#">+57.0215</a></td>
+                        <td id="T_aa_stat_tablerow3_col1" class="data row3 col1" ><a href="#">77</a></td>
+                        <td id="T_aa_stat_tablerow3_col2" class="data row3 col2" >0.000</td>
+                        <td id="T_aa_stat_tablerow3_col3" class="data row3 col3" >0.807</td>
+                        <td id="T_aa_stat_tablerow3_col4" class="data row3 col4" >1.079</td>
+                        <td id="T_aa_stat_tablerow3_col5" class="data row3 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow3_col6" class="data row3 col6" >0.801</td>
+                        <td id="T_aa_stat_tablerow3_col7" class="data row3 col7" >0.839</td>
+                        <td id="T_aa_stat_tablerow3_col8" class="data row3 col8" >0.978</td>
+                        <td id="T_aa_stat_tablerow3_col9" class="data row3 col9" >1.153</td>
+                        <td id="T_aa_stat_tablerow3_col10" class="data row3 col10" >0.763</td>
+                        <td id="T_aa_stat_tablerow3_col11" class="data row3 col11" >1.169</td>
+                        <td id="T_aa_stat_tablerow3_col12" class="data row3 col12" >0.723</td>
+                        <td id="T_aa_stat_tablerow3_col13" class="data row3 col13" >1.001</td>
+                        <td id="T_aa_stat_tablerow3_col14" class="data row3 col14" >0.852</td>
+                        <td id="T_aa_stat_tablerow3_col15" class="data row3 col15" >0.913</td>
+                        <td id="T_aa_stat_tablerow3_col16" class="data row3 col16" >1.075</td>
+                        <td id="T_aa_stat_tablerow3_col17" class="data row3 col17" >0.969</td>
+                        <td id="T_aa_stat_tablerow3_col18" class="data row3 col18" >0.817</td>
+                        <td id="T_aa_stat_tablerow3_col19" class="data row3 col19" >1.257</td>
+                        <td id="T_aa_stat_tablerow3_col20" class="data row3 col20" >0.931</td>
+                        <td id="T_aa_stat_tablerow3_col21" class="data row3 col21" >0.716</td>
+                                                                        <td id="T_aa_stat_tablerow3_col28" class="data row3 col28" ><a href="http://www.unimod.org/modifications_view.php?editid1=1263">Gly</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=1051">Ala->Gln</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=4">Carbamidomethyl</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=1108">Gly->Asn</a></td>
+            </tr>
+    </tbody></table>
+</div>
+<div id="legend">
+  <h2>Figure Legend</h2>
+  <p>
+    <span class="legend freq">Relative AA abundance</span>: this value represents the difference in occurrence frequency
+    between peptides with the given mass shift and the peptides with unshifted masses.
+    The AA occurrence frequency is calculated for all mass shifts as follows: the AA is counted in all peptides without miscleavages,
+    then the AA count is divided by the total of all AA counts.
+    Each AA occurrence frequency for each shift is then divided by the occurrence frequency of the same AA at zero mass shift.
+    Thus, values below 1 mean that the AA is "depleted" and values above 1 mean that it is "enriched" at a certain mass shift.
+  </p>
+  <p>
+    <span class="legend peptides">Peptides with AA, %</span>: This is the percentage of peptides at the given mass shift that contain
+    at least one AA residue of a certain kind. This is useful to assess the meaning of the observed frequencies.
+  </p>
+  <p>
+    <span class="legend localized">Localization count</span>: if spectrum files are provided to AA_stat, each MS/MS spectrum of shifted peptides
+    is tested for localization of mass shifts. This axis counts successful localizations of mass shifts at each AA. The counts are not normalized.
+  </p>
+</div>
+<div id="pic_container">
+  <img id="pic" src="summary.png">
+</div>
+
+<div id="peptides">
+  <h2 id="table_header"></h2>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_-0.9844">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>APQHVV<span class="loc">N[-1]</span>HLPPYTNVSLK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.2952.2952.4</td>
+    </tr>
+    <tr>
+      <td>TVTTSGTTN<span class="loc">N[-1]</span>TVTPTSQPVRK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1156.1156.2</td>
+    </tr>
+    <tr>
+      <td>L<span class="loc">N[-1]</span>PTVTYGNDSFSAK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.3035.3035.2</td>
+    </tr>
+    <tr>
+      <td>GALQ<span class="loc">N[-1]</span>IIPASTGAAK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.3755.3755.2</td>
+    </tr>
+    <tr>
+      <td>SLP<span class="loc">N[-1]</span>FPNTSATANATGGR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.3769.3769.2</td>
+    </tr>
+    <tr>
+      <td>VGI<span class="loc">N[-1]</span>YQPPTVVPGGDLAK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4631.4631.2</td>
+    </tr>
+    <tr>
+      <td>F<span class="loc">N[-1]</span>PGAESVVLSNSTLK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4706.4706.2</td>
+    </tr>
+    <tr>
+      <td>VVTQ<span class="loc">N[-1]</span>SSSGNVTHEK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.476.476.3</td>
+    </tr>
+    <tr>
+      <td>G<span class="loc">N[-1]</span>PTVEVDLFTSK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4802.4802.2</td>
+    </tr>
+    <tr>
+      <td>IVVY<span class="loc">N[-1]</span>QPYINYSR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.3871.3871.2</td>
+    </tr>
+    <tr>
+      <td>ILGDKV<span class="loc">N[-1]</span>NTAVIEK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.2025.2025.2</td>
+    </tr>
+    <tr>
+      <td>LH<span class="loc">N[-1]</span>QLLPNVTTVER</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.3625.3625.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[-1]</span>PNGTVTVISR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.1586.1586.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[-1]</span>AIKEGDNITLK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.1619.1619.3</td>
+    </tr>
+    <tr>
+      <td>KSDTQ<span class="loc">N[-1]</span>LLYNVSTGR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.3825.3825.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[-1]</span>ILPNITTTYLK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.5814.5814.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[-1]</span>AIANASTLAEVER</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.3883.3883.2</td>
+    </tr>
+    <tr>
+      <td>QINSSISG<span class="loc">N[-1]</span>LWDKDQR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.3554.3554.3</td>
+    </tr>
+    <tr>
+      <td>ST<span class="loc">N[-1]</span>SDTSVETLNSTR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.1589.1589.2</td>
+    </tr>
+    <tr>
+      <td>LI<span class="loc">N[-1]</span>KFNSSSSSLEEK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.1895.1895.3</td>
+    </tr>
+    <tr>
+      <td>KDNITAH<span class="loc">N[-1]</span>ISWR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.2054.2054.3</td>
+    </tr>
+    <tr>
+      <td>YPQDYQFYIQNFTALPL<span class="loc">N[-1]</span>TVVPPQR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.7479.7479.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[-1]</span>LADKGNQTAAIR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1190.1190.3</td>
+    </tr>
+    <tr>
+      <td>ENGT<span class="loc">N[-1]</span>LTFIGDK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.3331.3331.2</td>
+    </tr>
+    <tr>
+      <td>VQ<span class="loc">N[-1]</span>VTEFDDSLLR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.5038.5038.2</td>
+    </tr>
+    <tr>
+      <td>II<span class="loc">N[-1]</span>EPTAAAIAYGLDKK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4716.4716.3</td>
+    </tr>
+    <tr>
+      <td>DNITAH<span class="loc">N[-1]</span>ISWR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.2931.2931.2</td>
+    </tr>
+    <tr>
+      <td>AQLT<span class="loc">N[-1]</span>PEVKYNYTEDPTILR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4386.4386.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[-1]</span>PVGLIGAENATGETDPSHSK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.2837.2837.3</td>
+    </tr>
+    <tr>
+      <td>KGTENGVNGTLTS<span class="loc">N[-1]</span>VADSPR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.1795.1795.3</td>
+    </tr>
+    <tr>
+      <td>KNQSIGLIQPFAT<span class="loc">N[-1]</span>GK</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301_2.3973.3973.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[-1]</span>NHTASILDR</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301_2.1365.1365.2</td>
+    </tr>
+    <tr>
+      <td>GYFQV<span class="loc">N[-1]</span>QNSTSSHLGSS</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301i_3.3097.3097.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[-1]</span>IETNYTR</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301_3.1448.1448.2</td>
+    </tr>
+    <tr>
+      <td>FI<span class="loc">N[-1]</span>YNQTVSR</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301i_1.2247.2247.2</td>
+    </tr>
+    <tr>
+      <td>QRNSTIEAA<span class="loc">N[-1]</span>LAGLK</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301_2.2926.2926.3</td>
+    </tr>
+    <tr>
+      <td>HLNAS<span class="loc">N[-1]</span>PTEPATIIFTAAR</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301i_3.5162.5162.3</td>
+    </tr>
+    <tr>
+      <td>DIE<span class="loc">N[-1]</span>LKDASSFLAEWQNITK</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301i_1.7640.7640.3</td>
+    </tr>
+    <tr>
+      <td>KHPDASV<span class="loc">N[-1]</span>FSEFSK</td>
+      <td>0.97</td>
+      <td>120621_ZhangH_YW_A301i_3.2469.2469.3</td>
+    </tr>
+    <tr>
+      <td>AN<span class="loc">N[-1]</span>SWFQSILR</td>
+      <td>0.97</td>
+      <td>120621_ZhangH_YW_A301_1.6490.6490.2</td>
+    </tr>
+    <tr>
+      <td>TYNGT<span class="loc">N[-1]</span>PDAASR</td>
+      <td>0.97</td>
+      <td>120621_ZhangH_YW_A301i_3.1010.1010.2</td>
+    </tr>
+    <tr>
+      <td>YGEN<span class="loc">N[-1]</span>SLSVEGFR</td>
+      <td>0.95</td>
+      <td>120621_ZhangH_YW_A301i_1.3690.3690.2</td>
+    </tr>
+    <tr>
+      <td>GKDLDTDFT<span class="loc">N[-1]</span>NASQPETK</td>
+      <td>0.94</td>
+      <td>120621_ZhangH_YW_A301i_2.1986.1986.3</td>
+    </tr>
+    <tr>
+      <td>ENATVPE<span class="loc">N[-1]</span>EEEIIRK</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301i_2.2266.2266.3</td>
+    </tr>
+    <tr>
+      <td>DLDTDFT<span class="loc">N[-1]</span>NASQPETK</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301_1.2903.2903.2</td>
+    </tr>
+    <tr>
+      <td>AHTLLSPPSA<span class="loc">N[-1]</span>NATFAR</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301i_2.3475.3475.3</td>
+    </tr>
+    <tr>
+      <td>IK<span class="loc">N[-1]</span>QAIITDETNDSLVAPQEK</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301i_2.3256.3256.3</td>
+    </tr>
+    <tr>
+      <td>GG<span class="loc">N[-1]</span>NSFTHEALTLK</td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301i_2.3151.3151.3</td>
+    </tr>
+    <tr>
+      <td>SELVA<span class="loc">N[-1]</span>NVTLPAGEQR</td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301i_3.3340.3340.2</td>
+    </tr>
+    <tr>
+      <td>TVTTSGTTN<span class="loc">N[-1]</span>TVTPTSQPVR</td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301_1.1357.1357.3</td>
+    </tr>
+    <tr>
+      <td>IHVAGETDSSNL<span class="loc">N[-1]</span>VSEPR</td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301i_3.2122.2122.3</td>
+    </tr>
+    <tr>
+      <td>FA<span class="loc">N[-1]</span>EYPNITR</td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301i_2.2800.2800.2</td>
+    </tr>
+    <tr>
+      <td>YRPE<span class="loc">N[-1]</span>SVANDTGFTVVAPGK</td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301i_2.3486.3486.3</td>
+    </tr>
+    <tr>
+      <td>GSEGG<span class="loc">N[-1]</span>GSNPVAGLETDDHGGK</td>
+      <td>0.90</td>
+      <td>120621_ZhangH_YW_A301i_3.1996.1996.3</td>
+    </tr>
+    <tr>
+      <td>KEDFNQTLTS<span class="loc">N[-1]</span>EQTSR</td>
+      <td>0.90</td>
+      <td>120621_ZhangH_YW_A301i_2.1828.1828.3</td>
+    </tr>
+    <tr>
+      <td>RNASAVVLY<span class="loc">N[-1]</span>EER</td>
+      <td>0.89</td>
+      <td>120621_ZhangH_YW_A301_2.2004.2004.3</td>
+    </tr>
+    <tr>
+      <td>RPYVSYVN<span class="loc">N[-1]</span>SIAR</td>
+      <td>0.89</td>
+      <td>120621_ZhangH_YW_A301i_2.2649.2649.3</td>
+    </tr>
+    <tr>
+      <td>EAVFAV<span class="loc">N[-1]</span>ALNISEK</td>
+      <td>0.89</td>
+      <td>120621_ZhangH_YW_A301i_1.5328.5328.2</td>
+    </tr>
+    <tr>
+      <td>KVLIN<span class="loc">N[-1]</span>SLDEPR</td>
+      <td>0.88</td>
+      <td>120621_ZhangH_YW_A301_1.1949.1949.3</td>
+    </tr>
+    <tr>
+      <td>NSNS<span class="loc">N[-1]</span>VIQVDQSGLGLPSR</td>
+      <td>0.84</td>
+      <td>120621_ZhangH_YW_A301i_2.4876.4876.2</td>
+    </tr>
+    <tr>
+      <td>YGEN<span class="loc">N[-1]</span>SLSVEGFRK</td>
+      <td>0.80</td>
+      <td>120621_ZhangH_YW_A301i_1.2633.2633.3</td>
+    </tr>
+    <tr>
+      <td>EI<span class="loc">N[-1]</span>SLNLTESHNSR</td>
+      <td>0.77</td>
+      <td>120621_ZhangH_YW_A301i_2.2345.2345.3</td>
+    </tr>
+    <tr>
+      <td>VDLEDFEN<span class="loc">N[-1]</span>TAYAK</td>
+      <td>0.71</td>
+      <td>120621_ZhangH_YW_A301i_1.4587.4587.2</td>
+    </tr>
+    <tr>
+      <td>SDL<span class="loc">N[-1]</span>PANGSYPFQALR</td>
+      <td>0.71</td>
+      <td>120621_ZhangH_YW_A301_1.5127.5127.2</td>
+    </tr>
+    <tr>
+      <td>TSNSSQVS<span class="loc">N[-1]</span>EQDKIDAYK</td>
+      <td>0.69</td>
+      <td>120621_ZhangH_YW_A301_3.1708.1708.3</td>
+    </tr>
+    <tr>
+      <td>EF<span class="loc">N[-1]</span>NWFNVTGSDK</td>
+      <td>0.67</td>
+      <td>120621_ZhangH_YW_A301i_2.6030.6030.2</td>
+    </tr>
+    <tr>
+      <td>LAN<span class="loc">N[-1]</span>THQHVFDDLR</td>
+      <td>0.67</td>
+      <td>120621_ZhangH_YW_A301i_1.2053.2053.4</td>
+    </tr>
+    <tr>
+      <td>QN<span class="loc">N[-1]</span>GAFNETLFR</td>
+      <td>0.66</td>
+      <td>120621_ZhangH_YW_A301i_1.4844.4844.2</td>
+    </tr>
+    <tr>
+      <td>VEEEEA<span class="loc">N[-1]</span>SKQNITK</td>
+      <td>0.58</td>
+      <td>120621_ZhangH_YW_A301_2.925.925.3</td>
+    </tr>
+    <tr>
+      <td>IFDKNSTFGSV<span class="loc">E[-1]</span>VHNLQPEK</td>
+      <td>0.48</td>
+      <td>120621_ZhangH_YW_A301i_2.3869.3869.3</td>
+    </tr>
+    <tr>
+      <td>EAGNHTSGAGLVQIN<span class="loc">K[-1]</span></td>
+      <td>0.34</td>
+      <td>120621_ZhangH_YW_A301_3.1584.1584.2</td>
+    </tr>
+    <tr>
+      <td>NHSIFLADI<span class="loc">N[-1]</span>QER</td>
+      <td>0.20</td>
+      <td>120621_ZhangH_YW_A301i_1.4047.4047.3</td>
+    </tr>
+    <tr>
+      <td>KPDPAEQQNVTQVAHSPQGY<span class="loc">N[-1]</span>TAR</td>
+      <td>0.19</td>
+      <td>120621_ZhangH_YW_A301i_3.1600.1600.4</td>
+    </tr>
+    <tr>
+      <td>TANHSAPSLE<span class="loc">N[-1]</span>SVQPGK</td>
+      <td>0.18</td>
+      <td>120621_ZhangH_YW_A301i_2.1438.1438.3</td>
+    </tr>
+    <tr>
+      <td>EEAE<span class="loc">N[-1]</span>TLQSFR</td>
+      <td>0.14</td>
+      <td>120621_ZhangH_YW_A301i_1.2584.2584.2</td>
+    </tr>
+    <tr>
+      <td>ADA<span class="loc">N[-1]</span>PPATEYHWTTLNGSLPK</td>
+      <td>0.09</td>
+      <td>120621_ZhangH_YW_A301i_1.4653.4653.3</td>
+    </tr>
+    <tr>
+      <td>VLIN<span class="loc">N[-1]</span>SLDEPR</td>
+      <td>0.07</td>
+      <td>120621_ZhangH_YW_A301_3.2891.2891.2</td>
+    </tr>
+    <tr>
+      <td>KQ<span class="loc">N[-1]</span>NGAFNETLFR</td>
+      <td>0.05</td>
+      <td>120621_ZhangH_YW_A301_2.4017.4017.2</td>
+    </tr>
+    <tr>
+      <td>DI<span class="loc">N[-1]</span>SQQELQNITTDTR</td>
+      <td>0.04</td>
+      <td>120621_ZhangH_YW_A301_3.4038.4038.2</td>
+    </tr>
+    <tr>
+      <td>GEPS<span class="loc">N[-1]</span>EPSTETNKTQEQSDVK</td>
+      <td>0.04</td>
+      <td>120621_ZhangH_YW_A301i_3.998.998.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[-1]</span>NVGIYNLSK</td>
+      <td>0.04</td>
+      <td>120621_ZhangH_YW_A301_3.3126.3126.2</td>
+    </tr>
+    <tr>
+      <td>FQVN<span class="loc">N[-1]</span>TRPPHVQLLR</td>
+      <td>0.03</td>
+      <td>120621_ZhangH_YW_A301i_1.3105.3105.4</td>
+    </tr>
+    <tr>
+      <td>VAYSNDSA<span class="loc">N[-1]</span>WTEYQDPR</td>
+      <td>0.03</td>
+      <td>120621_ZhangH_YW_A301i_1.3483.3483.2</td>
+    </tr>
+    <tr>
+      <td>LTN<span class="loc">N[-1]</span>SNQFQTEVGK</td>
+      <td>0.02</td>
+      <td>120621_ZhangH_YW_A301_2.2132.2132.2</td>
+    </tr>
+    <tr>
+      <td>LL<span class="loc">D[-1]</span>AENKVVANGTGTQGQLK</td>
+      <td>0.02</td>
+      <td>120621_ZhangH_YW_A301i_1.2459.2459.3</td>
+    </tr>
+    <tr>
+      <td>VNDS<span class="loc">N[-1]</span>ELGGLTTSGSAEVHK</td>
+      <td>0.02</td>
+      <td>120621_ZhangH_YW_A301_3.2449.2449.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[-1]</span>NPGFDFSGAEISGNYTK</td>
+      <td>0.01</td>
+      <td>120621_ZhangH_YW_A301i_2.5109.5109.2</td>
+    </tr>
+    <tr>
+      <td>LLIAGTNSSDLQQILSLLESNKDLLLTSSYLSDSGSTGEHTK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_2.7860.7860.4</td>
+    </tr>
+    <tr>
+      <td>LQGLENWGQDPGVSANASK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301_3.4092.4092.2</td>
+    </tr>
+    <tr>
+      <td>ENPVEFDSLFNESK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_1.5765.5765.2</td>
+    </tr>
+    <tr>
+      <td>NNVITLNITGK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301_1.4680.4680.2</td>
+    </tr>
+    <tr>
+      <td>DNIQGITKPAIR</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_3.1936.1936.2</td>
+    </tr>
+    <tr>
+      <td>DANLTGLSDNKEIFLSK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_1.4604.4604.3</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+0.0000">
+  <thead>
+    <tr style="text-align: right;">
+      <th>peptide</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>EVHSGVSTDPQPLKEQPALNDSR</td>
+      <td>120621_ZhangH_YW_A301_3.1883.1883.3</td>
+    </tr>
+    <tr>
+      <td>GEGESPPVNGTDEAAGATGDAIEPAPPSQGAEAK</td>
+      <td>120621_ZhangH_YW_A301i_2.2877.2877.3</td>
+    </tr>
+    <tr>
+      <td>STYNDTEDVSQASPSESEAR</td>
+      <td>120621_ZhangH_YW_A301i_3.1627.1627.2</td>
+    </tr>
+    <tr>
+      <td>VPGSTPALHSSPAQPPAETANGTSEQHVR</td>
+      <td>120621_ZhangH_YW_A301i_1.1448.1448.4</td>
+    </tr>
+    <tr>
+      <td>AAPAPQEATATFNSTADREDGHR</td>
+      <td>120621_ZhangH_YW_A301i_1.1984.1984.4</td>
+    </tr>
+    <tr>
+      <td>IDPVTGNITLEEKPAPTDVGLHR</td>
+      <td>120621_ZhangH_YW_A301i_2.4080.4080.4</td>
+    </tr>
+    <tr>
+      <td>VPVASPSAHNISSSGGAPDR</td>
+      <td>120621_ZhangH_YW_A301_2.1430.1430.3</td>
+    </tr>
+    <tr>
+      <td>TRPVVIVDASLSHPESVNR</td>
+      <td>120621_ZhangH_YW_A301_2.2900.2900.3</td>
+    </tr>
+    <tr>
+      <td>LVALAVIDEKNTSVEHTR</td>
+      <td>120621_ZhangH_YW_A301_3.3357.3357.3</td>
+    </tr>
+    <tr>
+      <td>IAPASNVSHTVVLRPLK</td>
+      <td>120621_ZhangH_YW_A301i_1.2716.2716.2</td>
+    </tr>
+    <tr>
+      <td>KVEVEAVNSTSVK</td>
+      <td>120621_ZhangH_YW_A301i_2.1337.1337.2</td>
+    </tr>
+    <tr>
+      <td>ISSLQTTEKNDTVAGQGER</td>
+      <td>120621_ZhangH_YW_A301_3.1388.1388.3</td>
+    </tr>
+    <tr>
+      <td>KGFIISNATYK</td>
+      <td>120621_ZhangH_YW_A301i_2.2805.2805.2</td>
+    </tr>
+    <tr>
+      <td>SNSSGTPGATSSTGFQESR</td>
+      <td>120621_ZhangH_YW_A301_3.1336.1336.2</td>
+    </tr>
+    <tr>
+      <td>SGGGGGGGLGSGGSIR</td>
+      <td>120621_ZhangH_YW_A301i_3.1216.1216.2</td>
+    </tr>
+    <tr>
+      <td>AAPAPQEATATFNSTADR</td>
+      <td>120621_ZhangH_YW_A301i_1.2490.2490.2</td>
+    </tr>
+    <tr>
+      <td>AAAAAWEEPSSGNGTAR</td>
+      <td>120621_ZhangH_YW_A301_1.1764.1764.2</td>
+    </tr>
+    <tr>
+      <td>IETVLPAEFFEVLSSSQNGSYHR</td>
+      <td>120621_ZhangH_YW_A301i_1.7665.7665.3</td>
+    </tr>
+    <tr>
+      <td>TDDEVVQREEEAIQLDGLNASQIR</td>
+      <td>120621_ZhangH_YW_A301i_2.5982.5982.3</td>
+    </tr>
+    <tr>
+      <td>GRDIYTFDGALNK</td>
+      <td>120621_ZhangH_YW_A301_2.3461.3461.2</td>
+    </tr>
+    <tr>
+      <td>DDALKNLSHTPVSK</td>
+      <td>120621_ZhangH_YW_A301i_3.2193.2193.3</td>
+    </tr>
+    <tr>
+      <td>HLYTTTGGETDFTNVTSLR</td>
+      <td>120621_ZhangH_YW_A301_2.4215.4215.3</td>
+    </tr>
+    <tr>
+      <td>VLGSSTSATNSTSVSSR</td>
+      <td>120621_ZhangH_YW_A301_1.1216.1216.2</td>
+    </tr>
+    <tr>
+      <td>KDFEDLYTPVNGSIVIVR</td>
+      <td>120621_ZhangH_YW_A301_2.5813.5813.3</td>
+    </tr>
+    <tr>
+      <td>FLSSSPHLPPSSYFNASGR</td>
+      <td>120621_ZhangH_YW_A301i_2.4537.4537.3</td>
+    </tr>
+    <tr>
+      <td>ENGTDTVQEEEESPAEGSK</td>
+      <td>120621_ZhangH_YW_A301_2.1304.1304.2</td>
+    </tr>
+    <tr>
+      <td>GYYNQSEDGSHTLQR</td>
+      <td>120621_ZhangH_YW_A301_2.1411.1411.2</td>
+    </tr>
+    <tr>
+      <td>IVASDSGKPSLNQTALVR</td>
+      <td>120621_ZhangH_YW_A301i_2.2571.2571.3</td>
+    </tr>
+    <tr>
+      <td>VVVVDGKNESEYTVK</td>
+      <td>120621_ZhangH_YW_A301i_3.1951.1951.2</td>
+    </tr>
+    <tr>
+      <td>ITAPTLAPGNSTAVVPTPTPPSK</td>
+      <td>120621_ZhangH_YW_A301i_2.4262.4262.2</td>
+    </tr>
+    <tr>
+      <td>AEPPLNASASDQGEK</td>
+      <td>120621_ZhangH_YW_A301i_2.1350.1350.3</td>
+    </tr>
+    <tr>
+      <td>FVGTPEVNQTTLYQR</td>
+      <td>120621_ZhangH_YW_A301i_3.3712.3712.2</td>
+    </tr>
+    <tr>
+      <td>SYSTTYEERNITGTR</td>
+      <td>120621_ZhangH_YW_A301_2.1835.1835.3</td>
+    </tr>
+    <tr>
+      <td>GYYNQSEAGSHIIQR</td>
+      <td>120621_ZhangH_YW_A301i_1.1908.1908.2</td>
+    </tr>
+    <tr>
+      <td>DLEITNATLQSEEDSR</td>
+      <td>120621_ZhangH_YW_A301_1.3889.3889.2</td>
+    </tr>
+    <tr>
+      <td>DGTPLSDGQSNHTVSSK</td>
+      <td>120621_ZhangH_YW_A301i_2.1230.1230.3</td>
+    </tr>
+    <tr>
+      <td>AASPIITLVALDEALDNYTITFLIR</td>
+      <td>120621_ZhangH_YW_A301i_2.7900.7900.3</td>
+    </tr>
+    <tr>
+      <td>STTGQKPVQPTHAPGTTAAAHNTTR</td>
+      <td>120621_ZhangH_YW_A301i_3.945.945.4</td>
+    </tr>
+    <tr>
+      <td>APDTANLTTAALFR</td>
+      <td>120621_ZhangH_YW_A301i_2.5479.5479.2</td>
+    </tr>
+    <tr>
+      <td>KNQSIGLIQPFATNGK</td>
+      <td>120621_ZhangH_YW_A301i_2.4383.4383.2</td>
+    </tr>
+    <tr>
+      <td>ANSTSDSVFTETPSPVLK</td>
+      <td>120621_ZhangH_YW_A301i_1.4158.4158.2</td>
+    </tr>
+    <tr>
+      <td>KDVNYTQIVVDR</td>
+      <td>120621_ZhangH_YW_A301i_2.2991.2991.2</td>
+    </tr>
+    <tr>
+      <td>EEEAIQLDGLNASQIR</td>
+      <td>120621_ZhangH_YW_A301i_3.4839.4839.2</td>
+    </tr>
+    <tr>
+      <td>WIADPSPQNSTADTSK</td>
+      <td>120621_ZhangH_YW_A301_2.2130.2130.2</td>
+    </tr>
+    <tr>
+      <td>YVQDQVAAPFQLSNHTGR</td>
+      <td>120621_ZhangH_YW_A301_1.3535.3535.3</td>
+    </tr>
+    <tr>
+      <td>KQNNGAFNETLFR</td>
+      <td>120621_ZhangH_YW_A301i_1.4094.4094.2</td>
+    </tr>
+    <tr>
+      <td>INVTTLKDDGDISK</td>
+      <td>120621_ZhangH_YW_A301i_2.2773.2773.2</td>
+    </tr>
+    <tr>
+      <td>ENTSDPSLVIAFGR</td>
+      <td>120621_ZhangH_YW_A301_1.4953.4953.2</td>
+    </tr>
+    <tr>
+      <td>LPENQTSPGESPER</td>
+      <td>120621_ZhangH_YW_A301i_1.1205.1205.2</td>
+    </tr>
+    <tr>
+      <td>DYYPINESLASLPLR</td>
+      <td>120621_ZhangH_YW_A301i_3.6983.6983.2</td>
+    </tr>
+    <tr>
+      <td>VVTQNSSSGNVTHEK</td>
+      <td>120621_ZhangH_YW_A301_2.519.519.2</td>
+    </tr>
+    <tr>
+      <td>DTNGSQFFITTVK</td>
+      <td>120621_ZhangH_YW_A301_3.4749.4749.2</td>
+    </tr>
+    <tr>
+      <td>VQGNSTLLHITDLQAR</td>
+      <td>120621_ZhangH_YW_A301i_2.4510.4510.3</td>
+    </tr>
+    <tr>
+      <td>FVNSTGYLTEAEK</td>
+      <td>120621_ZhangH_YW_A301i_3.3482.3482.2</td>
+    </tr>
+    <tr>
+      <td>EADNHTAFIR</td>
+      <td>120621_ZhangH_YW_A301i_1.1468.1468.2</td>
+    </tr>
+    <tr>
+      <td>AGPNGTLFVADAYK</td>
+      <td>120621_ZhangH_YW_A301_2.4440.4440.2</td>
+    </tr>
+    <tr>
+      <td>LANLTQGEDQYYLR</td>
+      <td>120621_ZhangH_YW_A301i_1.4244.4244.2</td>
+    </tr>
+    <tr>
+      <td>GNETLHYETFGK</td>
+      <td>120621_ZhangH_YW_A301i_1.2290.2290.2</td>
+    </tr>
+    <tr>
+      <td>LGAINSTLSNQSK</td>
+      <td>120621_ZhangH_YW_A301_1.2027.2027.2</td>
+    </tr>
+    <tr>
+      <td>KNITDLVEGAK</td>
+      <td>120621_ZhangH_YW_A301_3.2782.2782.2</td>
+    </tr>
+    <tr>
+      <td>QPVSPVIHPPVSYNDTAPR</td>
+      <td>120621_ZhangH_YW_A301i_1.3188.3188.3</td>
+    </tr>
+    <tr>
+      <td>DFEDLYTPVNGSIVIVR</td>
+      <td>120621_ZhangH_YW_A301i_1.6828.6828.2</td>
+    </tr>
+    <tr>
+      <td>IKLDNYSTQELGK</td>
+      <td>120621_ZhangH_YW_A301i_3.2915.2915.2</td>
+    </tr>
+    <tr>
+      <td>KVPQVSTPTLVEVSR</td>
+      <td>120621_ZhangH_YW_A301_1.2807.2807.3</td>
+    </tr>
+    <tr>
+      <td>LENITTGTYTIHAQK</td>
+      <td>120621_ZhangH_YW_A301i_3.2775.2775.3</td>
+    </tr>
+    <tr>
+      <td>GVFITNETGQPLIGK</td>
+      <td>120621_ZhangH_YW_A301i_3.4813.4813.2</td>
+    </tr>
+    <tr>
+      <td>GILAADESTGSIAK</td>
+      <td>120621_ZhangH_YW_A301i_3.2490.2490.2</td>
+    </tr>
+    <tr>
+      <td>GELNTSIFSSRPIDK</td>
+      <td>120621_ZhangH_YW_A301i_3.4121.4121.2</td>
+    </tr>
+    <tr>
+      <td>YKPDTLAVAVENGTGTDR</td>
+      <td>120621_ZhangH_YW_A301_3.3383.3383.3</td>
+    </tr>
+    <tr>
+      <td>LNASLPALLLIR</td>
+      <td>120621_ZhangH_YW_A301i_3.7603.7603.2</td>
+    </tr>
+    <tr>
+      <td>KLTDVETQVLNQTSR</td>
+      <td>120621_ZhangH_YW_A301i_1.3699.3699.3</td>
+    </tr>
+    <tr>
+      <td>TSNISKPGTLER</td>
+      <td>120621_ZhangH_YW_A301i_1.1153.1153.2</td>
+    </tr>
+    <tr>
+      <td>LSQAQGNLSVLETR</td>
+      <td>120621_ZhangH_YW_A301_3.3715.3715.2</td>
+    </tr>
+    <tr>
+      <td>YTLDPNITSAGPTK</td>
+      <td>120621_ZhangH_YW_A301_3.3219.3219.2</td>
+    </tr>
+    <tr>
+      <td>GVTHLNISGLK</td>
+      <td>120621_ZhangH_YW_A301_1.2610.2610.2</td>
+    </tr>
+    <tr>
+      <td>AFSEVPTTANGSTK</td>
+      <td>120621_ZhangH_YW_A301i_1.1709.1709.2</td>
+    </tr>
+    <tr>
+      <td>HIYYITGETK</td>
+      <td>120621_ZhangH_YW_A301i_1.1692.1692.2</td>
+    </tr>
+    <tr>
+      <td>SLYASSPGGVYATR</td>
+      <td>120621_ZhangH_YW_A301i_1.2417.2417.2</td>
+    </tr>
+    <tr>
+      <td>YHVLHINTTK</td>
+      <td>120621_ZhangH_YW_A301i_3.1570.1570.3</td>
+    </tr>
+    <tr>
+      <td>EERPLNASALK</td>
+      <td>120621_ZhangH_YW_A301i_2.1611.1611.2</td>
+    </tr>
+    <tr>
+      <td>LLPAFNTTSGLPYPR</td>
+      <td>120621_ZhangH_YW_A301i_3.5771.5771.2</td>
+    </tr>
+    <tr>
+      <td>ANHSGAVVLLK</td>
+      <td>120621_ZhangH_YW_A301_1.1650.1650.2</td>
+    </tr>
+    <tr>
+      <td>DGGSGNSTIIVSR</td>
+      <td>120621_ZhangH_YW_A301_2.1667.1667.2</td>
+    </tr>
+    <tr>
+      <td>EAGNHTSGAGLVQINK</td>
+      <td>120621_ZhangH_YW_A301_1.1593.1593.3</td>
+    </tr>
+    <tr>
+      <td>HLLENSTASVSEAER</td>
+      <td>120621_ZhangH_YW_A301i_1.1787.1787.3</td>
+    </tr>
+    <tr>
+      <td>ALGDLPHHFNASTQPAYLR</td>
+      <td>120621_ZhangH_YW_A301i_2.4047.4047.3</td>
+    </tr>
+    <tr>
+      <td>LNGSLATFSTDQELR</td>
+      <td>120621_ZhangH_YW_A301_3.4401.4401.2</td>
+    </tr>
+    <tr>
+      <td>DSVINLSESVEDGPK</td>
+      <td>120621_ZhangH_YW_A301i_3.4466.4466.2</td>
+    </tr>
+    <tr>
+      <td>GVVDSDDLPLNVSR</td>
+      <td>120621_ZhangH_YW_A301_2.4191.4191.2</td>
+    </tr>
+    <tr>
+      <td>LNFTGPGDPDSIR</td>
+      <td>120621_ZhangH_YW_A301i_2.4011.4011.2</td>
+    </tr>
+    <tr>
+      <td>EASIVGENETYPR</td>
+      <td>120621_ZhangH_YW_A301_3.2320.2320.2</td>
+    </tr>
+    <tr>
+      <td>TVLENSTSYEEAK</td>
+      <td>120621_ZhangH_YW_A301i_1.1885.1885.2</td>
+    </tr>
+    <tr>
+      <td>VNESVVSIAAQQK</td>
+      <td>120621_ZhangH_YW_A301i_3.2751.2751.2</td>
+    </tr>
+    <tr>
+      <td>QNNGAFNETLFR</td>
+      <td>120621_ZhangH_YW_A301_3.5050.5050.2</td>
+    </tr>
+    <tr>
+      <td>IYNVTYLEPSLR</td>
+      <td>120621_ZhangH_YW_A301i_3.5264.5264.2</td>
+    </tr>
+    <tr>
+      <td>GYYNQSEAGSHTLQR</td>
+      <td>120621_ZhangH_YW_A301i_1.1421.1421.3</td>
+    </tr>
+    <tr>
+      <td>LNGTDPIVAADSKR</td>
+      <td>120621_ZhangH_YW_A301i_1.1680.1680.3</td>
+    </tr>
+    <tr>
+      <td>STGGAPTFNVTVTK</td>
+      <td>120621_ZhangH_YW_A301_3.2923.2923.2</td>
+    </tr>
+    <tr>
+      <td>LINSSTAEPVKEEAK</td>
+      <td>120621_ZhangH_YW_A301i_1.1287.1287.3</td>
+    </tr>
+    <tr>
+      <td>VHYAGYNVTRPEGDLGK</td>
+      <td>120621_ZhangH_YW_A301_1.2038.2038.3</td>
+    </tr>
+    <tr>
+      <td>INYTDPFSNQTVK</td>
+      <td>120621_ZhangH_YW_A301i_1.4341.4341.2</td>
+    </tr>
+    <tr>
+      <td>LTDVETQVLNQTSR</td>
+      <td>120621_ZhangH_YW_A301i_2.3994.3994.2</td>
+    </tr>
+    <tr>
+      <td>DFSAPTLEDHFNK</td>
+      <td>120621_ZhangH_YW_A301_3.3898.3898.2</td>
+    </tr>
+    <tr>
+      <td>INYTVPQSGTFK</td>
+      <td>120621_ZhangH_YW_A301_1.2968.2968.2</td>
+    </tr>
+    <tr>
+      <td>TLNSSGLPFGSYTFEK</td>
+      <td>120621_ZhangH_YW_A301i_2.5989.5989.2</td>
+    </tr>
+    <tr>
+      <td>ALLTNVSSVALGSR</td>
+      <td>120621_ZhangH_YW_A301i_2.5295.5295.2</td>
+    </tr>
+    <tr>
+      <td>KASGPPVSELITK</td>
+      <td>120621_ZhangH_YW_A301i_2.2309.2309.3</td>
+    </tr>
+    <tr>
+      <td>TDYNASVSVPDSSGPER</td>
+      <td>120621_ZhangH_YW_A301i_1.2286.2286.2</td>
+    </tr>
+    <tr>
+      <td>LYANHTSLPASAR</td>
+      <td>120621_ZhangH_YW_A301i_3.1563.1563.3</td>
+    </tr>
+    <tr>
+      <td>GSTLSQWSLGNGTPVTSK</td>
+      <td>120621_ZhangH_YW_A301i_1.4389.4389.2</td>
+    </tr>
+    <tr>
+      <td>DLVVQQLVNVSR</td>
+      <td>120621_ZhangH_YW_A301i_2.5710.5710.2</td>
+    </tr>
+    <tr>
+      <td>YALYDATYETK</td>
+      <td>120621_ZhangH_YW_A301i_3.3198.3198.2</td>
+    </tr>
+    <tr>
+      <td>ALSPNSTISSAPK</td>
+      <td>120621_ZhangH_YW_A301_3.1815.1815.2</td>
+    </tr>
+    <tr>
+      <td>NQSIGLIQPFATNGK</td>
+      <td>120621_ZhangH_YW_A301i_1.5182.5182.2</td>
+    </tr>
+    <tr>
+      <td>IFIFNQTGIEAK</td>
+      <td>120621_ZhangH_YW_A301i_1.5547.5547.2</td>
+    </tr>
+    <tr>
+      <td>VQNVTEFDDSLLR</td>
+      <td>120621_ZhangH_YW_A301_3.4977.4977.2</td>
+    </tr>
+    <tr>
+      <td>LSPNASAEHLELR</td>
+      <td>120621_ZhangH_YW_A301_3.2461.2461.3</td>
+    </tr>
+    <tr>
+      <td>QEYDESGPSIVHR</td>
+      <td>120621_ZhangH_YW_A301i_1.1504.1504.3</td>
+    </tr>
+    <tr>
+      <td>EGSGYFFLNTSTADVVK</td>
+      <td>120621_ZhangH_YW_A301i_2.6273.6273.2</td>
+    </tr>
+    <tr>
+      <td>GPILPLQANLTR</td>
+      <td>120621_ZhangH_YW_A301i_2.5332.5332.2</td>
+    </tr>
+    <tr>
+      <td>RPNQSQPLPPSSLQR</td>
+      <td>120621_ZhangH_YW_A301i_1.1454.1454.3</td>
+    </tr>
+    <tr>
+      <td>ANTTQPGIVEGGQVLK</td>
+      <td>120621_ZhangH_YW_A301i_3.2809.2809.2</td>
+    </tr>
+    <tr>
+      <td>EYVNVSQELHPGAAK</td>
+      <td>120621_ZhangH_YW_A301i_2.2735.2735.3</td>
+    </tr>
+    <tr>
+      <td>VFGSQNLTTVK</td>
+      <td>120621_ZhangH_YW_A301i_3.3102.3102.2</td>
+    </tr>
+    <tr>
+      <td>DSYVGDEAQSKR</td>
+      <td>120621_ZhangH_YW_A301i_2.1020.1020.2</td>
+    </tr>
+    <tr>
+      <td>ENGTNLTFIGDK</td>
+      <td>120621_ZhangH_YW_A301i_1.3638.3638.2</td>
+    </tr>
+    <tr>
+      <td>YHGFLNTSYHR</td>
+      <td>120621_ZhangH_YW_A301_2.2123.2123.3</td>
+    </tr>
+    <tr>
+      <td>DGQVINETSQHHDDLE</td>
+      <td>120621_ZhangH_YW_A301i_2.1737.1737.3</td>
+    </tr>
+    <tr>
+      <td>YVINGTYANETK</td>
+      <td>120621_ZhangH_YW_A301_2.2452.2452.2</td>
+    </tr>
+    <tr>
+      <td>ISNLTIVQAEIK</td>
+      <td>120621_ZhangH_YW_A301_2.4812.4812.2</td>
+    </tr>
+    <tr>
+      <td>ANHSGAVVLLKR</td>
+      <td>120621_ZhangH_YW_A301i_3.1428.1428.3</td>
+    </tr>
+    <tr>
+      <td>VVANGTGTQGQLK</td>
+      <td>120621_ZhangH_YW_A301i_1.1105.1105.2</td>
+    </tr>
+    <tr>
+      <td>VSDNESSSNYTYK</td>
+      <td>120621_ZhangH_YW_A301_3.1339.1339.2</td>
+    </tr>
+    <tr>
+      <td>LVQLFPNDTSLK</td>
+      <td>120621_ZhangH_YW_A301i_1.5176.5176.2</td>
+    </tr>
+    <tr>
+      <td>KLNVTTAWK</td>
+      <td>120621_ZhangH_YW_A301_2.2416.2416.2</td>
+    </tr>
+    <tr>
+      <td>WGHNITEFQQR</td>
+      <td>120621_ZhangH_YW_A301i_2.2832.2832.2</td>
+    </tr>
+    <tr>
+      <td>LWNSTFLEEYSK</td>
+      <td>120621_ZhangH_YW_A301i_1.6235.6235.2</td>
+    </tr>
+    <tr>
+      <td>DASSFLAEWQNITK</td>
+      <td>120621_ZhangH_YW_A301i_3.7581.7581.2</td>
+    </tr>
+    <tr>
+      <td>DVNYTQIVVDR</td>
+      <td>120621_ZhangH_YW_A301i_2.4118.4118.2</td>
+    </tr>
+    <tr>
+      <td>TNVSHVVGQLDDIRK</td>
+      <td>120621_ZhangH_YW_A301_3.3439.3439.3</td>
+    </tr>
+    <tr>
+      <td>ALTNGSLPAGTR</td>
+      <td>120621_ZhangH_YW_A301_2.1763.1763.2</td>
+    </tr>
+    <tr>
+      <td>VLEAVNGTDAR</td>
+      <td>120621_ZhangH_YW_A301i_1.1456.1456.2</td>
+    </tr>
+    <tr>
+      <td>RLKPLFNK</td>
+      <td>120621_ZhangH_YW_A301_1.1359.1359.2</td>
+    </tr>
+    <tr>
+      <td>VPGNQTSTTLK</td>
+      <td>120621_ZhangH_YW_A301_3.1126.1126.2</td>
+    </tr>
+    <tr>
+      <td>EIANATAKPEDR</td>
+      <td>120621_ZhangH_YW_A301_2.944.944.2</td>
+    </tr>
+    <tr>
+      <td>RNQSLSLLYK</td>
+      <td>120621_ZhangH_YW_A301i_2.2900.2900.2</td>
+    </tr>
+    <tr>
+      <td>QTPEYQNESSR</td>
+      <td>120621_ZhangH_YW_A301_2.999.999.2</td>
+    </tr>
+    <tr>
+      <td>IVDVNLTSEGK</td>
+      <td>120621_ZhangH_YW_A301_3.2496.2496.2</td>
+    </tr>
+    <tr>
+      <td>ELAVPDGYTNR</td>
+      <td>120621_ZhangH_YW_A301i_2.2733.2733.2</td>
+    </tr>
+    <tr>
+      <td>KKPNATAEPTPPDR</td>
+      <td>120621_ZhangH_YW_A301_1.839.839.3</td>
+    </tr>
+    <tr>
+      <td>SVNTSVHIYDK</td>
+      <td>120621_ZhangH_YW_A301i_2.1671.1671.2</td>
+    </tr>
+    <tr>
+      <td>VFVQTPTINYTLR</td>
+      <td>120621_ZhangH_YW_A301i_3.5120.5120.2</td>
+    </tr>
+    <tr>
+      <td>FNSTEYQVVTR</td>
+      <td>120621_ZhangH_YW_A301_1.2495.2495.2</td>
+    </tr>
+    <tr>
+      <td>GSKDNATDSVPLR</td>
+      <td>120621_ZhangH_YW_A301_3.1262.1262.3</td>
+    </tr>
+    <tr>
+      <td>NAIKEGDNITLK</td>
+      <td>120621_ZhangH_YW_A301i_2.2470.2470.3</td>
+    </tr>
+    <tr>
+      <td>VTSPNITVTLK</td>
+      <td>120621_ZhangH_YW_A301i_3.3356.3356.2</td>
+    </tr>
+    <tr>
+      <td>ELYNGTADITLR</td>
+      <td>120621_ZhangH_YW_A301_3.3975.3975.2</td>
+    </tr>
+    <tr>
+      <td>IETILLNGTDR</td>
+      <td>120621_ZhangH_YW_A301i_2.4020.4020.2</td>
+    </tr>
+    <tr>
+      <td>TQDEILFSNSTR</td>
+      <td>120621_ZhangH_YW_A301i_3.3489.3489.2</td>
+    </tr>
+    <tr>
+      <td>LFNVTPQDEQK</td>
+      <td>120621_ZhangH_YW_A301i_2.2828.2828.2</td>
+    </tr>
+    <tr>
+      <td>GNTSGVLVVLTK</td>
+      <td>120621_ZhangH_YW_A301i_1.4235.4235.2</td>
+    </tr>
+    <tr>
+      <td>ATLSTLAVAVNR</td>
+      <td>120621_ZhangH_YW_A301i_3.4087.4087.2</td>
+    </tr>
+    <tr>
+      <td>RQNQSLVYGK</td>
+      <td>120621_ZhangH_YW_A301i_3.1180.1180.2</td>
+    </tr>
+    <tr>
+      <td>DGNVSYAWYR</td>
+      <td>120621_ZhangH_YW_A301i_1.3842.3842.2</td>
+    </tr>
+    <tr>
+      <td>VPLQSAHLYYNVTEK</td>
+      <td>120621_ZhangH_YW_A301i_2.3749.3749.3</td>
+    </tr>
+    <tr>
+      <td>YNGTVGLWR</td>
+      <td>120621_ZhangH_YW_A301_1.3699.3699.2</td>
+    </tr>
+    <tr>
+      <td>EEGSHPPVQGQLSLQNTTHTR</td>
+      <td>120621_ZhangH_YW_A301i_2.1792.1792.4</td>
+    </tr>
+    <tr>
+      <td>GHTLTLNFTR</td>
+      <td>120621_ZhangH_YW_A301i_3.3317.3317.2</td>
+    </tr>
+    <tr>
+      <td>IGGIGTVPVGR</td>
+      <td>120621_ZhangH_YW_A301i_3.2615.2615.2</td>
+    </tr>
+    <tr>
+      <td>TGIYQVLNGSR</td>
+      <td>120621_ZhangH_YW_A301i_3.3990.3990.2</td>
+    </tr>
+    <tr>
+      <td>YNSQLLSFVR</td>
+      <td>120621_ZhangH_YW_A301_2.5477.5477.2</td>
+    </tr>
+    <tr>
+      <td>QTLQNASETVK</td>
+      <td>120621_ZhangH_YW_A301_3.1308.1308.2</td>
+    </tr>
+    <tr>
+      <td>ELISNASDALDKIR</td>
+      <td>120621_ZhangH_YW_A301i_2.4892.4892.3</td>
+    </tr>
+    <tr>
+      <td>SAEGTFFINK</td>
+      <td>120621_ZhangH_YW_A301_1.3359.3359.2</td>
+    </tr>
+    <tr>
+      <td>IPLVNISLLPK</td>
+      <td>120621_ZhangH_YW_A301i_2.6857.6857.2</td>
+    </tr>
+    <tr>
+      <td>LDNYSTQELGK</td>
+      <td>120621_ZhangH_YW_A301i_3.1962.1962.2</td>
+    </tr>
+    <tr>
+      <td>ASGPPVSELITK</td>
+      <td>120621_ZhangH_YW_A301i_2.3293.3293.2</td>
+    </tr>
+    <tr>
+      <td>ETPIKIPVNSTGTDK</td>
+      <td>120621_ZhangH_YW_A301_2.2390.2390.3</td>
+    </tr>
+    <tr>
+      <td>DGHGTAISNASDVWK</td>
+      <td>120621_ZhangH_YW_A301i_2.3129.3129.3</td>
+    </tr>
+    <tr>
+      <td>THNLTDLSPHLR</td>
+      <td>120621_ZhangH_YW_A301i_2.2506.2506.3</td>
+    </tr>
+    <tr>
+      <td>ESYSVYVYK</td>
+      <td>120621_ZhangH_YW_A301i_3.2936.2936.2</td>
+    </tr>
+    <tr>
+      <td>LPTTVLNATAK</td>
+      <td>120621_ZhangH_YW_A301i_1.2765.2765.2</td>
+    </tr>
+    <tr>
+      <td>SISENATATAAPK</td>
+      <td>120621_ZhangH_YW_A301_3.1235.1235.2</td>
+    </tr>
+    <tr>
+      <td>ANLSQVADHLDHIK</td>
+      <td>120621_ZhangH_YW_A301_3.3756.3756.3</td>
+    </tr>
+    <tr>
+      <td>AGFAGDDAPR</td>
+      <td>120621_ZhangH_YW_A301i_2.1292.1292.2</td>
+    </tr>
+    <tr>
+      <td>ENSTDYLYPEQLK</td>
+      <td>120621_ZhangH_YW_A301i_2.4152.4152.2</td>
+    </tr>
+    <tr>
+      <td>YISPDQLADLYK</td>
+      <td>120621_ZhangH_YW_A301i_2.5606.5606.2</td>
+    </tr>
+    <tr>
+      <td>LAPQVHNTTSR</td>
+      <td>120621_ZhangH_YW_A301i_2.937.937.3</td>
+    </tr>
+    <tr>
+      <td>YVQNGTYTVK</td>
+      <td>120621_ZhangH_YW_A301_1.1373.1373.2</td>
+    </tr>
+    <tr>
+      <td>GSLSYLNVTR</td>
+      <td>120621_ZhangH_YW_A301i_3.3561.3561.2</td>
+    </tr>
+    <tr>
+      <td>ISGLIYEETR</td>
+      <td>120621_ZhangH_YW_A301_1.2912.2912.2</td>
+    </tr>
+    <tr>
+      <td>NNHTASILDR</td>
+      <td>120621_ZhangH_YW_A301i_3.1834.1834.3</td>
+    </tr>
+    <tr>
+      <td>DSYVGDEAQSK</td>
+      <td>120621_ZhangH_YW_A301_3.1096.1096.2</td>
+    </tr>
+    <tr>
+      <td>LSITNETFR</td>
+      <td>120621_ZhangH_YW_A301i_3.3578.3578.2</td>
+    </tr>
+    <tr>
+      <td>ANLTVVLLR</td>
+      <td>120621_ZhangH_YW_A301i_3.5052.5052.2</td>
+    </tr>
+    <tr>
+      <td>YRPGTVALR</td>
+      <td>120621_ZhangH_YW_A301i_3.1372.1372.2</td>
+    </tr>
+    <tr>
+      <td>DHLLLPATTHNK</td>
+      <td>120621_ZhangH_YW_A301i_1.1547.1547.3</td>
+    </tr>
+    <tr>
+      <td>GSLSYLNVTRK</td>
+      <td>120621_ZhangH_YW_A301i_2.2702.2702.2</td>
+    </tr>
+    <tr>
+      <td>KIYIPLNK</td>
+      <td>120621_ZhangH_YW_A301i_1.2411.2411.2</td>
+    </tr>
+    <tr>
+      <td>EQYIHENYSR</td>
+      <td>120621_ZhangH_YW_A301_3.1357.1357.2</td>
+    </tr>
+    <tr>
+      <td>SEQLVNFTGK</td>
+      <td>120621_ZhangH_YW_A301i_3.3207.3207.2</td>
+    </tr>
+    <tr>
+      <td>SNGTIIHVK</td>
+      <td>120621_ZhangH_YW_A301i_1.1246.1246.2</td>
+    </tr>
+    <tr>
+      <td>VVDLLAPYAK</td>
+      <td>120621_ZhangH_YW_A301i_1.4540.4540.2</td>
+    </tr>
+    <tr>
+      <td>AAENFTLLVK</td>
+      <td>120621_ZhangH_YW_A301i_1.4652.4652.2</td>
+    </tr>
+    <tr>
+      <td>DGVQLAESNR</td>
+      <td>120621_ZhangH_YW_A301_3.1454.1454.2</td>
+    </tr>
+    <tr>
+      <td>KDNTTVTR</td>
+      <td>120621_ZhangH_YW_A301i_2.219.219.2</td>
+    </tr>
+    <tr>
+      <td>LGIYADVGNK</td>
+      <td>120621_ZhangH_YW_A301_3.2643.2643.2</td>
+    </tr>
+    <tr>
+      <td>GLNLTEDTYKPR</td>
+      <td>120621_ZhangH_YW_A301_2.2525.2525.3</td>
+    </tr>
+    <tr>
+      <td>AGLQFPVGR</td>
+      <td>120621_ZhangH_YW_A301_1.3245.3245.2</td>
+    </tr>
+    <tr>
+      <td>GHTNGTKPLDGFDVWK</td>
+      <td>120621_ZhangH_YW_A301i_1.4051.4051.3</td>
+    </tr>
+    <tr>
+      <td>LLQTSNITK</td>
+      <td>120621_ZhangH_YW_A301i_3.1843.1843.2</td>
+    </tr>
+    <tr>
+      <td>EIFVANGTQGK</td>
+      <td>120621_ZhangH_YW_A301i_3.2011.2011.2</td>
+    </tr>
+    <tr>
+      <td>FNSSSSSLEEK</td>
+      <td>120621_ZhangH_YW_A301_3.1286.1286.2</td>
+    </tr>
+    <tr>
+      <td>NGSLFAFR</td>
+      <td>120621_ZhangH_YW_A301i_1.5231.5231.2</td>
+    </tr>
+    <tr>
+      <td>TVNVSVPKK</td>
+      <td>120621_ZhangH_YW_A301_1.1091.1091.2</td>
+    </tr>
+    <tr>
+      <td>TYNASVLPVR</td>
+      <td>120621_ZhangH_YW_A301_1.2740.2740.2</td>
+    </tr>
+    <tr>
+      <td>TLLGDGPVVTDPK</td>
+      <td>120621_ZhangH_YW_A301i_1.3118.3118.2</td>
+    </tr>
+    <tr>
+      <td>IANETRYPHSVAK</td>
+      <td>120621_ZhangH_YW_A301i_2.1051.1051.4</td>
+    </tr>
+    <tr>
+      <td>VFSGLVSTGLK</td>
+      <td>120621_ZhangH_YW_A301i_1.3858.3858.2</td>
+    </tr>
+    <tr>
+      <td>DIYTFDGALNK</td>
+      <td>120621_ZhangH_YW_A301i_1.4279.4279.2</td>
+    </tr>
+    <tr>
+      <td>VNSTELFHVDR</td>
+      <td>120621_ZhangH_YW_A301i_3.3171.3171.3</td>
+    </tr>
+    <tr>
+      <td>LGVIEDHSNR</td>
+      <td>120621_ZhangH_YW_A301_1.1178.1178.3</td>
+    </tr>
+    <tr>
+      <td>IGFLKPHENK</td>
+      <td>120621_ZhangH_YW_A301_3.1369.1369.2</td>
+    </tr>
+    <tr>
+      <td>IYLRNESEFR</td>
+      <td>120621_ZhangH_YW_A301i_2.2502.2502.3</td>
+    </tr>
+    <tr>
+      <td>ATPEAANASELAALR</td>
+      <td>120621_ZhangH_YW_A301_3.3902.3902.2</td>
+    </tr>
+    <tr>
+      <td>VQPFNVTQGK</td>
+      <td>120621_ZhangH_YW_A301i_1.5625.5625.2</td>
+    </tr>
+    <tr>
+      <td>ELISNASDALDK</td>
+      <td>120621_ZhangH_YW_A301i_1.3144.3144.2</td>
+    </tr>
+    <tr>
+      <td>NITIVTGAPR</td>
+      <td>120621_ZhangH_YW_A301i_2.2769.2769.2</td>
+    </tr>
+    <tr>
+      <td>VNLSAPLLPK</td>
+      <td>120621_ZhangH_YW_A301_1.4171.4171.2</td>
+    </tr>
+    <tr>
+      <td>EEQFNSTYR</td>
+      <td>120621_ZhangH_YW_A301i_3.1665.1665.2</td>
+    </tr>
+    <tr>
+      <td>EETVNLTTDSR</td>
+      <td>120621_ZhangH_YW_A301i_2.1702.1702.2</td>
+    </tr>
+    <tr>
+      <td>IETILLNGTDRK</td>
+      <td>120621_ZhangH_YW_A301i_3.2996.2996.3</td>
+    </tr>
+    <tr>
+      <td>FNGSVSFFR</td>
+      <td>120621_ZhangH_YW_A301i_1.4654.4654.2</td>
+    </tr>
+    <tr>
+      <td>SHNRSEEFLIAGK</td>
+      <td>120621_ZhangH_YW_A301_3.1894.1894.3</td>
+    </tr>
+    <tr>
+      <td>AASNFTEIK</td>
+      <td>120621_ZhangH_YW_A301i_1.1955.1955.2</td>
+    </tr>
+    <tr>
+      <td>WHPQNSTSIWK</td>
+      <td>120621_ZhangH_YW_A301i_2.3276.3276.2</td>
+    </tr>
+    <tr>
+      <td>DAVTYTEHAK</td>
+      <td>120621_ZhangH_YW_A301i_2.1038.1038.3</td>
+    </tr>
+    <tr>
+      <td>RNSTSIYFK</td>
+      <td>120621_ZhangH_YW_A301i_1.1697.1697.2</td>
+    </tr>
+    <tr>
+      <td>LLLPGELAK</td>
+      <td>120621_ZhangH_YW_A301i_1.3961.3961.2</td>
+    </tr>
+    <tr>
+      <td>SLVTQYLNATGNR</td>
+      <td>120621_ZhangH_YW_A301_3.5236.5236.2</td>
+    </tr>
+    <tr>
+      <td>HLQLAIR</td>
+      <td>120621_ZhangH_YW_A301_1.1693.1693.2</td>
+    </tr>
+    <tr>
+      <td>GENFTETDVK</td>
+      <td>120621_ZhangH_YW_A301i_2.1633.1633.2</td>
+    </tr>
+    <tr>
+      <td>DAGPLLISLK</td>
+      <td>120621_ZhangH_YW_A301i_2.5196.5196.2</td>
+    </tr>
+    <tr>
+      <td>DHPNATVWR</td>
+      <td>120621_ZhangH_YW_A301_3.1596.1596.2</td>
+    </tr>
+    <tr>
+      <td>TIAPALVSK</td>
+      <td>120621_ZhangH_YW_A301i_3.1939.1939.2</td>
+    </tr>
+    <tr>
+      <td>FEVFKNGTLR</td>
+      <td>120621_ZhangH_YW_A301_1.2956.2956.2</td>
+    </tr>
+    <tr>
+      <td>VIYNLTEK</td>
+      <td>120621_ZhangH_YW_A301i_2.2609.2609.2</td>
+    </tr>
+    <tr>
+      <td>GPGIKPNQTSK</td>
+      <td>120621_ZhangH_YW_A301_2.472.472.3</td>
+    </tr>
+    <tr>
+      <td>VTLTSEEEAR</td>
+      <td>120621_ZhangH_YW_A301i_3.1413.1413.2</td>
+    </tr>
+    <tr>
+      <td>QTLFFNGTR</td>
+      <td>120621_ZhangH_YW_A301i_3.3830.3830.2</td>
+    </tr>
+    <tr>
+      <td>STTTGHLIYK</td>
+      <td>120621_ZhangH_YW_A301i_1.1216.1216.2</td>
+    </tr>
+    <tr>
+      <td>INSSLVLEIR</td>
+      <td>120621_ZhangH_YW_A301i_2.4959.4959.2</td>
+    </tr>
+    <tr>
+      <td>NYTADYDK</td>
+      <td>120621_ZhangH_YW_A301_1.1264.1264.2</td>
+    </tr>
+    <tr>
+      <td>QVALQTFGNQTTIIPAGGAGYK</td>
+      <td>120621_ZhangH_YW_A301i_2.5377.5377.2</td>
+    </tr>
+    <tr>
+      <td>NITDLVEGAK</td>
+      <td>120621_ZhangH_YW_A301i_1.3978.3978.2</td>
+    </tr>
+    <tr>
+      <td>YYVTIIDAPGHR</td>
+      <td>120621_ZhangH_YW_A301i_2.3444.3444.3</td>
+    </tr>
+    <tr>
+      <td>WTGHNVTVVQR</td>
+      <td>120621_ZhangH_YW_A301i_1.1550.1550.3</td>
+    </tr>
+    <tr>
+      <td>YINTTLVSR</td>
+      <td>120621_ZhangH_YW_A301_2.2467.2467.2</td>
+    </tr>
+    <tr>
+      <td>FNVSLDSVPELR</td>
+      <td>120621_ZhangH_YW_A301i_2.5909.5909.2</td>
+    </tr>
+    <tr>
+      <td>FEVLTDLANK</td>
+      <td>120621_ZhangH_YW_A301_2.4603.4603.2</td>
+    </tr>
+    <tr>
+      <td>ILLAELEQLK</td>
+      <td>120621_ZhangH_YW_A301i_2.6227.6227.2</td>
+    </tr>
+    <tr>
+      <td>YEQLQNETR</td>
+      <td>120621_ZhangH_YW_A301_1.1230.1230.2</td>
+    </tr>
+    <tr>
+      <td>GYSFTTTAER</td>
+      <td>120621_ZhangH_YW_A301_1.1891.1891.2</td>
+    </tr>
+    <tr>
+      <td>GDEELDSLIK</td>
+      <td>120621_ZhangH_YW_A301i_3.4054.4054.2</td>
+    </tr>
+    <tr>
+      <td>EVNITIIDR</td>
+      <td>120621_ZhangH_YW_A301_2.3860.3860.2</td>
+    </tr>
+    <tr>
+      <td>IIFANVSVR</td>
+      <td>120621_ZhangH_YW_A301i_3.4291.4291.2</td>
+    </tr>
+    <tr>
+      <td>QSLDQVTNR</td>
+      <td>120621_ZhangH_YW_A301i_2.1376.1376.2</td>
+    </tr>
+    <tr>
+      <td>LFQIQFNR</td>
+      <td>120621_ZhangH_YW_A301i_3.4966.4966.2</td>
+    </tr>
+    <tr>
+      <td>IREEYPDR</td>
+      <td>120621_ZhangH_YW_A301i_2.1012.1012.3</td>
+    </tr>
+    <tr>
+      <td>LSGNLTLLR</td>
+      <td>120621_ZhangH_YW_A301i_3.4077.4077.2</td>
+    </tr>
+    <tr>
+      <td>GSNYSEILDK</td>
+      <td>120621_ZhangH_YW_A301_3.2837.2837.2</td>
+    </tr>
+    <tr>
+      <td>KNSTAYFR</td>
+      <td>120621_ZhangH_YW_A301_3.1227.1227.2</td>
+    </tr>
+    <tr>
+      <td>TVFDEAIR</td>
+      <td>120621_ZhangH_YW_A301i_1.2834.2834.2</td>
+    </tr>
+    <tr>
+      <td>FLSYNVTR</td>
+      <td>120621_ZhangH_YW_A301i_3.3022.3022.2</td>
+    </tr>
+    <tr>
+      <td>SAEFFNYTVR</td>
+      <td>120621_ZhangH_YW_A301_1.4501.4501.2</td>
+    </tr>
+    <tr>
+      <td>AEPVEVVAPR</td>
+      <td>120621_ZhangH_YW_A301_1.1708.1708.2</td>
+    </tr>
+    <tr>
+      <td>GDLGIEIPAEK</td>
+      <td>120621_ZhangH_YW_A301i_2.3840.3840.2</td>
+    </tr>
+    <tr>
+      <td>AVFPSIVGRPR</td>
+      <td>120621_ZhangH_YW_A301i_3.3124.3124.3</td>
+    </tr>
+    <tr>
+      <td>TVNVSVPK</td>
+      <td>120621_ZhangH_YW_A301i_3.1611.1611.2</td>
+    </tr>
+    <tr>
+      <td>ANDTSYIR</td>
+      <td>120621_ZhangH_YW_A301_1.1315.1315.2</td>
+    </tr>
+    <tr>
+      <td>AFGGFRNESDR</td>
+      <td>120621_ZhangH_YW_A301_2.1631.1631.3</td>
+    </tr>
+    <tr>
+      <td>GFNATYHVR</td>
+      <td>120621_ZhangH_YW_A301i_2.1666.1666.3</td>
+    </tr>
+    <tr>
+      <td>IDTIEIITDR</td>
+      <td>120621_ZhangH_YW_A301i_2.4618.4618.2</td>
+    </tr>
+    <tr>
+      <td>FDNDAASPR</td>
+      <td>120621_ZhangH_YW_A301i_3.1139.1139.2</td>
+    </tr>
+    <tr>
+      <td>LAPNLTELR</td>
+      <td>120621_ZhangH_YW_A301i_1.3384.3384.2</td>
+    </tr>
+    <tr>
+      <td>ENETEIIK</td>
+      <td>120621_ZhangH_YW_A301_3.1529.1529.2</td>
+    </tr>
+    <tr>
+      <td>FTVFLNK</td>
+      <td>120621_ZhangH_YW_A301i_3.4175.4175.2</td>
+    </tr>
+    <tr>
+      <td>WSDIWNATK</td>
+      <td>120621_ZhangH_YW_A301i_1.4471.4471.2</td>
+    </tr>
+    <tr>
+      <td>RNITLPGVK</td>
+      <td>120621_ZhangH_YW_A301i_3.2135.2135.2</td>
+    </tr>
+    <tr>
+      <td>LNLTTDPK</td>
+      <td>120621_ZhangH_YW_A301_2.1649.1649.2</td>
+    </tr>
+    <tr>
+      <td>DFNETQLAR</td>
+      <td>120621_ZhangH_YW_A301_3.2290.2290.2</td>
+    </tr>
+    <tr>
+      <td>LSITNETFRK</td>
+      <td>120621_ZhangH_YW_A301i_2.2526.2526.3</td>
+    </tr>
+    <tr>
+      <td>SNVSFDR</td>
+      <td>120621_ZhangH_YW_A301i_2.1343.1343.2</td>
+    </tr>
+    <tr>
+      <td>GYNVTYWR</td>
+      <td>120621_ZhangH_YW_A301i_1.3595.3595.2</td>
+    </tr>
+    <tr>
+      <td>GNSTLSVPK</td>
+      <td>120621_ZhangH_YW_A301i_3.1498.1498.2</td>
+    </tr>
+    <tr>
+      <td>EVNITIIDRK</td>
+      <td>120621_ZhangH_YW_A301i_1.2798.2798.3</td>
+    </tr>
+    <tr>
+      <td>GFIISNATYK</td>
+      <td>120621_ZhangH_YW_A301i_2.3844.3844.2</td>
+    </tr>
+    <tr>
+      <td>SEDIKNVSR</td>
+      <td>120621_ZhangH_YW_A301i_3.991.991.2</td>
+    </tr>
+    <tr>
+      <td>EGDNITLK</td>
+      <td>120621_ZhangH_YW_A301_3.1485.1485.2</td>
+    </tr>
+    <tr>
+      <td>LVQAFQFTDK</td>
+      <td>120621_ZhangH_YW_A301i_1.3877.3877.2</td>
+    </tr>
+    <tr>
+      <td>SGVSLAALK</td>
+      <td>120621_ZhangH_YW_A301i_3.2895.2895.2</td>
+    </tr>
+    <tr>
+      <td>GTDNITVR</td>
+      <td>120621_ZhangH_YW_A301i_3.1240.1240.2</td>
+    </tr>
+    <tr>
+      <td>ANLTWSVK</td>
+      <td>120621_ZhangH_YW_A301i_1.3038.3038.2</td>
+    </tr>
+    <tr>
+      <td>ANATIEVK</td>
+      <td>120621_ZhangH_YW_A301i_3.1213.1213.2</td>
+    </tr>
+    <tr>
+      <td>SNVTLTLR</td>
+      <td>120621_ZhangH_YW_A301_1.2350.2350.2</td>
+    </tr>
+    <tr>
+      <td>EQYTIINR</td>
+      <td>120621_ZhangH_YW_A301i_2.2253.2253.2</td>
+    </tr>
+    <tr>
+      <td>LPLQDVYK</td>
+      <td>120621_ZhangH_YW_A301i_3.3116.3116.2</td>
+    </tr>
+    <tr>
+      <td>GASNLTWR</td>
+      <td>120621_ZhangH_YW_A301i_2.2446.2446.2</td>
+    </tr>
+    <tr>
+      <td>KESYSVYVYK</td>
+      <td>120621_ZhangH_YW_A301i_3.2069.2069.3</td>
+    </tr>
+    <tr>
+      <td>DNATDSVPLR</td>
+      <td>120621_ZhangH_YW_A301_1.1597.1597.2</td>
+    </tr>
+    <tr>
+      <td>FGHFTGFNSSTLK</td>
+      <td>120621_ZhangH_YW_A301i_1.3721.3721.3</td>
+    </tr>
+    <tr>
+      <td>DLYNTSSPR</td>
+      <td>120621_ZhangH_YW_A301_3.1508.1508.2</td>
+    </tr>
+    <tr>
+      <td>SNLSDLLEK</td>
+      <td>120621_ZhangH_YW_A301i_3.4513.4513.2</td>
+    </tr>
+    <tr>
+      <td>VINETWAWK</td>
+      <td>120621_ZhangH_YW_A301_1.4468.4468.2</td>
+    </tr>
+    <tr>
+      <td>VILLPNQTHYIIPK</td>
+      <td>120621_ZhangH_YW_A301_3.4800.4800.3</td>
+    </tr>
+    <tr>
+      <td>RNWTITR</td>
+      <td>120621_ZhangH_YW_A301_2.1580.1580.2</td>
+    </tr>
+    <tr>
+      <td>FVKNITSWK</td>
+      <td>120621_ZhangH_YW_A301i_2.2781.2781.3</td>
+    </tr>
+    <tr>
+      <td>NSTSIYFK</td>
+      <td>120621_ZhangH_YW_A301i_1.2576.2576.2</td>
+    </tr>
+    <tr>
+      <td>NTTIFLK</td>
+      <td>120621_ZhangH_YW_A301_2.3166.3166.2</td>
+    </tr>
+    <tr>
+      <td>KWGHNITEFQQR</td>
+      <td>120621_ZhangH_YW_A301i_1.2096.2096.3</td>
+    </tr>
+    <tr>
+      <td>SGVSLAALKK</td>
+      <td>120621_ZhangH_YW_A301i_3.1870.1870.2</td>
+    </tr>
+    <tr>
+      <td>IYIPLNK</td>
+      <td>120621_ZhangH_YW_A301_1.3109.3109.2</td>
+    </tr>
+    <tr>
+      <td>VFPQVNVTK</td>
+      <td>120621_ZhangH_YW_A301_2.2729.2729.2</td>
+    </tr>
+    <tr>
+      <td>VWNISSEK</td>
+      <td>120621_ZhangH_YW_A301i_2.2420.2420.2</td>
+    </tr>
+    <tr>
+      <td>NSTAVWR</td>
+      <td>120621_ZhangH_YW_A301i_3.1827.1827.2</td>
+    </tr>
+    <tr>
+      <td>IIAPPER</td>
+      <td>120621_ZhangH_YW_A301i_2.1328.1328.2</td>
+    </tr>
+    <tr>
+      <td>NVTLPAVFK</td>
+      <td>120621_ZhangH_YW_A301_1.4881.4881.2</td>
+    </tr>
+    <tr>
+      <td>QIDLSTVDLK</td>
+      <td>120621_ZhangH_YW_A301i_1.1642.1642.2</td>
+    </tr>
+    <tr>
+      <td>GPSSVEDIK</td>
+      <td>120621_ZhangH_YW_A301i_2.1264.1264.2</td>
+    </tr>
+    <tr>
+      <td>IANISGDGQK</td>
+      <td>120621_ZhangH_YW_A301_3.1085.1085.2</td>
+    </tr>
+    <tr>
+      <td>DTFFNLSLK</td>
+      <td>120621_ZhangH_YW_A301i_2.6466.6466.2</td>
+    </tr>
+    <tr>
+      <td>EIAQDFK</td>
+      <td>120621_ZhangH_YW_A301_3.1488.1488.2</td>
+    </tr>
+    <tr>
+      <td>DFQHLLNR</td>
+      <td>120621_ZhangH_YW_A301_2.3646.3646.2</td>
+    </tr>
+    <tr>
+      <td>IIKEFINK</td>
+      <td>120621_ZhangH_YW_A301_3.1938.1938.2</td>
+    </tr>
+    <tr>
+      <td>EQPALNDSR</td>
+      <td>120621_ZhangH_YW_A301_1.1022.1022.2</td>
+    </tr>
+    <tr>
+      <td>STELLIR</td>
+      <td>120621_ZhangH_YW_A301i_3.2484.2484.2</td>
+    </tr>
+    <tr>
+      <td>IVTPEEYYNVTVQ</td>
+      <td>120621_ZhangH_YW_A301i_1.5407.5407.2</td>
+    </tr>
+    <tr>
+      <td>FGVDSWSDFR</td>
+      <td>120621_ZhangH_YW_A301_3.1038.1038.2</td>
+    </tr>
+    <tr>
+      <td>TYSLGSALRPSTSR</td>
+      <td>120621_ZhangH_YW_A301i_1.2420.2420.3</td>
+    </tr>
+    <tr>
+      <td>TIAQDYGVLK</td>
+      <td>120621_ZhangH_YW_A301i_2.3178.3178.2</td>
+    </tr>
+    <tr>
+      <td>QLQRNAGLVPVPELPGK</td>
+      <td>120621_ZhangH_YW_A301_2.3129.3129.3</td>
+    </tr>
+    <tr>
+      <td>ADEGISFR</td>
+      <td>120621_ZhangH_YW_A301i_3.2162.2162.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+15.9950">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DYNSSREDSLQDA<span class="loc">W[+16]</span>DYVQAQVK</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301i_2.3731.3731.3</td>
+    </tr>
+    <tr>
+      <td>V<span class="loc">F[+16]</span>GSQNLTTVK</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301_1.1871.1871.2</td>
+    </tr>
+    <tr>
+      <td>TVTA<span class="loc">M[+16]</span>DVVYALKR</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301i_2.4337.4337.3</td>
+    </tr>
+    <tr>
+      <td>VM<span class="loc">E[+16]</span>LEKEIANATAKPEDR</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301i_2.3398.3398.3</td>
+    </tr>
+    <tr>
+      <td>H<span class="loc">M[+16]</span>LALAPNSTAR</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301_1.1301.1301.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">M[+16]</span>YNGSVPFEER</td>
+      <td>0.98</td>
+      <td>120621_ZhangH_YW_A301i_2.2872.2872.2</td>
+    </tr>
+    <tr>
+      <td>LN<span class="loc">F[+16]</span>TGPGDPDSIR</td>
+      <td>0.98</td>
+      <td>120621_ZhangH_YW_A301i_1.2846.2846.2</td>
+    </tr>
+    <tr>
+      <td>FNSTQIAA<span class="loc">M[+16]</span>APEHEEPR</td>
+      <td>0.98</td>
+      <td>120621_ZhangH_YW_A301i_2.2256.2256.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">M[+16]</span>LSAFNATSGK</td>
+      <td>0.98</td>
+      <td>120621_ZhangH_YW_A301_1.1804.1804.2</td>
+    </tr>
+    <tr>
+      <td>H<span class="loc">M[+16]</span>SLALNR</td>
+      <td>0.97</td>
+      <td>120621_ZhangH_YW_A301i_3.1154.1154.2</td>
+    </tr>
+    <tr>
+      <td>LLHALGGDDFLG<span class="loc">M[+16]</span>LNR</td>
+      <td>0.97</td>
+      <td>120621_ZhangH_YW_A301i_2.5910.5910.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">M[+16]</span>VLWNDSVVR</td>
+      <td>0.97</td>
+      <td>120621_ZhangH_YW_A301i_1.4156.4156.2</td>
+    </tr>
+    <tr>
+      <td>SLYVN<span class="loc">M[+16]</span>TSGPGGPAAAAGGR</td>
+      <td>0.95</td>
+      <td>120621_ZhangH_YW_A301i_1.2331.2331.2</td>
+    </tr>
+    <tr>
+      <td>IQQESLGSAPL<span class="loc">M[+16]</span>GDDHPNASR</td>
+      <td>0.95</td>
+      <td>120621_ZhangH_YW_A301i_2.2100.2100.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">M[+16]</span>HIFQNGSLVIHDVAPEDSGR</td>
+      <td>0.94</td>
+      <td>120621_ZhangH_YW_A301i_2.4212.4212.3</td>
+    </tr>
+    <tr>
+      <td>TPYRPPAAAVGAAPAAAAG<span class="loc">M[+16]</span>AGVAAPPGNGTR</td>
+      <td>0.94</td>
+      <td>120621_ZhangH_YW_A301i_2.3091.3091.3</td>
+    </tr>
+    <tr>
+      <td>HLTNDTTTPEST<span class="loc">M[+16]</span>TSGQAR</td>
+      <td>0.94</td>
+      <td>120621_ZhangH_YW_A301_1.1037.1037.3</td>
+    </tr>
+    <tr>
+      <td>GVSEPL<span class="loc">M[+16]</span>ENGSGAWVR</td>
+      <td>0.94</td>
+      <td>120621_ZhangH_YW_A301i_2.3794.3794.2</td>
+    </tr>
+    <tr>
+      <td>LENLSSSE<span class="loc">M[+16]</span>GYTATLTR</td>
+      <td>0.94</td>
+      <td>120621_ZhangH_YW_A301i_1.3651.3651.2</td>
+    </tr>
+    <tr>
+      <td>YGPEDKEN<span class="loc">M[+16]</span>SR</td>
+      <td>0.94</td>
+      <td>120621_ZhangH_YW_A301i_3.909.909.3</td>
+    </tr>
+    <tr>
+      <td>IDFSGSQDNLTIT<span class="loc">M[+16]</span>HR</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301_1.3370.3370.2</td>
+    </tr>
+    <tr>
+      <td>LAVTNTT<span class="loc">M[+16]</span>TGTVLK</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301i_3.2586.2586.2</td>
+    </tr>
+    <tr>
+      <td>LLANSS<span class="loc">M[+16]</span>LGEGQVLR</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301i_1.3605.3605.2</td>
+    </tr>
+    <tr>
+      <td>NSAHPLQSSTGF<span class="loc">M[+16]</span>EGLSR</td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301i_2.2784.2784.3</td>
+    </tr>
+    <tr>
+      <td>SFAGPGAPFPM<span class="loc">N[+16]</span>R</td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301_3.3187.3187.2</td>
+    </tr>
+    <tr>
+      <td>HIPGLIHN<span class="loc">M[+16]</span>TAR</td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301_2.1393.1393.3</td>
+    </tr>
+    <tr>
+      <td>AGPNGTL<span class="loc">F[+16]</span>VADAYK</td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301_3.4416.4416.2</td>
+    </tr>
+    <tr>
+      <td>VLGFKPKPPKNESLETYPV<span class="loc">M[+16]</span>K</td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301i_2.2881.2881.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">M[+16]</span>NITSIAPLLEK</td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301i_2.5530.5530.2</td>
+    </tr>
+    <tr>
+      <td>TLTIVDTGIG<span class="loc">M[+16]</span>TK</td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301i_1.3705.3705.2</td>
+    </tr>
+    <tr>
+      <td>IQTLQAPPD<span class="loc">M[+16]</span>APANVSLR</td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301_2.3703.3703.2</td>
+    </tr>
+    <tr>
+      <td>SHTNTSHV<span class="loc">M[+16]</span>QYGNK</td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301_3.480.480.3</td>
+    </tr>
+    <tr>
+      <td>LNNITIIGPLD<span class="loc">M[+16]</span>K</td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301_2.5435.5435.2</td>
+    </tr>
+    <tr>
+      <td>ALEVN<span class="loc">M[+16]</span>SLSGR</td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301i_3.2342.2342.2</td>
+    </tr>
+    <tr>
+      <td>TVTA<span class="loc">M[+16]</span>DVVYALK</td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301i_2.4885.4885.2</td>
+    </tr>
+    <tr>
+      <td>EITALAPST<span class="loc">M[+16]</span>K</td>
+      <td>0.90</td>
+      <td>120621_ZhangH_YW_A301i_3.1837.1837.2</td>
+    </tr>
+    <tr>
+      <td>SGPKNM<span class="loc">T[+16]</span>FDLPSDATVVLNR</td>
+      <td>0.90</td>
+      <td>120621_ZhangH_YW_A301i_3.5243.5243.3</td>
+    </tr>
+    <tr>
+      <td>EDNSTYI<span class="loc">M[+16]</span>R</td>
+      <td>0.90</td>
+      <td>120621_ZhangH_YW_A301_1.1269.1269.2</td>
+    </tr>
+    <tr>
+      <td>DIYT<span class="loc">F[+16]</span>DGALNK</td>
+      <td>0.90</td>
+      <td>120621_ZhangH_YW_A301i_3.3808.3808.2</td>
+    </tr>
+    <tr>
+      <td>DASSFLAE<span class="loc">W[+16]</span>QNITK</td>
+      <td>0.90</td>
+      <td>120621_ZhangH_YW_A301_2.4710.4710.2</td>
+    </tr>
+    <tr>
+      <td>VNETE<span class="loc">M[+16]</span>DIAK</td>
+      <td>0.90</td>
+      <td>120621_ZhangH_YW_A301i_1.1135.1135.2</td>
+    </tr>
+    <tr>
+      <td>DDVLFYNISS<span class="loc">M[+16]</span>K</td>
+      <td>0.89</td>
+      <td>120621_ZhangH_YW_A301i_3.5378.5378.2</td>
+    </tr>
+    <tr>
+      <td>YNGTVGL<span class="loc">W[+16]</span>R</td>
+      <td>0.89</td>
+      <td>120621_ZhangH_YW_A301i_2.2158.2158.2</td>
+    </tr>
+    <tr>
+      <td>KT<span class="loc">M[+16]</span>FNSTDIK</td>
+      <td>0.89</td>
+      <td>120621_ZhangH_YW_A301i_3.1344.1344.2</td>
+    </tr>
+    <tr>
+      <td>DSLLQDGEFSM<span class="loc">D[+16]</span>LR</td>
+      <td>0.89</td>
+      <td>120621_ZhangH_YW_A301i_2.5296.5296.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">M[+16]</span>NGSEIQYK</td>
+      <td>0.88</td>
+      <td>120621_ZhangH_YW_A301i_3.1230.1230.2</td>
+    </tr>
+    <tr>
+      <td>FIRPF<span class="loc">M[+16]</span>QYNSTR</td>
+      <td>0.87</td>
+      <td>120621_ZhangH_YW_A301i_1.2876.2876.3</td>
+    </tr>
+    <tr>
+      <td>KFNSTQIAAMA<span class="loc">P[+16]</span>EHEEPR</td>
+      <td>0.87</td>
+      <td>120621_ZhangH_YW_A301_3.1726.1726.3</td>
+    </tr>
+    <tr>
+      <td>SDPHWES<span class="loc">M[+16]</span>LNATTR</td>
+      <td>0.86</td>
+      <td>120621_ZhangH_YW_A301i_2.2691.2691.3</td>
+    </tr>
+    <tr>
+      <td>RPGNFSHSLD<span class="loc">M[+16]</span>K</td>
+      <td>0.85</td>
+      <td>120621_ZhangH_YW_A301_2.1261.1261.3</td>
+    </tr>
+    <tr>
+      <td>VETGVLKPG<span class="loc">M[+16]</span>VVTFAPVNVTTEVK</td>
+      <td>0.84</td>
+      <td>120621_ZhangH_YW_A301i_2.5638.5638.3</td>
+    </tr>
+    <tr>
+      <td>EEA<span class="loc">M[+16]</span>LYHNQTAELR</td>
+      <td>0.80</td>
+      <td>120621_ZhangH_YW_A301i_3.1985.1985.3</td>
+    </tr>
+    <tr>
+      <td>VVNIT<span class="loc">M[+16]</span>VALK</td>
+      <td>0.67</td>
+      <td>120621_ZhangH_YW_A301_1.3450.3450.2</td>
+    </tr>
+    <tr>
+      <td>TN<span class="loc">M[+16]</span>SLGLILTR</td>
+      <td>0.67</td>
+      <td>120621_ZhangH_YW_A301i_1.4511.4511.2</td>
+    </tr>
+    <tr>
+      <td>QES<span class="loc">M[+16]</span>NSNVSVYQPPR</td>
+      <td>0.67</td>
+      <td>120621_ZhangH_YW_A301i_2.1960.1960.2</td>
+    </tr>
+    <tr>
+      <td>KNLTL<span class="loc">M[+16]</span>ATTSQLPK</td>
+      <td>0.64</td>
+      <td>120621_ZhangH_YW_A301i_2.2605.2605.2</td>
+    </tr>
+    <tr>
+      <td>TAGVNTTDKE<span class="loc">M[+16]</span>EVLHLR</td>
+      <td>0.60</td>
+      <td>120621_ZhangH_YW_A301i_1.2574.2574.4</td>
+    </tr>
+    <tr>
+      <td>TYNASVLPVRVEVD<span class="loc">M[+16]</span>VR</td>
+      <td>0.58</td>
+      <td>120621_ZhangH_YW_A301i_2.4627.4627.3</td>
+    </tr>
+    <tr>
+      <td>LD<span class="loc">M[+16]</span>SQNVSLVTAELSK</td>
+      <td>0.54</td>
+      <td>120621_ZhangH_YW_A301i_2.5610.5610.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">W[+16]</span>GHNITEFQQR</td>
+      <td>0.54</td>
+      <td>120621_ZhangH_YW_A301i_1.2295.2295.2</td>
+    </tr>
+    <tr>
+      <td>SAEGTF<span class="loc">F[+16]</span>INK</td>
+      <td>0.53</td>
+      <td>120621_ZhangH_YW_A301i_1.2463.2463.2</td>
+    </tr>
+    <tr>
+      <td>VQKEDNSTYI<span class="loc">M[+16]</span>R</td>
+      <td>0.34</td>
+      <td>120621_ZhangH_YW_A301_1.1109.1109.3</td>
+    </tr>
+    <tr>
+      <td>TELD<span class="loc">M[+16]</span>QPQGLGLFVNTSAPR</td>
+      <td>0.29</td>
+      <td>120621_ZhangH_YW_A301i_3.5804.5804.3</td>
+    </tr>
+    <tr>
+      <td>KTVTA<span class="loc">M[+16]</span>DVVYALK</td>
+      <td>0.11</td>
+      <td>120621_ZhangH_YW_A301i_1.3693.3693.3</td>
+    </tr>
+    <tr>
+      <td>KIQQESLGSA<span class="loc">P[+16]</span>LMGDDHPNASR</td>
+      <td>0.09</td>
+      <td>120621_ZhangH_YW_A301_2.1633.1633.3</td>
+    </tr>
+    <tr>
+      <td>DLNETIHY<span class="loc">M[+16]</span>YK</td>
+      <td>0.05</td>
+      <td>120621_ZhangH_YW_A301i_3.2992.2992.2</td>
+    </tr>
+    <tr>
+      <td>ASNI<span class="loc">T[+16]</span>MILK</td>
+      <td>0.03</td>
+      <td>120621_ZhangH_YW_A301_2.3291.3291.2</td>
+    </tr>
+    <tr>
+      <td>ITDSEDKA<span class="loc">L[+16]</span>MNGSESR</td>
+      <td>0.03</td>
+      <td>120621_ZhangH_YW_A301_1.1199.1199.2</td>
+    </tr>
+    <tr>
+      <td>IAPASNVS<span class="loc">H[+16]</span>TVVLRPLK</td>
+      <td>0.01</td>
+      <td>120621_ZhangH_YW_A301_1.3390.3390.3</td>
+    </tr>
+    <tr>
+      <td>EAESLQPMTVVGTDYVFHNDTK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_2.4499.4499.3</td>
+    </tr>
+    <tr>
+      <td>TSLELWMHTDPVSQKNESVR</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_1.3427.3427.3</td>
+    </tr>
+    <tr>
+      <td>NMTFDLPSDATVVLNR</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_2.6270.6270.2</td>
+    </tr>
+    <tr>
+      <td>MYSEGSDIVPQSNETALHYFK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301_3.4782.4782.3</td>
+    </tr>
+    <tr>
+      <td>EETLLYDSNTSSMADR</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301_1.2471.2471.2</td>
+    </tr>
+    <tr>
+      <td>MVNHSLHPTEPVK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301_1.1025.1025.3</td>
+    </tr>
+    <tr>
+      <td>EETLLYDSNTSSMADRK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301_2.1968.1968.3</td>
+    </tr>
+    <tr>
+      <td>DMSDGFISNLTIQR</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_1.5507.5507.2</td>
+    </tr>
+    <tr>
+      <td>NMTAQNYTYAIR</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_3.3068.3068.2</td>
+    </tr>
+    <tr>
+      <td>DMNQTLGDNITVK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_1.2657.2657.2</td>
+    </tr>
+    <tr>
+      <td>GMNSTESNSSASVRPK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301_1.481.481.3</td>
+    </tr>
+    <tr>
+      <td>EGKPFYQMTSNATQAFWTK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_1.4666.4666.3</td>
+    </tr>
+    <tr>
+      <td>AMSSNETAAYK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301_1.919.919.2</td>
+    </tr>
+    <tr>
+      <td>AILVDLEPGTMDSVR</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_2.4621.4621.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+57.0215">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>EIV<span class="loc">C[+57]</span>NVTLGGERR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.2288.2288.2</td>
+    </tr>
+    <tr>
+      <td>EIV<span class="loc">C[+57]</span>NVTLGGER</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.2882.2882.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+57]</span>NFTGPGDPDSIR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.3670.3670.2</td>
+    </tr>
+    <tr>
+      <td>LTQ<span class="loc">C[+57]</span>NVSATLQEPAGTSR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.2452.2452.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+57]</span>FGSQNLTTVK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.2883.2883.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">C[+57]</span>VAFNGSVK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.1719.1719.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">C[+57]</span>NGTDIYK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1244.1244.2</td>
+    </tr>
+    <tr>
+      <td>GQTEIQVN<span class="loc">C[+57]</span>PPAVTENK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.2503.2503.2</td>
+    </tr>
+    <tr>
+      <td>GETASLL<span class="loc">C[+57]</span>NISVR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.4899.4899.2</td>
+    </tr>
+    <tr>
+      <td>VTPA<span class="loc">C[+57]</span>NTSLPAQR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1467.1467.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">C[+57]</span>NGTDIYKDK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.1137.1137.2</td>
+    </tr>
+    <tr>
+      <td>IATDPTIHTVPEGRPVNV<span class="loc">C[+57]</span>VGK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.2614.2614.4</td>
+    </tr>
+    <tr>
+      <td>GA<span class="loc">C[+57]</span>EVRPLGNLSR</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.2260.2260.3</td>
+    </tr>
+    <tr>
+      <td>ALS<span class="loc">C[+57]</span>NVSSPIFK</td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.3772.3772.2</td>
+    </tr>
+    <tr>
+      <td>NLTV<span class="loc">C[+57]</span>PDGALFEQK</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301_2.4792.4792.2</td>
+    </tr>
+    <tr>
+      <td>VN<span class="loc">C[+57]</span>SVPEEK</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301_2.1065.1065.2</td>
+    </tr>
+    <tr>
+      <td>TEKEPLSDPVGT<span class="loc">C[+57]</span>YLSTDNFTR</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301i_2.4964.4964.3</td>
+    </tr>
+    <tr>
+      <td>DDAGNYT<span class="loc">C[+57]</span>IASNGPQGQIR</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301_2.2972.2972.2</td>
+    </tr>
+    <tr>
+      <td>KGF<span class="loc">C[+57]</span>EAPGNR</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301i_3.1031.1031.2</td>
+    </tr>
+    <tr>
+      <td>ISHENGTIL<span class="loc">C[+57]</span>SK</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301_3.1334.1334.3</td>
+    </tr>
+    <tr>
+      <td>IRNTTS<span class="loc">C[+57]</span>NSGTYR</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301i_3.996.996.3</td>
+    </tr>
+    <tr>
+      <td>SFHNFTL<span class="loc">C[+57]</span>YIK</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301i_1.4743.4743.2</td>
+    </tr>
+    <tr>
+      <td>LSG<span class="loc">C[+57]</span>QNITSTK</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301_3.1165.1165.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">D[+57]</span>IYTFDGALNK</td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301i_1.4798.4798.2</td>
+    </tr>
+    <tr>
+      <td>NLT<span class="loc">C[+57]</span>EVWGPTSPK</td>
+      <td>0.98</td>
+      <td>120621_ZhangH_YW_A301_1.3810.3810.2</td>
+    </tr>
+    <tr>
+      <td>FTFTSHTPGEHQICL<span class="loc">H[+57]</span>SNSTK</td>
+      <td>0.98</td>
+      <td>120621_ZhangH_YW_A301i_2.2477.2477.4</td>
+    </tr>
+    <tr>
+      <td>GF<span class="loc">C[+57]</span>EAPGNR</td>
+      <td>0.98</td>
+      <td>120621_ZhangH_YW_A301_2.1208.1208.2</td>
+    </tr>
+    <tr>
+      <td>YAESDPTVP<span class="loc">C[+57]</span>NETR</td>
+      <td>0.97</td>
+      <td>120621_ZhangH_YW_A301i_1.1494.1494.2</td>
+    </tr>
+    <tr>
+      <td>GI<span class="loc">C[+57]</span>NSSDVR</td>
+      <td>0.96</td>
+      <td>120621_ZhangH_YW_A301_3.1067.1067.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+57]</span>APASNVSHTVVLRPLK</td>
+      <td>0.96</td>
+      <td>120621_ZhangH_YW_A301i_3.2937.2937.3</td>
+    </tr>
+    <tr>
+      <td>L<span class="loc">C[+57]</span>QGLGLNLTK</td>
+      <td>0.96</td>
+      <td>120621_ZhangH_YW_A301i_3.3965.3965.2</td>
+    </tr>
+    <tr>
+      <td>IN<span class="loc">C[+57]</span>SWFIR</td>
+      <td>0.94</td>
+      <td>120621_ZhangH_YW_A301i_1.5120.5120.2</td>
+    </tr>
+    <tr>
+      <td>LTNGSSS<span class="loc">C[+57]</span>SGTVEVR</td>
+      <td>0.94</td>
+      <td>120621_ZhangH_YW_A301i_2.1272.1272.2</td>
+    </tr>
+    <tr>
+      <td>VQEGNESYQQS<span class="loc">C[+57]</span>GTYLR</td>
+      <td>0.94</td>
+      <td>120621_ZhangH_YW_A301_1.2061.2061.2</td>
+    </tr>
+    <tr>
+      <td>LLN<span class="loc">C[+57]</span>TAPGPDAAAR</td>
+      <td>0.94</td>
+      <td>120621_ZhangH_YW_A301_2.1841.1841.2</td>
+    </tr>
+    <tr>
+      <td>SDAVSHTGNYTCEV<span class="loc">T[+57]</span>ELTR</td>
+      <td>0.94</td>
+      <td>120621_ZhangH_YW_A301_2.3549.3549.2</td>
+    </tr>
+    <tr>
+      <td>QPGENGSIVT<span class="loc">C[+57]</span>GHR</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301_3.1171.1171.2</td>
+    </tr>
+    <tr>
+      <td>APNGTGPL<span class="loc">C[+57]</span>SGK</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301i_2.1217.1217.2</td>
+    </tr>
+    <tr>
+      <td>GPE<span class="loc">C[+57]</span>SQNYTTPSGVIK</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301i_1.2215.2215.2</td>
+    </tr>
+    <tr>
+      <td>VPTANVSVVDLT<span class="loc">C[+57]</span>R</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301i_2.4342.4342.2</td>
+    </tr>
+    <tr>
+      <td>IEVLHRPEN<span class="loc">C[+57]</span>SK</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301_2.1144.1144.3</td>
+    </tr>
+    <tr>
+      <td>GNITEYQ<span class="loc">C[+57]</span>HQYITK</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301_2.2018.2018.2</td>
+    </tr>
+    <tr>
+      <td>TSPAN<span class="loc">C[+57]</span>TWLILGSK</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301i_2.5918.5918.2</td>
+    </tr>
+    <tr>
+      <td>GGGDPWTNGSGLAL<span class="loc">C[+57]</span>QR</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301_1.4390.4390.2</td>
+    </tr>
+    <tr>
+      <td>ITFKPIAPSGQNAT<span class="loc">C[+57]</span>TR</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301i_1.2460.2460.3</td>
+    </tr>
+    <tr>
+      <td>VNFTLEASE<span class="loc">G[+57]</span>CYR</td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301i_2.4224.4224.2</td>
+    </tr>
+    <tr>
+      <td>RGPE<span class="loc">C[+57]</span>SQNYTTPSGVIK</td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301i_2.1875.1875.3</td>
+    </tr>
+    <tr>
+      <td>TP<span class="loc">C[+57]</span>AWNSSR</td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301_2.1461.1461.2</td>
+    </tr>
+    <tr>
+      <td>FNSSGQ<span class="loc">C[+57]</span>EVPLVR</td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301_2.3037.3037.2</td>
+    </tr>
+    <tr>
+      <td>TFLHYD<span class="loc">C[+57]</span>GNK</td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301i_1.1878.1878.3</td>
+    </tr>
+    <tr>
+      <td>LSDTANYT<span class="loc">C[+57]</span>VAK</td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301i_3.1832.1832.2</td>
+    </tr>
+    <tr>
+      <td>QVQLE<span class="loc">C[+57]</span>VVLNR</td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301_2.4327.4327.2</td>
+    </tr>
+    <tr>
+      <td>LFQN<span class="loc">C[+57]</span>SELFK</td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301i_2.4721.4721.2</td>
+    </tr>
+    <tr>
+      <td>GPTNNT<span class="loc">C[+57]</span>VVR</td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301_2.1201.1201.2</td>
+    </tr>
+    <tr>
+      <td>VESGEN<span class="loc">C[+57]</span>SSPAPR</td>
+      <td>0.90</td>
+      <td>120621_ZhangH_YW_A301i_1.881.881.2</td>
+    </tr>
+    <tr>
+      <td>LNIT<span class="loc">C[+57]</span>ESSKK</td>
+      <td>0.90</td>
+      <td>120621_ZhangH_YW_A301_2.1107.1107.2</td>
+    </tr>
+    <tr>
+      <td>LDD<span class="loc">C[+57]</span>DFQTNHTLK</td>
+      <td>0.90</td>
+      <td>120621_ZhangH_YW_A301i_3.2134.2134.3</td>
+    </tr>
+    <tr>
+      <td>VGYQSQNIS<span class="loc">C[+57]</span>FFR</td>
+      <td>0.89</td>
+      <td>120621_ZhangH_YW_A301i_2.5690.5690.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">C[+57]</span>TLIDALNVTR</td>
+      <td>0.89</td>
+      <td>120621_ZhangH_YW_A301_2.5289.5289.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+57]</span>SLSYLNVTR</td>
+      <td>0.89</td>
+      <td>120621_ZhangH_YW_A301i_1.3455.3455.2</td>
+    </tr>
+    <tr>
+      <td>YPAN<span class="loc">C[+57]</span>TVR</td>
+      <td>0.88</td>
+      <td>120621_ZhangH_YW_A301_2.1077.1077.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+57]</span>VGTPEVNQTTLYQR</td>
+      <td>0.70</td>
+      <td>120621_ZhangH_YW_A301i_2.3982.3982.2</td>
+    </tr>
+    <tr>
+      <td>YEQGTG<span class="loc">C[+57]</span>WQGPNR</td>
+      <td>0.65</td>
+      <td>120621_ZhangH_YW_A301i_1.1767.1767.2</td>
+    </tr>
+    <tr>
+      <td>SWVQGNLTA<span class="loc">C[+57]</span>GR</td>
+      <td>0.63</td>
+      <td>120621_ZhangH_YW_A301_1.2891.2891.2</td>
+    </tr>
+    <tr>
+      <td>IS<span class="loc">C[+57]</span>IHNDSFTGLR</td>
+      <td>0.52</td>
+      <td>120621_ZhangH_YW_A301i_1.2755.2755.3</td>
+    </tr>
+    <tr>
+      <td>LDVTTSI<span class="loc">G[+57]</span>R</td>
+      <td>0.37</td>
+      <td>120621_ZhangH_YW_A301i_1.2093.2093.2</td>
+    </tr>
+    <tr>
+      <td>RSDAN<span class="loc">C[+57]</span>SGEDAAPAEER</td>
+      <td>0.06</td>
+      <td>120621_ZhangH_YW_A301i_1.960.960.3</td>
+    </tr>
+    <tr>
+      <td>TNITLVCKPG<span class="loc">D[+57]</span>LESAPVLR</td>
+      <td>0.04</td>
+      <td>120621_ZhangH_YW_A301_2.4633.4633.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+57]</span>YNQSEAGSHIIQR</td>
+      <td>0.04</td>
+      <td>120621_ZhangH_YW_A301i_2.2135.2135.3</td>
+    </tr>
+    <tr>
+      <td>GNQTALCGG<span class="loc">G[+57]</span>IQTR</td>
+      <td>0.02</td>
+      <td>120621_ZhangH_YW_A301i_2.1661.1661.2</td>
+    </tr>
+    <tr>
+      <td>AVGNSTFAIA<span class="loc">C[+57]</span>LQR</td>
+      <td>0.01</td>
+      <td>120621_ZhangH_YW_A301_1.4420.4420.2</td>
+    </tr>
+    <tr>
+      <td>ILLT<span class="loc">C[+57]</span>SLNDSATEVTGHR</td>
+      <td>0.01</td>
+      <td>120621_ZhangH_YW_A301_1.4075.4075.3</td>
+    </tr>
+    <tr>
+      <td>SS<span class="loc">C[+57]</span>GKENTSDPSLVIAFGR</td>
+      <td>0.01</td>
+      <td>120621_ZhangH_YW_A301i_3.4215.4215.3</td>
+    </tr>
+    <tr>
+      <td>DCADVYQAGFNK</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_3.2688.2688.2</td>
+    </tr>
+    <tr>
+      <td>SCIEQDVVNQTR</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_1.2554.2554.2</td>
+    </tr>
+    <tr>
+      <td>SCINESAIDSR</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301i_2.1689.1689.2</td>
+    </tr>
+    <tr>
+      <td>NSTCLDDSWIHPR</td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301_2.3674.3674.3</td>
+    </tr>
+  </tbody>
+</table>
+  
+</div>
+</body>
+<script type="text/javascript">
+  function getMassShift(elem) {
+    eid = elem.parentElement.id;
+    return document.getElementById(eid.replace("col1", "col0")).children[0].text;
+  };
+  function hideTablesAndLegend() {
+    var tables = document.getElementsByClassName('peptide_table');
+    for(j = 0; j < tables.length; j++) {
+        tables[j].style.display = 'none';
+      };
+    document.getElementById('legend').style.display = 'none';
+    // document.getElementById('table_header').textContent = "";
+  };
+  function showPic(src) {
+    hideTablesAndLegend();
+    var pic = document.getElementById('pic');
+    pic.src = src;
+    pic.style.display = 'block';
+    if (src == 'summary.png') {
+      pic.classList.add('summary');
+      pic.classList.remove('figure');
+    }
+    else {
+      pic.classList.remove('summary');
+      pic.classList.add('figure');
+    }
+  }
+
+  function showTable(elem) {
+    hideTablesAndLegend();
+    var ms = getMassShift(elem);
+    showPic(ms + '.png');
+    document.getElementById('peptides_'+ms).style.display = 'block';
+    // document.getElementById('table_header').textContent = "Mass shift " + ms + " (" + elem.text + " peptides)";
+  }
+
+  var shifts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col0');
+  for(i = 0; i < shifts.length; i++) {
+    shifts[i].children[0].onclick = function (e) {
+      showPic(e.target.text + '.png');
+      document.getElementById('legend').style.display = 'block';
+    }
+  }
+
+  var binh = document.getElementById('binh');
+  binh.onclick = function (e) {
+    showPic('summary.png');
+    hideTablesAndLegend();
+  }
+
+  var amounts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col1');
+  for(i = 0; i < amounts.length; i++) {
+    amounts[i].children[0].onclick = function (e) {
+      document.getElementById('pic').style.display = 'none';
+      showTable(e.target);
+    }
+  }
+  var reference = "+0.0000";
+  var table = document.getElementById("T_aa_stat_table");
+  for (var i = 0, row; row = table.rows[i]; i++) {
+    var ms = row.cells[0].innerText;
+    if (ms == reference) {
+      row.title = "Reference mass shift";
+      break;
+    }
+  }
+
+</script>
+</html>

@@ -1,0 +1,2544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AA_stat report</title>
+    <style type="text/css">
+        #steps {
+          text-align: center;
+        }
+        .steplink {
+          margin: 3vw 3vw;
+        }
+        #mods_outer {
+          text-align: center;
+        }
+        #fixmod {
+          display: flex;
+          margin-top: 1vh;
+          margin-bottom: 1vh;
+          /*text-align: center;*/
+          justify-content: center;
+          align-items: center;
+        }
+        .modtable {
+          width: 30vw;
+        }
+        .modtable table {
+          border-collapse: collapse;
+        }
+        .modtable td, th {
+          border: 1px solid;
+          padding: 0.3rem;
+          text-align: center;
+        }
+        #aa_stat {
+          text-align: center;
+        }
+        #pic_container {
+          max-height: 80vh;
+          max-width: 85vw;
+          min-height: 25vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          overflow-x: auto;
+        }
+        #pic {
+          max-height: 80vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .figure {
+          max-width: 70vw;
+        }
+        #legend {
+          display: none;
+          overflow: auto;
+          margin: 0 auto;
+          width: 81vw;
+        }
+        table {
+          border: 1px solid black;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .legend.peptides {
+          color: #FF6600;
+        }
+        .legend.freq {
+          color: #88AA00;
+        }
+        .legend.localized {
+          color: #006688;
+        }
+        .loc {
+          color: #FF0000;
+        }
+        #legend p {
+          max-width: 25vw;
+          margin-left: 1vw;
+          margin-right: 1vw;
+          float: left;
+          text-align: justify;
+        }
+        #legend h2, #peptides h2 {
+          text-align: center;
+        }
+        .peptide_table {
+          display: none;
+          text-align: center;
+          width: fit-content;
+        }
+    </style>
+</head>
+<body>
+<div id="steps">
+<a class="next steplink" href="../os_step_2/report.html">Next step</a></div>
+<div id="mods_outer">
+  <h3>Modifications</h3>
+  <div id="fixmod">
+    <div id="set_mods" class="modtable">
+    Set modifications: none.
+    </div>
+    <div id="rec_mods" class="modtable">
+    <style  type="text/css" >
+</style><table id="T_rec_fix_mod_table" ><caption>Recommended, fixed</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >N-term</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_rec_fix_mod_tablelevel0_row0" class="row_heading level0 row0" >value</th>
+                        <td id="T_rec_fix_mod_tablerow0_col0" class="data row0 col0" >+32.0572</td>
+            </tr>
+    </tbody></table>
+    </div>
+    <div id="rec_var_mods" class="modtable">
+    <style  type="text/css" >
+    #T_rec_var_mod_table th.col_heading {
+          display: none;
+    }    #T_rec_var_mod_table th.blank {
+          display: none;
+    }    #T_rec_var_mod_table .data.row0 {
+          font-weight: bold;
+    }</style><table id="T_rec_var_mod_table" ><caption>Recommended, variable</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >0</th>        <th class="col_heading level0 col1" >1</th>        <th class="col_heading level0 col2" >2</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_rec_var_mod_tablelevel0_row0" class="row_heading level0 row0" ></th>
+                        <td id="T_rec_var_mod_tablerow0_col0" class="data row0 col0" >N-term</td>
+                        <td id="T_rec_var_mod_tablerow0_col1" class="data row0 col1" >P</td>
+                        <td id="T_rec_var_mod_tablerow0_col2" class="data row0 col2" >Q</td>
+            </tr>
+            <tr>
+                        <th id="T_rec_var_mod_tablelevel0_row1" class="row_heading level0 row1" >value</th>
+                        <td id="T_rec_var_mod_tablerow1_col0" class="data row1 col0" >+28.0323</td>
+                        <td id="T_rec_var_mod_tablerow1_col1" class="data row1 col1" >+231.1130</td>
+                        <td id="T_rec_var_mod_tablerow1_col2" class="data row1 col2" >+231.1130</td>
+            </tr>
+    </tbody></table>
+    </div>
+  </div>
+</div>
+<div id="aa_stat">
+  <h3>Amino acid statistics</h3>
+  <style  type="text/css" >
+    #T_aa_stat_table tr:hover {
+          background-color: lightyellow;
+    }    #T_aa_stat_table td, th {
+          text-align: center;
+    }    #T_aa_stat_table td, th {
+          border: 1px solid black;
+    }#T_aa_stat_tablerow0_col1{
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 73.2%, transparent 73.2%);
+        }#T_aa_stat_tablerow1_col0,#T_aa_stat_tablerow1_col2,#T_aa_stat_tablerow1_col3,#T_aa_stat_tablerow1_col4,#T_aa_stat_tablerow1_col5,#T_aa_stat_tablerow1_col6,#T_aa_stat_tablerow1_col7,#T_aa_stat_tablerow1_col8,#T_aa_stat_tablerow1_col9,#T_aa_stat_tablerow1_col10,#T_aa_stat_tablerow1_col11,#T_aa_stat_tablerow1_col12,#T_aa_stat_tablerow1_col13,#T_aa_stat_tablerow1_col14,#T_aa_stat_tablerow1_col15,#T_aa_stat_tablerow1_col16,#T_aa_stat_tablerow1_col17,#T_aa_stat_tablerow1_col18,#T_aa_stat_tablerow1_col19,#T_aa_stat_tablerow1_col20,#T_aa_stat_tablerow1_col21,#T_aa_stat_tablerow1_col22,#T_aa_stat_tablerow1_col23,#T_aa_stat_tablerow1_col24,#T_aa_stat_tablerow1_col25,#T_aa_stat_tablerow1_col26,#T_aa_stat_tablerow1_col27,#T_aa_stat_tablerow1_col28{
+            background-color:  #cccccc;
+        }#T_aa_stat_tablerow1_col1{
+            background-color:  #cccccc;
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 100.0%, transparent 100.0%);
+        }#T_aa_stat_tablerow2_col1{
+            width:  10em;
+             height:  80%;
+        }#T_aa_stat_tablerow2_col4,#T_aa_stat_tablerow2_col13{
+            background-color:  yellow;
+        }</style><table id="T_aa_stat_table" ><thead>    <tr>        <th class="col_heading level0 col0" ><a id="binh" href="#">mass shift</a></th>        <th class="col_heading level0 col1" ># peptides in bin</th>        <th class="col_heading level0 col2" >M</th>        <th class="col_heading level0 col3" >D</th>        <th class="col_heading level0 col4" >Q</th>        <th class="col_heading level0 col5" >C</th>        <th class="col_heading level0 col6" >L</th>        <th class="col_heading level0 col7" >H</th>        <th class="col_heading level0 col8" >S</th>        <th class="col_heading level0 col9" >R</th>        <th class="col_heading level0 col10" >A</th>        <th class="col_heading level0 col11" >W</th>        <th class="col_heading level0 col12" >Y</th>        <th class="col_heading level0 col13" >P</th>        <th class="col_heading level0 col14" >F</th>        <th class="col_heading level0 col15" >V</th>        <th class="col_heading level0 col16" >N</th>        <th class="col_heading level0 col17" >T</th>        <th class="col_heading level0 col18" >E</th>        <th class="col_heading level0 col19" >G</th>        <th class="col_heading level0 col20" >I</th>        <th class="col_heading level0 col21" >K</th>        <th class="col_heading level0 col28" >info</th>    </tr></thead><tbody>
+                <tr>
+                                <td id="T_aa_stat_tablerow0_col0" class="data row0 col0" ><a href="#">+28.0323</a></td>
+                        <td id="T_aa_stat_tablerow0_col1" class="data row0 col1" ><a href="#">170</a></td>
+                        <td id="T_aa_stat_tablerow0_col2" class="data row0 col2" >0.570</td>
+                        <td id="T_aa_stat_tablerow0_col3" class="data row0 col3" >0.984</td>
+                        <td id="T_aa_stat_tablerow0_col4" class="data row0 col4" >1.052</td>
+                        <td id="T_aa_stat_tablerow0_col5" class="data row0 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow0_col6" class="data row0 col6" >0.938</td>
+                        <td id="T_aa_stat_tablerow0_col7" class="data row0 col7" >1.100</td>
+                        <td id="T_aa_stat_tablerow0_col8" class="data row0 col8" >1.036</td>
+                        <td id="T_aa_stat_tablerow0_col9" class="data row0 col9" >0.939</td>
+                        <td id="T_aa_stat_tablerow0_col10" class="data row0 col10" >1.040</td>
+                        <td id="T_aa_stat_tablerow0_col11" class="data row0 col11" >1.175</td>
+                        <td id="T_aa_stat_tablerow0_col12" class="data row0 col12" >1.228</td>
+                        <td id="T_aa_stat_tablerow0_col13" class="data row0 col13" >1.103</td>
+                        <td id="T_aa_stat_tablerow0_col14" class="data row0 col14" >1.132</td>
+                        <td id="T_aa_stat_tablerow0_col15" class="data row0 col15" >1.204</td>
+                        <td id="T_aa_stat_tablerow0_col16" class="data row0 col16" >0.912</td>
+                        <td id="T_aa_stat_tablerow0_col17" class="data row0 col17" >0.953</td>
+                        <td id="T_aa_stat_tablerow0_col18" class="data row0 col18" >0.733</td>
+                        <td id="T_aa_stat_tablerow0_col19" class="data row0 col19" >0.833</td>
+                        <td id="T_aa_stat_tablerow0_col20" class="data row0 col20" >1.141</td>
+                        <td id="T_aa_stat_tablerow0_col21" class="data row0 col21" >1.254</td>
+                                                                        <td id="T_aa_stat_tablerow0_col28" class="data row0 col28" ><a href="http://www.unimod.org/modifications_view.php?editid1=546">Ala->Val</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=36">Dimethyl</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=1061">Cys->Met</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=280">Ethyl</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=255">Delta:H(4)C(2)</a></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow1_col0" class="data row1 col0" ><a href="#">+32.0572</a></td>
+                        <td id="T_aa_stat_tablerow1_col1" class="data row1 col1" ><a href="#">214</a></td>
+                        <td id="T_aa_stat_tablerow1_col2" class="data row1 col2" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col3" class="data row1 col3" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col4" class="data row1 col4" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col5" class="data row1 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow1_col6" class="data row1 col6" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col7" class="data row1 col7" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col8" class="data row1 col8" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col9" class="data row1 col9" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col10" class="data row1 col10" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col11" class="data row1 col11" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col12" class="data row1 col12" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col13" class="data row1 col13" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col14" class="data row1 col14" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col15" class="data row1 col15" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col16" class="data row1 col16" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col17" class="data row1 col17" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col18" class="data row1 col18" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col19" class="data row1 col19" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col20" class="data row1 col20" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col21" class="data row1 col21" >1.000</td>
+                                                                        <td id="T_aa_stat_tablerow1_col28" class="data row1 col28" ><a href="http://www.unimod.org/modifications_view.php?editid1=199">Dimethyl:2H(4)</a></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow2_col0" class="data row2 col0" ><a href="#">+231.1130</a></td>
+                        <td id="T_aa_stat_tablerow2_col1" class="data row2 col1" ><a href="#">50</a></td>
+                        <td id="T_aa_stat_tablerow2_col2" class="data row2 col2" >0.149</td>
+                        <td id="T_aa_stat_tablerow2_col3" class="data row2 col3" >0.841</td>
+                        <td id="T_aa_stat_tablerow2_col4" class="data row2 col4" >1.670</td>
+                        <td id="T_aa_stat_tablerow2_col5" class="data row2 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow2_col6" class="data row2 col6" >0.647</td>
+                        <td id="T_aa_stat_tablerow2_col7" class="data row2 col7" >0.985</td>
+                        <td id="T_aa_stat_tablerow2_col8" class="data row2 col8" >1.259</td>
+                        <td id="T_aa_stat_tablerow2_col9" class="data row2 col9" >0.838</td>
+                        <td id="T_aa_stat_tablerow2_col10" class="data row2 col10" >1.323</td>
+                        <td id="T_aa_stat_tablerow2_col11" class="data row2 col11" >1.437</td>
+                        <td id="T_aa_stat_tablerow2_col12" class="data row2 col12" >0.624</td>
+                        <td id="T_aa_stat_tablerow2_col13" class="data row2 col13" >1.840</td>
+                        <td id="T_aa_stat_tablerow2_col14" class="data row2 col14" >0.446</td>
+                        <td id="T_aa_stat_tablerow2_col15" class="data row2 col15" >0.798</td>
+                        <td id="T_aa_stat_tablerow2_col16" class="data row2 col16" >0.478</td>
+                        <td id="T_aa_stat_tablerow2_col17" class="data row2 col17" >1.495</td>
+                        <td id="T_aa_stat_tablerow2_col18" class="data row2 col18" >0.821</td>
+                        <td id="T_aa_stat_tablerow2_col19" class="data row2 col19" >1.042</td>
+                        <td id="T_aa_stat_tablerow2_col20" class="data row2 col20" >0.466</td>
+                        <td id="T_aa_stat_tablerow2_col21" class="data row2 col21" >0.000</td>
+                                                                        <td id="T_aa_stat_tablerow2_col28" class="data row2 col28" ></td>
+            </tr>
+    </tbody></table>
+</div>
+<div id="legend">
+  <h2>Figure Legend</h2>
+  <p>
+    <span class="legend freq">Relative AA abundance</span>: this value represents the difference in occurrence frequency
+    between peptides with the given mass shift and the peptides with unshifted masses.
+    The AA occurrence frequency is calculated for all mass shifts as follows: the AA is counted in all peptides without miscleavages,
+    then the AA count is divided by the total of all AA counts.
+    Each AA occurrence frequency for each shift is then divided by the occurrence frequency of the same AA at zero mass shift.
+    Thus, values below 1 mean that the AA is "depleted" and values above 1 mean that it is "enriched" at a certain mass shift.
+  </p>
+  <p>
+    <span class="legend peptides">Peptides with AA, %</span>: This is the percentage of peptides at the given mass shift that contain
+    at least one AA residue of a certain kind. This is useful to assess the meaning of the observed frequencies.
+  </p>
+  <p>
+    <span class="legend localized">Localization count</span>: if spectrum files are provided to AA_stat, each MS/MS spectrum of shifted peptides
+    is tested for localization of mass shifts. This axis counts successful localizations of mass shifts at each AA. The counts are not normalized.
+  </p>
+</div>
+<div id="pic_container">
+  <img id="pic" src="summary.png">
+</div>
+
+<div id="peptides">
+  <h2 id="table_header"></h2>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+28.0323">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="loc">I[+28]</span>LITTVPPNLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.16933.16933.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>FGYGQGAGALVHAQ</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.15138.15138.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+28]</span>VATLGVEVHPLVFHTNR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.17135.17135.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+28]</span>SFLQFDPAPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.19944.19944.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>FGYYGPLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.16230.16230.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>GYIGSTYFER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.15325.15325.2</td>
+    </tr>
+    <tr>
+      <td>VSG<span class="loc">P[+28]</span>LSGNSANHHADNPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.6397.6397.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+28]</span>FYTFTNEHHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.8273.8273.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>QLLQPTLEINPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.17394.17394.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+28]</span>YVTIIDAPGHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.14825.14825.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+28]</span>VIGLQMGTNR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.14010.14010.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>SFSEQGINEFLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.19567.19567.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>LTPSQIGVILR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.18472.18472.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>VLGSSPFLSEANAER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.17814.17814.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+28]</span>QILPLHSQIPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.15784.15784.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+28]</span>LTPELYAELR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.19093.19093.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+28]</span>ILFVPTSAPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.17546.17546.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+28]</span>SILAQVLDQSAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.20219.20219.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>GLSVFTHHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.13219.13219.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>VFVDLEPTVIDEVR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.21897.21897.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+28]</span>LPLPPPPPPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.14421.14421.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>SYVSIHSSGFR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.11251.11251.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+28]</span>SSIQSIVPALEIANAHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.20288.20288.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>SSWDQAETPGHTPSLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.13839.13839.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>VTIASGGVLPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.14097.14097.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+28]</span>YGPEGPYGVFAGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.18506.18506.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+28]</span>GGIGTVPVGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.13018.13018.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>LYYLQIHPQELR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.17691.17691.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+28]</span>FLLEYHNR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.14552.14552.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+28]</span>FSHAYFHHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.7555.7555.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+28]</span>LGTADVHFER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.12150.12150.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>QSIGTENTEENRR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.8172.8172.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+28]</span>FSQSSHLVQHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.7092.7092.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>LLSSLDHTSIR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.14955.14955.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>GVIEDHSNR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.8234.8234.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>STAPVGGGAFPTIVER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.16549.16549.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>IPTYIYYFPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.20761.20761.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+28]</span>TSVAWSPHHDGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.9813.9813.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Q[+28]</span>ILNFFHHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.13978.13978.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+28]</span>ITLNFGPQHPAAHGVLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.15034.15034.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>SGQAFELILSPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.19373.19373.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+28]</span>GIDILVGTPGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.17041.17041.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>VAQALEVIPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.16480.16480.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>FHEVVQAFR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.14477.14477.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+28]</span>LLVPDHVITR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.14776.14776.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>GLQHHQDLSTPVLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.10880.10880.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>SFQHDPETSVLVLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.17944.17944.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+28]</span>WHHTFYNELR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.12475.12475.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+28]</span>TPSYVAFTDTER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.15780.15780.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Q[+28]</span>WYESHYALPLGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.16927.16927.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+28]</span>PHAPTIHFNYR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.11850.11850.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+28]</span>IHLENLLAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.17332.17332.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>LLEGISSTHAHHLR</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.11772.11772.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>RPAEVGGMQLR</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.10124.10124.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+28]</span>TPSYVAFTPEGER</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.17100.17100.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+28]</span>INEPTAAAIAYGLDR</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.19810.19810.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>FAFVQYVNER</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.18519.18519.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+28]</span>TNFAGILSQGLR</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.19552.19552.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>ILLHHEHPER</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.7733.7733.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>PILIATDVASR</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.15753.15753.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+28]</span>TAYEDYYYHPPPR</td>
+      <td>0.98</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.13052.13052.3</td>
+    </tr>
+    <tr>
+      <td>G<span class="loc">P[+28]</span>SLNPVLDYDHGSR</td>
+      <td>0.98</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.14441.14441.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+28]</span>VYDLTSIPVR</td>
+      <td>0.98</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.17735.17735.2</td>
+    </tr>
+    <tr>
+      <td>SYELP<span class="loc">D[+28]</span>GQVITIGNER</td>
+      <td>0.98</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.20122.20122.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+28]</span>LHVSENPVPLTVR</td>
+      <td>0.98</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.14923.14923.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+28]</span>LHENLPIPQR</td>
+      <td>0.98</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.13497.13497.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+28]</span>HIEIGPDGR</td>
+      <td>0.98</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.11410.11410.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+28]</span>HYEQQQEDLAR</td>
+      <td>0.98</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.5851.5851.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+28]</span>YVHNDIFR</td>
+      <td>0.98</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.15353.15353.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>FGDHIHWR</td>
+      <td>0.98</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.12045.12045.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>SYVAPLTAQPATYR</td>
+      <td>0.98</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.14609.14609.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+28]</span>VHVHVLPR</td>
+      <td>0.98</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.6160.6160.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+28]</span>NFLNPNDPYHAYYR</td>
+      <td>0.97</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.18757.18757.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>DVQSIIGLQR</td>
+      <td>0.97</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.16736.16736.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+28]</span>DFPQDQLTALTGR</td>
+      <td>0.97</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.20075.20075.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+28]</span>GPNLHGLFGR</td>
+      <td>0.97</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.15602.15602.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>LAVVYGPHEIR</td>
+      <td>0.97</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.13531.13531.3</td>
+    </tr>
+    <tr>
+      <td>G<span class="loc">A[+28]</span>AGRPLELSDFR</td>
+      <td>0.96</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.14598.14598.3</td>
+    </tr>
+    <tr>
+      <td>EKIDNAVNV<span class="loc">R[+28]</span></td>
+      <td>0.96</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.10603.10603.3</td>
+    </tr>
+    <tr>
+      <td>AEA<span class="loc">E[+28]</span>AGSPRPDPR</td>
+      <td>0.94</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.5845.5845.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+28]</span>GGTIPIVPTAEFQDR</td>
+      <td>0.94</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.15995.15995.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+28]</span>YSHSLLPVLR</td>
+      <td>0.94</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF10.16402.16402.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+28]</span>PVEPEVAIHR</td>
+      <td>0.93</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.10871.10871.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Q[+28]</span>ASTLIDRPAPHFER</td>
+      <td>0.93</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.11909.11909.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+28]</span>SNLLSDYGYHLR</td>
+      <td>0.93</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.17553.17553.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>LETTDRPDGHQNNLR</td>
+      <td>0.92</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.8583.8583.4</td>
+    </tr>
+    <tr>
+      <td>SQI<span class="loc">H[+28]</span>DIVLVGGSTR</td>
+      <td>0.91</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.13724.13724.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>SPPSLEQPYLTHR</td>
+      <td>0.91</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.13447.13447.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>ALALAQAVQR</td>
+      <td>0.91</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.13690.13690.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>AVYSFDPVGSYQR</td>
+      <td>0.90</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.16700.16700.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>FFAGEHTIR</td>
+      <td>0.90</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.14011.14011.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>NFNYIEFTR</td>
+      <td>0.89</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.17534.17534.2</td>
+    </tr>
+    <tr>
+      <td>TDVST<span class="loc">E[+28]</span>HPPFYYNIHR</td>
+      <td>0.89</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.14565.14565.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+28]</span>HIDIGADGR</td>
+      <td>0.87</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.11028.11028.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+28]</span>HVFYIDYGNR</td>
+      <td>0.87</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.16882.16882.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+28]</span>SILAAANPISGHYDR</td>
+      <td>0.86</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.16014.16014.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+28]</span>VFDRPLPVSR</td>
+      <td>0.85</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.15929.15929.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+28]</span>LIATSEQPIAALHR</td>
+      <td>0.84</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.16365.16365.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+28]</span>HIDVIHYR</td>
+      <td>0.84</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.10847.10847.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+28]</span>EEQPAPGYDTHGR</td>
+      <td>0.84</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.5556.5556.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>WGPGLHGGIVGR</td>
+      <td>0.84</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.13466.13466.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+28]</span>HFDYQFGYR</td>
+      <td>0.84</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.14732.14732.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>AQSNGWGVMVSHR</td>
+      <td>0.84</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.11925.11925.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>IHPDEDISLEER</td>
+      <td>0.84</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.14032.14032.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>NENANGAPAITLLIR</td>
+      <td>0.84</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.19374.19374.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+28]</span>NNLDLVIIR</td>
+      <td>0.84</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.15780.15780.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+28]</span>LAQYYTVTDEHHR</td>
+      <td>0.83</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.11402.11402.4</td>
+    </tr>
+    <tr>
+      <td>LV<span class="loc">R[+28]</span>PPVQVYGIEGR</td>
+      <td>0.81</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.14938.14938.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+28]</span>LDAVVAQEPLHR</td>
+      <td>0.81</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.13907.13907.3</td>
+    </tr>
+    <tr>
+      <td>G<span class="loc">H[+28]</span>YYVPLLR</td>
+      <td>0.81</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.15191.15191.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>GDVYVNDAFGTAHR</td>
+      <td>0.81</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.15563.15563.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+28]</span>WILPQDYDHAQAEAR</td>
+      <td>0.80</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.14347.14347.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>APFSLEYR</td>
+      <td>0.78</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.15865.15865.2</td>
+    </tr>
+    <tr>
+      <td>GP<span class="loc">H[+28]</span>HLDNSSPGPGSEAR</td>
+      <td>0.78</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.5197.5197.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>QAEAPHIVVGTPGR</td>
+      <td>0.77</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.13440.13440.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+28]</span>HTFPELAYR</td>
+      <td>0.76</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.13659.13659.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+28]</span>VDSEGHLYTVPIR</td>
+      <td>0.76</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.14629.14629.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>LVADSHPESER</td>
+      <td>0.76</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.7267.7267.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+28]</span>HQVTPQTHFIS</td>
+      <td>0.76</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.11254.11254.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+28]</span>PFSFPLENQAR</td>
+      <td>0.76</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.15426.15426.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">R[+28]</span>EPAEQPGDGER</td>
+      <td>0.75</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.4847.4847.3</td>
+    </tr>
+    <tr>
+      <td>VLSAPPHF<span class="loc">H[+28]</span>FGQTNR</td>
+      <td>0.75</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.13208.13208.4</td>
+    </tr>
+    <tr>
+      <td>YGG<span class="loc">E[+28]</span>LVPHFPAR</td>
+      <td>0.68</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.15393.15393.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>QHTLQQVLDQR</td>
+      <td>0.63</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.14249.14249.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>PGLIDVHVHLR</td>
+      <td>0.61</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.16603.16603.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>ITHIGYTDLPSR</td>
+      <td>0.61</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.13455.13455.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>AQAWFNTHR</td>
+      <td>0.60</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.13113.13113.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+28]</span>PPLSLTIHLTSPVVR</td>
+      <td>0.58</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.19075.19075.3</td>
+    </tr>
+    <tr>
+      <td>TNVLG<span class="loc">H[+28]</span>LQQGGAPTPFDR</td>
+      <td>0.55</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.16115.16115.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+28]</span>YPPWQHTTLSVLR</td>
+      <td>0.55</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF10.17234.17234.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>AVNMVPFPR</td>
+      <td>0.54</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.18402.18402.2</td>
+    </tr>
+    <tr>
+      <td>TG<span class="loc">A[+28]</span>IVDVPVGEELLGR</td>
+      <td>0.50</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.21099.21099.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+28]</span>TLPDADRER</td>
+      <td>0.50</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.6911.6911.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+28]</span>LAAHYFFPR</td>
+      <td>0.50</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.15294.15294.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>AQANGWGVMVSHR</td>
+      <td>0.48</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.14099.14099.3</td>
+    </tr>
+    <tr>
+      <td>VPHP<span class="loc">H[+28]</span>PHPPPYPHFTR</td>
+      <td>0.39</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.10076.10076.5</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>ATQLTGPVMPVR</td>
+      <td>0.31</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.15934.15934.2</td>
+    </tr>
+    <tr>
+      <td>GHYTEGA<span class="loc">E[+28]</span>LVDSVLDVVR</td>
+      <td>0.29</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.21831.21831.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+28]</span>AFQLGSPWR</td>
+      <td>0.28</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.17594.17594.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+28]</span>YHEELNAPIR</td>
+      <td>0.09</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.12528.12528.3</td>
+    </tr>
+    <tr>
+      <td>GMGGHGYGG<span class="loc">A[+28]</span>GDASSGFHGGHFVHMR</td>
+      <td>0.08</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.11022.11022.6</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+28]</span>IANYISGIQTIGHR</td>
+      <td>0.06</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.14476.14476.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+28]</span>THQIVDRPGQQTSVIGR</td>
+      <td>0.05</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.9898.9898.4</td>
+    </tr>
+    <tr>
+      <td>TPIA<span class="loc">A[+28]</span>GHPSMNLLLR</td>
+      <td>0.03</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.16672.16672.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>QAYHTQTTPLIEYYR</td>
+      <td>0.02</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.16170.16170.3</td>
+    </tr>
+    <tr>
+      <td>AAS<span class="loc">D[+28]</span>SVPAKPATWEGK</td>
+      <td>0.01</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.8123.8123.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+28]</span>LLHVTDTGVGMTR</td>
+      <td>0.01</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.14543.14543.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+28]</span>ALHNFG</td>
+      <td>0.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.13912.13912.2</td>
+    </tr>
+    <tr>
+      <td>VQEQVHTLLSQDQAQAAR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.12110.12110.3</td>
+    </tr>
+    <tr>
+      <td>FQSSHHPTDITSLDQYVER</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.15277.15277.4</td>
+    </tr>
+    <tr>
+      <td>SDSFENPVLQQHFR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.15629.15629.3</td>
+    </tr>
+    <tr>
+      <td>SHHGEHERPEFIAYPHLR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.11168.11168.5</td>
+    </tr>
+    <tr>
+      <td>GHLLYVALSPGQHR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.12816.12816.3</td>
+    </tr>
+    <tr>
+      <td>VHVGDEDFVHLR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.13829.13829.4</td>
+    </tr>
+    <tr>
+      <td>TVTNAVVTVPAYFNDSQR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.18065.18065.3</td>
+    </tr>
+    <tr>
+      <td>GPPDFSSDEEREPTPVLGSGAAAAGR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.15167.15167.3</td>
+    </tr>
+    <tr>
+      <td>ISRPGDSDDSR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.5354.5354.3</td>
+    </tr>
+    <tr>
+      <td>NVALLSQLYHSPAR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.17750.17750.3</td>
+    </tr>
+    <tr>
+      <td>SSGPTSLFAVTVAPPGAR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.19081.19081.3</td>
+    </tr>
+    <tr>
+      <td>VHIYHHTGNNTFR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.6370.6370.4</td>
+    </tr>
+    <tr>
+      <td>LHVQWAPTAAGPGGGAER</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.14292.14292.3</td>
+    </tr>
+    <tr>
+      <td>YRVPDVLVADPPIAR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.17394.17394.3</td>
+    </tr>
+    <tr>
+      <td>GSPHYFSPFRPY</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.16368.16368.3</td>
+    </tr>
+    <tr>
+      <td>NREPVQLETLSIR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.15079.15079.3</td>
+    </tr>
+    <tr>
+      <td>FNEEHIPDSPFVVPVASPSGDAR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.19360.19360.3</td>
+    </tr>
+    <tr>
+      <td>ILRPWQSSETR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.10892.10892.3</td>
+    </tr>
+    <tr>
+      <td>DAGVIAGLNVLR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.19796.19796.2</td>
+    </tr>
+    <tr>
+      <td>LAQHITYVHQHSR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.5706.5706.4</td>
+    </tr>
+    <tr>
+      <td>VTHAVVTVPAYFNDAQR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.15833.15833.3</td>
+    </tr>
+    <tr>
+      <td>GHAVNLLDVPVPVAR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.17911.17911.3</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+32.0572">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="loc">G[+32]</span>LLEFEHQR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.12927.12927.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+32]</span>LLSLPEHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.16903.16903.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>QLFALTGVQPAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.17649.17649.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+32]</span>ELSGALTGLTR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.16580.16580.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">D[+32]</span>AGTIAGLNVLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.18282.18282.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">R[+32]</span>GDLPFVVPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.14812.14812.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+32]</span>THAVVTVPAYFNDAQR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.15812.15812.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+32]</span>IHLENLLAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.17318.17318.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>YLGPPHQGPPMHHASGHDTR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.7107.7107.5</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>ISWYDNEFGYSNR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.20076.20076.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>YQHGGVTGLSQY</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.12873.12873.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>GAIVDVPVGEELLGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.21070.21070.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>FHEVVQAFR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.14467.14467.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+32]</span>YVTIIDAPGHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.14817.14817.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+32]</span>HEGETAYIR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.6944.6944.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>AVNMVPFPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.18379.18379.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>NFNYIEFTR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.17537.17537.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+32]</span>FYVEHPEVAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.12191.12191.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+32]</span>HIDIGADGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.11014.11014.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>HPTSVISGYR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.11452.11452.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>LAAHYFFPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.15283.15283.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+32]</span>FDGSGGNNHAVEHYR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.8204.8204.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+32]</span>YVHNDIFR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.15331.15331.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>FGYGQGAGALVHAQ</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.15139.15139.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>VFVDLEPTVIDEVR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.22165.22165.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+32]</span>STLHLVLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.13886.13886.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+32]</span>GESAWNLENR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.10669.10669.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">D[+32]</span>WQSYYYHHPQDR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.13157.13157.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>AQSNGWGVMVSHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.11911.11911.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+32]</span>VIGLQMGTNR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.13994.13994.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>TPLSHEVISR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.11969.11969.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>IPTYIYYFPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.20765.20765.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">R[+32]</span>AGELTEDEVER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.8606.8606.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>FGPGLQGGSAGSPAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.11431.11431.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>HLLYVALSPGQHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.12823.12823.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>DPHNHVLYSNR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.8992.8992.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>VTSILYPLLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.21653.21653.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+32]</span>SVDHLTIPSR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.12348.12348.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+32]</span>NGEPEHIER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.7553.7553.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>VFHEEEQR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.6786.6786.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>SFYETGEIPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.17867.17867.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">D[+32]</span>AGVIAGLNVLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.19687.19687.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>HLGFIEIR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.19630.19630.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>GGHILPYDQPLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.13598.13598.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>ALIHDGLAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.11676.11676.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>ETLDPALIRPGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.15665.15665.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">D[+32]</span>GLAFNALIHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.17750.17750.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+32]</span>FFHQHYLGGQEPTPSNIR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.13896.13896.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>AQHITYVHQHSR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.5686.5686.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+32]</span>NGELLPILR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.19612.19612.2</td>
+    </tr>
+    <tr>
+      <td>HYNGEAYEDDEHHP<span class="loc">R[+32]</span></td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.6061.6061.4</td>
+    </tr>
+    <tr>
+      <td>HLEINPDHPIVETL<span class="loc">R[+32]</span></td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.14945.14945.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Q[+32]</span>ILNFFHHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.14213.14213.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>VENYLIQMAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.18144.18144.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>GPNLHGLFGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.15528.15528.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+32]</span>MGGPYGGGNYGPGGSGGSGGYGGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.12377.12377.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>FFAGEHTIR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.13985.13985.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>LIAGGGAPEIELALR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.20819.20819.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+32]</span>SILAQVLDQSAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.20208.20208.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+32]</span>QIHDIVLVGGSTR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.13706.13706.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+32]</span>TAGDTHLGGEDFDNR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.10332.10332.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>TASEQAHPQEPAESAHEPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.7959.7959.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+32]</span>LYASSPGGVYATR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF10.12739.12739.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>LPESLGQHALR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.12850.12850.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+32]</span>GFQWPER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.19068.19068.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+32]</span>QILPLHSQIPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.15834.15834.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>TPSYVAFTPEGER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.17075.17075.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+32]</span>LQNTVANLHVR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.12570.12570.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">M[+32]</span>GLLAVLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.19615.19615.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>GTITTFEHAHNMR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.10568.10568.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+32]</span>FYTFTNEHHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.8229.8229.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>VDSLVPIGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.15130.15130.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>STAPVGGGAFPTIVER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.16626.16626.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>SFQHDPETSVLVLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.17922.17922.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+32]</span>YELPDGQVITIGNER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.20064.20064.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+32]</span>VATLGVEVHPLVFHTNR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.17125.17125.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>YLGPPHQGPPMHHVPGHESR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.8578.8578.5</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+32]</span>HIYHHTGNNTFR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.6323.6323.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>GLYGLPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.13601.13601.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+32]</span>EIQETQTPTHSR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.6735.6735.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+32]</span>DGYGSHGPLLPLPSR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.13806.13806.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>GGGPGGGGPGGGSAGGPSQPPGGGGPGIR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.9718.9718.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">D[+32]</span>GPPHQVLVVPLHSR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.13402.13402.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>HNDIIHNENMR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.7249.7249.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+32]</span>LLHVTDTGVGMTR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.14521.14521.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+32]</span>LDEDTIYHLQPSGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.16033.16033.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>FSLEELR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.17792.17792.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>NVLGHLQQGGAPTPFDR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.16104.16104.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+32]</span>WILPQDYDHAQAEAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.14325.14325.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>ITGFQTHTTPVLLAHGER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.14608.14608.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>QHTLQQVLDQR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.14232.14232.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+32]</span>WSQHINGASHSR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.6902.6902.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+32]</span>YNYNHLMPTR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.12907.12907.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+32]</span>LHVSENPVPLTVR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.14938.14938.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+32]</span>VVETPLLHPER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.13987.13987.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>PHYGSQTPLHDGSR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.6880.6880.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>WHHTFYNELR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.12365.12365.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>YSHSLLPVLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.16595.16595.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+32]</span>GIDILVGTPGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.17044.17044.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Q[+32]</span>ADLYISEGLHPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.14108.14108.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>FGDHIHWR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.12035.12035.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>FQNVFAPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.15126.15126.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>FQFQNFTNTR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.17491.17491.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>GLSVFTHHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.13198.13198.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>LDAVVAQEPLHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.13850.13850.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">M[+32]</span>GLFHHHHQGLSR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.6366.6366.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">D[+32]</span>ANLYISGLPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.17563.17563.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Q[+32]</span>ITLNDLPVGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.17189.17189.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+32]</span>HYEQQQEDLAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.5817.5817.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>TAPQTQHVSPMR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.7042.7042.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>ATQLTGPVMPVR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.15911.15911.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+32]</span>DITQSAQHALR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.11179.11179.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+32]</span>NHTLAEPILR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.13918.13918.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>SGQAFELILSPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.19334.19334.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>FHNEAQVNPER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.7695.7695.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+32]</span>LTVAAIFR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.20141.20141.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Q[+32]</span>WYESHYALPLGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.16914.16914.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">H[+32]</span>LEINPDHSIIETLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.16333.16333.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+32]</span>FILDQTNVSAAAQR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.16337.16337.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>FHTVTTTDDPVIR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.13251.13251.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">D[+32]</span>SAYQSITHYRPVSASR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.12945.12945.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>AVVPPVHDIYR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.13327.13327.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+32]</span>TLNPNPTGVQNPHIER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.14943.14943.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>VTNAVVTVPAYFNDSQR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.17994.17994.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>ADDDRPSWR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.8368.8368.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>QMEAPHIIVGTPGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.16169.16169.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>EAGVPAEFSIWTR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.20944.20944.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>INEPTAAAIAYGLDR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.19797.19797.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>EAHLAVNDFELAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.16219.16219.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>LTPSQIGVILR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.18466.18466.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>SFPLPQLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.17084.17084.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>VEAEAAHGTVTR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.6395.6395.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">D[+32]</span>AGQISGLNVLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.17099.17099.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+32]</span>SGPTSLFAVTVAPPGAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF10.18862.18862.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+32]</span>HIEIGPDGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.11381.11381.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+32]</span>AYPGDVFYLHSR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.16158.16158.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>FGYYGPLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.15874.15874.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>LMNLGGLAVAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.18139.18139.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>DVQSIIGLQR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.16729.16729.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+32]</span>AAATGATPIAGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.11347.11347.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>VPTGFILPIR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.20067.20067.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+32]</span>ILFVPTSAPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.17539.17539.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>VNTQALSGAGILR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.15751.15751.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>GYIGSTYFER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.15424.15424.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>AGTQPLEVLEAVQR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.20862.20862.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+32]</span>PDGTNGLHHHPAHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.5576.5576.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">D[+32]</span>AGTIAGLNVMR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.17056.17056.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>LLEGISSTHAHHLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.11756.11756.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+32]</span>GYTHLSTGDLLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.15564.15564.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+32]</span>LSDPQVHTVLVER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.15224.15224.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+32]</span>DSFENPVLQQHFR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.15619.15619.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>QAVSEDAGGNEGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.6058.6058.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+32]</span>GPEGGLQGEALEEGLKEEGLPEEGSVHGQELSEASSPDGK</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.12181.12181.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+32]</span>NEEHIPDSPFVVPVASPSGDAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.19318.19318.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>GDVYVNDAFGTAHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.15474.15474.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>VTEQGHELSNEER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.7501.7501.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>TNFAGILSQGLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.19944.19944.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+32]</span>LLPLIYHHLLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.18918.18918.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">D[+32]</span>PPSWSVLAGHSR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.15497.15497.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+32]</span>LTVAAVFR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.18520.18520.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>YVGNLPTDVR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.15900.15900.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>VTSILPVLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.18714.18714.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+32]</span>QSSHHPTDITSLDQYVER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.15256.15256.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>GLTDQVSHHAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.6271.6271.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">R[+32]</span>TEEGPTLSYGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.9277.9277.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+32]</span>IAFPSIGSGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.16549.16549.2</td>
+    </tr>
+    <tr>
+      <td>EVDPL<span class="loc">R[+32]</span>IPPHHPHTSR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.8525.8525.5</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>QLVEEELDRAQER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.16110.16110.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+32]</span>LAMSGDPNYLHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.13587.13587.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+32]</span>LDIERPTYTNLNR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.14051.14051.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+32]</span>GGASHSELIHNLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.8794.8794.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+32]</span>SQSHPGDFVLSVR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.14247.14247.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+32]</span>QGGYGGSSSSSSYGSGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.6576.6576.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>THFVEGGDAGNREDQINR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.9184.9184.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>NDVAFHFNPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.13183.13183.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+32]</span>TLPDADRER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.6885.6885.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>SYVAPLTAQPATYR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.14350.14350.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>SYVSIHSSGFR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.11243.11243.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>LYYLQIHPQELR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.17681.17681.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>WDPTPSHTPAGAATPGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.12058.12058.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">R[+32]</span>APFDLFENR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.17069.17069.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>TPYEVDELRR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.14589.14589.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">T[+32]</span>PVEPEVAIHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.10832.10832.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>SPVVTHDLLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.12109.12109.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>LETTDRPDGHQNNLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.8568.8568.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>PHHLDNSSPGPGSEAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.5208.5208.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">D[+32]</span>TSLYRPALEELR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.17348.17348.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+32]</span>HHFSPVLHFPHPSHIER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.1471.1471.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">V[+32]</span>LSAPPHFHFGQTNR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.13406.13406.4</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Y[+32]</span>GYTHLSAGELLR</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.15701.15701.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">S[+32]</span>IGTANRPMGAGEALR</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.10497.10497.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">F[+32]</span>VFDRPLPVSR</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.15917.15917.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Q[+32]</span>NLFLGSLTSR</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.18178.18178.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+32]</span>ADDDRIPR</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.6805.6805.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">N[+32]</span>ITLNFGPQHPAAHGVLR</td>
+      <td>0.98</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.15011.15011.4</td>
+    </tr>
+    <tr>
+      <td>VTLLETEMLLS<span class="loc">K[+32]</span></td>
+      <td>0.97</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.15774.15774.2</td>
+    </tr>
+    <tr>
+      <td><span class="loc">L[+32]</span>DRETEELHHDR</td>
+      <td>0.95</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.5986.5986.4</td>
+    </tr>
+    <tr>
+      <td>NL<span class="loc">R[+32]</span>PGDSQTAAQAR</td>
+      <td>0.68</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.6098.6098.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>LRPWQSSETR</td>
+      <td>0.56</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.10866.10866.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">A[+32]</span>AQDRDQIYR</td>
+      <td>0.55</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.6279.6279.3</td>
+    </tr>
+    <tr>
+      <td>H<span class="loc">R[+32]</span>WPTGDNIHAEHQVR</td>
+      <td>0.53</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.7478.7478.5</td>
+    </tr>
+    <tr>
+      <td><span class="loc">E[+32]</span>RPSQPEGLR</td>
+      <td>0.52</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.6600.6600.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">I[+32]</span>REEYPDR</td>
+      <td>0.40</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.7080.7080.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">G[+32]</span>AAGRPLELSDFR</td>
+      <td>0.10</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.14755.14755.3</td>
+    </tr>
+    <tr>
+      <td>IVAERPGTNSTGPAPMAPPR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.10910.10910.3</td>
+    </tr>
+    <tr>
+      <td>HRPSEADEEELAR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.7633.7633.3</td>
+    </tr>
+    <tr>
+      <td>LVRPPVQVYGIEGR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.14928.14928.3</td>
+    </tr>
+    <tr>
+      <td>ARFEELNADLFR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.18217.18217.3</td>
+    </tr>
+    <tr>
+      <td>LVARPEPATGYTLEFR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.15947.15947.3</td>
+    </tr>
+    <tr>
+      <td>VARPLPAEEPER</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.8597.8597.3</td>
+    </tr>
+    <tr>
+      <td>YRVPDVLVADPPIAR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.17400.17400.3</td>
+    </tr>
+    <tr>
+      <td>NSRPEANEALER</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.7046.7046.3</td>
+    </tr>
+    <tr>
+      <td>TREEIQEVR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.7127.7127.3</td>
+    </tr>
+    <tr>
+      <td>LTGRDPNDVRPIQAR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.8362.8362.4</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+231.1130">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>THVTHH<span class="loc">P[+231]</span>ISDHEATLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.5884.5884.4</td>
+    </tr>
+    <tr>
+      <td>S<span class="loc">Q[+231]</span>LIIHHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.14118.14118.3</td>
+    </tr>
+    <tr>
+      <td>LTHYHEGL<span class="loc">P[+231]</span>TTR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.8300.8300.4</td>
+    </tr>
+    <tr>
+      <td>SHSSGSVL<span class="loc">P[+231]</span>LGELEGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.15634.15634.3</td>
+    </tr>
+    <tr>
+      <td>GWTLNSAGYLLG<span class="loc">P[+231]</span>HAVGNHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.16856.16856.4</td>
+    </tr>
+    <tr>
+      <td>SRD<span class="loc">P[+231]</span>HYDDFR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.7035.7035.4</td>
+    </tr>
+    <tr>
+      <td>SWTAADTAA<span class="loc">Q[+231]</span>ITQR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.13470.13470.3</td>
+    </tr>
+    <tr>
+      <td>LHTLSVEH<span class="loc">Q[+231]</span>R</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.6433.6433.4</td>
+    </tr>
+    <tr>
+      <td>GYT<span class="loc">Q[+231]</span>DNNIVNYGIPAHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.13699.13699.3</td>
+    </tr>
+    <tr>
+      <td><span class="loc">Q[+231]</span>FEHLDPQNQHTFEAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.11275.11275.4</td>
+    </tr>
+    <tr>
+      <td>ALL<span class="loc">P[+231]</span>EDSGTHQVLR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.12060.12060.3</td>
+    </tr>
+    <tr>
+      <td>IG<span class="loc">P[+231]</span>TGSGPLLHIPHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.13551.13551.4</td>
+    </tr>
+    <tr>
+      <td>IT<span class="loc">P[+231]</span>SYVAFTPEGER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.16669.16669.3</td>
+    </tr>
+    <tr>
+      <td>LG<span class="loc">P[+231]</span>HVTTEYVGPSSER</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.11875.11875.3</td>
+    </tr>
+    <tr>
+      <td>G<span class="loc">Q[+231]</span>DSTIAASEQQVAAR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.9290.9290.3</td>
+    </tr>
+    <tr>
+      <td>NI<span class="loc">P[+231]</span>AVDPHLQFYHPQR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.15168.15168.4</td>
+    </tr>
+    <tr>
+      <td>LVDLNLAGE<span class="loc">P[+231]</span>TEGAPVAVQR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.18038.18038.3</td>
+    </tr>
+    <tr>
+      <td>ISAR<span class="loc">P[+231]</span>TTVTPETVPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.10367.10367.3</td>
+    </tr>
+    <tr>
+      <td>T<span class="loc">Q[+231]</span>GTPVHLNYR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF9.9729.9729.3</td>
+    </tr>
+    <tr>
+      <td>HTSV<span class="loc">Q[+231]</span>TTSSGSGPFTDVR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.10319.10319.3</td>
+    </tr>
+    <tr>
+      <td>VISDGE<span class="loc">Q[+231]</span>GGQQGHR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.4559.4559.3</td>
+    </tr>
+    <tr>
+      <td>TAEGGH<span class="loc">Q[+231]</span>TIPGHEQDHTAVPTDQTGGR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF4.7892.7892.5</td>
+    </tr>
+    <tr>
+      <td>HGYSS<span class="loc">P[+231]</span>AHQVPQHGPLYQSDSGPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.9271.9271.4</td>
+    </tr>
+    <tr>
+      <td>VH<span class="loc">Q[+231]</span>VTPQTHFIS</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF8.10649.10649.3</td>
+    </tr>
+    <tr>
+      <td>AG<span class="loc">Q[+231]</span>PPTAAAAAQPR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.6335.6335.3</td>
+    </tr>
+    <tr>
+      <td>G<span class="loc">P[+231]</span>GTVPPGPGHSHQR</td>
+      <td>1.00</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.4672.4672.4</td>
+    </tr>
+    <tr>
+      <td>SH<span class="loc">P[+231]</span>ASPSPPGPQASPVLPVSYR</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.14181.14181.3</td>
+    </tr>
+    <tr>
+      <td>HT<span class="loc">Q[+231]</span>LTGPALEAWTDR</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.15296.15296.3</td>
+    </tr>
+    <tr>
+      <td>ER<span class="loc">Q[+231]</span>PDGTPGGSGAAVAPAAGQGSHSR</td>
+      <td>0.99</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.6676.6676.4</td>
+    </tr>
+    <tr>
+      <td>TTNAG<span class="loc">P[+231]</span>LHPYWPQHLR</td>
+      <td>0.92</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF10.14189.14189.4</td>
+    </tr>
+    <tr>
+      <td>LAGTES<span class="loc">P[+231]</span>VREEPGEDFPAAR</td>
+      <td>0.91</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.12843.12843.3</td>
+    </tr>
+    <tr>
+      <td>AGS<span class="loc">P[+231]</span>TAPVHDESLVGPVDPSSGQQSR</td>
+      <td>0.88</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.13610.13610.3</td>
+    </tr>
+    <tr>
+      <td>SS<span class="loc">P[+231]</span>WQQPPPLQQR</td>
+      <td>0.84</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.13413.13413.3</td>
+    </tr>
+    <tr>
+      <td>EASITVSVLHGTHSG<span class="loc">P[+231]</span>SYTPVPGSTRPIR</td>
+      <td>0.82</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.14199.14199.5</td>
+    </tr>
+    <tr>
+      <td>SLEHSEGPVGRDPAGP<span class="loc">P[+231]</span>DGGPDTEPR</td>
+      <td>0.72</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.10398.10398.4</td>
+    </tr>
+    <tr>
+      <td>TL<span class="loc">P[+231]</span>PLPPGPTPAQQPGR</td>
+      <td>0.70</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.15513.15513.3</td>
+    </tr>
+    <tr>
+      <td>TT<span class="loc">P[+231]</span>QTTRPGPGTER</td>
+      <td>0.56</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.5807.5807.3</td>
+    </tr>
+    <tr>
+      <td>F<span class="loc">Q[+231]</span>SPYEEQLEQQR</td>
+      <td>0.51</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.12411.12411.3</td>
+    </tr>
+    <tr>
+      <td>MTTNAGPLH<span class="loc">P[+231]</span>YWPQHLR</td>
+      <td>0.48</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF11.14957.14957.4</td>
+    </tr>
+    <tr>
+      <td>A<span class="loc">P[+231]</span>GGRPAPSQDLNQR</td>
+      <td>0.18</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.6145.6145.3</td>
+    </tr>
+    <tr>
+      <td>FR<span class="loc">P[+231]</span>HHPEERPTTAAGTSLDR</td>
+      <td>0.04</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF6.7346.7346.4</td>
+    </tr>
+    <tr>
+      <td>ES<span class="loc">P[+231]</span>PQQQPPRLPPEVEAGQR</td>
+      <td>0.02</td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.13037.13037.3</td>
+    </tr>
+    <tr>
+      <td>SATAGSEGGFLAPEYR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.15142.15142.3</td>
+    </tr>
+    <tr>
+      <td>GTAAAAAAAAAAAAAGEGAR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF5.14109.14109.3</td>
+    </tr>
+    <tr>
+      <td>APVPTGEVYFADSFDR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF1.19037.19037.3</td>
+    </tr>
+    <tr>
+      <td>DLNISHINAATGTSASLVYR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF7.17052.17052.3</td>
+    </tr>
+    <tr>
+      <td>GTPGPPPAHGAALQPHPR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF12.7441.7441.4</td>
+    </tr>
+    <tr>
+      <td>ARETVENLPPLPLDPVLR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF2.20176.20176.3</td>
+    </tr>
+    <tr>
+      <td>HRGQAAQPEPSTGFTATPPAPDSPQEPLVLR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF3.15808.15808.4</td>
+    </tr>
+    <tr>
+      <td>TAHLGANPWR</td>
+      <td></td>
+      <td>140721_Fusion_Yoshiki_HEK_T2KO_TCL_VVA050614_2h_LC_2_HCD_ETD_50%_IEF10.10122.10122.3</td>
+    </tr>
+  </tbody>
+</table>
+  
+</div>
+</body>
+<script type="text/javascript">
+  function getMassShift(elem) {
+    eid = elem.parentElement.id;
+    return document.getElementById(eid.replace("col1", "col0")).children[0].text;
+  };
+  function hideTablesAndLegend() {
+    var tables = document.getElementsByClassName('peptide_table');
+    for(j = 0; j < tables.length; j++) {
+        tables[j].style.display = 'none';
+      };
+    document.getElementById('legend').style.display = 'none';
+    // document.getElementById('table_header').textContent = "";
+  };
+  function showPic(src) {
+    hideTablesAndLegend();
+    var pic = document.getElementById('pic');
+    pic.src = src;
+    pic.style.display = 'block';
+    if (src == 'summary.png') {
+      pic.classList.add('summary');
+      pic.classList.remove('figure');
+    }
+    else {
+      pic.classList.remove('summary');
+      pic.classList.add('figure');
+    }
+  }
+
+  function showTable(elem) {
+    hideTablesAndLegend();
+    var ms = getMassShift(elem);
+    showPic(ms + '.png');
+    document.getElementById('peptides_'+ms).style.display = 'block';
+    // document.getElementById('table_header').textContent = "Mass shift " + ms + " (" + elem.text + " peptides)";
+  }
+
+  var shifts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col0');
+  for(i = 0; i < shifts.length; i++) {
+    shifts[i].children[0].onclick = function (e) {
+      showPic(e.target.text + '.png');
+      document.getElementById('legend').style.display = 'block';
+    }
+  }
+
+  var binh = document.getElementById('binh');
+  binh.onclick = function (e) {
+    showPic('summary.png');
+    hideTablesAndLegend();
+  }
+
+  var amounts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col1');
+  for(i = 0; i < amounts.length; i++) {
+    amounts[i].children[0].onclick = function (e) {
+      document.getElementById('pic').style.display = 'none';
+      showTable(e.target);
+    }
+  }
+  var reference = "+32.0572";
+  var table = document.getElementById("T_aa_stat_table");
+  for (var i = 0, row; row = table.rows[i]; i++) {
+    var ms = row.cells[0].innerText;
+    if (ms == reference) {
+      row.title = "Reference mass shift";
+      break;
+    }
+  }
+
+</script>
+</html>
