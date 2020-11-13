@@ -18,3 +18,5 @@ The list of datasets corresponds to Supplementary Table S1 in [this biorXiv prep
 14. [PXD014565 SILAC subset 22204](PXD014565/SILAC/22204/os_step_2/report.html)
 15. [PXD014565 SILAC subset 22208](PXD014565/SILAC/22208/os_step_2/report.html)
 16. [CPTAC colon cancer data from study S037 (sample 01)](01_CPTAC_COprospective_Proteome_VU_20150901/os_step_2/report.html)
+
+Additionally, we provide the AA_stat report on all of [CPTAC colon cancer data from study S037](CPTAC_Colon_Cancer_S037/report.html).
