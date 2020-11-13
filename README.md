@@ -1,5 +1,6 @@
 # AA_stat report examples
 This page hosts example output of [AA_stat tool](https://github.com/SimpleNumber/aa_stat) for several datasets.
+The list of datasets corresponds to Supplementary Table S1 in [this biorXiv preprint](https://www.biorxiv.org/content/10.1101/2020.09.07.286161v1.supplementary-material).
 
 1. [PXD014565 TMT subset 63](PXD014565/TMT/63/os_step_3/report.html)
 2. [PXD014565 TMT subset 61](PXD014565/TMT/61/os_step_3/report.html)
