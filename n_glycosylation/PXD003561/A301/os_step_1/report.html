@@ -12,7 +12,7 @@
         #mods_outer {
           text-align: center;
         }
-        #fixmod {
+        #mod_container {
           display: flex;
           margin-top: 1vh;
           margin-bottom: 1vh;
@@ -76,6 +76,12 @@
         .loc {
           color: #FF0000;
         }
+        .vmod_loc {
+          color: #0000FF;
+        }
+        .nterm, .cterm {
+          color: #808080;
+        }
         #legend p {
           max-width: 25vw;
           margin-left: 1vw;
@@ -91,6 +97,23 @@
           text-align: center;
           width: fit-content;
         }
+        #meta {
+          text-align: center;
+        }
+        .note, .expand_info {
+          font-size: 75%;
+        }
+        .isotope_error {
+          background-color: #e0e0e0;
+        }
+        .highlighted {
+          background-color: lightyellow;
+        }
+        .has_tooltip::after {
+          content: "\002060\01F6C8";
+          vertical-align: super;
+          font-size: 75%;
+        }
     </style>
 </head>
 <body>
@@ -98,10 +121,11 @@
 <a class="next steplink" href="../os_step_2/report.html">Next step</a></div>
 <div id="mods_outer">
   <h3>Modifications</h3>
-  <div id="fixmod">
-    <div id="set_mods" class="modtable">
+  <div id="mod_container">
+    <div id="set_fmods" class="modtable">
     Set modifications: none.
     </div>
+    
     <div id="rec_mods" class="modtable">
     <style  type="text/css" >
 </style><table id="T_rec_fix_mod_table" ><caption>Recommended, fixed</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >N</th>    </tr></thead><tbody>
@@ -143,7 +167,7 @@
           text-align: center;
     }    #T_aa_stat_table td, th {
           border: 1px solid black;
-    }#T_aa_stat_tablerow0_col0,#T_aa_stat_tablerow0_col2,#T_aa_stat_tablerow0_col3,#T_aa_stat_tablerow0_col4,#T_aa_stat_tablerow0_col5,#T_aa_stat_tablerow0_col6,#T_aa_stat_tablerow0_col7,#T_aa_stat_tablerow0_col8,#T_aa_stat_tablerow0_col9,#T_aa_stat_tablerow0_col10,#T_aa_stat_tablerow0_col11,#T_aa_stat_tablerow0_col12,#T_aa_stat_tablerow0_col13,#T_aa_stat_tablerow0_col14,#T_aa_stat_tablerow0_col15,#T_aa_stat_tablerow0_col16,#T_aa_stat_tablerow0_col17,#T_aa_stat_tablerow0_col18,#T_aa_stat_tablerow0_col19,#T_aa_stat_tablerow0_col20,#T_aa_stat_tablerow0_col21,#T_aa_stat_tablerow0_col22,#T_aa_stat_tablerow0_col23,#T_aa_stat_tablerow0_col24,#T_aa_stat_tablerow0_col25,#T_aa_stat_tablerow0_col26,#T_aa_stat_tablerow0_col27,#T_aa_stat_tablerow0_col28{
+    }#T_aa_stat_tablerow0_col0,#T_aa_stat_tablerow0_col2,#T_aa_stat_tablerow0_col3,#T_aa_stat_tablerow0_col4,#T_aa_stat_tablerow0_col5,#T_aa_stat_tablerow0_col6,#T_aa_stat_tablerow0_col7,#T_aa_stat_tablerow0_col8,#T_aa_stat_tablerow0_col9,#T_aa_stat_tablerow0_col10,#T_aa_stat_tablerow0_col11,#T_aa_stat_tablerow0_col12,#T_aa_stat_tablerow0_col13,#T_aa_stat_tablerow0_col14,#T_aa_stat_tablerow0_col15,#T_aa_stat_tablerow0_col16,#T_aa_stat_tablerow0_col17,#T_aa_stat_tablerow0_col18,#T_aa_stat_tablerow0_col19,#T_aa_stat_tablerow0_col20,#T_aa_stat_tablerow0_col21,#T_aa_stat_tablerow0_col22,#T_aa_stat_tablerow0_col23,#T_aa_stat_tablerow0_col24,#T_aa_stat_tablerow0_col25,#T_aa_stat_tablerow0_col26,#T_aa_stat_tablerow0_col27,#T_aa_stat_tablerow0_col28,#T_aa_stat_tablerow0_col29{
             background-color:  #cccccc;
         }#T_aa_stat_tablerow0_col1{
             background-color:  #cccccc;
@@ -159,7 +183,7 @@
         }#T_aa_stat_tablerow2_col1{
             width:  10em;
              height:  80%;
-        }</style><table id="T_aa_stat_table" ><thead>    <tr>        <th class="col_heading level0 col0" ><a id="binh" href="#">mass shift</a></th>        <th class="col_heading level0 col1" ># peptides in bin</th>        <th class="col_heading level0 col2" >M</th>        <th class="col_heading level0 col3" >D</th>        <th class="col_heading level0 col4" >Q</th>        <th class="col_heading level0 col5" >C</th>        <th class="col_heading level0 col6" >L</th>        <th class="col_heading level0 col7" >H</th>        <th class="col_heading level0 col8" >S</th>        <th class="col_heading level0 col9" >R</th>        <th class="col_heading level0 col10" >A</th>        <th class="col_heading level0 col11" >W</th>        <th class="col_heading level0 col12" >Y</th>        <th class="col_heading level0 col13" >P</th>        <th class="col_heading level0 col14" >F</th>        <th class="col_heading level0 col15" >V</th>        <th class="col_heading level0 col16" >N</th>        <th class="col_heading level0 col17" >T</th>        <th class="col_heading level0 col18" >E</th>        <th class="col_heading level0 col19" >G</th>        <th class="col_heading level0 col20" >I</th>        <th class="col_heading level0 col21" >K</th>        <th class="col_heading level0 col28" >info</th>    </tr></thead><tbody>
+        }</style><table id="T_aa_stat_table" ><thead>    <tr>        <th class="col_heading level0 col0" ><a id="binh" href="#">mass shift</a></th>        <th class="col_heading level0 col1" ># peptides in bin</th>        <th class="col_heading level0 col2" >M</th>        <th class="col_heading level0 col3" >D</th>        <th class="col_heading level0 col4" >Q</th>        <th class="col_heading level0 col5" >C</th>        <th class="col_heading level0 col6" >L</th>        <th class="col_heading level0 col7" >H</th>        <th class="col_heading level0 col8" >S</th>        <th class="col_heading level0 col9" >R</th>        <th class="col_heading level0 col10" >A</th>        <th class="col_heading level0 col11" >W</th>        <th class="col_heading level0 col12" >Y</th>        <th class="col_heading level0 col13" >P</th>        <th class="col_heading level0 col14" >F</th>        <th class="col_heading level0 col15" >V</th>        <th class="col_heading level0 col16" >N</th>        <th class="col_heading level0 col17" >T</th>        <th class="col_heading level0 col18" >E</th>        <th class="col_heading level0 col19" >G</th>        <th class="col_heading level0 col20" >I</th>        <th class="col_heading level0 col21" >K</th>        <th class="col_heading level0 col29" >Possible interpretations</th>    </tr></thead><tbody>
                 <tr>
                                 <td id="T_aa_stat_tablerow0_col0" class="data row0 col0" ><a href="#">+0.9845</a></td>
                         <td id="T_aa_stat_tablerow0_col1" class="data row0 col1" ><a href="#">240</a></td>
@@ -183,7 +207,7 @@
                         <td id="T_aa_stat_tablerow0_col19" class="data row0 col19" >1.000</td>
                         <td id="T_aa_stat_tablerow0_col20" class="data row0 col20" >1.000</td>
                         <td id="T_aa_stat_tablerow0_col21" class="data row0 col21" >1.000</td>
-                                                                        <td id="T_aa_stat_tablerow0_col28" class="data row0 col28" ><a href="http://www.unimod.org/modifications_view.php?editid1=632">Gln->Glu</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=621">Asn->Asp</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=7">Deamidated</a></td>
+                                                                                <td id="T_aa_stat_tablerow0_col29" class="data row0 col29" ><span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=7">Deamidated</a> (98% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=621">Asn->Asp</a> (93% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=632">Gln->Glu</a> (4% match)</span></td>
             </tr>
             <tr>
                                 <td id="T_aa_stat_tablerow1_col0" class="data row1 col0" ><a href="#">+16.9796</a></td>
@@ -208,7 +232,7 @@
                         <td id="T_aa_stat_tablerow1_col19" class="data row1 col19" >0.871</td>
                         <td id="T_aa_stat_tablerow1_col20" class="data row1 col20" >0.770</td>
                         <td id="T_aa_stat_tablerow1_col21" class="data row1 col21" >0.749</td>
-                                                                        <td id="T_aa_stat_tablerow1_col28" class="data row1 col28" ></td>
+                                                                                <td id="T_aa_stat_tablerow1_col29" class="data row1 col29" ></td>
             </tr>
             <tr>
                                 <td id="T_aa_stat_tablerow2_col0" class="data row2 col0" ><a href="#">+58.0060</a></td>
@@ -233,7 +257,7 @@
                         <td id="T_aa_stat_tablerow2_col19" class="data row2 col19" >1.139</td>
                         <td id="T_aa_stat_tablerow2_col20" class="data row2 col20" >1.008</td>
                         <td id="T_aa_stat_tablerow2_col21" class="data row2 col21" >0.936</td>
-                                                                        <td id="T_aa_stat_tablerow2_col28" class="data row2 col28" ><a href="http://www.unimod.org/modifications_view.php?editid1=576">Gly->Asp</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=545">Ala->Glu</a>, <a href="http://www.unimod.org/modifications_view.php?editid1=6">Carboxymethyl</a></td>
+                                                                                <td id="T_aa_stat_tablerow2_col29" class="data row2 col29" ><span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=6">Carboxymethyl</a> (81% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=576">Gly->Asp</a> (8% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=545">Ala->Glu</a> (3% match)</span></td>
             </tr>
     </tbody></table>
 </div>
@@ -273,1202 +297,1202 @@
   </thead>
   <tbody>
     <tr>
-      <td>DDALK<span class="loc">N[+1]</span>LSHTPVSK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AAE<span class="loc">N[+1]</span>FTLLVK<span class="cterm">.<span class="next_aa">N</span></span></td>
       <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.2193.2193.3</td>
+      <td>120621_ZhangH_YW_A301_1.4508.4508.2</td>
     </tr>
     <tr>
-      <td>G<span class="loc">N[+1]</span>TSGVLVVLTK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.4235.4235.2</td>
-    </tr>
-    <tr>
-      <td>I<span class="loc">N[+1]</span>VTTLKDDGDISK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.2748.2748.3</td>
-    </tr>
-    <tr>
-      <td>TV<span class="loc">N[+1]</span>VSVPKK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_3.1110.1110.2</td>
-    </tr>
-    <tr>
-      <td>VGAETNGSKDAL<span class="loc">N[+1]</span>K</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_3.946.946.2</td>
-    </tr>
-    <tr>
-      <td>K<span class="loc">N[+1]</span>ITDLVEGAK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.2904.2904.2</td>
-    </tr>
-    <tr>
-      <td>LI<span class="loc">N[+1]</span>SSTAEPVKEEAK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.1287.1287.3</td>
-    </tr>
-    <tr>
-      <td>DGHGTAIS<span class="loc">N[+1]</span>ASDVWK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.3129.3129.3</td>
-    </tr>
-    <tr>
-      <td>YHVLHI<span class="loc">N[+1]</span>TTK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.1544.1544.3</td>
-    </tr>
-    <tr>
-      <td>ALSP<span class="loc">N[+1]</span>STISSAPK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_3.1815.1815.2</td>
-    </tr>
-    <tr>
-      <td>DSVI<span class="loc">N[+1]</span>LSESVEDGPK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.4466.4466.2</td>
-    </tr>
-    <tr>
-      <td>MTAPAGP<span class="loc">R[+1]</span></td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.4768.4768.2</td>
-    </tr>
-    <tr>
-      <td>ITAPTLAPG<span class="loc">N[+1]</span>STAVVPTPTPPSK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.4108.4108.2</td>
-    </tr>
-    <tr>
-      <td>KVEVEAV<span class="loc">N[+1]</span>STSVK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.1298.1298.3</td>
-    </tr>
-    <tr>
-      <td>GS<span class="loc">N[+1]</span>YSEILDK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_1.2710.2710.2</td>
-    </tr>
-    <tr>
-      <td>SISE<span class="loc">N[+1]</span>ATATAAPK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SISE<span class="loc">N[+1]</span>ATATAAPK<span class="cterm">.<span class="next_aa">M</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.1233.1233.2</td>
     </tr>
     <tr>
-      <td>TVLE<span class="loc">N[+1]</span>STSYEEAK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>F<span class="loc">N[+1]</span>SSSSSLEEK<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.1286.1286.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TV<span class="loc">N[+1]</span>VSVPKK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.1110.1110.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GHT<span class="loc">N[+1]</span>GTKPLDGFDVWK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.4051.4051.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GE<span class="loc">N[+1]</span>FTETDVK<span class="cterm">.<span class="next_aa">M</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.1647.1647.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TL<span class="loc">N[+1]</span>SSGLPFGSYTFEK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.5989.5989.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ALSP<span class="loc">N[+1]</span>STISSAPK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.1815.1815.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TVLE<span class="loc">N[+1]</span>STSYEEAK<span class="cterm">.<span class="next_aa">N</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_1.1856.1856.2</td>
     </tr>
     <tr>
-      <td>SV<span class="loc">N[+1]</span>TSVHIYDK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ITAPTLAPG<span class="loc">N[+1]</span>STAVVPTPTPPSK<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.1671.1671.2</td>
+      <td>120621_ZhangH_YW_A301_2.4108.4108.2</td>
     </tr>
     <tr>
-      <td>IDPVTG<span class="loc">N[+1]</span>ITLEEKPAPTDVGLHR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.4080.4080.4</td>
-    </tr>
-    <tr>
-      <td>VVVVDGK<span class="loc">N[+1]</span>ESEYTVK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.1937.1937.2</td>
-    </tr>
-    <tr>
-      <td>IVDV<span class="loc">N[+1]</span>LTSEGK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.2589.2589.2</td>
-    </tr>
-    <tr>
-      <td>YTLDP<span class="loc">N[+1]</span>ITSAGPTK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_1.3043.3043.2</td>
-    </tr>
-    <tr>
-      <td>GEGESPPVNGTDEAAGATGDAIEPAPPS<span class="loc">Q[+1]</span>GAEAK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.2695.2695.3</td>
-    </tr>
-    <tr>
-      <td>LSP<span class="loc">N[+1]</span>ASAEHLELR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_3.2461.2461.3</td>
-    </tr>
-    <tr>
-      <td>VPGSTPALHSSPAQPPAETA<span class="loc">N[+1]</span>GTSEQHVR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.1448.1448.4</td>
-    </tr>
-    <tr>
-      <td>GYY<span class="loc">N[+1]</span>QSEDGSHTLQR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.1449.1449.2</td>
-    </tr>
-    <tr>
-      <td>TS<span class="loc">N[+1]</span>ISKPGTLER</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.1175.1175.3</td>
-    </tr>
-    <tr>
-      <td>AFSEVPTTA<span class="loc">N[+1]</span>GSTK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.1709.1709.2</td>
-    </tr>
-    <tr>
-      <td>LE<span class="loc">N[+1]</span>ITTGTYTIHAQK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.2775.2775.3</td>
-    </tr>
-    <tr>
-      <td>KKP<span class="loc">N[+1]</span>ATAEPTPPDR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.862.862.3</td>
-    </tr>
-    <tr>
-      <td><span class="loc">N[+1]</span>ASAVVLYNEER</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.3078.3078.2</td>
-    </tr>
-    <tr>
-      <td>ELIS<span class="loc">N[+1]</span>ASDALDKIR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.4892.4892.3</td>
-    </tr>
-    <tr>
-      <td>L<span class="loc">N[+1]</span>ASLPALLLIR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.7603.7603.2</td>
-    </tr>
-    <tr>
-      <td><span class="loc">N[+1]</span>ISGVVLADHSGAFHNK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.3115.3115.3</td>
-    </tr>
-    <tr>
-      <td>TA<span class="loc">N[+1]</span>HSAPSLENSVQPGK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.1438.1438.3</td>
-    </tr>
-    <tr>
-      <td><span class="loc">N[+1]</span>YTADYDKTLIFNK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.4474.4474.3</td>
-    </tr>
-    <tr>
-      <td>STYNDTEDVS<span class="loc">Q[+1]</span>ASPSESEAR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.1627.1627.2</td>
-    </tr>
-    <tr>
-      <td>EIA<span class="loc">N[+1]</span>ATAKPEDR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.944.944.2</td>
-    </tr>
-    <tr>
-      <td>GL<span class="loc">N[+1]</span>LTEDTYKPR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.2525.2525.3</td>
-    </tr>
-    <tr>
-      <td>EAG<span class="loc">N[+1]</span>HTSGAGLVQINK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_3.1671.1671.3</td>
-    </tr>
-    <tr>
-      <td>LQGLENWGQDPGVSA<span class="loc">N[+1]</span>ASK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.4222.4222.2</td>
-    </tr>
-    <tr>
-      <td>GRDIYTFDGAL<span class="loc">N[+1]</span>K</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.3461.3461.2</td>
-    </tr>
-    <tr>
-      <td>V<span class="loc">N[+1]</span>ESVVSIAAQQK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.2751.2751.2</td>
-    </tr>
-    <tr>
-      <td>ELII<span class="loc">N[+1]</span>ETVPNR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.3478.3478.3</td>
-    </tr>
-    <tr>
-      <td>E<span class="loc">N[+1]</span>STDYLYPEQLK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.3942.3942.2</td>
-    </tr>
-    <tr>
-      <td>AQLTNPEVKY<span class="loc">N[+1]</span>YTEDPTILR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.4386.4386.3</td>
-    </tr>
-    <tr>
-      <td>EVHSGVSTDPQPLKEQPAL<span class="loc">N[+1]</span>DSR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.1966.1966.3</td>
-    </tr>
-    <tr>
-      <td>EV<span class="loc">N[+1]</span>ITIIDRK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.3033.3033.3</td>
-    </tr>
-    <tr>
-      <td>DA<span class="loc">N[+1]</span>LTGLSDNKEIFLSK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.4799.4799.3</td>
-    </tr>
-    <tr>
-      <td>HLLE<span class="loc">N[+1]</span>STASVSEAERK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.1524.1524.3</td>
-    </tr>
-    <tr>
-      <td>ALGDLPHHF<span class="loc">N[+1]</span>ASTQPAYLR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.4047.4047.3</td>
-    </tr>
-    <tr>
-      <td>I<span class="loc">N[+1]</span>YTVPQSGTFK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.3258.3258.2</td>
-    </tr>
-    <tr>
-      <td>A<span class="loc">N[+1]</span>LTTLAGTHTNIPK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_1.2721.2721.3</td>
-    </tr>
-    <tr>
-      <td>DA<span class="loc">N[+1]</span>LTGLSDNK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.1914.1914.2</td>
-    </tr>
-    <tr>
-      <td>IKLD<span class="loc">N[+1]</span>YSTQELGK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.2922.2922.2</td>
-    </tr>
-    <tr>
-      <td>IY<span class="loc">N[+1]</span>VTYLEPSLR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_3.5223.5223.2</td>
-    </tr>
-    <tr>
-      <td>ALT<span class="loc">N[+1]</span>GSLPAGTR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.1763.1763.2</td>
-    </tr>
-    <tr>
-      <td>S<span class="loc">N[+1]</span>SSGTPGATSSTGFQESR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.1329.1329.2</td>
-    </tr>
-    <tr>
-      <td>YKPDTLAVAVE<span class="loc">N[+1]</span>GTGTDR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_3.3383.3383.3</td>
-    </tr>
-    <tr>
-      <td>E<span class="loc">N[+1]</span>TSDPSLVIAFGR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_1.4953.4953.2</td>
-    </tr>
-    <tr>
-      <td>L<span class="loc">N[+1]</span>GTDPIVAADSKR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.1680.1680.3</td>
-    </tr>
-    <tr>
-      <td>AEPPL<span class="loc">N[+1]</span>ASASDQGEK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.1350.1350.3</td>
-    </tr>
-    <tr>
-      <td>APDTA<span class="loc">N[+1]</span>LTTAALFR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.5479.5479.2</td>
-    </tr>
-    <tr>
-      <td>LLDAENKVVA<span class="loc">N[+1]</span>GTGTQGQLK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.2459.2459.3</td>
-    </tr>
-    <tr>
-      <td>HLLE<span class="loc">N[+1]</span>STASVSEAER</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.1849.1849.3</td>
-    </tr>
-    <tr>
-      <td>G<span class="loc">N[+1]</span>ETGLITPNK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.1657.1657.2</td>
-    </tr>
-    <tr>
-      <td>Y<span class="loc">N[+1]</span>GTVGLWR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.3957.3957.2</td>
-    </tr>
-    <tr>
-      <td>LVALAVIDEK<span class="loc">N[+1]</span>TSVEHTR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.3369.3369.4</td>
-    </tr>
-    <tr>
-      <td>YA<span class="loc">N[+1]</span>ITVDYLYNK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.5016.5016.2</td>
-    </tr>
-    <tr>
-      <td>DT<span class="loc">N[+1]</span>GSQFFITTVK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_3.4749.4749.2</td>
-    </tr>
-    <tr>
-      <td>G<span class="loc">N[+1]</span>VTSLSLSSNR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.2275.2275.2</td>
-    </tr>
-    <tr>
-      <td>IS<span class="loc">N[+1]</span>LTIVQAEIK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_1.4661.4661.2</td>
-    </tr>
-    <tr>
-      <td>TDY<span class="loc">N[+1]</span>ASVSVPDSSGPER</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.2286.2286.2</td>
-    </tr>
-    <tr>
-      <td>E<span class="loc">N[+1]</span>ATVPENEEEIIRK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.2266.2266.3</td>
-    </tr>
-    <tr>
-      <td>NILP<span class="loc">N[+1]</span>ITTTYLK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.5814.5814.2</td>
-    </tr>
-    <tr>
-      <td>I<span class="loc">N[+1]</span>ATDADEPNTLNSK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.1524.1524.2</td>
-    </tr>
-    <tr>
-      <td>NAIA<span class="loc">N[+1]</span>ASTLAEVER</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.3883.3883.2</td>
-    </tr>
-    <tr>
-      <td>YY<span class="loc">N[+1]</span>YTLSINGK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_1.3639.3639.2</td>
-    </tr>
-    <tr>
-      <td><span class="loc">N[+1]</span>STIEAANLAGLK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.3953.3953.2</td>
-    </tr>
-    <tr>
-      <td>AA<span class="loc">N[+1]</span>YTSSLNLPDK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.3268.3268.2</td>
-    </tr>
-    <tr>
-      <td>DLGPTLA<span class="loc">N[+1]</span>STHHNVR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.1592.1592.3</td>
-    </tr>
-    <tr>
-      <td>EDNPDKNPEAPL<span class="loc">N[+1]</span>VSR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.1663.1663.3</td>
-    </tr>
-    <tr>
-      <td>DG<span class="loc">N[+1]</span>VSYAWYR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.3938.3938.2</td>
-    </tr>
-    <tr>
-      <td>TVTTSGTT<span class="loc">N[+1]</span>NTVTPTSQPVRK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.1156.1156.2</td>
-    </tr>
-    <tr>
-      <td>DGTPLSDGQS<span class="loc">N[+1]</span>HTVSSK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_1.1202.1202.3</td>
-    </tr>
-    <tr>
-      <td>DGGSG<span class="loc">N[+1]</span>STIIVSR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.1667.1667.2</td>
-    </tr>
-    <tr>
-      <td>KPDPAEQQ<span class="loc">N[+1]</span>VTQVAHSPQGYNTAR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.1573.1573.4</td>
-    </tr>
-    <tr>
-      <td>ELII<span class="loc">N[+1]</span>ETVPNRFSPK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.4240.4240.2</td>
-    </tr>
-    <tr>
-      <td>KDFEDLYTPV<span class="loc">N[+1]</span>GSIVIVR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.5813.5813.3</td>
-    </tr>
-    <tr>
-      <td><span class="loc">N[+1]</span>ITIVTGAPR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.2590.2590.2</td>
-    </tr>
-    <tr>
-      <td>L<span class="loc">N[+1]</span>GSLATFSTDQELR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_1.4269.4269.2</td>
-    </tr>
-    <tr>
-      <td>GVFIT<span class="loc">N[+1]</span>ETGQPLIGK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.4813.4813.2</td>
-    </tr>
-    <tr>
-      <td>SPVQE<span class="loc">N[+1]</span>SSDLNK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.1129.1129.2</td>
-    </tr>
-    <tr>
-      <td>DHP<span class="loc">N[+1]</span>ATVWR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_3.1596.1596.2</td>
-    </tr>
-    <tr>
-      <td>YHGFL<span class="loc">N[+1]</span>TSYHR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.2123.2123.3</td>
-    </tr>
-    <tr>
-      <td>KD<span class="loc">N[+1]</span>ITAHNISWR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.2054.2054.3</td>
-    </tr>
-    <tr>
-      <td>KSDTQNLLY<span class="loc">N[+1]</span>VSTGR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.3825.3825.3</td>
-    </tr>
-    <tr>
-      <td>IAPAS<span class="loc">N[+1]</span>VSHTVVLRPLK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_3.2629.2629.4</td>
-    </tr>
-    <tr>
-      <td>NQAIITDET<span class="loc">N[+1]</span>DSLVAPQEK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.3581.3581.2</td>
-    </tr>
-    <tr>
-      <td>E<span class="loc">N[+1]</span>GTDTVQEEEESPAEGSK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.1304.1304.2</td>
-    </tr>
-    <tr>
-      <td>KDV<span class="loc">N[+1]</span>YTQIVVDR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_2.2991.2991.2</td>
-    </tr>
-    <tr>
-      <td>VPVASPSAH<span class="loc">N[+1]</span>ISSSGGAPDR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_2.1430.1430.3</td>
-    </tr>
-    <tr>
-      <td>GYY<span class="loc">N[+1]</span>QSEAGSHTLQR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.1421.1421.3</td>
-    </tr>
-    <tr>
-      <td>EL<span class="loc">N[+1]</span>LSANALK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.3470.3470.2</td>
-    </tr>
-    <tr>
-      <td>GNVISSHGNPILL<span class="loc">N[+1]</span>SSIPEDPSIK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_3.5073.5073.3</td>
-    </tr>
-    <tr>
-      <td>NP<span class="loc">N[+1]</span>GTVTVISR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_1.1571.1571.2</td>
-    </tr>
-    <tr>
-      <td><span class="loc">N[+1]</span>STFGSVEVHNLQPEK</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301_3.3121.3121.2</td>
-    </tr>
-    <tr>
-      <td>RFANEYP<span class="loc">N[+1]</span>ITR</td>
-      <td>1.00</td>
-      <td>120621_ZhangH_YW_A301i_1.2074.2074.3</td>
-    </tr>
-    <tr>
-      <td>G<span class="loc">N[+1]</span>ETLHYETFGK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>G<span class="loc">N[+1]</span>ETLHYETFGK<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.2300.2300.3</td>
     </tr>
     <tr>
-      <td>FV<span class="loc">N[+1]</span>STGYLTEAEK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DDALK<span class="loc">N[+1]</span>LSHTPVSK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.2193.2193.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VVVVDGK<span class="loc">N[+1]</span>ESEYTVK<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1937.1937.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LI<span class="loc">N[+1]</span>SSTAEPVKEEAK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.1287.1287.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FV<span class="loc">N[+1]</span>STGYLTEAEK<span class="cterm">.<span class="next_aa">F</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.3482.3482.2</td>
     </tr>
     <tr>
-      <td>LSQAQG<span class="loc">N[+1]</span>LSVLETR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DSVI<span class="loc">N[+1]</span>LSESVEDGPK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.4466.4466.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AFSEVPTTA<span class="loc">N[+1]</span>GSTK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.1709.1709.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVDV<span class="loc">N[+1]</span>LTSEGK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.2589.2589.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VGAETNGSKDAL<span class="loc">N[+1]</span>K<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.946.946.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DGHGTAIS<span class="loc">N[+1]</span>ASDVWK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.3129.3129.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>K<span class="loc">N[+1]</span>ITDLVEGAK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.2904.2904.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YHVLHI<span class="loc">N[+1]</span>TTK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1544.1544.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IDPVTG<span class="loc">N[+1]</span>ITLEEKPAPTDVGLHR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4080.4080.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>G<span class="loc">N[+1]</span>TSGVLVVLTK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.4235.4235.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AAS<span class="loc">N[+1]</span>FTEIK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.1955.1955.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEGESPPVNGTDEAAGATGDAIEPAPPS<span class="loc">Q[+1]</span>GAEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.2695.2695.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LW<span class="loc">N[+1]</span>STFLEEYSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.6235.6235.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>I<span class="loc">N[+1]</span>VTTLKDDGDISK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.2748.2748.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GS<span class="loc">N[+1]</span>YSEILDK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.2710.2710.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YTLDP<span class="loc">N[+1]</span>ITSAGPTK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.3043.3043.2</td>
+    </tr>
+    <tr>
+      <td>-.MTAPAGP<span class="loc">R[+1]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4768.4768.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AGP<span class="loc">N[+1]</span>GTLFVADAYK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.4541.4541.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SV<span class="loc">N[+1]</span>TSVHIYDK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1671.1671.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>A<span class="loc">N[+1]</span>STSDSVFTETPSPVLK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.4158.4158.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>KVEVEAV<span class="loc">N[+1]</span>STSVK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.1298.1298.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LSP<span class="loc">N[+1]</span>ASAEHLELR<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.2461.2461.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GRDIYTFDGAL<span class="loc">N[+1]</span>K<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.3461.3461.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VPGSTPALHSSPAQPPAETA<span class="loc">N[+1]</span>GTSEQHVR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.1448.1448.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GYY<span class="loc">N[+1]</span>QSEDGSHTLQR<span class="cterm">.<span class="next_aa">M</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1449.1449.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TS<span class="loc">N[+1]</span>ISKPGTLER<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.1175.1175.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">N[+1]</span>ISGVVLADHSGAFHNK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.3115.3115.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LE<span class="loc">N[+1]</span>ITTGTYTIHAQK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.2775.2775.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>KKP<span class="loc">N[+1]</span>ATAEPTPPDR<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.862.862.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">N[+1]</span>ASAVVLYNEER<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.3078.3078.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LNPTVTYG<span class="loc">N[+1]</span>DSFSAK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.3319.3319.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ELIS<span class="loc">N[+1]</span>ASDALDKIR<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4892.4892.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>L<span class="loc">N[+1]</span>ASLPALLLIR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.7603.7603.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TA<span class="loc">N[+1]</span>HSAPSLENSVQPGK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1438.1438.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">N[+1]</span>YTADYDKTLIFNK<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4474.4474.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SGTIFDNFLITNDEAYAEEFG<span class="loc">N[+1]</span>ETWGVTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.7855.7855.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>STYNDTEDVS<span class="loc">Q[+1]</span>ASPSESEAR<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.1627.1627.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>EIA<span class="loc">N[+1]</span>ATAKPEDR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.944.944.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GL<span class="loc">N[+1]</span>LTEDTYKPR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.2525.2525.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>E<span class="loc">N[+1]</span>TSDPSLVIAFGR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.4953.4953.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>EAG<span class="loc">N[+1]</span>HTSGAGLVQINK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.1671.1671.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LQGLENWGQDPGVSA<span class="loc">N[+1]</span>ASK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4222.4222.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>V<span class="loc">N[+1]</span>ESVVSIAAQQK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.2751.2751.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ELII<span class="loc">N[+1]</span>ETVPNR<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.3478.3478.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>E<span class="loc">N[+1]</span>STDYLYPEQLK<span class="cterm">.<span class="next_aa">M</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.3942.3942.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AQLTNPEVKY<span class="loc">N[+1]</span>YTEDPTILR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4386.4386.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>S<span class="loc">N[+1]</span>SSGTPGATSSTGFQESR<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.1329.1329.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">N[+1]</span>LTTLGIFGAATNK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.6089.6089.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>EVHSGVSTDPQPLKEQPAL<span class="loc">N[+1]</span>DSR<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.1966.1966.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>EV<span class="loc">N[+1]</span>ITIIDRK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.3033.3033.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DA<span class="loc">N[+1]</span>LTGLSDNKEIFLSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4799.4799.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LINKF<span class="loc">N[+1]</span>SSSSSLEEK<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.1973.1973.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HLLE<span class="loc">N[+1]</span>STASVSEAERK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1524.1524.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>L<span class="loc">N[+1]</span>GSLATFSTDQELR<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.4269.4269.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALGDLPHHF<span class="loc">N[+1]</span>ASTQPAYLR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4047.4047.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>I<span class="loc">N[+1]</span>YTVPQSGTFK<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.3258.3258.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>A<span class="loc">N[+1]</span>LTTLAGTHTNIPK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.2721.2721.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>APDTA<span class="loc">N[+1]</span>LTTAALFR<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.5479.5479.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DA<span class="loc">N[+1]</span>LTGLSDNK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.1914.1914.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IKLD<span class="loc">N[+1]</span>YSTQELGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.2922.2922.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IY<span class="loc">N[+1]</span>VTYLEPSLR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.5223.5223.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ALT<span class="loc">N[+1]</span>GSLPAGTR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.1763.1763.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YKPDTLAVAVE<span class="loc">N[+1]</span>GTGTDR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.3383.3383.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>L<span class="loc">N[+1]</span>GTDPIVAADSKR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.1680.1680.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AEPPL<span class="loc">N[+1]</span>ASASDQGEK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1350.1350.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YHGFL<span class="loc">N[+1]</span>TSYHR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.2123.2123.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>V<span class="loc">N[+1]</span>STELFHVDR<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.3171.3171.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>EFNNWF<span class="loc">N[+1]</span>VTGSDK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.5763.5763.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLDAENKVVA<span class="loc">N[+1]</span>GTGTQGQLK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.2459.2459.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HLLE<span class="loc">N[+1]</span>STASVSEAER<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.1849.1849.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLPAF<span class="loc">N[+1]</span>TTSGLPYPR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.5952.5952.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>G<span class="loc">N[+1]</span>ETGLITPNK<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.1657.1657.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>Y<span class="loc">N[+1]</span>GTVGLWR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.3957.3957.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LVALAVIDEK<span class="loc">N[+1]</span>TSVEHTR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.3369.3369.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YA<span class="loc">N[+1]</span>ITVDYLYNK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.5016.5016.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DT<span class="loc">N[+1]</span>GSQFFITTVK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.4749.4749.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AASPIITLVALDEALD<span class="loc">N[+1]</span>YTITFLIR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.7900.7900.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>L<span class="loc">N[+1]</span>FTGPGDPDSIR<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.3787.3787.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>G<span class="loc">N[+1]</span>VTSLSLSSNR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.2275.2275.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">N[+1]</span>STFGSVEVHNLQPEK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.3121.3121.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>EAD<span class="loc">N[+1]</span>HTAFIR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.1413.1413.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IS<span class="loc">N[+1]</span>LTIVQAEIK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.4661.4661.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TDY<span class="loc">N[+1]</span>ASVSVPDSSGPER<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.2286.2286.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>E<span class="loc">N[+1]</span>ATVPENEEEIIRK<span class="cterm">.<span class="next_aa">M</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.2266.2266.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">N[+1]</span>HSIFLADINQER<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.4109.4109.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>NILP<span class="loc">N[+1]</span>ITTTYLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.5814.5814.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>I<span class="loc">N[+1]</span>ATDADEPNTLNSK<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.1524.1524.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>NAIA<span class="loc">N[+1]</span>ASTLAEVER<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.3883.3883.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YY<span class="loc">N[+1]</span>YTLSINGK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.3639.3639.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">N[+1]</span>STIEAANLAGLK<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.3953.3953.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AA<span class="loc">N[+1]</span>YTSSLNLPDK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.3268.3268.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DLGPTLA<span class="loc">N[+1]</span>STHHNVR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.1592.1592.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>EDNPDKNPEAPL<span class="loc">N[+1]</span>VSR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.1663.1663.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DG<span class="loc">N[+1]</span>VSYAWYR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.3938.3938.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TVTTSGTT<span class="loc">N[+1]</span>NTVTPTSQPVRK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1156.1156.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IFDKNSTFGSVEVH<span class="loc">N[+1]</span>LQPEK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.3921.3921.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DGTPLSDGQS<span class="loc">N[+1]</span>HTVSSK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.1202.1202.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DGGSG<span class="loc">N[+1]</span>STIIVSR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.1667.1667.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>KPDPAEQQ<span class="loc">N[+1]</span>VTQVAHSPQGYNTAR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1573.1573.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ELII<span class="loc">N[+1]</span>ETVPNRFSPK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.4240.4240.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>KDFEDLYTPV<span class="loc">N[+1]</span>GSIVIVR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.5813.5813.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">N[+1]</span>ITIVTGAPR<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.2590.2590.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GVFIT<span class="loc">N[+1]</span>ETGQPLIGK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.4813.4813.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SPVQE<span class="loc">N[+1]</span>SSDLNK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.1129.1129.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DHP<span class="loc">N[+1]</span>ATVWR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.1596.1596.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANIQFGD<span class="loc">N[+1]</span>GTTISAVSNK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.3448.3448.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>KD<span class="loc">N[+1]</span>ITAHNISWR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.2054.2054.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>KSDTQNLLY<span class="loc">N[+1]</span>VSTGR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.3825.3825.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GF<span class="loc">N[+1]</span>ATYHVR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.1666.1666.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IAPAS<span class="loc">N[+1]</span>VSHTVVLRPLK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_3.2629.2629.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>NQAIITDET<span class="loc">N[+1]</span>DSLVAPQEK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.3581.3581.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>E<span class="loc">N[+1]</span>GTDTVQEEEESPAEGSK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.1304.1304.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>KDV<span class="loc">N[+1]</span>YTQIVVDR<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.2991.2991.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VPVASPSAH<span class="loc">N[+1]</span>ISSSGGAPDR<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_2.1430.1430.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GYY<span class="loc">N[+1]</span>QSEAGSHTLQR<span class="cterm">.<span class="next_aa">M</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.1421.1421.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>EL<span class="loc">N[+1]</span>LSANALK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.3470.3470.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GNVISSHGNPILL<span class="loc">N[+1]</span>SSIPEDPSIK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.5073.5073.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>NP<span class="loc">N[+1]</span>GTVTVISR<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.1571.1571.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>RFANEYP<span class="loc">N[+1]</span>ITR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_1.2074.2074.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>WGH<span class="loc">N[+1]</span>ITEFQQR<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301_1.2499.2499.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LF<span class="loc">N[+1]</span>VTPQDEQK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_3.2830.2830.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FLSSSPHLPPSSYF<span class="loc">N[+1]</span>ASGR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>120621_ZhangH_YW_A301i_2.4537.4537.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LSQAQG<span class="loc">N[+1]</span>LSVLETR<span class="cterm">.<span class="next_aa">Q</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.3811.3811.2</td>
     </tr>
     <tr>
-      <td>LGAI<span class="loc">N[+1]</span>STLSNQSK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>I<span class="loc">N[+1]</span>TTADEKDPTNPFR<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>0.99</td>
+      <td>120621_ZhangH_YW_A301_1.2176.2176.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LGAI<span class="loc">N[+1]</span>STLSNQSK<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301i_1.1969.1969.2</td>
     </tr>
     <tr>
-      <td>LW<span class="loc">N[+1]</span>STFLEEYSK</td>
-      <td>0.99</td>
-      <td>120621_ZhangH_YW_A301i_1.6235.6235.2</td>
-    </tr>
-    <tr>
-      <td>ELY<span class="loc">N[+1]</span>GTADITLR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ELY<span class="loc">N[+1]</span>GTADITLR<span class="cterm">.<span class="next_aa">F</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301i_2.4142.4142.2</td>
     </tr>
     <tr>
-      <td>SGTIFDNFLITNDEAYAEEFG<span class="loc">N[+1]</span>ETWGVTK</td>
-      <td>0.99</td>
-      <td>120621_ZhangH_YW_A301i_2.7855.7855.3</td>
-    </tr>
-    <tr>
-      <td>EFNNWF<span class="loc">N[+1]</span>VTGSDK</td>
-      <td>0.99</td>
-      <td>120621_ZhangH_YW_A301i_3.5763.5763.2</td>
-    </tr>
-    <tr>
-      <td>SLVTQYL<span class="loc">N[+1]</span>ATGNR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SLVTQYL<span class="loc">N[+1]</span>ATGNR<span class="cterm">.<span class="next_aa">W</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301_2.5117.5117.2</td>
     </tr>
     <tr>
-      <td>AGP<span class="loc">N[+1]</span>GTLFVADAYK</td>
-      <td>0.99</td>
-      <td>120621_ZhangH_YW_A301i_3.4541.4541.2</td>
-    </tr>
-    <tr>
-      <td><span class="loc">N[+1]</span>HSIFLADINQER</td>
-      <td>0.99</td>
-      <td>120621_ZhangH_YW_A301_2.4109.4109.2</td>
-    </tr>
-    <tr>
-      <td>GF<span class="loc">N[+1]</span>ATYHVR</td>
-      <td>0.99</td>
-      <td>120621_ZhangH_YW_A301i_2.1666.1666.3</td>
-    </tr>
-    <tr>
-      <td>LA<span class="loc">N[+1]</span>LTQGEDQYYLR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LA<span class="loc">N[+1]</span>LTQGEDQYYLR<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301i_1.4244.4244.2</td>
     </tr>
     <tr>
-      <td>LINKF<span class="loc">N[+1]</span>SSSSSLEEK</td>
-      <td>0.99</td>
-      <td>120621_ZhangH_YW_A301i_3.1973.1973.3</td>
-    </tr>
-    <tr>
-      <td>HLYTTTGGETDFT<span class="loc">N[+1]</span>VTSLR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>HLYTTTGGETDFT<span class="loc">N[+1]</span>VTSLR<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301_2.4215.4215.3</td>
     </tr>
     <tr>
-      <td>VQG<span class="loc">N[+1]</span>STLLHITDLQAR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VQG<span class="loc">N[+1]</span>STLLHITDLQAR<span class="cterm">.<span class="next_aa">D</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301i_2.4510.4510.3</td>
     </tr>
     <tr>
-      <td>LNPTVTYG<span class="loc">N[+1]</span>DSFSAK</td>
-      <td>0.99</td>
-      <td>120621_ZhangH_YW_A301i_3.3319.3319.2</td>
-    </tr>
-    <tr>
-      <td>DYYPI<span class="loc">N[+1]</span>ESLASLPLR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYYPI<span class="loc">N[+1]</span>ESLASLPLR<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301i_2.7175.7175.2</td>
     </tr>
     <tr>
-      <td>KD<span class="loc">N[+1]</span>TTVTR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>KD<span class="loc">N[+1]</span>TTVTR<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301i_2.368.368.2</td>
     </tr>
     <tr>
-      <td>DFEDLYTPV<span class="loc">N[+1]</span>GSIVIVR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DFEDLYTPV<span class="loc">N[+1]</span>GSIVIVR<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.98</td>
       <td>120621_ZhangH_YW_A301i_1.6828.6828.2</td>
     </tr>
     <tr>
-      <td>TL<span class="loc">N[+1]</span>SSGLPFGSYTFEK</td>
-      <td>0.98</td>
-      <td>120621_ZhangH_YW_A301i_2.5989.5989.2</td>
-    </tr>
-    <tr>
-      <td>IGYSN<span class="loc">N[+1]</span>GSDWK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IGYSN<span class="loc">N[+1]</span>GSDWK<span class="cterm">.<span class="next_aa">M</span></span></td>
       <td>0.98</td>
       <td>120621_ZhangH_YW_A301i_1.2095.2095.2</td>
     </tr>
     <tr>
-      <td>NPVGLIGAE<span class="loc">N[+1]</span>ATGETDPSHSK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>NPVGLIGAE<span class="loc">N[+1]</span>ATGETDPSHSK<span class="cterm">.<span class="next_aa">F</span></span></td>
       <td>0.98</td>
       <td>120621_ZhangH_YW_A301i_2.2795.2795.3</td>
     </tr>
     <tr>
-      <td>LD<span class="loc">N[+1]</span>YSTQELGK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LD<span class="loc">N[+1]</span>YSTQELGK<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>0.98</td>
       <td>120621_ZhangH_YW_A301i_3.1962.1962.2</td>
     </tr>
     <tr>
-      <td>VVA<span class="loc">N[+1]</span>GTGTQGQLK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VVA<span class="loc">N[+1]</span>GTGTQGQLK<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>0.98</td>
       <td>120621_ZhangH_YW_A301_3.1093.1093.2</td>
     </tr>
     <tr>
-      <td>SELVAN<span class="loc">N[+1]</span>VTLPAGEQR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SELVAN<span class="loc">N[+1]</span>VTLPAGEQR<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td>0.98</td>
       <td>120621_ZhangH_YW_A301_3.3229.3229.2</td>
     </tr>
     <tr>
-      <td>ALLT<span class="loc">N[+1]</span>VSSVALGSR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALLT<span class="loc">N[+1]</span>VSSVALGSR<span class="cterm">.<span class="next_aa">R</span></span></td>
       <td>0.98</td>
       <td>120621_ZhangH_YW_A301i_1.5099.5099.2</td>
     </tr>
     <tr>
-      <td><span class="loc">N[+1]</span>LTTLGIFGAATNK</td>
-      <td>0.97</td>
-      <td>120621_ZhangH_YW_A301i_1.6089.6089.2</td>
-    </tr>
-    <tr>
-      <td>A<span class="loc">N[+1]</span>NSWFQSILR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>A<span class="loc">N[+1]</span>NSWFQSILR<span class="cterm">.<span class="next_aa">Q</span></span></td>
       <td>0.97</td>
       <td>120621_ZhangH_YW_A301_1.6490.6490.2</td>
     </tr>
     <tr>
-      <td>Y<span class="loc">N[+1]</span>SQLLSFVR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>Y<span class="loc">N[+1]</span>SQLLSFVR<span class="cterm">.<span class="next_aa">D</span></span></td>
       <td>0.97</td>
       <td>120621_ZhangH_YW_A301_1.5344.5344.2</td>
     </tr>
     <tr>
-      <td>TY<span class="loc">N[+1]</span>GTNPDAASR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TY<span class="loc">N[+1]</span>GTNPDAASR<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.97</td>
       <td>120621_ZhangH_YW_A301i_3.1010.1010.2</td>
     </tr>
     <tr>
-      <td>AAS<span class="loc">N[+1]</span>FTEIK</td>
-      <td>0.96</td>
-      <td>120621_ZhangH_YW_A301i_1.1955.1955.2</td>
-    </tr>
-    <tr>
-      <td>YA<span class="loc">N[+1]</span>ITVDYLYNKETK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YA<span class="loc">N[+1]</span>ITVDYLYNKETK<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>0.96</td>
       <td>120621_ZhangH_YW_A301i_1.4174.4174.3</td>
     </tr>
     <tr>
-      <td>LF<span class="loc">N[+1]</span>VTPQDEQK</td>
-      <td>0.96</td>
-      <td>120621_ZhangH_YW_A301i_3.2830.2830.2</td>
-    </tr>
-    <tr>
-      <td>IKNQAIITDET<span class="loc">N[+1]</span>DSLVAPQEK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IKNQAIITDET<span class="loc">N[+1]</span>DSLVAPQEK<span class="cterm">.<span class="next_aa">Q</span></span></td>
       <td>0.96</td>
       <td>120621_ZhangH_YW_A301_3.3123.3123.3</td>
     </tr>
     <tr>
-      <td>YGE<span class="loc">N[+1]</span>NSLSVEGFR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YGE<span class="loc">N[+1]</span>NSLSVEGFR<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td>0.95</td>
       <td>120621_ZhangH_YW_A301i_1.3690.3690.2</td>
     </tr>
     <tr>
-      <td>V<span class="loc">N[+1]</span>STELFHVDR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GQ<span class="loc">N[+1]</span>GSFDAPNERPYSLK<span class="cterm">.<span class="next_aa">I</span></span></td>
       <td>0.95</td>
-      <td>120621_ZhangH_YW_A301i_3.3171.3171.3</td>
+      <td>120621_ZhangH_YW_A301_3.2463.2463.3</td>
     </tr>
     <tr>
-      <td>WIADPSPQ<span class="loc">N[+1]</span>STADTSK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>WIADPSPQ<span class="loc">N[+1]</span>STADTSK<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>0.95</td>
       <td>120621_ZhangH_YW_A301i_2.2207.2207.2</td>
     </tr>
     <tr>
-      <td>EINSL<span class="loc">N[+1]</span>LTESHNSR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>EINSL<span class="loc">N[+1]</span>LTESHNSR<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td>0.95</td>
       <td>120621_ZhangH_YW_A301i_3.2049.2049.2</td>
     </tr>
     <tr>
-      <td>AAPAPQEATATF<span class="loc">N[+1]</span>STADREDGHR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AAPAPQEATATF<span class="loc">N[+1]</span>STADREDGHR<span class="cterm">.<span class="next_aa">N</span></span></td>
       <td>0.95</td>
       <td>120621_ZhangH_YW_A301i_1.1984.1984.4</td>
     </tr>
     <tr>
-      <td>WGH<span class="loc">N[+1]</span>ITEFQQR</td>
-      <td>0.95</td>
-      <td>120621_ZhangH_YW_A301_1.2499.2499.2</td>
-    </tr>
-    <tr>
-      <td>DGQVI<span class="loc">N[+1]</span>ETSQHHDDLE</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DGQVI<span class="loc">N[+1]</span>ETSQHHDDLE.-</td>
       <td>0.95</td>
       <td>120621_ZhangH_YW_A301i_3.1755.1755.3</td>
     </tr>
     <tr>
-      <td>AASPIITLVALDEALD<span class="loc">N[+1]</span>YTITFLIR</td>
-      <td>0.94</td>
-      <td>120621_ZhangH_YW_A301i_2.7900.7900.3</td>
-    </tr>
-    <tr>
-      <td>I<span class="loc">F[+1]</span>DKNSTFGSVEVHNLQPEK</td>
-      <td>0.94</td>
-      <td>120621_ZhangH_YW_A301i_2.3921.3921.3</td>
-    </tr>
-    <tr>
-      <td>ITS<span class="loc">N[+1]</span>ATSDLNIK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ITS<span class="loc">N[+1]</span>ATSDLNIK<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>0.94</td>
       <td>120621_ZhangH_YW_A301i_3.2230.2230.2</td>
     </tr>
     <tr>
-      <td>DLDTDFTN<span class="loc">N[+1]</span>ASQPETK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLDTDFTN<span class="loc">N[+1]</span>ASQPETK<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.93</td>
       <td>120621_ZhangH_YW_A301_3.3068.3068.2</td>
     </tr>
     <tr>
-      <td>RP<span class="loc">N[+1]</span>QSQPLPPSSLQR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>RP<span class="loc">N[+1]</span>QSQPLPPSSLQR<span class="cterm">.<span class="next_aa">F</span></span></td>
       <td>0.93</td>
       <td>120621_ZhangH_YW_A301_2.1485.1485.3</td>
     </tr>
     <tr>
-      <td>ANIQFGD<span class="loc">N[+1]</span>GTTISAVSNK</td>
-      <td>0.93</td>
-      <td>120621_ZhangH_YW_A301_1.3448.3448.2</td>
-    </tr>
-    <tr>
-      <td>GQ<span class="loc">N[+1]</span>GSFDAPNERPYSLK</td>
-      <td>0.93</td>
-      <td>120621_ZhangH_YW_A301_3.2463.2463.3</td>
-    </tr>
-    <tr>
-      <td>A<span class="loc">N[+1]</span>TTQPGIVEGGQVLK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>A<span class="loc">N[+1]</span>TTQPGIVEGGQVLK<span class="cterm">.<span class="next_aa">C</span></span></td>
       <td>0.93</td>
       <td>120621_ZhangH_YW_A301i_2.2867.2867.2</td>
     </tr>
     <tr>
-      <td>YRPENSVA<span class="loc">N[+1]</span>DTGFTVVAPGK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEL<span class="loc">N[+1]</span>TSIFSSRPIDK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301i_3.4121.4121.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VQ<span class="loc">N[+1]</span>VTEFDDSLLR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.93</td>
+      <td>120621_ZhangH_YW_A301i_2.5156.5156.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YRPENSVA<span class="loc">N[+1]</span>DTGFTVVAPGK<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>0.93</td>
       <td>120621_ZhangH_YW_A301i_2.3486.3486.3</td>
     </tr>
     <tr>
-      <td>TDDEVVQREEEAIQLDGLNAS<span class="loc">Q[+1]</span>IR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TDDEVVQREEEAIQLDGLNAS<span class="loc">Q[+1]</span>IR<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>0.92</td>
       <td>120621_ZhangH_YW_A301i_2.5982.5982.3</td>
     </tr>
     <tr>
-      <td>GGN<span class="loc">N[+1]</span>SFTHEALTLK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>KQNNGAF<span class="loc">N[+1]</span>ETLFR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.92</td>
+      <td>120621_ZhangH_YW_A301_1.3339.3339.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GGN<span class="loc">N[+1]</span>SFTHEALTLK<span class="cterm">.<span class="next_aa">Y</span></span></td>
       <td>0.92</td>
       <td>120621_ZhangH_YW_A301i_2.3151.3151.3</td>
     </tr>
     <tr>
-      <td>F<span class="loc">N[+1]</span>SSSSSLEEK</td>
-      <td>0.92</td>
-      <td>120621_ZhangH_YW_A301_3.1286.1286.2</td>
-    </tr>
-    <tr>
-      <td>QTLQ<span class="loc">N[+1]</span>ASETVK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>QTLQ<span class="loc">N[+1]</span>ASETVK<span class="cterm">.<span class="next_aa">Y</span></span></td>
       <td>0.92</td>
       <td>120621_ZhangH_YW_A301_3.1308.1308.2</td>
     </tr>
     <tr>
-      <td>VFGSQ<span class="loc">N[+1]</span>LTTVK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VFGSQ<span class="loc">N[+1]</span>LTTVK<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>0.92</td>
       <td>120621_ZhangH_YW_A301_3.2859.2859.2</td>
     </tr>
     <tr>
-      <td>DINSQQELQ<span class="loc">N[+1]</span>ITTDTR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DINSQQELQ<span class="loc">N[+1]</span>ITTDTR<span class="cterm">.<span class="next_aa">F</span></span></td>
       <td>0.91</td>
       <td>120621_ZhangH_YW_A301i_3.4147.4147.3</td>
     </tr>
     <tr>
-      <td>GYFQVNQ<span class="loc">N[+1]</span>STSSHLGSS</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SDLNPA<span class="loc">N[+1]</span>GSYPFQALR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.91</td>
+      <td>120621_ZhangH_YW_A301_1.5127.5127.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GYFQVNQ<span class="loc">N[+1]</span>STSSHLGSS.-</td>
       <td>0.91</td>
       <td>120621_ZhangH_YW_A301i_3.3097.3097.2</td>
     </tr>
     <tr>
-      <td>EAD<span class="loc">N[+1]</span>HTAFIR</td>
-      <td>0.90</td>
-      <td>120621_ZhangH_YW_A301_1.1413.1413.2</td>
-    </tr>
-    <tr>
-      <td>WVE<span class="loc">N[+1]</span>NTNNLVK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>WVE<span class="loc">N[+1]</span>NTNNLVK<span class="cterm">.<span class="next_aa">D</span></span></td>
       <td>0.90</td>
       <td>120621_ZhangH_YW_A301_1.2320.2320.2</td>
     </tr>
     <tr>
-      <td>GSEGGNGS<span class="loc">N[+1]</span>PVAGLETDDHGGK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GSEGGNGS<span class="loc">N[+1]</span>PVAGLETDDHGGK<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.90</td>
       <td>120621_ZhangH_YW_A301i_3.1996.1996.3</td>
     </tr>
     <tr>
-      <td>I<span class="loc">N[+1]</span>TTADEKDPTNPFR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>KEDF<span class="loc">N[+1]</span>QTLTSNEQTSR<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.90</td>
-      <td>120621_ZhangH_YW_A301_1.2176.2176.3</td>
+      <td>120621_ZhangH_YW_A301i_2.1828.1828.3</td>
     </tr>
     <tr>
-      <td>K<span class="loc">N[+1]</span>QSIGLIQPFATNGK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>K<span class="loc">N[+1]</span>QSIGLIQPFATNGK<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>0.89</td>
       <td>120621_ZhangH_YW_A301i_2.4126.4126.2</td>
     </tr>
     <tr>
-      <td>RLSAVNSIFLSH<span class="loc">N[+1]</span>NTK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>RLSAVNSIFLSH<span class="loc">N[+1]</span>NTK<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>0.89</td>
       <td>120621_ZhangH_YW_A301i_2.3229.3229.3</td>
     </tr>
     <tr>
-      <td>KEDF<span class="loc">N[+1]</span>QTLTSNEQTSR</td>
-      <td>0.89</td>
-      <td>120621_ZhangH_YW_A301i_2.1828.1828.3</td>
-    </tr>
-    <tr>
-      <td>QR<span class="loc">N[+1]</span>STIEAANLAGLK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>QR<span class="loc">N[+1]</span>STIEAANLAGLK<span class="cterm">.<span class="next_aa">I</span></span></td>
       <td>0.89</td>
       <td>120621_ZhangH_YW_A301_2.2926.2926.3</td>
     </tr>
     <tr>
-      <td>AAE<span class="loc">N[+1]</span>FTLLVK</td>
-      <td>0.88</td>
-      <td>120621_ZhangH_YW_A301_1.4508.4508.2</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GHTLTL<span class="loc">N[+1]</span>FTR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.89</td>
+      <td>120621_ZhangH_YW_A301i_3.3327.3327.3</td>
     </tr>
     <tr>
-      <td>LPE<span class="loc">N[+1]</span>QTSPGESPER</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LPE<span class="loc">N[+1]</span>QTSPGESPER<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>0.88</td>
       <td>120621_ZhangH_YW_A301i_1.1205.1205.2</td>
     </tr>
     <tr>
-      <td>KVLI<span class="loc">N[+1]</span>NSLDEPR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>KVLI<span class="loc">N[+1]</span>NSLDEPR<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.88</td>
       <td>120621_ZhangH_YW_A301_3.2095.2095.3</td>
     </tr>
     <tr>
-      <td>GHTLTL<span class="loc">N[+1]</span>FTR</td>
-      <td>0.88</td>
-      <td>120621_ZhangH_YW_A301i_3.3327.3327.3</td>
-    </tr>
-    <tr>
-      <td>A<span class="loc">R[+1]</span>NISGVVLADHSGAFHNK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>A<span class="loc">R[+1]</span>NISGVVLADHSGAFHNK<span class="cterm">.<span class="next_aa">Y</span></span></td>
       <td>0.88</td>
       <td>120621_ZhangH_YW_A301_2.2149.2149.4</td>
     </tr>
     <tr>
-      <td>A<span class="loc">N[+1]</span>STSDSVFTETPSPVLK</td>
-      <td>0.87</td>
-      <td>120621_ZhangH_YW_A301i_1.4158.4158.2</td>
-    </tr>
-    <tr>
-      <td>E<span class="loc">N[+1]</span>QTWNLQR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>E<span class="loc">N[+1]</span>QTWNLQR<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td>0.87</td>
       <td>120621_ZhangH_YW_A301i_1.2219.2219.2</td>
     </tr>
     <tr>
-      <td>LLPAF<span class="loc">N[+1]</span>TTSGLPYPR</td>
-      <td>0.87</td>
-      <td>120621_ZhangH_YW_A301i_2.5952.5952.2</td>
-    </tr>
-    <tr>
-      <td>A<span class="loc">N[+1]</span>LSQVADHLDHIK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>A<span class="loc">N[+1]</span>LSQVADHLDHIK<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>0.87</td>
       <td>120621_ZhangH_YW_A301_3.3756.3756.3</td>
     </tr>
     <tr>
-      <td>NYFHY<span class="loc">N[+1]</span>QSYPPTYNVK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>NYFHY<span class="loc">N[+1]</span>QSYPPTYNVK<span class="cterm">.<span class="next_aa">D</span></span></td>
       <td>0.86</td>
       <td>120621_ZhangH_YW_A301i_2.3981.3981.3</td>
     </tr>
     <tr>
-      <td>ISSLQTTEK<span class="loc">N[+1]</span>DTVAGQGER</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ISSLQTTEK<span class="loc">N[+1]</span>DTVAGQGER<span class="cterm">.<span class="next_aa">D</span></span></td>
       <td>0.86</td>
       <td>120621_ZhangH_YW_A301_3.1388.1388.3</td>
     </tr>
     <tr>
-      <td>VHYAGY<span class="loc">N[+1]</span>VTRPEGDLGK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VHYAGY<span class="loc">N[+1]</span>VTRPEGDLGK<span class="cterm">.<span class="next_aa">Y</span></span></td>
       <td>0.85</td>
       <td>120621_ZhangH_YW_A301_1.2041.2041.4</td>
     </tr>
     <tr>
-      <td>QI<span class="loc">N[+1]</span>SSISGNLWDKDQR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>QI<span class="loc">N[+1]</span>SSISGNLWDKDQR<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.85</td>
       <td>120621_ZhangH_YW_A301i_2.3554.3554.3</td>
     </tr>
     <tr>
-      <td>GHTNGTKPLDG<span class="loc">F[+1]</span>DVWK</td>
-      <td>0.85</td>
-      <td>120621_ZhangH_YW_A301i_1.4051.4051.3</td>
-    </tr>
-    <tr>
-      <td>HLNAS<span class="loc">N[+1]</span>PTEPATIIFTAAR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HLNAS<span class="loc">N[+1]</span>PTEPATIIFTAAR<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>0.84</td>
       <td>120621_ZhangH_YW_A301_1.4933.4933.3</td>
     </tr>
     <tr>
-      <td>YPQDYQ<span class="loc">F[+1]</span>YIQNFTALPLNTVVPPQR</td>
-      <td>0.84</td>
-      <td>120621_ZhangH_YW_A301_3.7479.7479.3</td>
-    </tr>
-    <tr>
-      <td>ITVNDSD<span class="loc">Q[+1]</span>GANAK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITVNDSD<span class="loc">Q[+1]</span>GANAK<span class="cterm">.<span class="next_aa">F</span></span></td>
       <td>0.83</td>
       <td>120621_ZhangH_YW_A301i_2.1102.1102.2</td>
     </tr>
     <tr>
-      <td>EYV<span class="loc">N[+1]</span>VSQELHPGAAK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>EYV<span class="loc">N[+1]</span>VSQELHPGAAK<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>0.83</td>
       <td>120621_ZhangH_YW_A301i_2.2735.2735.3</td>
     </tr>
     <tr>
-      <td>NL<span class="loc">N[+1]</span>NSQSDVVSFR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>NL<span class="loc">N[+1]</span>NSQSDVVSFR<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>0.82</td>
       <td>120621_ZhangH_YW_A301i_3.3056.3056.2</td>
     </tr>
     <tr>
-      <td>L<span class="loc">N[+1]</span>QTEPVAGNYYPVNTR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>L<span class="loc">N[+1]</span>QTEPVAGNYYPVNTR<span class="cterm">.<span class="next_aa">I</span></span></td>
       <td>0.81</td>
       <td>120621_ZhangH_YW_A301_1.3048.3048.2</td>
     </tr>
     <tr>
-      <td>VAYS<span class="loc">N[+1]</span>DSANWTEYQDPR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VAYS<span class="loc">N[+1]</span>DSANWTEYQDPR<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>0.81</td>
       <td>120621_ZhangH_YW_A301i_2.3696.3696.2</td>
     </tr>
     <tr>
-      <td>LT<span class="loc">N[+1]</span>NSNQFQTEVGK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LT<span class="loc">N[+1]</span>NSNQFQTEVGK<span class="cterm">.<span class="next_aa">Q</span></span></td>
       <td>0.81</td>
       <td>120621_ZhangH_YW_A301_3.1874.1874.2</td>
     </tr>
     <tr>
-      <td>YGE<span class="loc">N[+1]</span>NSLSVEGFRK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YGE<span class="loc">N[+1]</span>NSLSVEGFRK<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>0.80</td>
       <td>120621_ZhangH_YW_A301i_1.2633.2633.3</td>
     </tr>
     <tr>
-      <td>L<span class="loc">N[+1]</span>FTGPGDPDSIR</td>
-      <td>0.77</td>
-      <td>120621_ZhangH_YW_A301_2.3787.3787.2</td>
-    </tr>
-    <tr>
-      <td>TS<span class="loc">N[+1]</span>SSQVSNEQDKIDAYK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TS<span class="loc">N[+1]</span>SSQVSNEQDKIDAYK<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>0.76</td>
       <td>120621_ZhangH_YW_A301_3.1708.1708.3</td>
     </tr>
     <tr>
-      <td><span class="loc">Q[+1]</span>DNETGIYYETWNVK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">Q[+1]</span>DNETGIYYETWNVK<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.76</td>
       <td>120621_ZhangH_YW_A301i_2.4925.4925.2</td>
     </tr>
     <tr>
-      <td>ILGDKV<span class="loc">N[+1]</span>NTAVIEK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ILGDKV<span class="loc">N[+1]</span>NTAVIEK<span class="cterm">.<span class="next_aa">Q</span></span></td>
       <td>0.76</td>
       <td>120621_ZhangH_YW_A301_2.2026.2026.2</td>
     </tr>
     <tr>
-      <td>F<span class="loc">N[+1]</span>STEYQVVTR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>F<span class="loc">N[+1]</span>STEYQVVTR<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>0.74</td>
       <td>120621_ZhangH_YW_A301_1.2495.2495.2</td>
     </tr>
     <tr>
-      <td>GE<span class="loc">N[+1]</span>FTETDVK</td>
-      <td>0.71</td>
-      <td>120621_ZhangH_YW_A301i_3.1647.1647.2</td>
-    </tr>
-    <tr>
-      <td>V<span class="loc">N[+1]</span>DSNELGGLTTSGSAEVHK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>V<span class="loc">N[+1]</span>DSNELGGLTTSGSAEVHK<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.70</td>
       <td>120621_ZhangH_YW_A301_3.2449.2449.3</td>
     </tr>
     <tr>
-      <td>GYY<span class="loc">N[+1]</span>QSEAGSHIIQR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GYY<span class="loc">N[+1]</span>QSEAGSHIIQR<span class="cterm">.<span class="next_aa">M</span></span></td>
       <td>0.68</td>
       <td>120621_ZhangH_YW_A301i_1.1908.1908.2</td>
     </tr>
     <tr>
-      <td>DV<span class="loc">N[+1]</span>YTQIVVDR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DV<span class="loc">N[+1]</span>YTQIVVDR<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>0.68</td>
       <td>120621_ZhangH_YW_A301i_3.3991.3991.2</td>
     </tr>
     <tr>
-      <td>TVTTSGTT<span class="loc">N[+1]</span>NTVTPTSQPVR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TVTTSGTT<span class="loc">N[+1]</span>NTVTPTSQPVR<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td>0.66</td>
       <td>120621_ZhangH_YW_A301_1.1357.1357.3</td>
     </tr>
     <tr>
-      <td>VQ<span class="loc">N[+1]</span>VTEFDDSLLR</td>
-      <td>0.66</td>
-      <td>120621_ZhangH_YW_A301i_2.5156.5156.2</td>
-    </tr>
-    <tr>
-      <td>GEPSNEPSTETNKT<span class="loc">Q[+1]</span>EQSDVK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GEPSNEPSTETNKT<span class="loc">Q[+1]</span>EQSDVK<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>0.65</td>
       <td>120621_ZhangH_YW_A301_2.966.966.3</td>
     </tr>
     <tr>
-      <td>E<span class="loc">N[+1]</span>GTNLTFIGDK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>E<span class="loc">N[+1]</span>GTNLTFIGDK<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>0.64</td>
       <td>120621_ZhangH_YW_A301_3.3390.3390.2</td>
     </tr>
     <tr>
-      <td><span class="loc">N[+1]</span>TSWDNAGFK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">N[+1]</span>TSWDNAGFK<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>0.47</td>
       <td>120621_ZhangH_YW_A301_1.2747.2747.2</td>
     </tr>
     <tr>
-      <td>GKDLDTDFTN<span class="loc">N[+1]</span>ASQPETK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GKDLDTDFTN<span class="loc">N[+1]</span>ASQPETK<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.39</td>
       <td>120621_ZhangH_YW_A301i_2.1986.1986.3</td>
     </tr>
     <tr>
-      <td>KQNNGAF<span class="loc">N[+1]</span>ETLFR</td>
-      <td>0.32</td>
-      <td>120621_ZhangH_YW_A301_1.3339.3339.3</td>
-    </tr>
-    <tr>
-      <td>GEL<span class="loc">N[+1]</span>TSIFSSRPIDK</td>
-      <td>0.27</td>
-      <td>120621_ZhangH_YW_A301i_3.4121.4121.2</td>
-    </tr>
-    <tr>
-      <td><span class="loc">N[+1]</span>ATQAANAWR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">N[+1]</span>ATQAANAWR<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>0.23</td>
       <td>120621_ZhangH_YW_A301i_2.1947.1947.2</td>
     </tr>
     <tr>
-      <td>SDLNPANGSYP<span class="loc">F[+1]</span>QALR</td>
-      <td>0.17</td>
-      <td>120621_ZhangH_YW_A301_1.5127.5127.2</td>
-    </tr>
-    <tr>
-      <td>DLEIT<span class="loc">N[+1]</span>ATLQSEEDSR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLEIT<span class="loc">N[+1]</span>ATLQSEEDSR<span class="cterm">.<span class="next_aa">Y</span></span></td>
       <td>0.13</td>
       <td>120621_ZhangH_YW_A301i_1.4049.4049.2</td>
     </tr>
     <tr>
-      <td>TRPVVIVDASLSHPESVN<span class="loc">R[+1]</span></td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TRPVVIVDASLSHPESVN<span class="loc">R[+1]</span><span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>0.10</td>
       <td>120621_ZhangH_YW_A301i_2.3036.3036.3</td>
     </tr>
     <tr>
-      <td>IHVAGETDSSNL<span class="loc">N[+1]</span>VSEPR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHVAGETDSSNL<span class="loc">N[+1]</span>VSEPR<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.09</td>
       <td>120621_ZhangH_YW_A301i_2.2117.2117.3</td>
     </tr>
     <tr>
-      <td>E<span class="loc">N[+1]</span>ATVPENEEEIIR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>E<span class="loc">N[+1]</span>ATVPENEEEIIR<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td>0.08</td>
       <td>120621_ZhangH_YW_A301_3.2936.2936.2</td>
     </tr>
     <tr>
-      <td>KLTDVETQVL<span class="loc">N[+1]</span>QTSR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>KLTDVETQVL<span class="loc">N[+1]</span>QTSR<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>0.08</td>
       <td>120621_ZhangH_YW_A301i_1.3699.3699.3</td>
     </tr>
     <tr>
-      <td>VLI<span class="loc">N[+1]</span>NSLDEPR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLI<span class="loc">N[+1]</span>NSLDEPR<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.07</td>
       <td>120621_ZhangH_YW_A301_3.2891.2891.2</td>
     </tr>
     <tr>
-      <td>DITDLI<span class="loc">N[+1]</span>NTFIR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DITDLI<span class="loc">N[+1]</span>NTFIR<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>0.06</td>
       <td>120621_ZhangH_YW_A301i_3.7600.7600.2</td>
     </tr>
     <tr>
-      <td>TILVDNNTW<span class="loc">N[+1]</span>NTHISR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TILVDNNTW<span class="loc">N[+1]</span>NTHISR<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>0.05</td>
       <td>120621_ZhangH_YW_A301_1.3373.3373.2</td>
     </tr>
     <tr>
-      <td>NS<span class="loc">N[+1]</span>SNVIQVDQSGLGLPSR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>NS<span class="loc">N[+1]</span>SNVIQVDQSGLGLPSR<span class="cterm">.<span class="next_aa">D</span></span></td>
       <td>0.04</td>
       <td>120621_ZhangH_YW_A301_2.4196.4196.2</td>
     </tr>
     <tr>
-      <td>LA<span class="loc">N[+1]</span>NTHQHVFDDLR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LA<span class="loc">N[+1]</span>NTHQHVFDDLR<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>0.04</td>
       <td>120621_ZhangH_YW_A301i_2.2187.2187.3</td>
     </tr>
     <tr>
-      <td>FLSSSPHLPPSSYF<span class="loc">N[+1]</span>ASGR</td>
-      <td>0.04</td>
-      <td>120621_ZhangH_YW_A301i_2.4537.4537.3</td>
-    </tr>
-    <tr>
-      <td>VDLEDFE<span class="loc">N[+1]</span>NTAYAK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VDLEDFE<span class="loc">N[+1]</span>NTAYAK<span class="cterm">.<span class="next_aa">Y</span></span></td>
       <td>0.04</td>
       <td>120621_ZhangH_YW_A301i_2.4779.4779.2</td>
     </tr>
     <tr>
-      <td>FQV<span class="loc">N[+1]</span>NTRPPHVQLLR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>FQV<span class="loc">N[+1]</span>NTRPPHVQLLR<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td>0.04</td>
       <td>120621_ZhangH_YW_A301i_2.3320.3320.4</td>
     </tr>
     <tr>
-      <td>RPYVSYVN<span class="loc">N[+1]</span>SIAR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>RPYVSYVN<span class="loc">N[+1]</span>SIAR<span class="cterm">.<span class="next_aa">N</span></span></td>
       <td>0.03</td>
       <td>120621_ZhangH_YW_A301i_1.2471.2471.3</td>
     </tr>
     <tr>
-      <td>IFIF<span class="loc">N[+1]</span>QTGIEAK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IFIF<span class="loc">N[+1]</span>QTGIEAK<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td>0.02</td>
       <td>120621_ZhangH_YW_A301i_1.5500.5500.2</td>
     </tr>
     <tr>
-      <td>IA<span class="loc">N[+1]</span>ETRYPHSVAK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IA<span class="loc">N[+1]</span>ETRYPHSVAK<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td>0.01</td>
       <td>120621_ZhangH_YW_A301i_2.1051.1051.4</td>
     </tr>
     <tr>
-      <td>TTLVDNNTW<span class="loc">N[+1]</span>NSHIALVGK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TTLVDNNTW<span class="loc">N[+1]</span>NSHIALVGK<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.01</td>
       <td>120621_ZhangH_YW_A301i_2.4579.4579.2</td>
     </tr>
     <tr>
-      <td>VLGQSQEPNVNPASAGN<span class="loc">Q[+1]</span>TQK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLGQSQEPNVNPASAGN<span class="loc">Q[+1]</span>TQK<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>0.01</td>
       <td>120621_ZhangH_YW_A301i_2.1886.1886.3</td>
     </tr>
     <tr>
-      <td>DIENLKDASSFLAEW<span class="loc">Q[+1]</span>NITK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DIENLKDASSFLAEW<span class="loc">Q[+1]</span>NITK<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>0.00</td>
       <td>120621_ZhangH_YW_A301i_1.7640.7640.3</td>
     </tr>
     <tr>
-      <td>FVGTPEVN<span class="loc">Q[+1]</span>TTLYQR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FVGTPEVN<span class="loc">Q[+1]</span>TTLYQR<span class="cterm">.<span class="next_aa">Y</span></span></td>
       <td>0.00</td>
       <td>120621_ZhangH_YW_A301i_3.3756.3756.3</td>
     </tr>
     <tr>
-      <td>LLIAGTNSSDLQ<span class="loc">Q[+1]</span>ILSLLESNKDLLLTSSYLSDSGSTGEHTK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLIAGTNSSDLQ<span class="loc">Q[+1]</span>ILSLLESNKDLLLTSSYLSDSGSTGEHTK<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td>0.00</td>
       <td>120621_ZhangH_YW_A301i_2.7860.7860.4</td>
     </tr>
     <tr>
-      <td>NNTIVNELVR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YPQDYQFYIQNFTALPLNTVVPPQR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td></td>
+      <td>120621_ZhangH_YW_A301_3.7479.7479.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>NNTIVNELVR<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301_2.4515.4515.2</td>
     </tr>
     <tr>
-      <td>QVALQTFGNQTTIIPAGGAGYK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>QVALQTFGNQTTIIPAGGAGYK<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301i_2.5377.5377.2</td>
     </tr>
     <tr>
-      <td>NNSNNFDLNR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>NNSNNFDLNR<span class="cterm">.<span class="next_aa">N</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301_2.1877.1877.2</td>
     </tr>
@@ -1485,337 +1509,337 @@
   </thead>
   <tbody>
     <tr>
-      <td><span class="loc">W[+17]</span>GHNITEFQQR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">W[+17]</span>GHNITEFQQR<span class="cterm">.<span class="next_aa">F</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_1.2131.2131.3</td>
     </tr>
     <tr>
-      <td>LNLQTSTSIPNVTE<span class="loc">M[+17]</span>K</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LNLQTSTSIPNVTE<span class="loc">M[+17]</span>K<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.3874.3874.2</td>
     </tr>
     <tr>
-      <td><span class="loc">M[+17]</span>NGSEIQYK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">M[+17]</span>NGSEIQYK<span class="cterm">.<span class="next_aa">I</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.1230.1230.2</td>
     </tr>
     <tr>
-      <td>LENLSSSE<span class="loc">M[+17]</span>GYTATLTR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LENLSSSE<span class="loc">M[+17]</span>GYTATLTR<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.3906.3906.2</td>
     </tr>
     <tr>
-      <td>IDFSGSQDNLTIT<span class="loc">M[+17]</span>HR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IDFSGSQDNLTIT<span class="loc">M[+17]</span>HR<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_1.3370.3370.2</td>
     </tr>
     <tr>
-      <td>INLNES<span class="loc">M[+17]</span>QVVSR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>INLNES<span class="loc">M[+17]</span>QVVSR<span class="cterm">.<span class="next_aa">R</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.2428.2428.2</td>
     </tr>
     <tr>
-      <td>IQQESLGSAPL<span class="loc">M[+17]</span>GDDHPNASR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQQESLGSAPL<span class="loc">M[+17]</span>GDDHPNASR<span class="cterm">.<span class="next_aa">D</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.2100.2100.3</td>
     </tr>
     <tr>
-      <td>QQ<span class="loc">M[+17]</span>ENYPKNNHTASILDR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>QQ<span class="loc">M[+17]</span>ENYPKNNHTASILDR<span class="cterm">.<span class="next_aa">M</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.1562.1562.3</td>
     </tr>
     <tr>
-      <td>ALEVN<span class="loc">M[+17]</span>SLSGR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ALEVN<span class="loc">M[+17]</span>SLSGR<span class="cterm">.<span class="next_aa">Y</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.2194.2194.2</td>
     </tr>
     <tr>
-      <td>LLHALGGDDFLG<span class="loc">M[+17]</span>LNR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLHALGGDDFLG<span class="loc">M[+17]</span>LNR<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.5910.5910.3</td>
     </tr>
     <tr>
-      <td>DYNSSREDSLQDA<span class="loc">W[+17]</span>DYVQAQVK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DYNSSREDSLQDA<span class="loc">W[+17]</span>DYVQAQVK<span class="cterm">.<span class="next_aa">C</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.3511.3511.3</td>
     </tr>
     <tr>
-      <td>EEA<span class="loc">M[+17]</span>LYHNQTAELR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>EEA<span class="loc">M[+17]</span>LYHNQTAELR<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.1985.1985.3</td>
     </tr>
     <tr>
-      <td>ELQNSVLETTL<span class="loc">M[+17]</span>PHNYSR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ELQNSVLETTL<span class="loc">M[+17]</span>PHNYSR<span class="cterm">.<span class="next_aa">C</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.4214.4214.3</td>
     </tr>
     <tr>
-      <td>IQTLQAPPD<span class="loc">M[+17]</span>APANVSLR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQTLQAPPD<span class="loc">M[+17]</span>APANVSLR<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.3703.3703.2</td>
     </tr>
     <tr>
-      <td>YGPEDKEN<span class="loc">M[+17]</span>SR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YGPEDKEN<span class="loc">M[+17]</span>SR<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.909.909.3</td>
     </tr>
     <tr>
-      <td>LLANSS<span class="loc">M[+17]</span>LGEGQVLR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLANSS<span class="loc">M[+17]</span>LGEGQVLR<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.3659.3659.2</td>
     </tr>
     <tr>
-      <td>DASSFLAE<span class="loc">W[+17]</span>QNITK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DASSFLAE<span class="loc">W[+17]</span>QNITK<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.4758.4758.2</td>
     </tr>
     <tr>
-      <td>AADEALNA<span class="loc">M[+17]</span>TSNGSHR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AADEALNA<span class="loc">M[+17]</span>TSNGSHR<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.1028.1028.3</td>
     </tr>
     <tr>
-      <td>LD<span class="loc">M[+17]</span>SQNVSLVTAELSK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LD<span class="loc">M[+17]</span>SQNVSLVTAELSK<span class="cterm">.<span class="next_aa">D</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.5610.5610.2</td>
     </tr>
     <tr>
-      <td>DVLQNHLTEVLTLVA<span class="loc">M[+17]</span>ELPHNVSSAEAVLR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DVLQNHLTEVLTLVA<span class="loc">M[+17]</span>ELPHNVSSAEAVLR<span class="cterm">.<span class="next_aa">H</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.7875.7875.4</td>
     </tr>
     <tr>
-      <td>LGSQSTNSSYT<span class="loc">M[+17]</span>NTK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LGSQSTNSSYT<span class="loc">M[+17]</span>NTK<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.1120.1120.2</td>
     </tr>
     <tr>
-      <td>TN<span class="loc">M[+17]</span>SLGLILTR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TN<span class="loc">M[+17]</span>SLGLILTR<span class="cterm">.<span class="next_aa">N</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_3.4570.4570.2</td>
     </tr>
     <tr>
-      <td>KFNSTQIAA<span class="loc">M[+17]</span>APEHEEPR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>KFNSTQIAA<span class="loc">M[+17]</span>APEHEEPR<span class="cterm">.<span class="next_aa">I</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.1686.1686.4</td>
     </tr>
     <tr>
-      <td>FNSTQIAA<span class="loc">M[+17]</span>APEHEEPR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FNSTQIAA<span class="loc">M[+17]</span>APEHEEPR<span class="cterm">.<span class="next_aa">I</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.2209.2209.3</td>
     </tr>
     <tr>
-      <td>LTGSDVNLLAENLLSPED<span class="loc">M[+17]</span>VLFHNLTQPR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LTGSDVNLLAENLLSPED<span class="loc">M[+17]</span>VLFHNLTQPR<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.7852.7852.3</td>
     </tr>
     <tr>
-      <td>EIANATAKPEDRNDP<span class="loc">M[+17]</span>LLYNK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>EIANATAKPEDRNDP<span class="loc">M[+17]</span>LLYNK<span class="cterm">.<span class="next_aa">M</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.2185.2185.3</td>
     </tr>
     <tr>
-      <td>ALNYYPQNIT<span class="loc">M[+17]</span>K</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALNYYPQNIT<span class="loc">M[+17]</span>K<span class="cterm">.<span class="next_aa">W</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.3095.3095.2</td>
     </tr>
     <tr>
-      <td>KTYAIYDLLDTA<span class="loc">M[+17]</span>INNSR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>KTYAIYDLLDTA<span class="loc">M[+17]</span>INNSR<span class="cterm">.<span class="next_aa">N</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.6426.6426.3</td>
     </tr>
     <tr>
-      <td>N<span class="loc">M[+17]</span>SFVNDLTVTQDGRK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>N<span class="loc">M[+17]</span>SFVNDLTVTQDGRK<span class="cterm">.<span class="next_aa">I</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.3547.3547.2</td>
     </tr>
     <tr>
-      <td>DDVLFYNISS<span class="loc">M[+17]</span>K</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DDVLFYNISS<span class="loc">M[+17]</span>K<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.5261.5261.2</td>
     </tr>
     <tr>
-      <td>KNLTL<span class="loc">M[+17]</span>ATTSQLPK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>KNLTL<span class="loc">M[+17]</span>ATTSQLPK<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.2449.2449.2</td>
     </tr>
     <tr>
-      <td><span class="loc">M[+17]</span>HIFQNGSLVIHDVAPEDSGR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">M[+17]</span>HIFQNGSLVIHDVAPEDSGR<span class="cterm">.<span class="next_aa">Y</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.4212.4212.3</td>
     </tr>
     <tr>
-      <td>AS<span class="loc">M[+17]</span>NTSSNPGTPLPLPLR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AS<span class="loc">M[+17]</span>NTSSNPGTPLPLPLR<span class="cterm">.<span class="next_aa">I</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.4626.4626.2</td>
     </tr>
     <tr>
-      <td>N<span class="loc">M[+17]</span>SFVNDLTVTQDGR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>N<span class="loc">M[+17]</span>SFVNDLTVTQDGR<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.4334.4334.2</td>
     </tr>
     <tr>
-      <td>TPYRPPAAAVGAAPAAAAG<span class="loc">M[+17]</span>AGVAAPPGNGTR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TPYRPPAAAVGAAPAAAAG<span class="loc">M[+17]</span>AGVAAPPGNGTR<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.3091.3091.3</td>
     </tr>
     <tr>
-      <td>TTLVDNNT<span class="loc">W[+17]</span>NNSHIALVGK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TTLVDNNT<span class="loc">W[+17]</span>NNSHIALVGK<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.3759.3759.3</td>
     </tr>
     <tr>
-      <td><span class="loc">M[+17]</span>VNHSLHPTEPVK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">M[+17]</span>VNHSLHPTEPVK<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_1.1025.1025.3</td>
     </tr>
     <tr>
-      <td>SGPKN<span class="loc">M[+17]</span>TFDLPSDATVVLNR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SGPKN<span class="loc">M[+17]</span>TFDLPSDATVVLNR<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.5077.5077.3</td>
     </tr>
     <tr>
-      <td>KIQQESLGSAPL<span class="loc">M[+17]</span>GDDHPNASR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>KIQQESLGSAPL<span class="loc">M[+17]</span>GDDHPNASR<span class="cterm">.<span class="next_aa">D</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.1633.1633.3</td>
     </tr>
     <tr>
-      <td>TP<span class="loc">M[+17]</span>TNSSIQFLDNAFR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TP<span class="loc">M[+17]</span>TNSSIQFLDNAFR<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.6337.6337.2</td>
     </tr>
     <tr>
-      <td>TILVDNNT<span class="loc">W[+17]</span>NNTHISR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TILVDNNT<span class="loc">W[+17]</span>NNTHISR<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.2925.2925.3</td>
     </tr>
     <tr>
-      <td>HTN<span class="loc">M[+17]</span>NLTQLK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HTN<span class="loc">M[+17]</span>NLTQLK<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.1237.1237.2</td>
     </tr>
     <tr>
-      <td>LAVTNTT<span class="loc">M[+17]</span>TGTVLK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LAVTNTT<span class="loc">M[+17]</span>TGTVLK<span class="cterm">.<span class="next_aa">M</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.2586.2586.2</td>
     </tr>
     <tr>
-      <td>EETLLYDSNTSS<span class="loc">M[+17]</span>ADR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>EETLLYDSNTSS<span class="loc">M[+17]</span>ADR<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.2750.2750.2</td>
     </tr>
     <tr>
-      <td>HIPGLIHN<span class="loc">M[+17]</span>TAR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HIPGLIHN<span class="loc">M[+17]</span>TAR<span class="cterm">.<span class="next_aa">C</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.1393.1393.3</td>
     </tr>
     <tr>
-      <td>D<span class="loc">M[+17]</span>NQTLGDNITVK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>D<span class="loc">M[+17]</span>NQTLGDNITVK<span class="cterm">.<span class="next_aa">M</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_1.2243.2243.2</td>
     </tr>
     <tr>
-      <td>LSSE<span class="loc">M[+17]</span>NTSTVNSAR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LSSE<span class="loc">M[+17]</span>NTSTVNSAR<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.1062.1062.2</td>
     </tr>
     <tr>
-      <td><span class="loc">M[+17]</span>NITSIAPLLEK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">M[+17]</span>NITSIAPLLEK<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.5530.5530.2</td>
     </tr>
     <tr>
-      <td>QES<span class="loc">M[+17]</span>NSNVSVYQPPR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>QES<span class="loc">M[+17]</span>NSNVSVYQPPR<span class="cterm">.<span class="next_aa">Q</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.1824.1824.2</td>
     </tr>
     <tr>
-      <td>TKEINN<span class="loc">M[+17]</span>TVPSK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TKEINN<span class="loc">M[+17]</span>TVPSK<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.997.997.2</td>
     </tr>
     <tr>
-      <td>SFAGPGAPFP<span class="loc">M[+17]</span>NR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SFAGPGAPFP<span class="loc">M[+17]</span>NR<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.3197.3197.2</td>
     </tr>
     <tr>
-      <td>N<span class="loc">M[+17]</span>TFDLPSDATVVLNR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>N<span class="loc">M[+17]</span>TFDLPSDATVVLNR<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.5974.5974.2</td>
     </tr>
     <tr>
-      <td>EFNN<span class="loc">W[+17]</span>FNVTGSDK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>EFNN<span class="loc">W[+17]</span>FNVTGSDK<span class="cterm">.<span class="next_aa">C</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.4951.4951.2</td>
     </tr>
     <tr>
-      <td>EETLLYDSNTSS<span class="loc">M[+17]</span>ADRK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>EETLLYDSNTSS<span class="loc">M[+17]</span>ADRK<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.2041.2041.3</td>
     </tr>
     <tr>
-      <td>NYEIIQQP<span class="loc">M[+17]</span>SYDNLTQR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>NYEIIQQP<span class="loc">M[+17]</span>SYDNLTQR<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.4498.4498.2</td>
     </tr>
     <tr>
-      <td>TALWVATDHN<span class="loc">M[+17]</span>DNTSTVLR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TALWVATDHN<span class="loc">M[+17]</span>DNTSTVLR<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.3815.3815.3</td>
     </tr>
     <tr>
-      <td>GVSEPL<span class="loc">M[+17]</span>ENGSGAWVR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GVSEPL<span class="loc">M[+17]</span>ENGSGAWVR<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.3794.3794.2</td>
     </tr>
     <tr>
-      <td>EGKPFYQ<span class="loc">M[+17]</span>TSNATQAFWTK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>EGKPFYQ<span class="loc">M[+17]</span>TSNATQAFWTK<span class="cterm">.<span class="next_aa">Q</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.4666.4666.3</td>
     </tr>
     <tr>
-      <td>SDPHWES<span class="loc">M[+17]</span>LNATTR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDPHWES<span class="loc">M[+17]</span>LNATTR<span class="cterm">.<span class="next_aa">R</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301i_2.2691.2691.3</td>
     </tr>
     <tr>
-      <td>LGEM<span class="loc">W[+17]</span>NNTAADDKQPYEK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LGEM<span class="loc">W[+17]</span>NNTAADDKQPYEK<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td>0.80</td>
       <td>120621_ZhangH_YW_A301i_1.2241.2241.3</td>
     </tr>
     <tr>
-      <td>ITDSEDKALMNGSESR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITDSEDKALMNGSESR<span class="cterm">.<span class="next_aa">F</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301i_1.1234.1234.2</td>
     </tr>
     <tr>
-      <td>SLYVNMTSGPGGPAAAAGGR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLYVNMTSGPGGPAAAAGGR<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301i_3.2491.2491.2</td>
     </tr>
     <tr>
-      <td>IAPASNVSHTVVLRPLK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IAPASNVSHTVVLRPLK<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301_3.2654.2654.3</td>
     </tr>
     <tr>
-      <td>EAGNHTSGAGLVQINK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>EAGNHTSGAGLVQINK<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301i_1.2153.2153.2</td>
     </tr>
     <tr>
-      <td>LNFTGPGDPDSIR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LNFTGPGDPDSIR<span class="cterm">.<span class="next_aa">C</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301i_1.2846.2846.2</td>
     </tr>
     <tr>
-      <td>EGYNVYGIESVK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>EGYNVYGIESVK<span class="cterm">.<span class="next_aa">I</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301i_1.2389.2389.2</td>
     </tr>
     <tr>
-      <td>AGPNGTLFVADAYK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AGPNGTLFVADAYK<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301i_1.4386.4386.2</td>
     </tr>
@@ -1832,297 +1856,297 @@
   </thead>
   <tbody>
     <tr>
-      <td><span class="loc">L[+58]</span>TNNSNQFQTEVGK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">L[+58]</span>TNNSNQFQTEVGK<span class="cterm">.<span class="next_aa">Q</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.1942.1942.2</td>
     </tr>
     <tr>
-      <td>YAESDPTVP<span class="loc">C[+58]</span>NETR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YAESDPTVP<span class="loc">C[+58]</span>NETR<span class="cterm">.<span class="next_aa">W</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.1494.1494.2</td>
     </tr>
     <tr>
-      <td>SDAVSHT<span class="loc">G[+58]</span>NYTCEVTELTR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDAVSHT<span class="loc">G[+58]</span>NYTCEVTELTR<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.3686.3686.2</td>
     </tr>
     <tr>
-      <td>APDSN<span class="loc">C[+58]</span>SNLLITTR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>APDSN<span class="loc">C[+58]</span>SNLLITTR<span class="cterm">.<span class="next_aa">Q</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.3172.3172.2</td>
     </tr>
     <tr>
-      <td><span class="loc">Y[+58]</span>YNQSEAGSHIIQR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">Y[+58]</span>YNQSEAGSHIIQR<span class="cterm">.<span class="next_aa">M</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.2139.2139.3</td>
     </tr>
     <tr>
-      <td>DDFVQIGKGPTNNT<span class="loc">C[+58]</span>VVR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DDFVQIGKGPTNNT<span class="loc">C[+58]</span>VVR<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.3236.3236.3</td>
     </tr>
     <tr>
-      <td>ALS<span class="loc">C[+58]</span>NVSSPIFK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALS<span class="loc">C[+58]</span>NVSSPIFK<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.3712.3712.2</td>
     </tr>
     <tr>
-      <td>NIETFT<span class="loc">C[+58]</span>DTQNITYR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>NIETFT<span class="loc">C[+58]</span>DTQNITYR<span class="cterm">.<span class="next_aa">F</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_1.4140.4140.2</td>
     </tr>
     <tr>
-      <td>NINSS<span class="loc">C[+58]</span>RPGPGAWLR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>NINSS<span class="loc">C[+58]</span>RPGPGAWLR<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.3212.3212.3</td>
     </tr>
     <tr>
-      <td>SKGNPYSDLGNHTT<span class="loc">C[+58]</span>R</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SKGNPYSDLGNHTT<span class="loc">C[+58]</span>R<span class="cterm">.<span class="next_aa">Y</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_1.1228.1228.3</td>
     </tr>
     <tr>
-      <td>VT<span class="loc">G[+58]</span>LNCTTNHPINPK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VT<span class="loc">G[+58]</span>LNCTTNHPINPK<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.1398.1398.2</td>
     </tr>
     <tr>
-      <td>FTFTSHTPGEHQI<span class="loc">C[+58]</span>LHSNSTK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>FTFTSHTPGEHQI<span class="loc">C[+58]</span>LHSNSTK<span class="cterm">.<span class="next_aa">F</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.2477.2477.4</td>
     </tr>
     <tr>
-      <td>IAP<span class="loc">A[+58]</span>SNVSHTVVLRPLK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IAP<span class="loc">A[+58]</span>SNVSHTVVLRPLK<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.2881.2881.3</td>
     </tr>
     <tr>
-      <td>LFQN<span class="loc">C[+58]</span>SELFK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LFQN<span class="loc">C[+58]</span>SELFK<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.4721.4721.2</td>
     </tr>
     <tr>
-      <td>EIV<span class="loc">C[+58]</span>NVTLGGERR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>EIV<span class="loc">C[+58]</span>NVTLGGERR<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.2404.2404.3</td>
     </tr>
     <tr>
-      <td>TLTLVENKPIQLN<span class="loc">C[+58]</span>SVK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TLTLVENKPIQLN<span class="loc">C[+58]</span>SVK<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.3954.3954.3</td>
     </tr>
     <tr>
-      <td><span class="loc">L[+58]</span>NFTGPGDPDSIR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">L[+58]</span>NFTGPGDPDSIR<span class="cterm">.<span class="next_aa">C</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_1.3670.3670.2</td>
     </tr>
     <tr>
-      <td>LTQ<span class="loc">C[+58]</span>NVSATLQEPAGTSR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LTQ<span class="loc">C[+58]</span>NVSATLQEPAGTSR<span class="cterm">.<span class="next_aa">D</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.2619.2619.2</td>
     </tr>
     <tr>
-      <td>LLN<span class="loc">C[+58]</span>TAPGPDAAAR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLN<span class="loc">C[+58]</span>TAPGPDAAAR<span class="cterm">.<span class="next_aa">C</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_3.1838.1838.2</td>
     </tr>
     <tr>
-      <td>GETASLL<span class="loc">C[+58]</span>NISVR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GETASLL<span class="loc">C[+58]</span>NISVR<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_1.4899.4899.2</td>
     </tr>
     <tr>
-      <td>NLGFN<span class="loc">C[+58]</span>TTSQGK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>NLGFN<span class="loc">C[+58]</span>TTSQGK<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_1.1784.1784.2</td>
     </tr>
     <tr>
-      <td>RGPE<span class="loc">C[+58]</span>SQNYTTPSGVIK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>RGPE<span class="loc">C[+58]</span>SQNYTTPSGVIK<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.1875.1875.3</td>
     </tr>
     <tr>
-      <td>IEVLHRPEN<span class="loc">C[+58]</span>SK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IEVLHRPEN<span class="loc">C[+58]</span>SK<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_1.1123.1123.3</td>
     </tr>
     <tr>
-      <td>GPE<span class="loc">C[+58]</span>SQNYTTPSGVIK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GPE<span class="loc">C[+58]</span>SQNYTTPSGVIK<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.2365.2365.2</td>
     </tr>
     <tr>
-      <td>SSENHPNLT<span class="loc">C[+58]</span>TASNPVSR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSENHPNLT<span class="loc">C[+58]</span>TASNPVSR<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.1437.1437.3</td>
     </tr>
     <tr>
-      <td>VESGEN<span class="loc">C[+58]</span>SSPAPR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VESGEN<span class="loc">C[+58]</span>SSPAPR<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.900.900.2</td>
     </tr>
     <tr>
-      <td><span class="loc">C[+58]</span>NGTDIYKDK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">C[+58]</span>NGTDIYKDK<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_3.1137.1137.2</td>
     </tr>
     <tr>
-      <td>TEKEPLSDPVGT<span class="loc">C[+58]</span>YLSTDNFTR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TEKEPLSDPVGT<span class="loc">C[+58]</span>YLSTDNFTR<span class="cterm">.<span class="next_aa">I</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.4964.4964.3</td>
     </tr>
     <tr>
-      <td>LSG<span class="loc">C[+58]</span>QNITSTK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LSG<span class="loc">C[+58]</span>QNITSTK<span class="cterm">.<span class="next_aa">C</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.1184.1184.2</td>
     </tr>
     <tr>
-      <td>DDAGNYT<span class="loc">C[+58]</span>IASNGPQGQIR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DDAGNYT<span class="loc">C[+58]</span>IASNGPQGQIR<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301_2.3113.3113.2</td>
     </tr>
     <tr>
-      <td>VINTN<span class="loc">C[+58]</span>SAVR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VINTN<span class="loc">C[+58]</span>SAVR<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>1.00</td>
       <td>120621_ZhangH_YW_A301i_2.1200.1200.2</td>
     </tr>
     <tr>
-      <td>VTPA<span class="loc">C[+58]</span>NTSLPAQR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VTPA<span class="loc">C[+58]</span>NTSLPAQR<span class="cterm">.<span class="next_aa">W</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301i_3.1485.1485.2</td>
     </tr>
     <tr>
-      <td>EIV<span class="loc">C[+58]</span>NVTLGGER</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>EIV<span class="loc">C[+58]</span>NVTLGGER<span class="cterm">.<span class="next_aa">R</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301_1.2833.2833.2</td>
     </tr>
     <tr>
-      <td>HLELAGENPSSDIN<span class="loc">C[+58]</span>TK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>HLELAGENPSSDIN<span class="loc">C[+58]</span>TK<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301i_3.2424.2424.3</td>
     </tr>
     <tr>
-      <td>IS<span class="loc">C[+58]</span>IHNDSFTGLR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IS<span class="loc">C[+58]</span>IHNDSFTGLR<span class="cterm">.<span class="next_aa">N</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301i_1.2755.2755.3</td>
     </tr>
     <tr>
-      <td>GHTLVLN<span class="loc">C[+58]</span>TATTPLNTR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GHTLVLN<span class="loc">C[+58]</span>TATTPLNTR<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301i_3.3283.3283.3</td>
     </tr>
     <tr>
-      <td>TNITLV<span class="loc">C[+58]</span>KPGDLESAPVLR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TNITLV<span class="loc">C[+58]</span>KPGDLESAPVLR<span class="cterm">.<span class="next_aa">T</span></span></td>
       <td>0.99</td>
       <td>120621_ZhangH_YW_A301_2.4633.4633.3</td>
     </tr>
     <tr>
-      <td>TSPAN<span class="loc">C[+58]</span>TWLILGSK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TSPAN<span class="loc">C[+58]</span>TWLILGSK<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>0.98</td>
       <td>120621_ZhangH_YW_A301i_2.5918.5918.2</td>
     </tr>
     <tr>
-      <td>NLT<span class="loc">C[+58]</span>EVWGPTSPK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>NLT<span class="loc">C[+58]</span>EVWGPTSPK<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>0.96</td>
       <td>120621_ZhangH_YW_A301_1.3810.3810.2</td>
     </tr>
     <tr>
-      <td>VN<span class="loc">C[+58]</span>SVPEEK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VN<span class="loc">C[+58]</span>SVPEEK<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.96</td>
       <td>120621_ZhangH_YW_A301_3.1055.1055.2</td>
     </tr>
     <tr>
-      <td><span class="loc">R[+58]</span>SDANCSGEDAAPAEER</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">R[+58]</span>SDANCSGEDAAPAEER<span class="cterm">.<span class="next_aa">D</span></span></td>
       <td>0.93</td>
       <td>120621_ZhangH_YW_A301i_1.960.960.3</td>
     </tr>
     <tr>
-      <td>IATDPTIHTVPEGRPVNV<span class="loc">C[+58]</span>VGK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IATDPTIHTVPEGRPVNV<span class="loc">C[+58]</span>VGK<span class="cterm">.<span class="next_aa">E</span></span></td>
       <td>0.92</td>
       <td>120621_ZhangH_YW_A301_3.2662.2662.4</td>
     </tr>
     <tr>
-      <td>ITFKPIAPSGQNAT<span class="loc">C[+58]</span>TR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ITFKPIAPSGQNAT<span class="loc">C[+58]</span>TR<span class="cterm">.<span class="next_aa">Y</span></span></td>
       <td>0.92</td>
       <td>120621_ZhangH_YW_A301i_3.2640.2640.3</td>
     </tr>
     <tr>
-      <td>YSGCG<span class="loc">G[+58]</span>NENNFTSK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YSGCG<span class="loc">G[+58]</span>NENNFTSK<span class="cterm">.<span class="next_aa">Q</span></span></td>
       <td>0.91</td>
       <td>120621_ZhangH_YW_A301i_1.1294.1294.2</td>
     </tr>
     <tr>
-      <td>NTNENPQE<span class="loc">C[+58]</span>FNASK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>NTNENPQE<span class="loc">C[+58]</span>FNASK<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>0.91</td>
       <td>120621_ZhangH_YW_A301_1.1450.1450.2</td>
     </tr>
     <tr>
-      <td>TEVTQVNTTN<span class="loc">C[+58]</span>GR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TEVTQVNTTN<span class="loc">C[+58]</span>GR<span class="cterm">.<span class="next_aa">L</span></span></td>
       <td>0.90</td>
       <td>120621_ZhangH_YW_A301_3.1158.1158.2</td>
     </tr>
     <tr>
-      <td>FLKPYTLEEQKNLTV<span class="loc">C[+58]</span>PDGALFEQK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FLKPYTLEEQKNLTV<span class="loc">C[+58]</span>PDGALFEQK<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>0.88</td>
       <td>120621_ZhangH_YW_A301i_2.5473.5473.4</td>
     </tr>
     <tr>
-      <td>NLTV<span class="loc">C[+58]</span>PDGALFEQK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>NLTV<span class="loc">C[+58]</span>PDGALFEQK<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>0.80</td>
       <td>120621_ZhangH_YW_A301_2.4792.4792.2</td>
     </tr>
     <tr>
-      <td>YEQGTGC<span class="loc">W[+58]</span>QGPNR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YEQGTGC<span class="loc">W[+58]</span>QGPNR<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td>0.75</td>
       <td>120621_ZhangH_YW_A301i_3.1886.1886.2</td>
     </tr>
     <tr>
-      <td>ILLT<span class="loc">C[+58]</span>SLNDSATEVTGHR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ILLT<span class="loc">C[+58]</span>SLNDSATEVTGHR<span class="cterm">.<span class="next_aa">W</span></span></td>
       <td>0.69</td>
       <td>120621_ZhangH_YW_A301i_1.4180.4180.3</td>
     </tr>
     <tr>
-      <td>VTRDDA<span class="loc">G[+58]</span>NYTCIASNGPQGQIR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VTRDDA<span class="loc">G[+58]</span>NYTCIASNGPQGQIR<span class="cterm">.<span class="next_aa">A</span></span></td>
       <td>0.50</td>
       <td>120621_ZhangH_YW_A301_2.2579.2579.3</td>
     </tr>
     <tr>
-      <td>SS<span class="loc">C[+58]</span>GKENTSDPSLVIAFGR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SS<span class="loc">C[+58]</span>GKENTSDPSLVIAFGR<span class="cterm">.<span class="next_aa">G</span></span></td>
       <td>0.11</td>
       <td>120621_ZhangH_YW_A301i_3.4215.4215.3</td>
     </tr>
     <tr>
-      <td>NLSVSE<span class="loc">A[+58]</span>RGK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>NLSVSE<span class="loc">A[+58]</span>RGK<span class="cterm">.<span class="next_aa">I</span></span></td>
       <td>0.11</td>
       <td>120621_ZhangH_YW_A301_2.3822.3822.2</td>
     </tr>
     <tr>
-      <td><span class="loc">N[+58]</span>STCLDDSWIHPR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">N[+58]</span>STCLDDSWIHPR<span class="cterm">.<span class="next_aa">N</span></span></td>
       <td>0.03</td>
       <td>120621_ZhangH_YW_A301_2.3674.3674.3</td>
     </tr>
     <tr>
-      <td>GGGDPWTN<span class="loc">G[+58]</span>SGLALCQR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GGGDPWTN<span class="loc">G[+58]</span>SGLALCQR<span class="cterm">.<span class="next_aa">Y</span></span></td>
       <td>0.00</td>
       <td>120621_ZhangH_YW_A301_1.4390.4390.2</td>
     </tr>
     <tr>
-      <td>VASVININPNTTHSTGSCR</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VASVININPNTTHSTGSCR<span class="cterm">.<span class="next_aa">S</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301_2.2291.2291.2</td>
     </tr>
     <tr>
-      <td>YFNIDPNATQASGNCGTR</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YFNIDPNATQASGNCGTR<span class="cterm">.<span class="next_aa">K</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301i_2.3597.3597.2</td>
     </tr>
     <tr>
-      <td>GFLINSKPENACEPIVPPPVK</td>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GFLINSKPENACEPIVPPPVK<span class="cterm">.<span class="next_aa">D</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301i_2.4739.4739.3</td>
     </tr>
     <tr>
-      <td>NKNCTAIWEAFK</td>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>NKNCTAIWEAFK<span class="cterm">.<span class="next_aa">V</span></span></td>
       <td></td>
       <td>120621_ZhangH_YW_A301i_2.4749.4749.3</td>
     </tr>
@@ -2130,6 +2154,11 @@
 </table>
   
 </div>
+
+<div id="meta">
+  <span class="note">Report created 16:23:14 March 12, 2021 with <a href="https://github.com/SimpleNumber/aa_stat">AA_stat</a> 2.2.2</span>
+</div>
+
 </body>
 <script type="text/javascript">
   function getMassShift(elem) {
@@ -2188,6 +2217,7 @@
       showTable(e.target);
     }
   }
+
   var reference = "+0.9845";
   var table = document.getElementById("T_aa_stat_table");
   for (var i = 0, row; row = table.rows[i]; i++) {
@@ -2195,6 +2225,98 @@
     if (ms == reference) {
       row.title = "Reference mass shift";
       break;
+    }
+  }
+
+  var vmod_comb_i = [];
+  var vmod_comb_val = [];
+  var vmod_table = document.getElementById("T_rec_var_mod_table");
+
+  for (var i = 0; i < vmod_comb_i.length; i++) {
+    var cells = vmod_table.querySelectorAll('.data.col' + vmod_comb_i[i]);
+    cells.forEach(function(c) {
+      c.title = vmod_comb_val[i];
+      c.classList.add("highlighted", "combine_mod");
+      if (c.classList.contains("row1")) {
+        c.classList.add("has_tooltip");
+      }
+    });
+  }
+
+  var opp_mod_i = [];
+  var opp_mod_val = [];
+  for (var j = 0; j < opp_mod_i.length; j++) {
+    var ocells = vmod_table.querySelectorAll('.data.col' + opp_mod_i[j]);
+    ocells.forEach(function(c) {
+      c.title = opp_mod_val[j];
+      c.classList.add("opposite_mod", "highlighted");
+      if (c.classList.contains("row1")) {
+        c.classList.add("has_tooltip");
+      }
+    });
+  }
+
+  var artefact_i = [];
+  for (var j = 0; j < artefact_i.length; j++) {
+    var acells = vmod_table.querySelectorAll('.data.col' + artefact_i[j]);
+    acells.forEach(function(c) {
+      c.title = "This modification is potentially a search artefact.";
+      c.classList.add("artefact_mod", "highlighted");
+      if (c.classList.contains("row1")) {
+        c.classList.add("has_tooltip");
+      }
+    });
+  }
+
+
+  if (vmod_table.querySelector('.data.row0.col0').textContent == "isotope error") {
+    vmod_table.querySelectorAll('.data.col0').forEach(function(c) {
+      c.classList.add("isotope_error");
+      c.title = "This is the recommended value for search engine parameters such as 'isotope peak error', i.e. misassignment of monoisotopic peak.";
+      if (c.classList.contains("row0")) {
+        c.classList.add("has_tooltip");
+      }
+    })
+  }
+
+  var full_info = ["<span class=\"info_item unimod\" data-ref=\"[]\"><a href=\"http://www.unimod.org/modifications_view.php?editid1=7\">Deamidated</a> (98% match)</span>, <span class=\"info_item unimod\" data-ref=\"[]\"><a href=\"http://www.unimod.org/modifications_view.php?editid1=621\">Asn->Asp</a> (93% match)</span>, <span class=\"info_item unimod\" data-ref=\"[]\"><a href=\"http://www.unimod.org/modifications_view.php?editid1=632\">Gln->Glu</a> (4% match)</span>", "", "<span class=\"info_item unimod\" data-ref=\"[]\"><a href=\"http://www.unimod.org/modifications_view.php?editid1=6\">Carboxymethyl</a> (81% match)</span>, <span class=\"info_item unimod\" data-ref=\"[]\"><a href=\"http://www.unimod.org/modifications_view.php?editid1=576\">Gly->Asp</a> (8% match)</span>, <span class=\"info_item unimod\" data-ref=\"[]\"><a href=\"http://www.unimod.org/modifications_view.php?editid1=545\">Ala->Glu</a> (3% match)</span>"];
+
+  var table_rows = new Array();
+  for(i = 0; i < shifts.length; i++) {
+    table_rows[shifts[i].textContent] = shifts[i].parentElement;
+  }
+
+  function set_mouseover_handlers(elem) {
+    var info_spans = elem.querySelectorAll('span.info_item');
+    for (var i = info_spans.length - 1; i >= 0; i--) {
+      info_spans[i].onmouseover = function(e) {
+        var refs = eval(e.target.dataset.ref);
+        for(j = 0; j < refs.length; j++) {
+          table_rows[refs[j]].classList.add("highlighted");
+        }
+      }
+      info_spans[i].onmouseout = function(e) {
+        var refs = eval(e.target.dataset.ref);
+        for(j = 0; j < refs.length; j++) {
+          table_rows[refs[j]].classList.remove("highlighted");
+        }
+      }
+    }
+  }
+  set_mouseover_handlers(table);
+
+  var onclickCreator = function(i) {
+    return function(e) {
+      var td = e.target.parentElement.parentElement;
+      td.innerHTML = full_info[i];
+      set_mouseover_handlers(td);
+    };
+  };
+  for (var i = 0; i < full_info.length; i++) {
+    var info_cell = table.querySelector('.data.col29.row' + i);
+    var link = info_cell.querySelector('a.expand_info_link');
+    if (link) {
+      link.onclick = onclickCreator(i);
     }
   }
 
