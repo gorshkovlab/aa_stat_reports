@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AA_stat report</title>
+    <style type="text/css">
+        #steps {
+          text-align: center;
+        }
+        .steplink {
+          margin: 3vw 3vw;
+        }
+        #mods_outer {
+          text-align: center;
+        }
+        #mod_container {
+          display: flex;
+          margin-top: 1vh;
+          margin-bottom: 1vh;
+          /*text-align: center;*/
+          justify-content: center;
+          align-items: center;
+        }
+        .modtable {
+          width: 30vw;
+        }
+        .modtable table {
+          border-collapse: collapse;
+        }
+        .modtable td, th {
+          border: 1px solid;
+          padding: 0.3rem;
+          text-align: center;
+        }
+        #aa_stat {
+          text-align: center;
+        }
+        #pic_container {
+          max-height: 80vh;
+          max-width: 85vw;
+          min-height: 25vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          overflow-x: auto;
+        }
+        #pic {
+          max-height: 80vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .figure {
+          max-width: 70vw;
+        }
+        #legend {
+          display: none;
+          overflow: auto;
+          margin: 0 auto;
+          width: 81vw;
+        }
+        table {
+          border: 1px solid black;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .legend.peptides {
+          color: #FF6600;
+        }
+        .legend.freq {
+          color: #88AA00;
+        }
+        .legend.localized {
+          color: #006688;
+        }
+        .loc {
+          color: #FF0000;
+        }
+        .vmod_loc {
+          color: #0000FF;
+        }
+        .nterm, .cterm {
+          color: #808080;
+        }
+        #legend p {
+          max-width: 25vw;
+          margin-left: 1vw;
+          margin-right: 1vw;
+          float: left;
+          text-align: justify;
+        }
+        #legend h2, #peptides h2 {
+          text-align: center;
+        }
+        .peptide_table {
+          display: none;
+          text-align: center;
+          width: fit-content;
+        }
+        #meta {
+          text-align: center;
+        }
+        .note, .expand_info {
+          font-size: 75%;
+        }
+        .isotope_error {
+          background-color: #e0e0e0;
+        }
+        .highlighted {
+          background-color: lightyellow;
+        }
+        .has_tooltip::after {
+          content: "\01F6C8";
+          vertical-align: super;
+          font-size: 75%;
+        }
+    </style>
+</head>
+<body>
+<div id="steps"></div>
+<div id="mods_outer">
+  <h3>Modifications</h3>
+  <div id="mod_container">
+    <div id="set_fmods" class="modtable">
+    Set modifications: none.
+    </div>
+    
+    <div id="rec_mods" class="modtable">
+    <style  type="text/css" >
+</style><table id="T_rec_fix_mod_table" ><caption>Recommended, fixed</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >K</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_rec_fix_mod_tablelevel0_row0" class="row_heading level0 row0" >value</th>
+                        <td id="T_rec_fix_mod_tablerow0_col0" class="data row0 col0" >+86.0033</td>
+            </tr>
+    </tbody></table>
+    </div>
+    <div id="rec_var_mods" class="modtable">
+    <style  type="text/css" >
+    #T_rec_var_mod_table th.col_heading {
+          display: none;
+    }    #T_rec_var_mod_table th.blank {
+          display: none;
+    }    #T_rec_var_mod_table .data.row0 {
+          font-weight: bold;
+    }</style><table id="T_rec_var_mod_table" ><caption>Recommended, variable</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >0</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_rec_var_mod_tablelevel0_row0" class="row_heading level0 row0" ></th>
+                        <td id="T_rec_var_mod_tablerow0_col0" class="data row0 col0" >M</td>
+            </tr>
+            <tr>
+                        <th id="T_rec_var_mod_tablelevel0_row1" class="row_heading level0 row1" >value</th>
+                        <td id="T_rec_var_mod_tablerow1_col0" class="data row1 col0" >-128.0928</td>
+            </tr>
+    </tbody></table>
+    </div>
+  </div>
+</div>
+<div id="aa_stat">
+  <h3>Amino acid statistics</h3>
+  <style  type="text/css" >
+    #T_aa_stat_table tr:hover {
+          background-color: lightyellow;
+    }    #T_aa_stat_table td, th {
+          text-align: center;
+    }    #T_aa_stat_table td, th {
+          border: 1px solid black;
+    }#T_aa_stat_tablerow0_col1{
+            width:  10em;
+             height:  80%;
+        }#T_aa_stat_tablerow0_col2{
+            background-color:  yellow;
+        }#T_aa_stat_tablerow1_col0,#T_aa_stat_tablerow1_col2,#T_aa_stat_tablerow1_col3,#T_aa_stat_tablerow1_col4,#T_aa_stat_tablerow1_col5,#T_aa_stat_tablerow1_col6,#T_aa_stat_tablerow1_col7,#T_aa_stat_tablerow1_col8,#T_aa_stat_tablerow1_col9,#T_aa_stat_tablerow1_col10,#T_aa_stat_tablerow1_col11,#T_aa_stat_tablerow1_col12,#T_aa_stat_tablerow1_col13,#T_aa_stat_tablerow1_col14,#T_aa_stat_tablerow1_col15,#T_aa_stat_tablerow1_col16,#T_aa_stat_tablerow1_col17,#T_aa_stat_tablerow1_col18,#T_aa_stat_tablerow1_col19,#T_aa_stat_tablerow1_col20,#T_aa_stat_tablerow1_col21,#T_aa_stat_tablerow1_col22,#T_aa_stat_tablerow1_col23,#T_aa_stat_tablerow1_col24,#T_aa_stat_tablerow1_col25,#T_aa_stat_tablerow1_col26,#T_aa_stat_tablerow1_col27,#T_aa_stat_tablerow1_col28,#T_aa_stat_tablerow1_col29{
+            background-color:  #cccccc;
+        }#T_aa_stat_tablerow1_col1{
+            background-color:  #cccccc;
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 100.0%, transparent 100.0%);
+        }</style><table id="T_aa_stat_table" ><thead>    <tr>        <th class="col_heading level0 col0" ><a id="binh" href="#">mass shift</a></th>        <th class="col_heading level0 col1" ># peptides in bin</th>        <th class="col_heading level0 col2" >M</th>        <th class="col_heading level0 col3" >D</th>        <th class="col_heading level0 col4" >Q</th>        <th class="col_heading level0 col5" >C</th>        <th class="col_heading level0 col6" >L</th>        <th class="col_heading level0 col7" >H</th>        <th class="col_heading level0 col8" >S</th>        <th class="col_heading level0 col9" >R</th>        <th class="col_heading level0 col10" >A</th>        <th class="col_heading level0 col11" >W</th>        <th class="col_heading level0 col12" >Y</th>        <th class="col_heading level0 col13" >P</th>        <th class="col_heading level0 col14" >F</th>        <th class="col_heading level0 col15" >V</th>        <th class="col_heading level0 col16" >N</th>        <th class="col_heading level0 col17" >T</th>        <th class="col_heading level0 col18" >E</th>        <th class="col_heading level0 col19" >G</th>        <th class="col_heading level0 col20" >I</th>        <th class="col_heading level0 col21" >K</th>        <th class="col_heading level0 col29" >Possible interpretations</th>    </tr></thead><tbody>
+                <tr>
+                                <td id="T_aa_stat_tablerow0_col0" class="data row0 col0" ><a href="#">-128.0928</a></td>
+                        <td id="T_aa_stat_tablerow0_col1" class="data row0 col1" ><a href="#">78</a></td>
+                        <td id="T_aa_stat_tablerow0_col2" class="data row0 col2" >1.687</td>
+                        <td id="T_aa_stat_tablerow0_col3" class="data row0 col3" >1.017</td>
+                        <td id="T_aa_stat_tablerow0_col4" class="data row0 col4" >1.081</td>
+                        <td id="T_aa_stat_tablerow0_col5" class="data row0 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow0_col6" class="data row0 col6" >1.010</td>
+                        <td id="T_aa_stat_tablerow0_col7" class="data row0 col7" >1.102</td>
+                        <td id="T_aa_stat_tablerow0_col8" class="data row0 col8" >0.914</td>
+                        <td id="T_aa_stat_tablerow0_col9" class="data row0 col9" >0.837</td>
+                        <td id="T_aa_stat_tablerow0_col10" class="data row0 col10" >1.005</td>
+                        <td id="T_aa_stat_tablerow0_col11" class="data row0 col11" >0.656</td>
+                        <td id="T_aa_stat_tablerow0_col12" class="data row0 col12" >1.152</td>
+                        <td id="T_aa_stat_tablerow0_col13" class="data row0 col13" >0.765</td>
+                        <td id="T_aa_stat_tablerow0_col14" class="data row0 col14" >1.022</td>
+                        <td id="T_aa_stat_tablerow0_col15" class="data row0 col15" >0.961</td>
+                        <td id="T_aa_stat_tablerow0_col16" class="data row0 col16" >1.141</td>
+                        <td id="T_aa_stat_tablerow0_col17" class="data row0 col17" >0.895</td>
+                        <td id="T_aa_stat_tablerow0_col18" class="data row0 col18" >0.957</td>
+                        <td id="T_aa_stat_tablerow0_col19" class="data row0 col19" >0.966</td>
+                        <td id="T_aa_stat_tablerow0_col20" class="data row0 col20" >0.962</td>
+                        <td id="T_aa_stat_tablerow0_col21" class="data row0 col21" >1.154</td>
+                                                                                <td id="T_aa_stat_tablerow0_col29" class="data row0 col29" ><span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=313">Lys-loss</a> (0% match)</span></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow1_col0" class="data row1 col0" ><a href="#">+86.0033</a></td>
+                        <td id="T_aa_stat_tablerow1_col1" class="data row1 col1" ><a href="#">152</a></td>
+                        <td id="T_aa_stat_tablerow1_col2" class="data row1 col2" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col3" class="data row1 col3" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col4" class="data row1 col4" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col5" class="data row1 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow1_col6" class="data row1 col6" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col7" class="data row1 col7" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col8" class="data row1 col8" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col9" class="data row1 col9" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col10" class="data row1 col10" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col11" class="data row1 col11" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col12" class="data row1 col12" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col13" class="data row1 col13" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col14" class="data row1 col14" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col15" class="data row1 col15" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col16" class="data row1 col16" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col17" class="data row1 col17" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col18" class="data row1 col18" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col19" class="data row1 col19" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col20" class="data row1 col20" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col21" class="data row1 col21" >1.000</td>
+                                                                                <td id="T_aa_stat_tablerow1_col29" class="data row1 col29" ><span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=747">Malonyl</a> (95% match)</span></td>
+            </tr>
+    </tbody></table>
+</div>
+<div id="legend">
+  <h2>Figure Legend</h2>
+  <p>
+    <span class="legend freq">Relative AA abundance</span>: this value represents the difference in occurrence frequency
+    between peptides with the given mass shift and the peptides with unshifted masses.
+    The AA occurrence frequency is calculated for all mass shifts as follows: the AA is counted in all peptides without miscleavages,
+    then the AA count is divided by the total of all AA counts.
+    Each AA occurrence frequency for each shift is then divided by the occurrence frequency of the same AA at zero mass shift.
+    Thus, values below 1 mean that the AA is "depleted" and values above 1 mean that it is "enriched" at a certain mass shift.
+  </p>
+  <p>
+    <span class="legend peptides">Peptides with AA, %</span>: This is the percentage of peptides at the given mass shift that contain
+    at least one AA residue of a certain kind. This is useful to assess the meaning of the observed frequencies.
+  </p>
+  <p>
+    <span class="legend localized">Localization count</span>: if spectrum files are provided to AA_stat, each MS/MS spectrum of shifted peptides
+    is tested for localization of mass shifts. This axis counts successful localizations of mass shifts at each AA. The counts are not normalized.
+  </p>
+</div>
+<div id="pic_container">
+  <img id="pic" src="summary.png">
+</div>
+
+<div id="peptides">
+  <h2 id="table_header"></h2>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_-128.0928">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FELGKL<span class="loc">M[-128]</span>ELHGEGSSSGK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.40811.40811.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IPIANTEKY<span class="loc">M[-128]</span>ADK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.29217.29217.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FS<span class="loc">M[-128]</span>PGFKGEGPDVDVNLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.49520.49520.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FS<span class="loc">M[-128]</span>PGFKGEGPDVDVSLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.50323.50323.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VTAAA<span class="loc">M[-128]</span>AGNKSTPR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.15553.15553.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SQNTD<span class="loc">M[-128]</span>VQKSVSK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.16119.16119.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGNFSAA<span class="loc">M[-128]</span>KDLSGK<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.31255.31255.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AAN<span class="loc">M[-128]</span>LQQSGSKNTGAK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.14259.14259.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DIVAAIQHNYK<span class="loc">M[-128]</span>SAFK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.48793.48793.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DQEAL<span class="loc">M[-128]</span>KSVK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.25131.25131.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TK<span class="loc">M[-128]</span>SAAQALK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.18195.18195.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SMSTEGL<span class="loc">M[-128]</span>KFVDSK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.40384.40384.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SNEEGSEEKGPEVR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.10658.10658.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTGEKLTVAENEAETK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.20880.20880.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANEKTESSSAQQVAVSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.12914.12914.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DASTLQSQKAEGTGDAK.-</td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.14852.14852.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVEKYGYTHLSAGELLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.39110.39110.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSAYIKNSNPALNDNLEK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.35672.35672.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSGPGGQNVNKVNSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.8073.8073.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TPGQNAQKWIPAR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.28052.28052.2</td>
+    </tr>
+    <tr>
+      <td>-.PSKGPLQSVQVFGR.-</td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.39294.39294.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDSGKPYYYNSQTK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.17676.17676.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DFDTALKHYDK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.27537.27537.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TQAYQDQKPGTSGLR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.17200.17200.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNLKNLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.47036.47036.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VPTTEKPTVTVNFR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.33752.33752.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAEAAEATAEGALKAEK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.29685.29685.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEEIVKEVSTYIK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.41268.41268.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGQKLIDVNHYAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.24910.24910.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGIDTPDIDIHGPEGK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.38421.38421.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DDSFLGKLGGTLAR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.47189.47189.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DESFLGKLGGTLAR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.46817.46817.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IVSGKDYNVTANSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.18683.18683.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYSSGFGGKYGVQADR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.30044.30044.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IISSIEQKEENK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.19561.19561.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YIEIYVQKVNPSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.39179.39179.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHNAENIQPGEQKYEYK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.19836.19836.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHVQSSSDSSDEPAEK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.12523.12523.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTISAPGKVVTAAAQAK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.30902.30902.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TVSKVDDFLANEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.40651.40651.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LEEVTGKLQVAR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.30305.30305.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IFVGGIKEDTEEHHLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.29843.29843.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASNAAVKLAESK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.15081.15081.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TLQKQSVVYGGK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.21407.21407.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLLPGELAKHAVSEGTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.43061.43061.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPNSKVESK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.17977.17977.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGLQVVAVKAPGFGDNR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.43594.43594.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DLGKFQVATDALK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.43868.43868.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SGKFTQQDIDEAK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.21247.21247.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>FDDTNPEKEEAK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.16034.16034.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AAINQKLIETGER<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.34094.34094.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DSINFLDHINGK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.43044.43044.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTSLNVKYNNDK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.25219.25219.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGDWKGYTGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.20672.20672.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HAVSEGTKAVTK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.4361.4361.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>INNFSADIKDSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.25530.25530.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQEKVESAQSEQK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.10002.10002.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALASIDSKLNQAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.28918.28918.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SLKLNTAEDAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.24949.24949.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LTEKELAEAASK<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.23230.23230.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DIVAAIQHNYK<span class="cterm">.<span class="next_aa">M</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.36783.36783.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IGNSYFKEEK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.23568.23568.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQTKAGEATVK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.10222.10222.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGDDIAKATGDWK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.28822.28822.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLEEEGAAHSGK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.8932.8932.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ASEALLKQLK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.33471.33471.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITGKNQVTATK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.8162.8162.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LEKTIDDLEEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.30268.30268.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VFSIISSEKELK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.41567.41567.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ISALQGKLSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.27222.27222.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LEQVEKELLR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.38672.38672.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LDEKENLSAK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.15803.15803.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNALKNLQVK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.30666.30666.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVFSGNLFQHQEDSK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.41349.41349.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ILDLKTGTVK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.35025.35025.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ALLQAKASGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.18304.18304.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGFGKFER<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.26601.26601.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LDDKELEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.13264.13264.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+86.0033">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGLQVVAV<span class="loc">K[+86]</span>APGFGDNR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.46454.46454.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>MAQEL<span class="loc">K[+86]</span>YGDIVER<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.35267.35267.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VTLEVG<span class="loc">K[+86]</span>VIQQGR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.39180.39180.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">K[+86]</span>YEEIDNAPEER<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.21251.21251.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>D<span class="loc">K[+86]</span>ALPLEAEVAPVK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.44177.44177.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGQ<span class="loc">K[+86]</span>LIDVNHYAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.23858.23858.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHNAENIQPGEQ<span class="loc">K[+86]</span><span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.16154.16154.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IFVGGI<span class="loc">K[+86]</span>EDTEEHHLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.35567.35567.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VPTTE<span class="loc">K[+86]</span>PTVTVNFR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.31060.31060.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LEEVTG<span class="loc">K[+86]</span>LQVAR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.32785.32785.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VNVEAPDVNLEGLGG<span class="loc">K[+86]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.44611.44611.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LEQVE<span class="loc">K[+86]</span>ELLR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.40550.40550.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HAEMVHTGL<span class="loc">K[+86]</span>LER<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.24690.24690.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DTMGIAD<span class="loc">K[+86]</span>TENTLER<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.35539.35539.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AAINQ<span class="loc">K[+86]</span>LIETGER<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.32273.32273.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLTWDV<span class="loc">K[+86]</span>DTLLR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.50094.50094.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GAE<span class="loc">K[+86]</span>TEVAEPR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.15177.15177.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LE<span class="loc">K[+86]</span>TIDDLEEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.30837.30837.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANLE<span class="loc">K[+86]</span>AQAELVGTADEATR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.42659.42659.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LGNDFHTN<span class="loc">K[+86]</span>R<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.11518.11518.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TPGQNAQ<span class="loc">K[+86]</span>WIPAR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.30989.30989.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DLG<span class="loc">K[+86]</span>FQVATDALK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.47057.47057.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLFFGG<span class="loc">K[+86]</span>GAPLQR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.44976.44976.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DYSAPVNFI<span class="loc">S[+86]</span>AGLKK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.49491.49491.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLFSNTAAQ<span class="loc">K[+86]</span>LR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.42667.42667.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVE<span class="loc">K[+86]</span>YGYTHLSAGELLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.35776.35776.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FELG<span class="loc">K[+86]</span>LMELHGEGSSSGK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.44856.44856.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHVQSSSDSSDEPAE<span class="loc">K[+86]</span>R<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.11273.11273.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTGE<span class="loc">K[+86]</span>LTVAENEAETK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.30470.30470.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQT<span class="loc">K[+86]</span>AGEATVK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.13640.13640.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYSSGFGG<span class="loc">K[+86]</span>YGVQADR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.31761.31761.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEQEHAAIQD<span class="loc">K[+86]</span>LFQVAK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.43048.43048.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DESFLG<span class="loc">K[+86]</span>LGGTLAR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.54822.54822.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LTE<span class="loc">K[+86]</span>ELAEAASK<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.29955.29955.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DDSFLG<span class="loc">K[+86]</span>LGGTLAR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.55117.55117.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GTITVSAQEL<span class="loc">K[+86]</span>DNR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.29478.29478.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ISSNFSSIIAE<span class="loc">K[+86]</span>LR<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.54036.54036.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNAL<span class="loc">K[+86]</span>NLQVK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.33159.33159.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLDSGAPI<span class="loc">K[+86]</span>IPVGPETLGR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.50067.50067.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQAAYAGD<span class="loc">K[+86]</span>ADDIQK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.24381.24381.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASDTSSETVFG<span class="loc">K[+86]</span>R<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.25497.25497.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">K[+86]</span>FGVLSDNFK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.39221.39221.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASNAAV<span class="loc">K[+86]</span>LAESK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.23350.23350.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TTGFYSGFSEVAE<span class="loc">K[+86]</span>R<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.40416.40416.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITG<span class="loc">K[+86]</span>NQVTATK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.11839.11839.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IDLPAENSNSETIIITG<span class="loc">K[+86]</span>R<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.42204.42204.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YIEIYVQ<span class="loc">K[+86]</span>VNPSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.40410.40410.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSFAY<span class="loc">K[+86]</span>DQNENR<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.18479.18479.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGFG<span class="loc">K[+86]</span>FER<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.29102.29102.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GGNIGA<span class="loc">K[+86]</span>WTIDLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.45977.45977.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGDW<span class="loc">K[+86]</span>GYTGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.22549.22549.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IVSG<span class="loc">K[+86]</span>DYNVTANSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.19760.19760.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ILDL<span class="loc">K[+86]</span>TGTVK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.35142.35142.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTISAPG<span class="loc">K[+86]</span>VVTAAAQAK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.32979.32979.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQE<span class="loc">K[+86]</span>VESAQSEQK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.12310.12310.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LDE<span class="loc">K[+86]</span>ENLSAK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.17316.17316.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TFG<span class="loc">K[+86]</span>AAGPSLSHTSGGTQSK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.17509.17509.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IISSIEQ<span class="loc">K[+86]</span>EENK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.23638.23638.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTSLNV<span class="loc">K[+86]</span>YNNDK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.26775.26775.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANE<span class="loc">K[+86]</span>TESSSAQQVAVSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.14642.14642.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TQAYQDQ<span class="loc">K[+86]</span>PGTSGLR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.19447.19447.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GGPGSTLSFVG<span class="loc">K[+86]</span>R<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.34295.34295.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VSPASSVDSNIPSSQGYK<span class="loc">K[+86]</span><span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.25009.25009.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ASEALL<span class="loc">K[+86]</span>QLK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.41746.41746.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNL<span class="loc">K[+86]</span>NLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.54356.54356.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEEIV<span class="loc">K[+86]</span>EVSTYIK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.50528.50528.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLEQ<span class="loc">K[+86]</span>TQESQK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.12917.12917.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGDDIA<span class="loc">K[+86]</span>ATGDWK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.28684.28684.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>INNFSADI<span class="loc">K[+86]</span>DSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.28799.28799.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLTANSNPSSPSAA<span class="loc">K[+86]</span>R<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.15565.15565.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GSLE<span class="loc">K[+86]</span>GSPEDK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.11638.11638.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IGNSYF<span class="loc">K[+86]</span>EEK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.25399.25399.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LAEEEN<span class="loc">K[+86]</span>AK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.6974.6974.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TLQ<span class="loc">K[+86]</span>QSVVYGGK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.23453.23453.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLLPGELA<span class="loc">K[+86]</span>HAVSEGTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.39259.39259.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTPTSAGPNSFN<span class="loc">K[+86]</span>GK<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.18533.18533.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DASTLQSQ<span class="loc">K[+86]</span>AEGTGDAK.-</td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.16336.16336.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DVNAAIAAI<span class="loc">K[+86]</span>TK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.40805.40805.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGEFSGAN<span class="loc">K[+86]</span>EK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.13352.13352.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLGEPAAGEGSA<span class="loc">K[+86]</span>R<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.14470.14470.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SL<span class="loc">K[+86]</span>LNTAEDAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.23010.23010.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHNAENIQPGEQ<span class="loc">K[+86]</span>YEYK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.21567.21567.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>T<span class="loc">K[+86]</span>MSAAQALK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.23463.23463.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VETTVTSL<span class="loc">K[+86]</span>TK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.23921.23921.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ALLQA<span class="loc">K[+86]</span>ASGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.21550.21550.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEVQVSD<span class="loc">K[+86]</span>ER<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.12608.12608.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ISALQG<span class="loc">K[+86]</span>LSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.29392.29392.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGF<span class="loc">K[+86]</span>GEGPDVDVSLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.49023.49023.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DFDTAL<span class="loc">K[+86]</span>HYDK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.27684.27684.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VFSIISSE<span class="loc">K[+86]</span>ELK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.44128.44128.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>MSFV<span class="loc">K[+86]</span>GWGAEYR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.42411.42411.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSGPGGQNVN<span class="loc">K[+86]</span>VNSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.10282.10282.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>FDDTNPE<span class="loc">K[+86]</span>EEAK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.22029.22029.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGNFSAAM<span class="loc">K[+86]</span>DLSGK<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.36436.36436.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALASIDS<span class="loc">K[+86]</span>LNQAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.34146.34146.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGIDTPDIDIHGPEG<span class="loc">K[+86]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.40502.40502.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GETAS<span class="loc">K[+86]</span>LQSEISR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.27412.27412.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPNS<span class="loc">K[+86]</span>VESK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.21898.21898.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AAQASDLE<span class="loc">K[+86]</span>IHLDEK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.26530.26530.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DSSPTTNS<span class="loc">K[+86]</span>LSALQR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.30632.30632.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TVS<span class="loc">K[+86]</span>VDDFLANEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.42116.42116.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>STGLELETPSLVPV<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.47054.47054.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GWL<span class="loc">K[+86]</span>SNVSDAVAQSTR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.41056.41056.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VFIGNLNTLVV<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.49628.49628.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLEEEDS<span class="loc">K[+86]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.27437.27437.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQQELQTA<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.12506.12506.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPDEAYAIA<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.23407.23407.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TLDEILQE<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.37808.37808.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SEASSEFA<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.14731.14731.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGF<span class="loc">K[+86]</span>GEGPDVDVNLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.48219.48219.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TTEETS<span class="loc">K[+86]</span>PK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.4017.4017.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGVEVPDVNIEGPEG<span class="loc">K[+86]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.45524.45524.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVEVPDVSLEGPEG<span class="loc">K[+86]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.40041.40041.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VGTASVLQPV<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.30173.30173.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQLEIDQ<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.31391.31391.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDAPDVSIEGPDA<span class="loc">K[+86]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.36979.36979.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDVPDVNIEGPEG<span class="loc">K[+86]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.40943.40943.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SNEEGSEE<span class="loc">K[+86]</span>GPEVR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.13350.13350.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SGNLTEDD<span class="loc">K[+86]</span>HNNAK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>0.97</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.4238.4238.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSAYI<span class="loc">K[+86]</span>NSNPALNDNLEK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.96</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.36796.36796.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TAS<span class="loc">S[+86]</span>PDSLRSR<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.96</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.25145.25145.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VYIASSSGSTAI<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.95</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.22409.22409.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITESVAETAQTI<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.28219.28219.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLIVSTTPYSE<span class="loc">K[+86]</span>DTK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.38720.38720.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGPNASIISL<span class="loc">K[+86]</span>SDK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.30686.30686.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AMEAASSL<span class="loc">K[+86]</span>SQAATK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.23807.23807.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GADFLVTEVENGGSLGS<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.90</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.45911.45911.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SG<span class="loc">K[+86]</span>FTQQDIDEAK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.90</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.24319.24319.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLEEEGAAHSG<span class="loc">K[+86]</span>R<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.89</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.8170.8170.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DQEALM<span class="loc">K[+86]</span>SVK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.87</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.27113.27113.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FLQEFYQDDELG<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.87</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.36143.36143.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPSDSGYSYETIG<span class="loc">K[+86]</span>TTK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.87</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.23021.23021.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AQQHWGSGVGV<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.86</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.15090.15090.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AANDAGYFNDEMAPIEV<span class="loc">K[+86]</span>TK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.86</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.40901.40901.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VTAAAMAGN<span class="loc">K[+86]</span>STPR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.85</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.18414.18414.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SQNTDMVQ<span class="loc">K[+86]</span>SVSK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.83</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.18131.18131.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDSG<span class="loc">K[+86]</span>PYYYNSQTK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.52</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.17574.17574.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ATVAS<span class="loc">S[+86]</span>TQKFQDLGVK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.50</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.36972.36972.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GFALVGVGSEASS<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.40</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.37042.37042.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IINEPTAAAIAYGLD<span class="loc">K[+86]</span>K<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.39</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.45631.45631.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAIHFYN<span class="loc">K[+86]</span>SLAEHR<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.25</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.28252.28252.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SITHSTVG<span class="loc">S[+86]</span>KGEK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.19</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.6808.6808.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VNVEAPDVNLEGLGG<span class="loc">K[+86]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.14</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_2xIT_2xHCD_R1.47997.47997.2</td>
+    </tr>
+    <tr>
+      <td>-.PS<span class="loc">K[+86]</span>GPLQSVQVFGR.-</td>
+      <td>0.02</td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.37376.37376.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>MGSKSPGNTSQPPAFFSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.33355.33355.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SKLLFSNTAAQK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.44231.44231.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEDEVLTSKGDAWAK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.30124.30124.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SKHLQEQLNELK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.23329.23329.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAEAAEATAEGALKAEK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.35975.35975.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ITLSKHQNVQLPR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.29104.29104.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TQDQISNIKYHEEFEK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_3xHCD_R1.25375.25375.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDDESSQKDIK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td></td>
+      <td>02330a_GG2_3991_04_PTM_TrainKit_Kmod_Malonyl_200fmol_survey_R1.11830.11830.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+</div>
+
+<div id="meta">
+  <span class="note">Report created 20:03:29 March 05, 2021 with <a href="https://github.com/SimpleNumber/aa_stat">AA_stat</a> 2.1.5</span>
+</div>
+
+</body>
+<script type="text/javascript">
+  function getMassShift(elem) {
+    eid = elem.parentElement.id;
+    return document.getElementById(eid.replace("col1", "col0")).children[0].text;
+  };
+  function hideTablesAndLegend() {
+    var tables = document.getElementsByClassName('peptide_table');
+    for(j = 0; j < tables.length; j++) {
+        tables[j].style.display = 'none';
+      };
+    document.getElementById('legend').style.display = 'none';
+    // document.getElementById('table_header').textContent = "";
+  };
+  function showPic(src) {
+    hideTablesAndLegend();
+    var pic = document.getElementById('pic');
+    pic.src = src;
+    pic.style.display = 'block';
+    if (src == 'summary.png') {
+      pic.classList.add('summary');
+      pic.classList.remove('figure');
+    }
+    else {
+      pic.classList.remove('summary');
+      pic.classList.add('figure');
+    }
+  }
+
+  function showTable(elem) {
+    hideTablesAndLegend();
+    var ms = getMassShift(elem);
+    showPic(ms + '.png');
+    document.getElementById('peptides_'+ms).style.display = 'block';
+    // document.getElementById('table_header').textContent = "Mass shift " + ms + " (" + elem.text + " peptides)";
+  }
+
+  var shifts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col0');
+  for(i = 0; i < shifts.length; i++) {
+    shifts[i].children[0].onclick = function (e) {
+      showPic(e.target.text + '.png');
+      document.getElementById('legend').style.display = 'block';
+    }
+  }
+
+  var binh = document.getElementById('binh');
+  binh.onclick = function (e) {
+    showPic('summary.png');
+    hideTablesAndLegend();
+  }
+
+  var amounts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col1');
+  for(i = 0; i < amounts.length; i++) {
+    amounts[i].children[0].onclick = function (e) {
+      document.getElementById('pic').style.display = 'none';
+      showTable(e.target);
+    }
+  }
+
+  var reference = "+86.0033";
+  var table = document.getElementById("T_aa_stat_table");
+  for (var i = 0, row; row = table.rows[i]; i++) {
+    var ms = row.cells[0].innerText;
+    if (ms == reference) {
+      row.title = "Reference mass shift";
+      break;
+    }
+  }
+
+  var vmod_comb_i = [];
+  var vmod_comb_val = [];
+  var vmod_table = document.getElementById("T_rec_var_mod_table");
+
+  for (var i = 0; i < vmod_comb_i.length; i++) {
+    var cells = vmod_table.querySelectorAll('.data.col' + vmod_comb_i[i]);
+    cells.forEach(function(c) {
+      c.title = vmod_comb_val[i];
+      c.classList.add("highlighted", "combine_mod");
+      if (c.classList.contains("row1")) {
+        c.classList.add("has_tooltip");
+      }
+    });
+  }
+
+  var opp_mod_i = [];
+  var opp_mod_val = [];
+  for (var j = 0; j < opp_mod_i.length; j++) {
+    var ocells = vmod_table.querySelectorAll('.data.col' + opp_mod_i[j]);
+    ocells.forEach(function(c) {
+      c.title = opp_mod_val[j];
+      c.classList.add("opposite_mod", "highlighted");
+      if (c.classList.contains("row1")) {
+        c.classList.add("has_tooltip");
+      }
+    });
+  }
+
+  if (vmod_table.querySelector('.data.row0.col0').textContent == "isotope error") {
+    vmod_table.querySelectorAll('.data.col0').forEach(function(c) {
+      c.classList.add("isotope_error");
+      c.title = "This is the recommended value for search engine parameters such as 'isotope peak error', i.e. misassignment of monoisotopic peak.";
+      if (c.classList.contains("row0")) {
+        c.classList.add("has_tooltip");
+      }
+    })
+  }
+
+  var full_info = ['<span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=313">Lys-loss</a> (0% match)</span>', '<span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=747">Malonyl</a> (95% match)</span>'];
+
+  var table_rows = new Array();
+  for(i = 0; i < shifts.length; i++) {
+    table_rows[shifts[i].textContent] = shifts[i].parentElement;
+  }
+
+  function set_mouseover_handlers(elem) {
+    var info_spans = elem.querySelectorAll('span.info_item');
+    for (var i = info_spans.length - 1; i >= 0; i--) {
+      info_spans[i].onmouseover = function(e) {
+        var refs = eval(e.target.dataset.ref);
+        for(j = 0; j < refs.length; j++) {
+          table_rows[refs[j]].classList.add("highlighted");
+        }
+      }
+      info_spans[i].onmouseout = function(e) {
+        var refs = eval(e.target.dataset.ref);
+        for(j = 0; j < refs.length; j++) {
+          table_rows[refs[j]].classList.remove("highlighted");
+        }
+      }
+    }
+  }
+  set_mouseover_handlers(table);
+
+  var onclickCreator = function(i) {
+    return function(e) {
+      var td = e.target.parentElement.parentElement;
+      td.innerHTML = full_info[i];
+      set_mouseover_handlers(td);
+    };
+  };
+  for (var i = 0; i < full_info.length; i++) {
+    var info_cell = table.querySelector('.data.col29.row' + i);
+    var link = info_cell.querySelector('a.expand_info_link');
+    if (link) {
+      link.onclick = onclickCreator(i);
+    }
+  }
+
+</script>
+</html>

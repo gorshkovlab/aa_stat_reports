@@ -1,0 +1,3 @@
+mass shift,# peptides in bin,is isotope,isotope index,sum of mass shifts,unimod candidates,unimod accessions,aa_stat candidates,all candidates,candidates for loc,localization
+-128.09276705882354,78,False,,,{'Protein C-term'},{313},['M'],"{'Protein C-term', 'M'}","[{'-128.0928': {'Protein C-term', 'M'}}]",{'M_-128.0928': 12}
+86.00333882022966,152,False,,,"{'C', 'K', 'S'}",{747},[],"{'C', 'K', 'S'}","[{'+86.0033': {'C', 'K', 'S'}}]","{'K_+86.0033': 140, 'S_+86.0033': 4, 'non-localized': 7, 'N-term_+86.0033': 2, 'C-term_+86.0033': 3}"

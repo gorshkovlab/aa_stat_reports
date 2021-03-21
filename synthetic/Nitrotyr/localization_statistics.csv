@@ -1,0 +1,2 @@
+mass shift,# peptides in bin,is isotope,isotope index,sum of mass shifts,unimod candidates,unimod accessions,aa_stat candidates,all candidates,candidates for loc,localization
+44.98696178278689,145,False,,,"{'W', 'Y', 'F'}",{354},[],"{'W', 'Y', 'F'}","[{'+44.9870': {'W', 'Y', 'F'}}]","{'Y_+44.9870': 139, 'F_+44.9870': 4, 'N-term_+44.9870': 16}"

@@ -1,0 +1,5 @@
+mass shift,# peptides in bin,is isotope,isotope index,sum of mass shifts,unimod candidates,unimod accessions,aa_stat candidates,all candidates,candidates for loc,localization
+-128.0929250764526,90,False,,,{'Protein C-term'},{313},['C'],"{'Protein C-term', 'C'}","[{'-128.0929': {'Protein C-term', 'C'}}]",{}
+100.0189212480881,210,False,,,"{'K', 'N-term', 'S', 'Protein N-term'}","{64, 914}",[],"{'K', 'N-term', 'S'}","[{'+100.0189': {'K', 'N-term', 'S'}}]","{'K_+100.0189': 160, 'S_+100.0189': 17, 'C-term_+100.0189': 24, 'non-localized': 6, 'N-term_+100.0189': 27, 'V_+100.0189': 4, 'T_+100.0189': 1, 'A_+100.0189': 4, 'M_+100.0189': 1, 'L_+100.0189': 3, 'N_+100.0189': 1, 'G_+100.0189': 3, 'E_+100.0189': 2, 'Y_+100.0189': 1, 'H_+100.0189': 1, 'W_+100.0189': 1, 'F_+100.0189': 1}"
+156.08195942028988,53,False,,,"{'K', 'Protein N-term'}",{1020},[],"{'K', 'Protein N-term'}","[{'+156.0820': {'K', 'Protein N-term'}}]","{'K_+156.0820': 49, 'N-term_+156.0820': 1, 'C-term_+156.0820': 1, 'non-localized': 3}"
+171.05586106194687,94,False,,,set(),set(),[],set(),[{'+171.0559': set()}],{}

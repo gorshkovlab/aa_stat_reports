@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AA_stat report</title>
+    <style type="text/css">
+        #steps {
+          text-align: center;
+        }
+        .steplink {
+          margin: 3vw 3vw;
+        }
+        #mods_outer {
+          text-align: center;
+        }
+        #mod_container {
+          display: flex;
+          margin-top: 1vh;
+          margin-bottom: 1vh;
+          /*text-align: center;*/
+          justify-content: center;
+          align-items: center;
+        }
+        .modtable {
+          width: 30vw;
+        }
+        .modtable table {
+          border-collapse: collapse;
+        }
+        .modtable td, th {
+          border: 1px solid;
+          padding: 0.3rem;
+          text-align: center;
+        }
+        #aa_stat {
+          text-align: center;
+        }
+        #pic_container {
+          max-height: 80vh;
+          max-width: 85vw;
+          min-height: 25vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          overflow-x: auto;
+        }
+        #pic {
+          max-height: 80vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .figure {
+          max-width: 70vw;
+        }
+        #legend {
+          display: none;
+          overflow: auto;
+          margin: 0 auto;
+          width: 81vw;
+        }
+        table {
+          border: 1px solid black;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .legend.peptides {
+          color: #FF6600;
+        }
+        .legend.freq {
+          color: #88AA00;
+        }
+        .legend.localized {
+          color: #006688;
+        }
+        .loc {
+          color: #FF0000;
+        }
+        .vmod_loc {
+          color: #0000FF;
+        }
+        .nterm, .cterm {
+          color: #808080;
+        }
+        #legend p {
+          max-width: 25vw;
+          margin-left: 1vw;
+          margin-right: 1vw;
+          float: left;
+          text-align: justify;
+        }
+        #legend h2, #peptides h2 {
+          text-align: center;
+        }
+        .peptide_table {
+          display: none;
+          text-align: center;
+          width: fit-content;
+        }
+        #meta {
+          text-align: center;
+        }
+        .note, .expand_info {
+          font-size: 75%;
+        }
+        .isotope_error {
+          background-color: #e0e0e0;
+        }
+        .highlighted {
+          background-color: lightyellow;
+        }
+        .has_tooltip::after {
+          content: "\01F6C8";
+          vertical-align: super;
+          font-size: 75%;
+        }
+    </style>
+</head>
+<body>
+<div id="steps"></div>
+<div id="mods_outer">
+  <h3>Modifications</h3>
+  <div id="mod_container">
+    <div id="set_fmods" class="modtable">
+    Set modifications: none.
+    </div>
+    
+    <div id="rec_mods" class="modtable">
+    <style  type="text/css" >
+</style><table id="T_rec_fix_mod_table" ><caption>Recommended, fixed</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >P</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_rec_fix_mod_tablelevel0_row0" class="row_heading level0 row0" >value</th>
+                        <td id="T_rec_fix_mod_tablerow0_col0" class="data row0 col0" >+15.9969</td>
+            </tr>
+    </tbody></table>
+    </div>
+    <div id="rec_var_mods" class="modtable">
+    No variable modifications recommended.
+    </div>
+  </div>
+</div>
+<div id="aa_stat">
+  <h3>Amino acid statistics</h3>
+  <style  type="text/css" >
+    #T_aa_stat_table tr:hover {
+          background-color: lightyellow;
+    }    #T_aa_stat_table td, th {
+          text-align: center;
+    }    #T_aa_stat_table td, th {
+          border: 1px solid black;
+    }#T_aa_stat_tablerow0_col0,#T_aa_stat_tablerow0_col2,#T_aa_stat_tablerow0_col3,#T_aa_stat_tablerow0_col4,#T_aa_stat_tablerow0_col5,#T_aa_stat_tablerow0_col6,#T_aa_stat_tablerow0_col7,#T_aa_stat_tablerow0_col8,#T_aa_stat_tablerow0_col9,#T_aa_stat_tablerow0_col10,#T_aa_stat_tablerow0_col11,#T_aa_stat_tablerow0_col12,#T_aa_stat_tablerow0_col13,#T_aa_stat_tablerow0_col14,#T_aa_stat_tablerow0_col15,#T_aa_stat_tablerow0_col16,#T_aa_stat_tablerow0_col17,#T_aa_stat_tablerow0_col18,#T_aa_stat_tablerow0_col19,#T_aa_stat_tablerow0_col20,#T_aa_stat_tablerow0_col21,#T_aa_stat_tablerow0_col22,#T_aa_stat_tablerow0_col23,#T_aa_stat_tablerow0_col24,#T_aa_stat_tablerow0_col25,#T_aa_stat_tablerow0_col26,#T_aa_stat_tablerow0_col27,#T_aa_stat_tablerow0_col28,#T_aa_stat_tablerow0_col29{
+            background-color:  #cccccc;
+        }#T_aa_stat_tablerow0_col1{
+            background-color:  #cccccc;
+            width:  10em;
+             height:  80%;
+        }</style><table id="T_aa_stat_table" ><thead>    <tr>        <th class="col_heading level0 col0" ><a id="binh" href="#">mass shift</a></th>        <th class="col_heading level0 col1" ># peptides in bin</th>        <th class="col_heading level0 col2" >M</th>        <th class="col_heading level0 col3" >D</th>        <th class="col_heading level0 col4" >Q</th>        <th class="col_heading level0 col5" >C</th>        <th class="col_heading level0 col6" >L</th>        <th class="col_heading level0 col7" >H</th>        <th class="col_heading level0 col8" >S</th>        <th class="col_heading level0 col9" >R</th>        <th class="col_heading level0 col10" >A</th>        <th class="col_heading level0 col11" >W</th>        <th class="col_heading level0 col12" >Y</th>        <th class="col_heading level0 col13" >P</th>        <th class="col_heading level0 col14" >F</th>        <th class="col_heading level0 col15" >V</th>        <th class="col_heading level0 col16" >N</th>        <th class="col_heading level0 col17" >T</th>        <th class="col_heading level0 col18" >E</th>        <th class="col_heading level0 col19" >G</th>        <th class="col_heading level0 col20" >I</th>        <th class="col_heading level0 col21" >K</th>        <th class="col_heading level0 col29" >Possible interpretations</th>    </tr></thead><tbody>
+                <tr>
+                                <td id="T_aa_stat_tablerow0_col0" class="data row0 col0" ><a href="#">+15.9969</a></td>
+                        <td id="T_aa_stat_tablerow0_col1" class="data row0 col1" ><a href="#">62</a></td>
+                        <td id="T_aa_stat_tablerow0_col2" class="data row0 col2" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col3" class="data row0 col3" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col4" class="data row0 col4" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col5" class="data row0 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow0_col6" class="data row0 col6" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col7" class="data row0 col7" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col8" class="data row0 col8" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col9" class="data row0 col9" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col10" class="data row0 col10" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col11" class="data row0 col11" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col12" class="data row0 col12" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col13" class="data row0 col13" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col14" class="data row0 col14" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col15" class="data row0 col15" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col16" class="data row0 col16" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col17" class="data row0 col17" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col18" class="data row0 col18" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col19" class="data row0 col19" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col20" class="data row0 col20" >1.000</td>
+                        <td id="T_aa_stat_tablerow0_col21" class="data row0 col21" >1.000</td>
+                                                                                <td id="T_aa_stat_tablerow0_col29" class="data row0 col29" ><span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=35">Oxidation</a> (89% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=569">Phe->Tyr</a> (0% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=540">Ala->Ser</a> (0% match)</span></td>
+            </tr>
+    </tbody></table>
+</div>
+<div id="legend">
+  <h2>Figure Legend</h2>
+  <p>
+    <span class="legend freq">Relative AA abundance</span>: this value represents the difference in occurrence frequency
+    between peptides with the given mass shift and the peptides with unshifted masses.
+    The AA occurrence frequency is calculated for all mass shifts as follows: the AA is counted in all peptides without miscleavages,
+    then the AA count is divided by the total of all AA counts.
+    Each AA occurrence frequency for each shift is then divided by the occurrence frequency of the same AA at zero mass shift.
+    Thus, values below 1 mean that the AA is "depleted" and values above 1 mean that it is "enriched" at a certain mass shift.
+  </p>
+  <p>
+    <span class="legend peptides">Peptides with AA, %</span>: This is the percentage of peptides at the given mass shift that contain
+    at least one AA residue of a certain kind. This is useful to assess the meaning of the observed frequencies.
+  </p>
+  <p>
+    <span class="legend localized">Localization count</span>: if spectrum files are provided to AA_stat, each MS/MS spectrum of shifted peptides
+    is tested for localization of mass shifts. This axis counts successful localizations of mass shifts at each AA. The counts are not normalized.
+  </p>
+</div>
+<div id="pic_container">
+  <img id="pic" src="summary.png">
+</div>
+
+<div id="peptides">
+  <h2 id="table_header"></h2>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+15.9969">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEKGL<span class="loc">P[+16]</span>GLAGDHGEFGEK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.22042.22042.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GGPGAPGA<span class="loc">P[+16]</span>GPKGESGDYK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.7218.7218.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GGQGP<span class="loc">P[+16]</span>GPQGPIGYPGPR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.22889.22889.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGY<span class="loc">P[+16]</span>GPSGPLGARGIPGIK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.31141.31141.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LGV<span class="loc">P[+16]</span>GLPGYPGRQGPK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.27923.27923.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>V<span class="loc">P[+16]</span>GALAAAKAAK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.11833.11833.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGY<span class="loc">P[+16]</span>GPSGPLGAR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.21969.21969.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEKGN<span class="loc">P[+16]</span>GVGTQGPR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.3031.3031.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEAGPTGPQ<span class="loc">G[+16]</span>EPGVRGIR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.14171.14171.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LEKDYQ<span class="loc">P[+16]</span>GITFIVVQK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_2xIT_2xHCD_R1.42557.42557.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEQGE<span class="loc">P[+16]</span>GAPGIR<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_2xIT_2xHCD_R1.14142.14142.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GN<span class="loc">P[+16]</span>GVGTQGPR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_2xIT_2xHCD_R1.5803.5803.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GL<span class="loc">P[+16]</span>GEKGER<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.12270.12270.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYQP<span class="loc">G[+16]</span>ITFIVVQK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.97</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_2xIT_2xHCD_R1.45704.45704.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LGP<span class="loc">P[+16]</span>GNPGPSGSPGPKGQK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.96</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.8354.8354.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VQFA<span class="loc">P[+16]</span>EKPGPQPSAETTR<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>0.95</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.14804.14804.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GL<span class="loc">P[+16]</span>GLAGDHGEFGEK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.95</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.24321.24321.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YTAILNQI<span class="loc">P[+16]</span>SHSSSIR<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.25384.25384.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GERGFPGY<span class="loc">P[+16]</span>GPK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.17304.17304.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEPGI<span class="loc">P[+16]</span>AIPGIRGPK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.29337.29337.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEQGE<span class="loc">P[+16]</span>GAPGIRTGIQGLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.23057.23057.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GDAGEPGRPGS<span class="loc">P[+16]</span>GK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.2098.2098.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GLPGEPGPRGLLG<span class="loc">P[+16]</span>K<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.25723.25723.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEAGPTGPQGE<span class="loc">P[+16]</span>GVR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.10098.10098.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEPGQGLRGLQGP<span class="loc">P[+16]</span>GK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.17160.17160.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GKLGV<span class="loc">P[+16]</span>GLPGYPGR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.28061.28061.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GDQGEPGPSGN<span class="loc">P[+16]</span>GK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_2xIT_2xHCD_R1.2673.2673.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GQKGEPGL<span class="loc">P[+16]</span>GHPGK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.4914.4914.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GERGP<span class="loc">P[+16]</span>GPPGK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.2642.2642.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEPGI<span class="loc">P[+16]</span>AIPGIR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.32593.32593.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GEIGP<span class="loc">P[+16]</span>GPR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.90</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.9836.9836.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>V<span class="loc">P[+16]</span>GALAAAK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.90</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.11767.11767.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>RP<span class="loc">P[+16]</span>GFSPFR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.88</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.22486.22486.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GFPGY<span class="loc">P[+16]</span>GPK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.88</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.16771.16771.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GD<span class="loc">P[+16]</span>GLIGPK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.87</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_survey_R1.19396.19396.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LGV<span class="loc">P[+16]</span>GLPGYPGR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.86</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.32392.32392.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>WHLSSLA<span class="loc">P[+16]</span>PYVK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.86</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_survey_R1.35942.35942.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEPGLPG<span class="loc">H[+16]</span>PGK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.82</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_survey_R1.9735.9735.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGVEAKQPN<span class="loc">S[+16]</span>AIR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.79</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_2xIT_2xHCD_R1.10814.10814.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GP<span class="loc">P[+16]</span>GPPGR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.72</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_2xIT_2xHCD_R1.4300.4300.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GL<span class="loc">P[+16]</span>GPPGPQGESR<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.67</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_survey_R1.17514.17514.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYQP<span class="loc">G[+16]</span>ITFIVVQKR<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>0.57</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_survey_R1.38925.38925.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GFPGA<span class="loc">P[+16]</span>GLPGLKGHR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.55</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.26883.26883.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">R[+16]</span>AGAPLGGSGFK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.51</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_survey_R1.4591.4591.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>FPGVGV<span class="loc">L[+16]</span>PGVPTGAGVKPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.28</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.34430.34430.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GERGPPGP<span class="loc">P[+16]</span>GR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.13</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_survey_R1.4589.4589.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GDRGEIGP<span class="loc">P[+16]</span>GPR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.09</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_2xIT_2xHCD_R1.9566.9566.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LGPPGNPGPSGSP<span class="loc">G[+16]</span>PK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.03</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.13658.13658.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GFPGA<span class="loc">P[+16]</span>GLPGLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.02</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.33601.33601.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GG<span class="loc">P[+16]</span>GAPGAPGPK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.02</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.4809.4809.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GGPGGPGPQGP<span class="loc">P[+16]</span>GK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.02</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.5936.5936.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GSIGF<span class="loc">P[+16]</span>GFPGANGEK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.02</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.33328.33328.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GSIGFP<span class="loc">G[+16]</span>FPGANGEKGGR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.01</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_survey_R1.34353.34353.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IH<span class="loc">P[+16]</span>EGPPLK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>0.01</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.9071.9071.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GAPGPQGPPGP<span class="loc">P[+16]</span>GK<span class="cterm">.<span class="next_aa">M</span></span></td>
+      <td>0.00</td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.8607.8607.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GHPGPPGPPGEQGLPGLAGK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_2xIT_2xHCD_R1.28973.28973.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VPGVGLPGVYPGGVLPGAR<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td></td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_survey_R1.46259.46259.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GDTGLPGPQGIPGGVGSPGR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td></td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.26772.26772.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GDIGETGVPGAEGPR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_2xIT_2xHCD_R1.21636.21636.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEKGDPGLIGPK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.11468.11468.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEMGEPGVPGQSGAPGK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_survey_R1.18835.18835.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GPPGPPGRPGNSGIR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GH3_3991_13_PTM_TrainKit_Pmod_Hydroxyproline_200fmol_3xHCD_R1.7782.7782.3</td>
+    </tr>
+  </tbody>
+</table>
+  
+</div>
+
+<div id="meta">
+  <span class="note">Report created 20:12:30 March 05, 2021 with <a href="https://github.com/SimpleNumber/aa_stat">AA_stat</a> 2.1.5</span>
+</div>
+
+</body>
+<script type="text/javascript">
+  function getMassShift(elem) {
+    eid = elem.parentElement.id;
+    return document.getElementById(eid.replace("col1", "col0")).children[0].text;
+  };
+  function hideTablesAndLegend() {
+    var tables = document.getElementsByClassName('peptide_table');
+    for(j = 0; j < tables.length; j++) {
+        tables[j].style.display = 'none';
+      };
+    document.getElementById('legend').style.display = 'none';
+    // document.getElementById('table_header').textContent = "";
+  };
+  function showPic(src) {
+    hideTablesAndLegend();
+    var pic = document.getElementById('pic');
+    pic.src = src;
+    pic.style.display = 'block';
+    if (src == 'summary.png') {
+      pic.classList.add('summary');
+      pic.classList.remove('figure');
+    }
+    else {
+      pic.classList.remove('summary');
+      pic.classList.add('figure');
+    }
+  }
+
+  function showTable(elem) {
+    hideTablesAndLegend();
+    var ms = getMassShift(elem);
+    showPic(ms + '.png');
+    document.getElementById('peptides_'+ms).style.display = 'block';
+    // document.getElementById('table_header').textContent = "Mass shift " + ms + " (" + elem.text + " peptides)";
+  }
+
+  var shifts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col0');
+  for(i = 0; i < shifts.length; i++) {
+    shifts[i].children[0].onclick = function (e) {
+      showPic(e.target.text + '.png');
+      document.getElementById('legend').style.display = 'block';
+    }
+  }
+
+  var binh = document.getElementById('binh');
+  binh.onclick = function (e) {
+    showPic('summary.png');
+    hideTablesAndLegend();
+  }
+
+  var amounts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col1');
+  for(i = 0; i < amounts.length; i++) {
+    amounts[i].children[0].onclick = function (e) {
+      document.getElementById('pic').style.display = 'none';
+      showTable(e.target);
+    }
+  }
+
+  var reference = "+15.9969";
+  var table = document.getElementById("T_aa_stat_table");
+  for (var i = 0, row; row = table.rows[i]; i++) {
+    var ms = row.cells[0].innerText;
+    if (ms == reference) {
+      row.title = "Reference mass shift";
+      break;
+    }
+  }
+
+  var vmod_comb_i = [];
+  var vmod_comb_val = [];
+  var vmod_table = document.getElementById("T_rec_var_mod_table");
+
+  for (var i = 0; i < vmod_comb_i.length; i++) {
+    var cells = vmod_table.querySelectorAll('.data.col' + vmod_comb_i[i]);
+    cells.forEach(function(c) {
+      c.title = vmod_comb_val[i];
+      c.classList.add("highlighted", "combine_mod");
+      if (c.classList.contains("row1")) {
+        c.classList.add("has_tooltip");
+      }
+    });
+  }
+
+  var opp_mod_i = [];
+  var opp_mod_val = [];
+  for (var j = 0; j < opp_mod_i.length; j++) {
+    var ocells = vmod_table.querySelectorAll('.data.col' + opp_mod_i[j]);
+    ocells.forEach(function(c) {
+      c.title = opp_mod_val[j];
+      c.classList.add("opposite_mod", "highlighted");
+      if (c.classList.contains("row1")) {
+        c.classList.add("has_tooltip");
+      }
+    });
+  }
+
+  if (vmod_table.querySelector('.data.row0.col0').textContent == "isotope error") {
+    vmod_table.querySelectorAll('.data.col0').forEach(function(c) {
+      c.classList.add("isotope_error");
+      c.title = "This is the recommended value for search engine parameters such as 'isotope peak error', i.e. misassignment of monoisotopic peak.";
+      if (c.classList.contains("row0")) {
+        c.classList.add("has_tooltip");
+      }
+    })
+  }
+
+  var full_info = ['<span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=35">Oxidation</a> (89% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=569">Phe->Tyr</a> (0% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=540">Ala->Ser</a> (0% match)</span>'];
+
+  var table_rows = new Array();
+  for(i = 0; i < shifts.length; i++) {
+    table_rows[shifts[i].textContent] = shifts[i].parentElement;
+  }
+
+  function set_mouseover_handlers(elem) {
+    var info_spans = elem.querySelectorAll('span.info_item');
+    for (var i = info_spans.length - 1; i >= 0; i--) {
+      info_spans[i].onmouseover = function(e) {
+        var refs = eval(e.target.dataset.ref);
+        for(j = 0; j < refs.length; j++) {
+          table_rows[refs[j]].classList.add("highlighted");
+        }
+      }
+      info_spans[i].onmouseout = function(e) {
+        var refs = eval(e.target.dataset.ref);
+        for(j = 0; j < refs.length; j++) {
+          table_rows[refs[j]].classList.remove("highlighted");
+        }
+      }
+    }
+  }
+  set_mouseover_handlers(table);
+
+  var onclickCreator = function(i) {
+    return function(e) {
+      var td = e.target.parentElement.parentElement;
+      td.innerHTML = full_info[i];
+      set_mouseover_handlers(td);
+    };
+  };
+  for (var i = 0; i < full_info.length; i++) {
+    var info_cell = table.querySelector('.data.col29.row' + i);
+    var link = info_cell.querySelector('a.expand_info_link');
+    if (link) {
+      link.onclick = onclickCreator(i);
+    }
+  }
+
+</script>
+</html>

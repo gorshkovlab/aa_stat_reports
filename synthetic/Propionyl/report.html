@@ -1,0 +1,2837 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AA_stat report</title>
+    <style type="text/css">
+        #steps {
+          text-align: center;
+        }
+        .steplink {
+          margin: 3vw 3vw;
+        }
+        #mods_outer {
+          text-align: center;
+        }
+        #mod_container {
+          display: flex;
+          margin-top: 1vh;
+          margin-bottom: 1vh;
+          /*text-align: center;*/
+          justify-content: center;
+          align-items: center;
+        }
+        .modtable {
+          width: 30vw;
+        }
+        .modtable table {
+          border-collapse: collapse;
+        }
+        .modtable td, th {
+          border: 1px solid;
+          padding: 0.3rem;
+          text-align: center;
+        }
+        #aa_stat {
+          text-align: center;
+        }
+        #pic_container {
+          max-height: 80vh;
+          max-width: 85vw;
+          min-height: 25vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          overflow-x: auto;
+        }
+        #pic {
+          max-height: 80vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .figure {
+          max-width: 70vw;
+        }
+        #legend {
+          display: none;
+          overflow: auto;
+          margin: 0 auto;
+          width: 81vw;
+        }
+        table {
+          border: 1px solid black;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .legend.peptides {
+          color: #FF6600;
+        }
+        .legend.freq {
+          color: #88AA00;
+        }
+        .legend.localized {
+          color: #006688;
+        }
+        .loc {
+          color: #FF0000;
+        }
+        .vmod_loc {
+          color: #0000FF;
+        }
+        .nterm, .cterm {
+          color: #808080;
+        }
+        #legend p {
+          max-width: 25vw;
+          margin-left: 1vw;
+          margin-right: 1vw;
+          float: left;
+          text-align: justify;
+        }
+        #legend h2, #peptides h2 {
+          text-align: center;
+        }
+        .peptide_table {
+          display: none;
+          text-align: center;
+          width: fit-content;
+        }
+        #meta {
+          text-align: center;
+        }
+        .note, .expand_info {
+          font-size: 75%;
+        }
+        .isotope_error {
+          background-color: #e0e0e0;
+        }
+        .highlighted {
+          background-color: lightyellow;
+        }
+        .has_tooltip::after {
+          content: "\01F6C8";
+          vertical-align: super;
+          font-size: 75%;
+        }
+    </style>
+</head>
+<body>
+<div id="steps"></div>
+<div id="mods_outer">
+  <h3>Modifications</h3>
+  <div id="mod_container">
+    <div id="set_fmods" class="modtable">
+    Set modifications: none.
+    </div>
+    
+    <div id="rec_mods" class="modtable">
+    <style  type="text/css" >
+</style><table id="T_rec_fix_mod_table" ><caption>Recommended, fixed</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >K</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_rec_fix_mod_tablelevel0_row0" class="row_heading level0 row0" >value</th>
+                        <td id="T_rec_fix_mod_tablerow0_col0" class="data row0 col0" >+56.0291</td>
+            </tr>
+    </tbody></table>
+    </div>
+    <div id="rec_var_mods" class="modtable">
+    <style  type="text/css" >
+    #T_rec_var_mod_table th.col_heading {
+          display: none;
+    }    #T_rec_var_mod_table th.blank {
+          display: none;
+    }    #T_rec_var_mod_table .data.row0 {
+          font-weight: bold;
+    }</style><table id="T_rec_var_mod_table" ><caption>Recommended, variable</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >0</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_rec_var_mod_tablelevel0_row0" class="row_heading level0 row0" ></th>
+                        <td id="T_rec_var_mod_tablerow0_col0" class="data row0 col0" >K</td>
+            </tr>
+            <tr>
+                        <th id="T_rec_var_mod_tablelevel0_row1" class="row_heading level0 row1" >value</th>
+                        <td id="T_rec_var_mod_tablerow1_col0" class="data row1 col0" >+70.0454</td>
+            </tr>
+    </tbody></table>
+    </div>
+  </div>
+</div>
+<div id="aa_stat">
+  <h3>Amino acid statistics</h3>
+  <style  type="text/css" >
+    #T_aa_stat_table tr:hover {
+          background-color: lightyellow;
+    }    #T_aa_stat_table td, th {
+          text-align: center;
+    }    #T_aa_stat_table td, th {
+          border: 1px solid black;
+    }#T_aa_stat_tablerow0_col1{
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 9.8%, transparent 9.8%);
+        }#T_aa_stat_tablerow0_col5,#T_aa_stat_tablerow4_col5{
+            background-color:  yellow;
+        }#T_aa_stat_tablerow1_col0,#T_aa_stat_tablerow1_col2,#T_aa_stat_tablerow1_col3,#T_aa_stat_tablerow1_col4,#T_aa_stat_tablerow1_col5,#T_aa_stat_tablerow1_col6,#T_aa_stat_tablerow1_col7,#T_aa_stat_tablerow1_col8,#T_aa_stat_tablerow1_col9,#T_aa_stat_tablerow1_col10,#T_aa_stat_tablerow1_col11,#T_aa_stat_tablerow1_col12,#T_aa_stat_tablerow1_col13,#T_aa_stat_tablerow1_col14,#T_aa_stat_tablerow1_col15,#T_aa_stat_tablerow1_col16,#T_aa_stat_tablerow1_col17,#T_aa_stat_tablerow1_col18,#T_aa_stat_tablerow1_col19,#T_aa_stat_tablerow1_col20,#T_aa_stat_tablerow1_col21,#T_aa_stat_tablerow1_col22,#T_aa_stat_tablerow1_col23,#T_aa_stat_tablerow1_col24,#T_aa_stat_tablerow1_col25,#T_aa_stat_tablerow1_col26,#T_aa_stat_tablerow1_col27,#T_aa_stat_tablerow1_col28,#T_aa_stat_tablerow1_col29{
+            background-color:  #cccccc;
+        }#T_aa_stat_tablerow1_col1{
+            background-color:  #cccccc;
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 100.0%, transparent 100.0%);
+        }#T_aa_stat_tablerow2_col1{
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 28.7%, transparent 28.7%);
+        }#T_aa_stat_tablerow3_col1{
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 4.2%, transparent 4.2%);
+        }#T_aa_stat_tablerow4_col1{
+            width:  10em;
+             height:  80%;
+        }</style><table id="T_aa_stat_table" ><thead>    <tr>        <th class="col_heading level0 col0" ><a id="binh" href="#">mass shift</a></th>        <th class="col_heading level0 col1" ># peptides in bin</th>        <th class="col_heading level0 col2" >M</th>        <th class="col_heading level0 col3" >D</th>        <th class="col_heading level0 col4" >Q</th>        <th class="col_heading level0 col5" >C</th>        <th class="col_heading level0 col6" >L</th>        <th class="col_heading level0 col7" >H</th>        <th class="col_heading level0 col8" >S</th>        <th class="col_heading level0 col9" >R</th>        <th class="col_heading level0 col10" >A</th>        <th class="col_heading level0 col11" >W</th>        <th class="col_heading level0 col12" >Y</th>        <th class="col_heading level0 col13" >P</th>        <th class="col_heading level0 col14" >F</th>        <th class="col_heading level0 col15" >V</th>        <th class="col_heading level0 col16" >N</th>        <th class="col_heading level0 col17" >T</th>        <th class="col_heading level0 col18" >E</th>        <th class="col_heading level0 col19" >G</th>        <th class="col_heading level0 col20" >I</th>        <th class="col_heading level0 col21" >K</th>        <th class="col_heading level0 col29" >Possible interpretations</th>    </tr></thead><tbody>
+                <tr>
+                                <td id="T_aa_stat_tablerow0_col0" class="data row0 col0" ><a href="#">-128.0930</a></td>
+                        <td id="T_aa_stat_tablerow0_col1" class="data row0 col1" ><a href="#">69</a></td>
+                        <td id="T_aa_stat_tablerow0_col2" class="data row0 col2" >0.929</td>
+                        <td id="T_aa_stat_tablerow0_col3" class="data row0 col3" >1.020</td>
+                        <td id="T_aa_stat_tablerow0_col4" class="data row0 col4" >1.011</td>
+                        <td id="T_aa_stat_tablerow0_col5" class="data row0 col5" >2.449</td>
+                        <td id="T_aa_stat_tablerow0_col6" class="data row0 col6" >0.936</td>
+                        <td id="T_aa_stat_tablerow0_col7" class="data row0 col7" >1.039</td>
+                        <td id="T_aa_stat_tablerow0_col8" class="data row0 col8" >0.911</td>
+                        <td id="T_aa_stat_tablerow0_col9" class="data row0 col9" >0.979</td>
+                        <td id="T_aa_stat_tablerow0_col10" class="data row0 col10" >1.001</td>
+                        <td id="T_aa_stat_tablerow0_col11" class="data row0 col11" >1.360</td>
+                        <td id="T_aa_stat_tablerow0_col12" class="data row0 col12" >1.122</td>
+                        <td id="T_aa_stat_tablerow0_col13" class="data row0 col13" >0.974</td>
+                        <td id="T_aa_stat_tablerow0_col14" class="data row0 col14" >0.904</td>
+                        <td id="T_aa_stat_tablerow0_col15" class="data row0 col15" >1.015</td>
+                        <td id="T_aa_stat_tablerow0_col16" class="data row0 col16" >1.236</td>
+                        <td id="T_aa_stat_tablerow0_col17" class="data row0 col17" >1.026</td>
+                        <td id="T_aa_stat_tablerow0_col18" class="data row0 col18" >0.889</td>
+                        <td id="T_aa_stat_tablerow0_col19" class="data row0 col19" >0.977</td>
+                        <td id="T_aa_stat_tablerow0_col20" class="data row0 col20" >1.040</td>
+                        <td id="T_aa_stat_tablerow0_col21" class="data row0 col21" >1.069</td>
+                                                                                <td id="T_aa_stat_tablerow0_col29" class="data row0 col29" ><span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=313">Lys-loss</a> (0% match)</span></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow1_col0" class="data row1 col0" ><a href="#">+56.0291</a></td>
+                        <td id="T_aa_stat_tablerow1_col1" class="data row1 col1" ><a href="#">198</a></td>
+                        <td id="T_aa_stat_tablerow1_col2" class="data row1 col2" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col3" class="data row1 col3" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col4" class="data row1 col4" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col5" class="data row1 col5" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col6" class="data row1 col6" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col7" class="data row1 col7" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col8" class="data row1 col8" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col9" class="data row1 col9" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col10" class="data row1 col10" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col11" class="data row1 col11" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col12" class="data row1 col12" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col13" class="data row1 col13" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col14" class="data row1 col14" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col15" class="data row1 col15" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col16" class="data row1 col16" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col17" class="data row1 col17" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col18" class="data row1 col18" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col19" class="data row1 col19" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col20" class="data row1 col20" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col21" class="data row1 col21" >1.000</td>
+                                                                                <td id="T_aa_stat_tablerow1_col29" class="data row1 col29" ><span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=58">Propionyl</a> (95% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=206">Delta:H(4)C(3)O(1)</a> (87% match)</span>, <span class="info_item sum" data-ref="['-128.0930', '+184.1243']"><a href="http://www.unimod.org/modifications_view.php?editid1=313">Lys-loss</a> +184.1243</span></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow2_col0" class="data row2 col0" ><a href="#">+70.0454</a></td>
+                        <td id="T_aa_stat_tablerow2_col1" class="data row2 col1" ><a href="#">96</a></td>
+                        <td id="T_aa_stat_tablerow2_col2" class="data row2 col2" >0.316</td>
+                        <td id="T_aa_stat_tablerow2_col3" class="data row2 col3" >0.892</td>
+                        <td id="T_aa_stat_tablerow2_col4" class="data row2 col4" >1.110</td>
+                        <td id="T_aa_stat_tablerow2_col5" class="data row2 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow2_col6" class="data row2 col6" >1.111</td>
+                        <td id="T_aa_stat_tablerow2_col7" class="data row2 col7" >0.889</td>
+                        <td id="T_aa_stat_tablerow2_col8" class="data row2 col8" >1.075</td>
+                        <td id="T_aa_stat_tablerow2_col9" class="data row2 col9" >1.223</td>
+                        <td id="T_aa_stat_tablerow2_col10" class="data row2 col10" >0.979</td>
+                        <td id="T_aa_stat_tablerow2_col11" class="data row2 col11" >1.223</td>
+                        <td id="T_aa_stat_tablerow2_col12" class="data row2 col12" >0.497</td>
+                        <td id="T_aa_stat_tablerow2_col13" class="data row2 col13" >1.039</td>
+                        <td id="T_aa_stat_tablerow2_col14" class="data row2 col14" >1.016</td>
+                        <td id="T_aa_stat_tablerow2_col15" class="data row2 col15" >1.122</td>
+                        <td id="T_aa_stat_tablerow2_col16" class="data row2 col16" >0.962</td>
+                        <td id="T_aa_stat_tablerow2_col17" class="data row2 col17" >0.944</td>
+                        <td id="T_aa_stat_tablerow2_col18" class="data row2 col18" >1.022</td>
+                        <td id="T_aa_stat_tablerow2_col19" class="data row2 col19" >1.010</td>
+                        <td id="T_aa_stat_tablerow2_col20" class="data row2 col20" >0.986</td>
+                        <td id="T_aa_stat_tablerow2_col21" class="data row2 col21" >0.975</td>
+                                                                                <td id="T_aa_stat_tablerow2_col29" class="data row2 col29" ><span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=1289">Butyryl</a> (94% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=253">Crotonaldehyde</a> (94% match)</span></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow3_col0" class="data row3 col0" ><a href="#">+112.0919</a></td>
+                        <td id="T_aa_stat_tablerow3_col1" class="data row3 col1" ><a href="#">61</a></td>
+                        <td id="T_aa_stat_tablerow3_col2" class="data row3 col2" >0.303</td>
+                        <td id="T_aa_stat_tablerow3_col3" class="data row3 col3" >0.772</td>
+                        <td id="T_aa_stat_tablerow3_col4" class="data row3 col4" >1.020</td>
+                        <td id="T_aa_stat_tablerow3_col5" class="data row3 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow3_col6" class="data row3 col6" >1.290</td>
+                        <td id="T_aa_stat_tablerow3_col7" class="data row3 col7" >0.443</td>
+                        <td id="T_aa_stat_tablerow3_col8" class="data row3 col8" >1.306</td>
+                        <td id="T_aa_stat_tablerow3_col9" class="data row3 col9" >0.910</td>
+                        <td id="T_aa_stat_tablerow3_col10" class="data row3 col10" >0.998</td>
+                        <td id="T_aa_stat_tablerow3_col11" class="data row3 col11" >0.650</td>
+                        <td id="T_aa_stat_tablerow3_col12" class="data row3 col12" >1.279</td>
+                        <td id="T_aa_stat_tablerow3_col13" class="data row3 col13" >0.846</td>
+                        <td id="T_aa_stat_tablerow3_col14" class="data row3 col14" >0.810</td>
+                        <td id="T_aa_stat_tablerow3_col15" class="data row3 col15" >1.020</td>
+                        <td id="T_aa_stat_tablerow3_col16" class="data row3 col16" >1.079</td>
+                        <td id="T_aa_stat_tablerow3_col17" class="data row3 col17" >1.032</td>
+                        <td id="T_aa_stat_tablerow3_col18" class="data row3 col18" >0.829</td>
+                        <td id="T_aa_stat_tablerow3_col19" class="data row3 col19" >0.953</td>
+                        <td id="T_aa_stat_tablerow3_col20" class="data row3 col20" >0.690</td>
+                        <td id="T_aa_stat_tablerow3_col21" class="data row3 col21" >1.137</td>
+                                                                                <td id="T_aa_stat_tablerow3_col29" class="data row3 col29" ></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow4_col0" class="data row4 col0" ><a href="#">+184.1243</a></td>
+                        <td id="T_aa_stat_tablerow4_col1" class="data row4 col1" ><a href="#">55</a></td>
+                        <td id="T_aa_stat_tablerow4_col2" class="data row4 col2" >0.244</td>
+                        <td id="T_aa_stat_tablerow4_col3" class="data row4 col3" >1.106</td>
+                        <td id="T_aa_stat_tablerow4_col4" class="data row4 col4" >1.072</td>
+                        <td id="T_aa_stat_tablerow4_col5" class="data row4 col5" >7.080</td>
+                        <td id="T_aa_stat_tablerow4_col6" class="data row4 col6" >1.000</td>
+                        <td id="T_aa_stat_tablerow4_col7" class="data row4 col7" >0.751</td>
+                        <td id="T_aa_stat_tablerow4_col8" class="data row4 col8" >1.037</td>
+                        <td id="T_aa_stat_tablerow4_col9" class="data row4 col9" >0.315</td>
+                        <td id="T_aa_stat_tablerow4_col10" class="data row4 col10" >1.123</td>
+                        <td id="T_aa_stat_tablerow4_col11" class="data row4 col11" >1.180</td>
+                        <td id="T_aa_stat_tablerow4_col12" class="data row4 col12" >1.180</td>
+                        <td id="T_aa_stat_tablerow4_col13" class="data row4 col13" >1.237</td>
+                        <td id="T_aa_stat_tablerow4_col14" class="data row4 col14" >0.763</td>
+                        <td id="T_aa_stat_tablerow4_col15" class="data row4 col15" >1.421</td>
+                        <td id="T_aa_stat_tablerow4_col16" class="data row4 col16" >0.928</td>
+                        <td id="T_aa_stat_tablerow4_col17" class="data row4 col17" >1.041</td>
+                        <td id="T_aa_stat_tablerow4_col18" class="data row4 col18" >0.986</td>
+                        <td id="T_aa_stat_tablerow4_col19" class="data row4 col19" >0.915</td>
+                        <td id="T_aa_stat_tablerow4_col20" class="data row4 col20" >0.735</td>
+                        <td id="T_aa_stat_tablerow4_col21" class="data row4 col21" >0.871</td>
+                                                                                <td id="T_aa_stat_tablerow4_col29" class="data row4 col29" ></td>
+            </tr>
+    </tbody></table>
+</div>
+<div id="legend">
+  <h2>Figure Legend</h2>
+  <p>
+    <span class="legend freq">Relative AA abundance</span>: this value represents the difference in occurrence frequency
+    between peptides with the given mass shift and the peptides with unshifted masses.
+    The AA occurrence frequency is calculated for all mass shifts as follows: the AA is counted in all peptides without miscleavages,
+    then the AA count is divided by the total of all AA counts.
+    Each AA occurrence frequency for each shift is then divided by the occurrence frequency of the same AA at zero mass shift.
+    Thus, values below 1 mean that the AA is "depleted" and values above 1 mean that it is "enriched" at a certain mass shift.
+  </p>
+  <p>
+    <span class="legend peptides">Peptides with AA, %</span>: This is the percentage of peptides at the given mass shift that contain
+    at least one AA residue of a certain kind. This is useful to assess the meaning of the observed frequencies.
+  </p>
+  <p>
+    <span class="legend localized">Localization count</span>: if spectrum files are provided to AA_stat, each MS/MS spectrum of shifted peptides
+    is tested for localization of mass shifts. This axis counts successful localizations of mass shifts at each AA. The counts are not normalized.
+  </p>
+</div>
+<div id="pic_container">
+  <img id="pic" src="summary.png">
+</div>
+
+<div id="peptides">
+  <h2 id="table_header"></h2>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_-128.0930">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IPQEK<span class="loc">C[-128]</span>ILQTDVK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.31371.31371.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANEKTESSSAQQVAVSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.12622.12622.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DASTLQSQKAEGTGDAK.-</td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.14615.14615.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANLEKAQAELVGTADEATR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.34092.34092.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVEKYGYTHLSAGELLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.38732.38732.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FELGKLMELHGEGSSSGK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.40558.40558.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DIVAAIQHNYKMSAFK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.48617.48617.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGFKGEGPDVDVNLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.49191.49191.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSGPGGQNVNKVNSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.7782.7782.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSAYIKNSNPALNDNLEK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.35405.35405.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IPIANTEKYMADK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.28896.28896.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDSGKPYYYNSQTK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.17360.17360.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TPGQNAQKWIPAR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.27573.27573.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SNEEGSEEKGPEVR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.11071.11071.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SGKFTQQDIDEAK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.20857.20857.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AANMLQQSGSKNTGAK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.13970.13970.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TQAYQDQKPGTSGLR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.16930.16930.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GWLKSNVSDAVAQSTR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.44387.44387.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VPTTEKPTVTVNFR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.33522.33522.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGFKGEGPDVDVSLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.50115.50115.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VTAAAMAGNKSTPR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.15191.15191.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DDSFLGKLGGTLAR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.46880.46880.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHNAENIQPGEQKYEYK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.19470.19470.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGDDIAKATGDWK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.23618.23618.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DFDTALKHYDK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.27070.27070.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQEKVESAQSEQK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.9523.9523.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTGEKLTVAENEAETK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.26077.26077.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTISAPGKVVTAAAQAK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.30616.30616.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGIDTPDIDIHGPEGK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.38273.38273.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TVSKVDDFLANEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.40440.40440.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DLGKFQVATDALK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.45676.45676.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IVSGKDYNVTANSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.18039.18039.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YIEIYVQKVNPSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.38871.38871.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGQKLIDVNHYAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.24629.24629.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DSINFLDHINGK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.42917.42917.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ISMPGFKGEGPDVDVNLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.38675.38675.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGNFSAAMKDLSGK<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.30971.30971.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASNAAVKLAESK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.14650.14650.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLLPGELAKHAVSEGTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.42799.42799.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNLKNLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.46853.46853.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LEEVTGKLQVAR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.29818.29818.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGLQVVAVKAPGFGDNR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.43270.43270.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SQNTDMVQKSVSK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.15835.15835.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IFVGGIKEDTEEHHLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.29726.29726.4</td>
+    </tr>
+    <tr>
+      <td>-.PSKGPLQSVQVFGR.-</td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.39086.39086.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>FDDTNPEKEEAK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.17463.17463.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTSLNVKYNNDK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.25121.25121.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEEIVKEVSTYIK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.41070.41070.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TLQKQSVVYGGK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.20906.20906.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHVQSSSDSSDEPAEK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.12396.12396.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLDSGAPIKIPVGPETLGR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.40758.40758.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALASIDSKLNQAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.29245.29245.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SMSTEGLMKFVDSK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.39965.39965.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>INNFSADIKDSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.25217.25217.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SLKLNTAEDAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.24709.24709.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGDWKGYTGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.18888.18888.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AAINQKLIETGER<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.33782.33782.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IGNSYFKEEK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.23452.23452.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLTWDVKDTLLR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.55441.55441.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IISSIEQKEENK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.19972.19972.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVFSGNLFQHQEDSK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.41026.41026.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPNSKVESK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.21908.21908.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LTEKELAEAASK<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.22788.22788.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HAVSEGTKAVTK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.4128.4128.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQTKAGEATVK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.9931.9931.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LEKTIDDLEEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.31291.31291.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LGNDFHTNK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.14231.14231.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DIVAAIQHNYK<span class="cterm">.<span class="next_aa">M</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36547.36547.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DVNAAIAAIKTK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.23224.23224.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+56.0291">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">K[+56]</span>YEEIDNAPEER<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.24477.24477.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FLQEFYQDDELGK<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.42845.42845.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VFIGNLNTLVV<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.57677.57677.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VQGGALED<span class="loc">S[+56]</span>QLVAGVAFK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.52156.52156.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGVEVPDVNIEGPEG<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.45577.45577.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNL<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.51880.51880.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DVNAAIAAI<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.45486.45486.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHVQSSSDSSDEPAE<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.17715.17715.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGLQVVAV<span class="loc">K[+56]</span>APGFGDNR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.47019.47019.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FELG<span class="loc">K[+56]</span>LMELHGEGSSSGK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.45133.45133.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VQGGALEDSQLVAGVAFK<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.46514.46514.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVE<span class="loc">K[+56]</span>YGYTHLSAGELLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.36345.36345.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLDSGAPI<span class="loc">K[+56]</span>IPVGPETLGR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.49114.49114.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>MSFV<span class="loc">K[+56]</span>GWGAEYR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.44147.44147.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEQEHAAIQD<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.19361.19361.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSFAY<span class="loc">K[+56]</span>DQNENR<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.20014.20014.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>MAQEL<span class="loc">K[+56]</span>YGDIVER<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36648.36648.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TPGQNAQ<span class="loc">K[+56]</span>WIPAR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.28055.28055.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YIEIYVQ<span class="loc">K[+56]</span>VNPSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.42236.42236.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AAINQ<span class="loc">K[+56]</span>LIETGER<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.33064.33064.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IISSIEQ<span class="loc">K[+56]</span>EENK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.25601.25601.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGDDIAKA<span class="loc">T[+56]</span>GDWK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.33543.33543.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASNAAV<span class="loc">K[+56]</span>LAESK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.23307.23307.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AQQHWGSGVGV<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.19267.19267.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">K[+56]</span>FGVLSDNFK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.35547.35547.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQAAYAGD<span class="loc">K[+56]</span>ADDIQK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.25218.25218.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LEQVE<span class="loc">K[+56]</span>ELLR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.40897.40897.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LDE<span class="loc">K[+56]</span>ENLSAK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.23093.23093.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGIDTPDIDIHGPEG<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.40319.40319.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTSLNV<span class="loc">K[+56]</span>YNNDK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.29122.29122.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQE<span class="loc">K[+56]</span>VESAQSEQK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.11950.11950.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALASID<span class="loc">S[+56]</span>KLNQAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.32359.32359.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVFSGNLFQHQEDS<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.33157.33157.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASDTSSETVFGK<span class="loc">R[+56]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.27193.27193.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNAL<span class="loc">K[+56]</span>NLQVK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.28033.28033.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGF<span class="loc">K[+56]</span>GEGPDVDVNLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.49587.49587.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGF<span class="loc">K[+56]</span>GEGPDVDVSLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.50247.50247.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IFVGGI<span class="loc">K[+56]</span>EDTEEHHLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.30107.30107.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>MQQL<span class="loc">K[+56]</span>EQYR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.23137.23137.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGDW<span class="loc">K[+56]</span>GYTGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.24416.24416.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>STGLELETPSLVPVK<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.48174.48174.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSAYIKN<span class="loc">S[+56]</span>NPALNDNLEK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.38412.38412.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GTITVSAQEL<span class="loc">K[+56]</span>DNR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.31285.31285.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LTE<span class="loc">K[+56]</span>ELAEAASK<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.25161.25161.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HAEMVHTGL<span class="loc">K[+56]</span>LER<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.25443.25443.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGQ<span class="loc">K[+56]</span>LIDVNHYAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.24287.24287.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITG<span class="loc">K[+56]</span>NQVTATK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.11737.11737.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVEVPDVSLEGPEGKL<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.40706.40706.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TQDQISNI<span class="loc">K[+56]</span>YHEEFEK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.26797.26797.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">D[+56]</span>LGKFQVATDALK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.41574.41574.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SNEEGSEE<span class="loc">K[+56]</span>GPEVR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.12468.12468.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGFG<span class="loc">K[+56]</span>FER<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.30957.30957.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNL<span class="loc">K[+56]</span>NLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.52431.52431.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AAQASDLEKI<span class="loc">H[+56]</span>LDEK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.27185.27185.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQDEIQNM<span class="loc">K[+56]</span>EEMAR<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.43723.43723.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ISSNFSSIIAE<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.48090.48090.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>INNFSADI<span class="loc">K[+56]</span>DSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.31056.31056.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IV<span class="loc">S[+56]</span>GKDYNVTANSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.18729.18729.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ASEALL<span class="loc">K[+56]</span>QLK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.39541.39541.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAIHFYN<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36140.36140.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LDHLAE<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.22000.22000.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTGE<span class="loc">K[+56]</span>LTVAENEAETK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.32406.32406.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GGNIGA<span class="loc">K[+56]</span>WTIDLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.47159.47159.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TQAYQDQ<span class="loc">K[+56]</span>PGTSGLR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.19387.19387.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VFSIISSE<span class="loc">K[+56]</span>ELK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.45549.45549.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLFSNTAAQ<span class="loc">K[+56]</span>LR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.43013.43013.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LEEVTG<span class="loc">K[+56]</span>LQVAR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.35772.35772.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNIGQGSHPQ<span class="loc">K[+56]</span>VK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.11476.11476.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SL<span class="loc">K[+56]</span>LNTAEDAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.23609.23609.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SMSTEGLM<span class="loc">K[+56]</span>FVDSK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.48222.48222.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GSLE<span class="loc">K[+56]</span>GSPEDK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.13115.13115.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TLQ<span class="loc">K[+56]</span>QSVVYGGK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.25465.25465.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGEFSGAN<span class="loc">K[+56]</span>EK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.17532.17532.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLTWDV<span class="loc">K[+56]</span>DTLLR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.59963.59963.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>FDDTNPE<span class="loc">K[+56]</span>EEAK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.15985.15985.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGNFSAAM<span class="loc">K[+56]</span>DLSGK<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.37071.37071.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNIGQGSHPQ<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.17744.17744.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TFG<span class="loc">K[+56]</span>AAGPSLSHTSGGTQSK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.18225.18225.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FGTINIVHP<span class="loc">K[+56]</span>LGSYTK<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.35628.35628.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ALLQA<span class="loc">K[+56]</span>ASGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.24061.24061.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IGNSYF<span class="loc">K[+56]</span>EEK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.22598.22598.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DHLSD<span class="loc">K[+56]</span>ESK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.8585.8585.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GGPGSTLSFVG<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.44289.44289.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVEVPDVSLEGPEG<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.46924.46924.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAEAAEATAEGAL<span class="loc">K[+56]</span>AEK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.33995.33995.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VSPASSVDSNIPSSQGY<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.32287.32287.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DYSAPVNFISAGL<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.56371.56371.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IPIANTE<span class="loc">K[+56]</span>YMADK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.33760.33760.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ISSNFSSIIAE<span class="loc">K[+56]</span>LR<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.54913.54913.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GAE<span class="loc">K[+56]</span>TEVAEPR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.15656.15656.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>MESEEG<span class="loc">K[+56]</span>EAR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.10119.10119.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTVPDDAVEALADSLG<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.59979.59979.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTPTSAGPNSFN<span class="loc">K[+56]</span>GK<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.20822.20822.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DVNAAIAAI<span class="loc">K[+56]</span>TK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.42940.42940.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DDSFLGKLGG<span class="loc">T[+56]</span>LAR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.55539.55539.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPDEAYAIA<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.25539.25539.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VFIGNLNTLVV<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.50443.50443.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DIVAAIQHNY<span class="loc">K[+56]</span>MSAFK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.46499.46499.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDDESSQ<span class="loc">K[+56]</span>DIK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.11015.11015.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLTANSNPSSPSAA<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.23608.23608.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LAEEEN<span class="loc">K[+56]</span>AK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.7891.7891.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DESFLGKLGG<span class="loc">T[+56]</span>LAR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.55417.55417.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQT<span class="loc">K[+56]</span>AGEATVK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.13781.13781.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLGEPAAGEGSA<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.23271.23271.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ATVASSTQ<span class="loc">K[+56]</span>FQDLGVK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.37887.37887.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEQEHAAIQDKLFQVA<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.44291.44291.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLLPGELA<span class="loc">K[+56]</span>HAVSEGTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.39014.39014.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITQDLMA<span class="loc">K[+56]</span>VR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36493.36493.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LGNDFHTN<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.22511.22511.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ITLS<span class="loc">K[+56]</span>HQNVQLPR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.25928.25928.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DIVAAIQHNY<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">M</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.39575.39575.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GETA<span class="loc">S[+56]</span>KLQSEISR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.28597.28597.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VGTASVLQPV<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.30233.30233.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDVPDVNIEGPEG<span class="loc">K[+56]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.48963.48963.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEDEVLTS<span class="loc">K[+56]</span>GDAWAK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.31883.31883.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANE<span class="loc">K[+56]</span>TESSSAQQVAVSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.14103.14103.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VTAAAMAGN<span class="loc">K[+56]</span>STPR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.20898.20898.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SITHSTVGS<span class="loc">K[+56]</span>GEK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.7293.7293.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLEEEGAAH<span class="loc">S[+56]</span>GKR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.8847.8847.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGPNASIISL<span class="loc">K[+56]</span>SDK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.32763.32763.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LE<span class="loc">K[+56]</span>TIDDLEEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.28739.28739.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDVPDVNIEGPDA<span class="loc">K[+56]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.41140.41140.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AANMLQQSG<span class="loc">S[+56]</span>KNTGAK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.19394.19394.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GGPGSTLSFVG<span class="loc">K[+56]</span>R<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.36215.36215.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DSSPTTNS<span class="loc">K[+56]</span>LSALQR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.32460.32460.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSGPGGQNVNKVN<span class="loc">S[+56]</span>K<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.9128.9128.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SG<span class="loc">K[+56]</span>FTQQDIDEAK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.25385.25385.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEEIVKEV<span class="loc">S[+56]</span>TYIK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.49523.49523.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AMEAASSL<span class="loc">K[+56]</span>SQAATK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.26470.26470.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GWL<span class="loc">K[+56]</span>SNVSDAVAQSTR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.40272.40272.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DFDTAL<span class="loc">K[+56]</span>HYDK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.29102.29102.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DTMGIAD<span class="loc">K[+56]</span>TENTLER<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.37700.37700.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SQNTDMVQ<span class="loc">K[+56]</span>SVSK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.20476.20476.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVFSGNLFQHQEDS<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.42972.42972.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VETTVTSL<span class="loc">K[+56]</span>TK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.26151.26151.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGIDTPDIDIHGPEGKL<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.34849.34849.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>T<span class="loc">K[+56]</span>MSAAQALK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.25008.25008.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTMLNTVS<span class="loc">K[+56]</span>IR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.43341.43341.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLEEEGAAHSG<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.16050.16050.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TTEETS<span class="loc">K[+56]</span>PK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.4938.4938.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FGTINIVHP<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.39621.39621.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SEASSEFA<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.17214.17214.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEVQVSD<span class="loc">K[+56]</span>ER<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.14028.14028.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQQELQTA<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.17639.17639.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQLEIDQ<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.33816.33816.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TLDEILQE<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.39232.39232.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTVPDDAVEALADSLGK<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.55294.55294.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LDHLAE<span class="loc">K[+56]</span>FR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.28402.28402.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DQEALM<span class="loc">K[+56]</span>SVK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.28468.28468.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYS<span class="loc">S[+56]</span>GFGGKYGVQADR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.31904.31904.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLEQ<span class="loc">K[+56]</span>TQESQK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.15384.15384.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITESVAETAQTI<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.97</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.30022.30022.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ISALQG<span class="loc">K[+56]</span>LSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.26508.26508.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DSINFLDHING<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.35139.35139.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDAPDVSIEGPDA<span class="loc">K[+56]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.45316.45316.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SGNLTEDD<span class="loc">K[+56]</span>HNNAK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.8186.8186.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LGNDFHTN<span class="loc">K[+56]</span>R<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.12882.12882.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LFQSDTNAMLG<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.35875.35875.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>D<span class="loc">K[+56]</span>ALPLEAEVAPVK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.45156.45156.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANLE<span class="loc">K[+56]</span>AQAELVGTADEATR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.35011.35011.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>S<span class="loc">K[+56]</span>LLFSNTAAQK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.35553.35553.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SEDTIS<span class="loc">K[+56]</span>MNDFMR<span class="cterm">.<span class="next_aa">M</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.43544.43544.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLEEEIQAPTSS<span class="loc">K[+56]</span>R<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.31741.31741.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLFFGGKGAPLQ<span class="loc">R[+56]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.46613.46613.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GFCFITYTDEEPV<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.43448.43448.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDSG<span class="loc">K[+56]</span>PYYYNSQTK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.19160.19160.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TPNLYIYS<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.31066.31066.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLGEPAAGEGSA<span class="loc">K[+56]</span>R<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.15826.15826.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ILDL<span class="loc">K[+56]</span>TGTVK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.29038.29038.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLIVSTTPYSE<span class="loc">K[+56]</span>DTK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.85</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.39981.39981.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VYIASSSGSTAIK<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.85</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.23658.23658.2</td>
+    </tr>
+    <tr>
+      <td>-.PS<span class="loc">K[+56]</span>GPLQSVQVFGR.-</td>
+      <td>0.79</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.37247.37247.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VPTTEKP<span class="loc">T[+56]</span>VTVNFR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.78</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.32640.32640.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IDLPAENSNSETIIITGK<span class="loc">R[+56]</span><span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.77</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.43202.43202.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAI<span class="loc">H[+56]</span>FYNKSLAEHR<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.77</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.32110.32110.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>V<span class="loc">T[+56]</span>LEVGKVIQQGR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.72</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.34403.34403.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TTGFYSGFSEVAE<span class="loc">K[+56]</span>R<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>0.68</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.41693.41693.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VNVEAPDVNLEGLGG<span class="loc">K[+56]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.68</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.48723.48723.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TVS<span class="loc">K[+56]</span>VDDFLANEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.64</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.42686.42686.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VSPASSVDSNIPS<span class="loc">S[+56]</span>QGYKK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.63</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.25850.25850.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DASTLQ<span class="loc">S[+56]</span>QKAEGTGDAK.-</td>
+      <td>0.51</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.16550.16550.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHVQSSSDSSDEPAE<span class="loc">K[+56]</span>R<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.51</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.11987.11987.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTISAPGKVV<span class="loc">T[+56]</span>AAAQAK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.48</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.33519.33519.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLTANSNPSSP<span class="loc">S[+56]</span>AAKR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.47</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.15891.15891.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPSDSGYSYETIG<span class="loc">K[+56]</span>TTK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.43</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.27983.27983.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>S<span class="loc">K[+56]</span>HLQEQLNELK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.30</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.27822.27822.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AANDAGYFNDEMAPIEV<span class="loc">K[+56]</span>TK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.13</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.42884.42884.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DYSAPVNFISAGL<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.09</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.48060.48060.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HAVSEGT<span class="loc">K[+56]</span>AVTK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>0.08</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.6828.6828.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLEEEIQAPTSS<span class="loc">K[+56]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.08</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36889.36889.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPNS<span class="loc">K[+56]</span>VESK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>0.07</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.24132.24132.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GFALVGVGSEAS<span class="loc">S[+56]</span>KK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.01</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.38256.38256.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GADFLVTEVENGGSLGS<span class="loc">K[+56]</span>K<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.01</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.46588.46588.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGVEVPDVNIEGPEGKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.39659.39659.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>MGSKSPGNTSQPPAFFSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.34594.34594.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHNAENIQPGEQKYEYK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.22219.22219.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DEPSVAAMVYPFTGDHKQK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.45141.45141.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVDIPDVNIEGPDAKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.43897.43897.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+70.0454">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DDSFLG<span class="loc">K[+70]</span>LGGTLAR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.58468.58468.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SNEEGSEE<span class="loc">K[+70]</span>GPEVR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.19059.19059.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>S<span class="loc">K[+70]</span>LLFSNTAAQK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.38810.38810.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VPTTE<span class="loc">K[+70]</span>PTVTVNFR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.40335.40335.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLFSNTAAQ<span class="loc">K[+70]</span>LR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.44651.44651.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLFFGG<span class="loc">K[+70]</span>GAPLQR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.47490.47490.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSAYI<span class="loc">K[+70]</span>NSNPALNDNLEK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.40122.40122.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LEQVE<span class="loc">K[+70]</span>ELLR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.40796.40796.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANLE<span class="loc">K[+70]</span>AQAELVGTADEATR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.42495.42495.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>D<span class="loc">K[+70]</span>ALPLEAEVAPVK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.46689.46689.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">K[+70]</span>FGVLSDNFK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.44038.44038.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YIEIYVQ<span class="loc">K[+70]</span>VNPSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.43980.43980.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLDSGAPI<span class="loc">K[+70]</span>IPVGPETLGR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.50936.50936.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSFAY<span class="loc">K[+70]</span>DQNENR<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.25359.25359.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLEEEIQAPTSS<span class="loc">K[+70]</span>R<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.34005.34005.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLTWDV<span class="loc">K[+70]</span>DTLLR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.60526.60526.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTMLNTVS<span class="loc">K[+70]</span>IR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.44814.44814.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GTITVSAQEL<span class="loc">K[+70]</span>DNR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36382.36382.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTGE<span class="loc">K[+70]</span>LTVAENEAETK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.35501.35501.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GAE<span class="loc">K[+70]</span>TEVAEPR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.20825.20825.2</td>
+    </tr>
+    <tr>
+      <td>-.PS<span class="loc">K[+70]</span>GPLQSVQVFGR.-</td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.44054.44054.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GETAS<span class="loc">K[+70]</span>LQSEISR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.32120.32120.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>MESEEG<span class="loc">K[+70]</span>EAR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.13519.13519.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VADVEALLTTQN<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.50910.50910.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGF<span class="loc">K[+70]</span>GEGPDVDVSLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.52137.52137.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>MSFV<span class="loc">K[+70]</span>GWGAEYR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.46781.46781.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GWL<span class="loc">K[+70]</span>SNVSDAVAQSTR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.43847.43847.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SG<span class="loc">K[+70]</span>FTQQDIDEAK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.29070.29070.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DESFLG<span class="loc">K[+70]</span>LGGTLAR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.57247.57247.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHVQSSSDSSDEPAE<span class="loc">K[+70]</span>R<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.16386.16386.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LEEVTG<span class="loc">K[+70]</span>LQVAR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.37785.37785.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLGEPAAGEGSA<span class="loc">K[+70]</span>R<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.20662.20662.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AAINQ<span class="loc">K[+70]</span>LIETGER<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36154.36154.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VTLEVG<span class="loc">K[+70]</span>VIQQGR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.41372.41372.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASDTSSETVFG<span class="loc">K[+70]</span>R<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.31806.31806.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ISSNFSSIIAE<span class="loc">K[+70]</span>LR<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.56910.56910.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLTANSNPSSPSAA<span class="loc">K[+70]</span>R<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.21229.21229.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANE<span class="loc">K[+70]</span>TESSSAQQVAVSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.19648.19648.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGLQVVAV<span class="loc">K[+70]</span>APGFGDNR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.47875.47875.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQE<span class="loc">K[+70]</span>VESAQSEQK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.18569.18569.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DLG<span class="loc">K[+70]</span>FQVATDALK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.50036.50036.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTISAPG<span class="loc">K[+70]</span>VVTAAAQAK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36005.36005.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITG<span class="loc">K[+70]</span>NQVTATK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.18768.18768.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAIHFYN<span class="loc">K[+70]</span>SLAEHR<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.34598.34598.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TVS<span class="loc">K[+70]</span>VDDFLANEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.44572.44572.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SL<span class="loc">K[+70]</span>LNTAEDAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.28098.28098.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLEQ<span class="loc">K[+70]</span>TQESQK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.22597.22597.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ATVASSTQ<span class="loc">K[+70]</span>FQDLGVK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.36423.36423.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQT<span class="loc">K[+70]</span>AGEATVK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.20757.20757.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNAL<span class="loc">K[+70]</span>NLQVK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36784.36784.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEQEHAAIQD<span class="loc">K[+70]</span>LFQVAK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.44056.44056.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IFVGGI<span class="loc">K[+70]</span>EDTEEHHLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36204.36204.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LDE<span class="loc">K[+70]</span>ENLSAK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.24749.24749.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DASTLQSQ<span class="loc">K[+70]</span>AEGTGDAK.-</td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.21723.21723.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GSLE<span class="loc">K[+70]</span>GSPEDK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.18890.18890.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GGNIGA<span class="loc">K[+70]</span>WTIDLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.48216.48216.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ASEALL<span class="loc">K[+70]</span>QLK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.39118.39118.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DHLSD<span class="loc">K[+70]</span>ESK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.12155.12155.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASNAAV<span class="loc">K[+70]</span>LAESK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.27496.27496.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGDW<span class="loc">K[+70]</span>GYTGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.28862.28862.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSGPGGQNVN<span class="loc">K[+70]</span>VNSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.15805.15805.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPNS<span class="loc">K[+70]</span>VESK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.28389.28389.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IISSIEQ<span class="loc">K[+70]</span>EENK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.30180.30180.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ISALQG<span class="loc">K[+70]</span>LSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.34896.34896.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>INNFSADI<span class="loc">K[+70]</span>DSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.34245.34245.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGPNASIISL<span class="loc">K[+70]</span>SDK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.40716.40716.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LGNDFHTN<span class="loc">K[+70]</span>R<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.19754.19754.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SITHSTVGS<span class="loc">K[+70]</span>GEK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.13598.13598.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VFSIISSE<span class="loc">K[+70]</span>ELK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.46558.46558.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLEEEDS<span class="loc">K[+70]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.32935.32935.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IGNSYF<span class="loc">K[+70]</span>EEK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.30337.30337.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNIGQGSHPQ<span class="loc">K[+70]</span>VK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.17671.17671.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDAPDVSIEGPDA<span class="loc">K[+70]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.44770.44770.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VNVEAPDVNLEGLGG<span class="loc">K[+70]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.49618.49618.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDVPDVNIEGPDA<span class="loc">K[+70]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.48655.48655.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DVNAAIAAI<span class="loc">K[+70]</span>TK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.44937.44937.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ITLS<span class="loc">K[+70]</span>HQNVQLPR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.32763.32763.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQQELQTA<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.21641.21641.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DQEALM<span class="loc">K[+70]</span>SVK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.32660.32660.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVFSGNLFQHQEDS<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>0.95</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.39281.39281.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLLPGELA<span class="loc">K[+70]</span>HAVSEGTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.46148.46148.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VYIASSSGSTAI<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.28156.28156.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DYSAPVNFISAGL<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.51929.51929.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGIDTPDIDIHGPEG<span class="loc">K[+70]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.41522.41522.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AQQHWGSGVGV<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.23269.23269.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FLQEFYQDDELG<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.43986.43986.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VGTASVLQPV<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.34047.34047.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SEASSEFA<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.22681.22681.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQLEIDQ<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36772.36772.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TLDEILQE<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.90</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.41828.41828.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>STGLELETPSLVPVKK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.49092.49092.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTVPDDAVEALADSLGKK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.56105.56105.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GADFLVTEVENGGSLGSKK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.47052.47052.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VSPASSVDSNIPSSQGYKK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.29269.29269.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>QRHGPGSGFPR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.36507.36507.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>KTETQTTGAENK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.33744.33744.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+112.0919">
+  <thead>
+    <tr style="text-align: right;">
+      <th>peptide</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DVNAAIAAIKTK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.48715.48715.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YIEIYVQKVNPSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.48816.48816.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GWLKSNVSDAVAQSTR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.49165.49165.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSGPGGQNVNKVNSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.24911.24911.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGPNASIISLKSDK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.46234.46234.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DASTLQSQKAEGTGDAK.-</td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.29538.29538.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TVSKVDDFLANEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.48882.48882.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALASIDSKLNQAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.43330.43330.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IVSGKDYNVTANSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.32692.32692.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQEKVESAQSEQK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.25769.25769.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASNAAVKLAESK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.37301.37301.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IGNSYFKEEK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.31676.31676.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLIVSTTPYSEKDTK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.47112.47112.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEEIVKEVSTYIK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.54933.54933.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLEEEIQAPTSSKR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.40675.40675.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TPNLYIYSKK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.46571.46571.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDSGKPYYYNSQTK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.28473.28473.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GFALVGVGSEASSKK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.45324.45324.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>STGLELETPSLVPVKK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.56162.56162.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGEFSGANKEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.24485.24485.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GETASKLQSEISR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.38059.38059.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DSSPTTNSKLSALQR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.40268.40268.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPNSKVESK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36615.36615.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNLKNLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.57932.57932.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>KFGVLSDNFK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.48862.48862.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VETTVTSLKTK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.41826.41826.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DQEALMKSVK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.45805.45805.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TLQKQSVVYGGK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.38053.38053.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DESFLGKLGGTLAR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.59574.59574.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTISAPGKVVTAAAQAK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.43794.43794.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IISSIEQKEENK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.43191.43191.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LTEKELAEAASK<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.39603.39603.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SKLLFSNTAAQK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.44692.44692.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ITLSKHQNVQLPR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.37565.37565.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLFFGGKGAPLQR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.53745.53745.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLLPGELAKHAVSEGTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.49007.49007.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DYSAPVNFISAGLKK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.59082.59082.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SGKFTQQDIDEAK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.33645.33645.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LEGKAGHGPGPGPGRPK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.61588.61588.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SKHLQEQLNELK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.32929.32929.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ISALQGKLSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.40134.40134.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VGTASVLQPVKK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.42179.42179.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SLKLNTAEDAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.35557.35557.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYSSGFGGKYGVQADR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.41536.41536.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANEKTESSSAQQVAVSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.28120.28120.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLEEEDSKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.39362.39362.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DDSFLGKLGGTLAR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.59615.59615.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DFDTALKHYDK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.48123.48123.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSFAYKDQNENR<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.34003.34003.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ALLQAKASGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.35441.35441.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTMLNTVSKIR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.51845.51845.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LDEKENLSAK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.33921.33921.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGDWKGYTGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.29311.29311.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ATVASSTQKFQDLGVK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.52529.52529.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GADFLVTEVENGGSLGSKK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.51405.51405.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VEAILLASR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.39102.39102.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTVPDDAVEALADSLGKK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.57313.57313.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TTEETSKPK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.22241.22241.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SQNTDMVQKSVSK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.31989.31989.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GPSYGLSAEVKNK<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.52390.52390.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTSLNVKYNNDK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.45730.45730.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+184.1243">
+  <thead>
+    <tr style="text-align: right;">
+      <th>peptide</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TESSSAQQVAVSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.14342.14342.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQDVSGQLSSSK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.18346.18346.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEGPDVDVNLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.32063.32063.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTVPDDAVEALADSLGKK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.48856.48856.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>STGLELETPSLVPVKK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.41374.41374.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVEVPDVSLEGPEGKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.41068.41068.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VGTASVLQPVK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_2xIT_2xHCD_R1.30724.30724.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEGPDVDVSLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.33247.33247.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VQGGALEDSQLVAGVAFK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.39871.39871.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGVEVPDVNIEGPEGKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.39949.39949.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTVPDDAVEALADSLGK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.48130.48130.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDAPDVSIEGPDAKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.37611.37611.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPDEAYAIAKK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.21267.21267.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VNVEAPDVNLEGLGGKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.42561.42561.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ATDDYHYEK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.13223.13223.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITESVAETAQTIKK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.28002.28002.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FLQEFYQDDELGKK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.37257.37257.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DYSAPVNFISAGLKK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.44671.44671.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPGNTSQPPAFFSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.32245.32245.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DVNAAIAAIKTK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.37531.37531.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTVAENEAETK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.21386.21386.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VSPASSVDSNIPSSQGYK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.26010.26010.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VESAQSEQK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.4126.4126.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDDFLANEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.32508.32508.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VGTASVLQPVKK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.24903.24903.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YGYTHLSAGELLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36369.36369.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLIVSTTPYSEKDTK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.34285.34285.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>EDTEEHHLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.5574.5574.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYNVTANSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.16464.16464.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQAAYAGDKADDIQK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.22657.22657.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTPTSAGPNSFNKGK<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.17756.17756.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LIDVNHYAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.28000.28000.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GFALVGVGSEASSKK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.32429.32429.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AAGPSLSHTSGGTQSK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.10925.10925.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGEFSGANKEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.14016.14016.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VVTAAAQAK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.14674.14674.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TPNLYIYSKK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.29565.29565.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQQELQTAKK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.13704.13704.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TLDEILQEKK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.33813.33813.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>WNLAEAQQK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.30388.30388.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNLKNLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.47581.47581.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FQVATDALK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.34007.34007.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPNSKVESK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.20394.20394.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALASIDSKLNQAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.31482.31482.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SEASSEFAKK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.13042.13042.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VETTVTSLKTK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.22079.22079.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGDDIAKATGDWK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.27908.27908.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>FDDTNPEKEEAK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.14971.14971.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LFVINEVCEMKNCNK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.36529.36529.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VYIASSSGSTAIK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_3xHCD_R1.20198.20198.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>NQVTATK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.5767.5767.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>QSVVYGGK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.16972.16972.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AQQHWGSGVGVKK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.14911.14911.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQLEIDQKK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.27814.27814.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>MESTETEER<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD2_3991_01_PTM_TrainKit_Kmod_Propionyl_200fmol_survey_R1.10524.10524.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+</div>
+
+<div id="meta">
+  <span class="note">Report created 20:04:46 March 05, 2021 with <a href="https://github.com/SimpleNumber/aa_stat">AA_stat</a> 2.1.5</span>
+</div>
+
+</body>
+<script type="text/javascript">
+  function getMassShift(elem) {
+    eid = elem.parentElement.id;
+    return document.getElementById(eid.replace("col1", "col0")).children[0].text;
+  };
+  function hideTablesAndLegend() {
+    var tables = document.getElementsByClassName('peptide_table');
+    for(j = 0; j < tables.length; j++) {
+        tables[j].style.display = 'none';
+      };
+    document.getElementById('legend').style.display = 'none';
+    // document.getElementById('table_header').textContent = "";
+  };
+  function showPic(src) {
+    hideTablesAndLegend();
+    var pic = document.getElementById('pic');
+    pic.src = src;
+    pic.style.display = 'block';
+    if (src == 'summary.png') {
+      pic.classList.add('summary');
+      pic.classList.remove('figure');
+    }
+    else {
+      pic.classList.remove('summary');
+      pic.classList.add('figure');
+    }
+  }
+
+  function showTable(elem) {
+    hideTablesAndLegend();
+    var ms = getMassShift(elem);
+    showPic(ms + '.png');
+    document.getElementById('peptides_'+ms).style.display = 'block';
+    // document.getElementById('table_header').textContent = "Mass shift " + ms + " (" + elem.text + " peptides)";
+  }
+
+  var shifts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col0');
+  for(i = 0; i < shifts.length; i++) {
+    shifts[i].children[0].onclick = function (e) {
+      showPic(e.target.text + '.png');
+      document.getElementById('legend').style.display = 'block';
+    }
+  }
+
+  var binh = document.getElementById('binh');
+  binh.onclick = function (e) {
+    showPic('summary.png');
+    hideTablesAndLegend();
+  }
+
+  var amounts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col1');
+  for(i = 0; i < amounts.length; i++) {
+    amounts[i].children[0].onclick = function (e) {
+      document.getElementById('pic').style.display = 'none';
+      showTable(e.target);
+    }
+  }
+
+  var reference = "+56.0291";
+  var table = document.getElementById("T_aa_stat_table");
+  for (var i = 0, row; row = table.rows[i]; i++) {
+    var ms = row.cells[0].innerText;
+    if (ms == reference) {
+      row.title = "Reference mass shift";
+      break;
+    }
+  }
+
+  var vmod_comb_i = [];
+  var vmod_comb_val = [];
+  var vmod_table = document.getElementById("T_rec_var_mod_table");
+
+  for (var i = 0; i < vmod_comb_i.length; i++) {
+    var cells = vmod_table.querySelectorAll('.data.col' + vmod_comb_i[i]);
+    cells.forEach(function(c) {
+      c.title = vmod_comb_val[i];
+      c.classList.add("highlighted", "combine_mod");
+      if (c.classList.contains("row1")) {
+        c.classList.add("has_tooltip");
+      }
+    });
+  }
+
+  var opp_mod_i = [];
+  var opp_mod_val = [];
+  for (var j = 0; j < opp_mod_i.length; j++) {
+    var ocells = vmod_table.querySelectorAll('.data.col' + opp_mod_i[j]);
+    ocells.forEach(function(c) {
+      c.title = opp_mod_val[j];
+      c.classList.add("opposite_mod", "highlighted");
+      if (c.classList.contains("row1")) {
+        c.classList.add("has_tooltip");
+      }
+    });
+  }
+
+  if (vmod_table.querySelector('.data.row0.col0').textContent == "isotope error") {
+    vmod_table.querySelectorAll('.data.col0').forEach(function(c) {
+      c.classList.add("isotope_error");
+      c.title = "This is the recommended value for search engine parameters such as 'isotope peak error', i.e. misassignment of monoisotopic peak.";
+      if (c.classList.contains("row0")) {
+        c.classList.add("has_tooltip");
+      }
+    })
+  }
+
+  var full_info = ['<span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=313">Lys-loss</a> (0% match)</span>', '<span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=58">Propionyl</a> (95% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=206">Delta:H(4)C(3)O(1)</a> (87% match)</span>, <span class="info_item sum" data-ref="[\'-128.0930\', \'+184.1243\']"><a href="http://www.unimod.org/modifications_view.php?editid1=313">Lys-loss</a> +184.1243</span>', '<span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=1289">Butyryl</a> (94% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=253">Crotonaldehyde</a> (94% match)</span>', '', ''];
+
+  var table_rows = new Array();
+  for(i = 0; i < shifts.length; i++) {
+    table_rows[shifts[i].textContent] = shifts[i].parentElement;
+  }
+
+  function set_mouseover_handlers(elem) {
+    var info_spans = elem.querySelectorAll('span.info_item');
+    for (var i = info_spans.length - 1; i >= 0; i--) {
+      info_spans[i].onmouseover = function(e) {
+        var refs = eval(e.target.dataset.ref);
+        for(j = 0; j < refs.length; j++) {
+          table_rows[refs[j]].classList.add("highlighted");
+        }
+      }
+      info_spans[i].onmouseout = function(e) {
+        var refs = eval(e.target.dataset.ref);
+        for(j = 0; j < refs.length; j++) {
+          table_rows[refs[j]].classList.remove("highlighted");
+        }
+      }
+    }
+  }
+  set_mouseover_handlers(table);
+
+  var onclickCreator = function(i) {
+    return function(e) {
+      var td = e.target.parentElement.parentElement;
+      td.innerHTML = full_info[i];
+      set_mouseover_handlers(td);
+    };
+  };
+  for (var i = 0; i < full_info.length; i++) {
+    var info_cell = table.querySelector('.data.col29.row' + i);
+    var link = info_cell.querySelector('a.expand_info_link');
+    if (link) {
+      link.onclick = onclickCreator(i);
+    }
+  }
+
+</script>
+</html>

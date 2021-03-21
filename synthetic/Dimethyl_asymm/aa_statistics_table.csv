@@ -1,0 +1,2 @@
+mass shift,# peptides in bin,M,D,Q,C,L,H,S,R,A,W,Y,P,F,V,N,T,E,G,I,K,is reference,is isotope,isotope index,unimod candidates,unimod accessions,sum of mass shifts
+28.033581094139652,128,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,True,False,,"{'K', 'D', 'Q', 'C', 'H', 'A', 'R', 'Protein N-term', 'C-term', 'N', 'E', 'N-term'}","{546, 36, 1061, 280, 634, 255}",

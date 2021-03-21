@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AA_stat report</title>
+    <style type="text/css">
+        #steps {
+          text-align: center;
+        }
+        .steplink {
+          margin: 3vw 3vw;
+        }
+        #mods_outer {
+          text-align: center;
+        }
+        #mod_container {
+          display: flex;
+          margin-top: 1vh;
+          margin-bottom: 1vh;
+          /*text-align: center;*/
+          justify-content: center;
+          align-items: center;
+        }
+        .modtable {
+          width: 30vw;
+        }
+        .modtable table {
+          border-collapse: collapse;
+        }
+        .modtable td, th {
+          border: 1px solid;
+          padding: 0.3rem;
+          text-align: center;
+        }
+        #aa_stat {
+          text-align: center;
+        }
+        #pic_container {
+          max-height: 80vh;
+          max-width: 85vw;
+          min-height: 25vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          overflow-x: auto;
+        }
+        #pic {
+          max-height: 80vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .figure {
+          max-width: 70vw;
+        }
+        #legend {
+          display: none;
+          overflow: auto;
+          margin: 0 auto;
+          width: 81vw;
+        }
+        table {
+          border: 1px solid black;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .legend.peptides {
+          color: #FF6600;
+        }
+        .legend.freq {
+          color: #88AA00;
+        }
+        .legend.localized {
+          color: #006688;
+        }
+        .loc {
+          color: #FF0000;
+        }
+        .vmod_loc {
+          color: #0000FF;
+        }
+        .nterm, .cterm {
+          color: #808080;
+        }
+        #legend p {
+          max-width: 25vw;
+          margin-left: 1vw;
+          margin-right: 1vw;
+          float: left;
+          text-align: justify;
+        }
+        #legend h2, #peptides h2 {
+          text-align: center;
+        }
+        .peptide_table {
+          display: none;
+          text-align: center;
+          width: fit-content;
+        }
+        #meta {
+          text-align: center;
+        }
+        .note, .expand_info {
+          font-size: 75%;
+        }
+        .isotope_error {
+          background-color: #e0e0e0;
+        }
+        .highlighted {
+          background-color: lightyellow;
+        }
+        .has_tooltip::after {
+          content: "\01F6C8";
+          vertical-align: super;
+          font-size: 75%;
+        }
+    </style>
+</head>
+<body>
+<div id="steps"></div>
+<div id="mods_outer">
+  <h3>Modifications</h3>
+  <div id="mod_container">
+    <div id="set_fmods" class="modtable">
+    Set modifications: none.
+    </div>
+    
+    <div id="rec_mods" class="modtable">
+    <style  type="text/css" >
+</style><table id="T_rec_fix_mod_table" ><caption>Recommended, fixed</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >K</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_rec_fix_mod_tablelevel0_row0" class="row_heading level0 row0" >value</th>
+                        <td id="T_rec_fix_mod_tablerow0_col0" class="data row0 col0" >+70.0443</td>
+            </tr>
+    </tbody></table>
+    </div>
+    <div id="rec_var_mods" class="modtable">
+    <style  type="text/css" >
+    #T_rec_var_mod_table th.col_heading {
+          display: none;
+    }    #T_rec_var_mod_table th.blank {
+          display: none;
+    }    #T_rec_var_mod_table .data.row0 {
+          font-weight: bold;
+    }</style><table id="T_rec_var_mod_table" ><caption>Recommended, variable</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >0</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_rec_var_mod_tablelevel0_row0" class="row_heading level0 row0" ></th>
+                        <td id="T_rec_var_mod_tablerow0_col0" class="data row0 col0" >S</td>
+            </tr>
+            <tr>
+                        <th id="T_rec_var_mod_tablelevel0_row1" class="row_heading level0 row1" >value</th>
+                        <td id="T_rec_var_mod_tablerow1_col0" class="data row1 col0" >+126.1078</td>
+            </tr>
+    </tbody></table>
+    </div>
+  </div>
+</div>
+<div id="aa_stat">
+  <h3>Amino acid statistics</h3>
+  <style  type="text/css" >
+    #T_aa_stat_table tr:hover {
+          background-color: lightyellow;
+    }    #T_aa_stat_table td, th {
+          text-align: center;
+    }    #T_aa_stat_table td, th {
+          border: 1px solid black;
+    }#T_aa_stat_tablerow0_col1{
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 7.9%, transparent 7.9%);
+        }#T_aa_stat_tablerow1_col0,#T_aa_stat_tablerow1_col2,#T_aa_stat_tablerow1_col3,#T_aa_stat_tablerow1_col4,#T_aa_stat_tablerow1_col5,#T_aa_stat_tablerow1_col6,#T_aa_stat_tablerow1_col7,#T_aa_stat_tablerow1_col8,#T_aa_stat_tablerow1_col9,#T_aa_stat_tablerow1_col10,#T_aa_stat_tablerow1_col11,#T_aa_stat_tablerow1_col12,#T_aa_stat_tablerow1_col13,#T_aa_stat_tablerow1_col14,#T_aa_stat_tablerow1_col15,#T_aa_stat_tablerow1_col16,#T_aa_stat_tablerow1_col17,#T_aa_stat_tablerow1_col18,#T_aa_stat_tablerow1_col19,#T_aa_stat_tablerow1_col20,#T_aa_stat_tablerow1_col21,#T_aa_stat_tablerow1_col22,#T_aa_stat_tablerow1_col23,#T_aa_stat_tablerow1_col24,#T_aa_stat_tablerow1_col25,#T_aa_stat_tablerow1_col26,#T_aa_stat_tablerow1_col27,#T_aa_stat_tablerow1_col28,#T_aa_stat_tablerow1_col29{
+            background-color:  #cccccc;
+        }#T_aa_stat_tablerow1_col1{
+            background-color:  #cccccc;
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 100.0%, transparent 100.0%);
+        }#T_aa_stat_tablerow2_col1{
+            width:  10em;
+             height:  80%;
+        }#T_aa_stat_tablerow3_col1{
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 1.4%, transparent 1.4%);
+        }</style><table id="T_aa_stat_table" ><thead>    <tr>        <th class="col_heading level0 col0" ><a id="binh" href="#">mass shift</a></th>        <th class="col_heading level0 col1" ># peptides in bin</th>        <th class="col_heading level0 col2" >M</th>        <th class="col_heading level0 col3" >D</th>        <th class="col_heading level0 col4" >Q</th>        <th class="col_heading level0 col5" >C</th>        <th class="col_heading level0 col6" >L</th>        <th class="col_heading level0 col7" >H</th>        <th class="col_heading level0 col8" >S</th>        <th class="col_heading level0 col9" >R</th>        <th class="col_heading level0 col10" >A</th>        <th class="col_heading level0 col11" >W</th>        <th class="col_heading level0 col12" >Y</th>        <th class="col_heading level0 col13" >P</th>        <th class="col_heading level0 col14" >F</th>        <th class="col_heading level0 col15" >V</th>        <th class="col_heading level0 col16" >N</th>        <th class="col_heading level0 col17" >T</th>        <th class="col_heading level0 col18" >E</th>        <th class="col_heading level0 col19" >G</th>        <th class="col_heading level0 col20" >I</th>        <th class="col_heading level0 col21" >K</th>        <th class="col_heading level0 col29" >Possible interpretations</th>    </tr></thead><tbody>
+                <tr>
+                                <td id="T_aa_stat_tablerow0_col0" class="data row0 col0" ><a href="#">-128.0929</a></td>
+                        <td id="T_aa_stat_tablerow0_col1" class="data row0 col1" ><a href="#">78</a></td>
+                        <td id="T_aa_stat_tablerow0_col2" class="data row0 col2" >0.963</td>
+                        <td id="T_aa_stat_tablerow0_col3" class="data row0 col3" >1.020</td>
+                        <td id="T_aa_stat_tablerow0_col4" class="data row0 col4" >1.100</td>
+                        <td id="T_aa_stat_tablerow0_col5" class="data row0 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow0_col6" class="data row0 col6" >0.958</td>
+                        <td id="T_aa_stat_tablerow0_col7" class="data row0 col7" >1.077</td>
+                        <td id="T_aa_stat_tablerow0_col8" class="data row0 col8" >1.009</td>
+                        <td id="T_aa_stat_tablerow0_col9" class="data row0 col9" >0.909</td>
+                        <td id="T_aa_stat_tablerow0_col10" class="data row0 col10" >1.017</td>
+                        <td id="T_aa_stat_tablerow0_col11" class="data row0 col11" >1.234</td>
+                        <td id="T_aa_stat_tablerow0_col12" class="data row0 col12" >1.155</td>
+                        <td id="T_aa_stat_tablerow0_col13" class="data row0 col13" >0.836</td>
+                        <td id="T_aa_stat_tablerow0_col14" class="data row0 col14" >0.854</td>
+                        <td id="T_aa_stat_tablerow0_col15" class="data row0 col15" >0.950</td>
+                        <td id="T_aa_stat_tablerow0_col16" class="data row0 col16" >1.175</td>
+                        <td id="T_aa_stat_tablerow0_col17" class="data row0 col17" >0.927</td>
+                        <td id="T_aa_stat_tablerow0_col18" class="data row0 col18" >0.902</td>
+                        <td id="T_aa_stat_tablerow0_col19" class="data row0 col19" >0.971</td>
+                        <td id="T_aa_stat_tablerow0_col20" class="data row0 col20" >1.027</td>
+                        <td id="T_aa_stat_tablerow0_col21" class="data row0 col21" >1.106</td>
+                                                                                <td id="T_aa_stat_tablerow0_col29" class="data row0 col29" ><span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=313">Lys-loss</a> (0% match)</span></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow1_col0" class="data row1 col0" ><a href="#">+70.0443</a></td>
+                        <td id="T_aa_stat_tablerow1_col1" class="data row1 col1" ><a href="#">206</a></td>
+                        <td id="T_aa_stat_tablerow1_col2" class="data row1 col2" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col3" class="data row1 col3" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col4" class="data row1 col4" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col5" class="data row1 col5" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col6" class="data row1 col6" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col7" class="data row1 col7" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col8" class="data row1 col8" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col9" class="data row1 col9" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col10" class="data row1 col10" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col11" class="data row1 col11" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col12" class="data row1 col12" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col13" class="data row1 col13" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col14" class="data row1 col14" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col15" class="data row1 col15" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col16" class="data row1 col16" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col17" class="data row1 col17" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col18" class="data row1 col18" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col19" class="data row1 col19" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col20" class="data row1 col20" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col21" class="data row1 col21" >1.000</td>
+                                                                                <td id="T_aa_stat_tablerow1_col29" class="data row1 col29" ><span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=253">Crotonaldehyde</a> (93% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=1289">Butyryl</a> (89% match)</span>, <span class="info_item sum" data-ref="['-128.0929', '+198.1395']"><a href="http://www.unimod.org/modifications_view.php?editid1=313">Lys-loss</a> +198.1395</span></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow2_col0" class="data row2 col0" ><a href="#">+126.1078</a></td>
+                        <td id="T_aa_stat_tablerow2_col1" class="data row2 col1" ><a href="#">67</a></td>
+                        <td id="T_aa_stat_tablerow2_col2" class="data row2 col2" >0.355</td>
+                        <td id="T_aa_stat_tablerow2_col3" class="data row2 col3" >0.949</td>
+                        <td id="T_aa_stat_tablerow2_col4" class="data row2 col4" >1.095</td>
+                        <td id="T_aa_stat_tablerow2_col5" class="data row2 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow2_col6" class="data row2 col6" >1.164</td>
+                        <td id="T_aa_stat_tablerow2_col7" class="data row2 col7" >0.404</td>
+                        <td id="T_aa_stat_tablerow2_col8" class="data row2 col8" >1.271</td>
+                        <td id="T_aa_stat_tablerow2_col9" class="data row2 col9" >0.908</td>
+                        <td id="T_aa_stat_tablerow2_col10" class="data row2 col10" >1.005</td>
+                        <td id="T_aa_stat_tablerow2_col11" class="data row2 col11" >0.888</td>
+                        <td id="T_aa_stat_tablerow2_col12" class="data row2 col12" >1.225</td>
+                        <td id="T_aa_stat_tablerow2_col13" class="data row2 col13" >0.846</td>
+                        <td id="T_aa_stat_tablerow2_col14" class="data row2 col14" >0.738</td>
+                        <td id="T_aa_stat_tablerow2_col15" class="data row2 col15" >0.981</td>
+                        <td id="T_aa_stat_tablerow2_col16" class="data row2 col16" >1.127</td>
+                        <td id="T_aa_stat_tablerow2_col17" class="data row2 col17" >0.939</td>
+                        <td id="T_aa_stat_tablerow2_col18" class="data row2 col18" >0.963</td>
+                        <td id="T_aa_stat_tablerow2_col19" class="data row2 col19" >0.815</td>
+                        <td id="T_aa_stat_tablerow2_col20" class="data row2 col20" >0.854</td>
+                        <td id="T_aa_stat_tablerow2_col21" class="data row2 col21" >1.107</td>
+                                                                                <td id="T_aa_stat_tablerow2_col29" class="data row2 col29" ><span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=426">Octanoyl</a> (88% match)</span></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow3_col0" class="data row3 col0" ><a href="#">+198.1395</a></td>
+                        <td id="T_aa_stat_tablerow3_col1" class="data row3 col1" ><a href="#">69</a></td>
+                        <td id="T_aa_stat_tablerow3_col2" class="data row3 col2" >0.109</td>
+                        <td id="T_aa_stat_tablerow3_col3" class="data row3 col3" >1.100</td>
+                        <td id="T_aa_stat_tablerow3_col4" class="data row3 col4" >0.919</td>
+                        <td id="T_aa_stat_tablerow3_col5" class="data row3 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow3_col6" class="data row3 col6" >0.923</td>
+                        <td id="T_aa_stat_tablerow3_col7" class="data row3 col7" >1.093</td>
+                        <td id="T_aa_stat_tablerow3_col8" class="data row3 col8" >1.143</td>
+                        <td id="T_aa_stat_tablerow3_col9" class="data row3 col9" >0.447</td>
+                        <td id="T_aa_stat_tablerow3_col10" class="data row3 col10" >0.974</td>
+                        <td id="T_aa_stat_tablerow3_col11" class="data row3 col11" >0.729</td>
+                        <td id="T_aa_stat_tablerow3_col12" class="data row3 col12" >0.984</td>
+                        <td id="T_aa_stat_tablerow3_col13" class="data row3 col13" >1.042</td>
+                        <td id="T_aa_stat_tablerow3_col14" class="data row3 col14" >0.958</td>
+                        <td id="T_aa_stat_tablerow3_col15" class="data row3 col15" >1.294</td>
+                        <td id="T_aa_stat_tablerow3_col16" class="data row3 col16" >0.914</td>
+                        <td id="T_aa_stat_tablerow3_col17" class="data row3 col17" >1.014</td>
+                        <td id="T_aa_stat_tablerow3_col18" class="data row3 col18" >1.104</td>
+                        <td id="T_aa_stat_tablerow3_col19" class="data row3 col19" >0.986</td>
+                        <td id="T_aa_stat_tablerow3_col20" class="data row3 col20" >0.866</td>
+                        <td id="T_aa_stat_tablerow3_col21" class="data row3 col21" >0.964</td>
+                                                                                <td id="T_aa_stat_tablerow3_col29" class="data row3 col29" ></td>
+            </tr>
+    </tbody></table>
+</div>
+<div id="legend">
+  <h2>Figure Legend</h2>
+  <p>
+    <span class="legend freq">Relative AA abundance</span>: this value represents the difference in occurrence frequency
+    between peptides with the given mass shift and the peptides with unshifted masses.
+    The AA occurrence frequency is calculated for all mass shifts as follows: the AA is counted in all peptides without miscleavages,
+    then the AA count is divided by the total of all AA counts.
+    Each AA occurrence frequency for each shift is then divided by the occurrence frequency of the same AA at zero mass shift.
+    Thus, values below 1 mean that the AA is "depleted" and values above 1 mean that it is "enriched" at a certain mass shift.
+  </p>
+  <p>
+    <span class="legend peptides">Peptides with AA, %</span>: This is the percentage of peptides at the given mass shift that contain
+    at least one AA residue of a certain kind. This is useful to assess the meaning of the observed frequencies.
+  </p>
+  <p>
+    <span class="legend localized">Localization count</span>: if spectrum files are provided to AA_stat, each MS/MS spectrum of shifted peptides
+    is tested for localization of mass shifts. This axis counts successful localizations of mass shifts at each AA. The counts are not normalized.
+  </p>
+</div>
+<div id="pic_container">
+  <img id="pic" src="summary.png">
+</div>
+
+<div id="peptides">
+  <h2 id="table_header"></h2>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_-128.0929">
+  <thead>
+    <tr style="text-align: right;">
+      <th>peptide</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANEKTESSSAQQVAVSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.12421.12421.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FELGKLMELHGEGSSSGK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.40465.40465.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSGPGGQNVNKVNSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.7536.7536.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DASTLQSQKAEGTGDAK.-</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.14459.14459.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GWLKSNVSDAVAQSTR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.44211.44211.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGFKGEGPDVDVNLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.49125.49125.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TPGQNAQKWIPAR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.27574.27574.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDSGKPYYYNSQTK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.17872.17872.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNLKNLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.46813.46813.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSAYIKNSNPALNDNLEK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.35300.35300.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTGEKLTVAENEAETK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.26107.26107.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SNEEGSEEKGPEVR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.10208.10208.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGDDIAKATGDWK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.28280.28280.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SGKFTQQDIDEAK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.20902.20902.2</td>
+    </tr>
+    <tr>
+      <td>-.PSKGPLQSVQVFGR.-</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.38928.38928.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VPTTEKPTVTVNFR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.33463.33463.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AANMLQQSGSKNTGAK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.13661.13661.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TQAYQDQKPGTSGLR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.16761.16761.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVEKYGYTHLSAGELLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.38804.38804.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVFSGNLFQHQEDSK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.40938.40938.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHVQSSSDSSDEPAEK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.12183.12183.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGFKGEGPDVDVSLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.50158.50158.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGPNASIISLKSDK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.31750.31750.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VTAAAMAGNKSTPR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.15282.15282.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IPIANTEKYMADK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.28933.28933.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IVSGKDYNVTANSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.17886.17886.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DFDTALKHYDK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.27826.27826.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DESFLGKLGGTLAR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.46593.46593.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DDSFLGKLGGTLAR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.46935.46935.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TVSKVDDFLANEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.40192.40192.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YIEIYVQKVNPSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.39051.39051.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGIDTPDIDIHGPEGK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.38113.38113.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DIVAAIQHNYKMSAFK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.48555.48555.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DLGKFQVATDALK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.45739.45739.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGQKLIDVNHYAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.24684.24684.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IDEMPEAAVKSTANK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.24843.24843.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASNAAVKLAESK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.14665.14665.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SQNTDMVQKSVSK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.15764.15764.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLLPGELAKHAVSEGTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.42697.42697.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTISAPGKVVTAAAQAK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.30594.30594.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LEEVTGKLQVAR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.29604.29604.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQEKVESAQSEQK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.9276.9276.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGNFSAAMKDLSGK<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.30996.30996.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTSLNVKYNNDK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.25458.25458.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYSSGFGGKYGVQADR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.29747.29747.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALASIDSKLNQAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.28535.28535.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGLQVVAVKAPGFGDNR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.40249.40249.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SMSTEGLMKFVDSK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.39925.39925.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IISSIEQKEENK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.19762.19762.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LTEKELAEAASK<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.22698.22698.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AAINQKLIETGER<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.33677.33677.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEEIVKEVSTYIK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.41087.41087.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>INNFSADIKDSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.25175.25175.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TLQKQSVVYGGK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.20833.20833.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AAQASDLEKIHLDEK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.28589.28589.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>MMSKPQTSGAYVLNK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.29280.29280.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGDWKGYTGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.19028.19028.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHNAENIQPGEQKYEYK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.19466.19466.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPNSKVESK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.22022.22022.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>FDDTNPEKEEAK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.16010.16010.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLEEEGAAHSGK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.8299.8299.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQAAYAGDKADDIQK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.21370.21370.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DSINFLDHINGK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.42842.42842.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IFVGGIKEDTEEHHLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.29258.29258.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SLKLNTAEDAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.24406.24406.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITGKNQVTATK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.7681.7681.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQTKAGEATVK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.9690.9690.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IGNSYFKEEK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.23294.23294.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DIVAAIQHNYK<span class="cterm">.<span class="next_aa">M</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.36426.36426.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GTITVSAQELKDNR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.27304.27304.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ASEALLKQLK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.33262.33262.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLTWDVKDTLLR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.57746.57746.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HAVSEGTKAVTK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.3850.3850.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LEKTIDDLEEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.30862.30862.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VFSIISSEKELK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.41346.41346.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNIGQGSHPQK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.10301.10301.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ISALQGKLSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.27456.27456.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LDEKENLSAK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.15376.15376.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+70.0443">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SNEEGSEE<span class="loc">K[+70]</span>GPEVR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.11416.11416.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GAE<span class="loc">K[+70]</span>TEVAEPR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.18899.18899.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SEDTIS<span class="loc">K[+70]</span>MNDFMR<span class="cterm">.<span class="next_aa">M</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.46278.46278.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNL<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.55147.55147.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LEQVE<span class="loc">K[+70]</span>ELLR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.41418.41418.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>D<span class="loc">K[+70]</span>ALPLEAEVAPVK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.47732.47732.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>MAQEL<span class="loc">K[+70]</span>YGDIVER<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.38963.38963.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">K[+70]</span>FGVLSDNFK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.44710.44710.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VTAAAMAGN<span class="loc">K[+70]</span>STPR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.24238.24238.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGFKGEGPDVDVNLP<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.51400.51400.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVEKYGYT<span class="loc">H[+70]</span>LSAGELLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.43834.43834.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TPGQNAQ<span class="loc">K[+70]</span>WIPAR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.35330.35330.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLGEPAAGEGSA<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.27132.27132.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VPTTE<span class="loc">K[+70]</span>PTVTVNFR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.40162.40162.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DTMGIAD<span class="loc">K[+70]</span>TENTLER<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.40693.40693.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLDSGAPI<span class="loc">K[+70]</span>IPVGPETLGR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.51983.51983.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LEEVTG<span class="loc">K[+70]</span>LQVAR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.37658.37658.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLFFGG<span class="loc">K[+70]</span>GAPLQR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.48972.48972.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTGE<span class="loc">K[+70]</span>LTVAENEAETK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.36417.36417.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDVPDVNIEGPEGKL<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.49754.49754.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">K[+70]</span>YEEIDNAPEER<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.24401.24401.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGVEVPDVNIEGPEG<span class="loc">K[+70]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.47815.47815.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AAINQ<span class="loc">K[+70]</span>LIETGER<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.36222.36222.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLIVSTTPYSEKDT<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.41929.41929.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLFSNTAAQ<span class="loc">K[+70]</span>LR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.45594.45594.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASDTSSETVFG<span class="loc">K[+70]</span>R<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.30585.30585.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IVSGKDYNVTANS<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.20347.20347.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>MSFV<span class="loc">K[+70]</span>GWGAEYR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.46620.46620.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>T<span class="loc">K[+70]</span>MSAAQALK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.28452.28452.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>MGS<span class="loc">K[+70]</span>SPGNTSQPPAFFSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.36787.36787.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLTWDV<span class="loc">K[+70]</span>DTLLR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.62322.62322.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GGPGSTLSFVG<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.47762.47762.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>MMS<span class="loc">K[+70]</span>PQTSGAYVLNK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.35019.35019.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LDHLAE<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.27100.27100.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGPNASIISL<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.49918.49918.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AAGPSLS<span class="loc">H[+70]</span>TSGGTQSK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.19690.19690.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">H[+70]</span>QNVQLPR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.24068.24068.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>Y<span class="loc">H[+70]</span>EEFEK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.26269.26269.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">H[+70]</span>AVSEGTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.9855.9855.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLEEEIQAPTSS<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.39621.39621.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DVNAAIAAI<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.49265.49265.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>MESEEG<span class="loc">K[+70]</span>EAR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.13220.13220.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGFG<span class="loc">K[+70]</span>FER<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.28899.28899.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITQDLMA<span class="loc">K[+70]</span>VR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.39687.39687.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVEVPDVSLEGPEG<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.49215.49215.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLFSNTAAQ<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.44293.44293.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVDIPDVNIEGPDA<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.49951.49951.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLTANSNPSSPSAA<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.27186.27186.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>MQQL<span class="loc">K[+70]</span>EQYR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.26311.26311.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLEEEIQAPTSS<span class="loc">K[+70]</span>R<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.34752.34752.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTMLNTVS<span class="loc">K[+70]</span>IR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.45179.45179.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEVQVSD<span class="loc">K[+70]</span>ER<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.17687.17687.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ISSNFSSIIAE<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.51476.51476.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>S<span class="loc">K[+70]</span>LLFSNTAAQK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.39163.39163.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLIVSTTPYSE<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.49305.49305.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LIDVN<span class="loc">H[+70]</span>YAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.44997.44997.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TFG<span class="loc">K[+70]</span>AAGPSLSHTSGGTQSK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.19489.19489.3</td>
+    </tr>
+    <tr>
+      <td>-.PS<span class="loc">K[+70]</span>GPLQSVQVFGR.-</td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.37489.37489.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GTITVSAQEL<span class="loc">K[+70]</span>DNR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.33933.33933.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GWL<span class="loc">K[+70]</span>SNVSDAVAQSTR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.44597.44597.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ISSNFSSIIAE<span class="loc">K[+70]</span>LR<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.56542.56542.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DLGKFQVATDAL<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.51333.51333.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEEIVKEVSTYI<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.50845.50845.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DYSAPVNFISAGL<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.50667.50667.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGLQVVAV<span class="loc">K[+70]</span>APGFGDNR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.49589.49589.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IINEPTAAAIAYGLD<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.49343.49343.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GADFLVTEVENGGSLGSK<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.48143.48143.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDAPDVSIEGPDA<span class="loc">K[+70]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.45602.45602.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TVSKVDDFLANEA<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.45383.45383.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FLQEFYQDDELG<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.44822.44822.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TTGFYSGFSEVAE<span class="loc">K[+70]</span>R<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.44087.44087.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AAQASDLEKIHLDE<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.33859.33859.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANLE<span class="loc">K[+70]</span>AQAELVGTADEATR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.43097.43097.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VTLEVG<span class="loc">K[+70]</span>VIQQGR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.41875.41875.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSAYIKNSNPALNDNLE<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.40296.40296.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALASIDSKLNQA<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.39857.39857.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GFALVGVGSEASS<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.39772.39772.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GGPGSTLSFVG<span class="loc">K[+70]</span>R<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.39030.39030.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAEAAEATAEGALKAE<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.30688.30688.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SG<span class="loc">K[+70]</span>FTQQDIDEAK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.28122.28122.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VYIASSSGSTAIK<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.26293.26293.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSFAY<span class="loc">K[+70]</span>DQNENR<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.23557.23557.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DESFLG<span class="loc">K[+70]</span>LGGTLAR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.56995.56995.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GTITVSAQEL<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.41980.41980.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DSSPTTNS<span class="loc">K[+70]</span>LSALQR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.36582.36582.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQE<span class="loc">K[+70]</span>VESAQSEQK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.13414.13414.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTVPDDAVEALADSLGK<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.55940.55940.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AMEAASSLKSQAAT<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.29641.29641.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YIEIYVQ<span class="loc">K[+70]</span>VNPSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.44966.44966.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGF<span class="loc">K[+70]</span>GEGPDVDVSLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.52178.52178.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FELG<span class="loc">K[+70]</span>LMELHGEGSSSGK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.46745.46745.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LTE<span class="loc">K[+70]</span>ELAEAASK<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.32274.32274.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHNAENIQPGEQKYEY<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.25277.25277.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LE<span class="loc">K[+70]</span>TIDDLEEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.37711.37711.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITG<span class="loc">K[+70]</span>NQVTATK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.13717.13717.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IFVGGI<span class="loc">K[+70]</span>EDTEEHHLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.35450.35450.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SL<span class="loc">K[+70]</span>LNTAEDAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.26509.26509.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDSG<span class="loc">K[+70]</span>PYYYNSQTK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.20432.20432.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLEQ<span class="loc">K[+70]</span>TQESQK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.17143.17143.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GSLE<span class="loc">K[+70]</span>GSPEDK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.16387.16387.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HAVSEGT<span class="loc">K[+70]</span>AVTK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.8505.8505.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TLQ<span class="loc">K[+70]</span>QSVVYGGK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.28641.28641.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQT<span class="loc">K[+70]</span>AGEATVK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.15514.15514.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ATVASSTQ<span class="loc">K[+70]</span>FQDLGVK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.41534.41534.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGDDIA<span class="loc">K[+70]</span>ATGDWK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.36202.36202.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTSLNV<span class="loc">K[+70]</span>YNNDK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.31360.31360.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASNAAV<span class="loc">K[+70]</span>LAESK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.25864.25864.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEQEHAAIQD<span class="loc">K[+70]</span>LFQVAK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.44223.44223.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLLPGELA<span class="loc">K[+70]</span>HAVSEGTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.45779.45779.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTISAPG<span class="loc">K[+70]</span>VVTAAAQAK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.35332.35332.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LDE<span class="loc">K[+70]</span>ENLSAK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.23293.23293.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ILDL<span class="loc">K[+70]</span>TGTVK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.40425.40425.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IPIANTE<span class="loc">K[+70]</span>YMADK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.36059.36059.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNAL<span class="loc">K[+70]</span>NLQVK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.36487.36487.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQAAYAGD<span class="loc">K[+70]</span>ADDIQK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.27952.27952.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DASTLQSQ<span class="loc">K[+70]</span>AEGTGDAK.-</td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.19591.19591.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEQEHAAIQD<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.23137.23137.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GGNIGA<span class="loc">K[+70]</span>WTIDLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.49581.49581.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IISSIEQ<span class="loc">K[+70]</span>EENK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.28956.28956.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGDW<span class="loc">K[+70]</span>GYTGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.27610.27610.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HAEMVHTGL<span class="loc">K[+70]</span>LER<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.27268.27268.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>FDDTNPE<span class="loc">K[+70]</span>EEAK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.14792.14792.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ALLQA<span class="loc">K[+70]</span>ASGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.27121.27121.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SITHSTVGS<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.19571.19571.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSGPGGQNVN<span class="loc">K[+70]</span>VNSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.10943.10943.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGIDTPDIDIHGPEG<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.42545.42545.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAI<span class="loc">H[+70]</span>FYNKSLAEHR<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.28784.28784.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPNS<span class="loc">K[+70]</span>VESK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.27261.27261.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SITHSTVGS<span class="loc">K[+70]</span>GEK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.9185.9185.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SQNTDMVQ<span class="loc">K[+70]</span>SVSK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.23997.23997.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LGNDFHTN<span class="loc">K[+70]</span>R<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.14745.14745.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VFSIISSE<span class="loc">K[+70]</span>ELK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.48197.48197.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ASEALL<span class="loc">K[+70]</span>QLK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.41755.41755.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNIGQGSHPQ<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.21260.21260.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ISALQG<span class="loc">K[+70]</span>LSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.34704.34704.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HAEMVHTGL<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.25707.25707.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLEEEGAAHSG<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.19311.19311.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TQDQISNI<span class="loc">K[+70]</span>YHEEFEK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.33170.33170.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>INNFSADI<span class="loc">K[+70]</span>DSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.33509.33509.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEDEVLTS<span class="loc">K[+70]</span>GDAWAK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.40093.40093.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IGNSYF<span class="loc">K[+70]</span>EEK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.24231.24231.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SMSTEGLM<span class="loc">K[+70]</span>FVDSK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.50223.50223.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DHLSD<span class="loc">K[+70]</span>ESK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.8749.8749.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LGNDFHTN<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.26303.26303.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDDESSQ<span class="loc">K[+70]</span>DIK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.18212.18212.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGPNASIISL<span class="loc">K[+70]</span>SDK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.40543.40543.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAIHFYN<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.39639.39639.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AANMLQQSGS<span class="loc">K[+70]</span>NTGAK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.22580.22580.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGEFSGAN<span class="loc">K[+70]</span>EK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.17529.17529.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DVNAAIAAI<span class="loc">K[+70]</span>TK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.46803.46803.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLEEEGAAHSG<span class="loc">K[+70]</span>R<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.10141.10141.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FGTINIVHP<span class="loc">K[+70]</span>LGSYTK<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.41966.41966.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGNFSAAM<span class="loc">K[+70]</span>DLSGK<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.39085.39085.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VETTVTSL<span class="loc">K[+70]</span>TK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.29235.29235.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLEEEDS<span class="loc">K[+70]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.32575.32575.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGQKLIDVN<span class="loc">H[+70]</span>YAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.30644.30644.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LADHFGG<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.36465.36465.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>S<span class="loc">K[+70]</span>HLQEQLNELK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.30429.30429.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VFIGNLNTLVV<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.52566.52566.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LDHLAE<span class="loc">K[+70]</span>FR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.27810.27810.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TTEETS<span class="loc">K[+70]</span>PK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.8745.8745.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDVPDVNIEGPDA<span class="loc">K[+70]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.50664.50664.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVEVPDVSLEGPEG<span class="loc">K[+70]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.49168.49168.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNIGQGSHPQ<span class="loc">K[+70]</span>VK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.12875.12875.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VGTASVLQPV<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.33297.33297.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DFDTAL<span class="loc">K[+70]</span>HYDK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.30016.30016.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPDEAYAIA<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.23536.23536.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TLDEILQE<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.42349.42349.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SEASSEFA<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.20694.20694.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQQELQTA<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.19729.19729.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TPNLYIYS<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.32065.32065.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQLEIDQ<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.36166.36166.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LAEEEN<span class="loc">K[+70]</span>AK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.13427.13427.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DQEALM<span class="loc">K[+70]</span>SVK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.48595.48595.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ITLS<span class="loc">K[+70]</span>HQNVQLPR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.97</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.32628.32628.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNL<span class="loc">K[+70]</span>NLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.97</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.58753.58753.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPSDSGYSYETIG<span class="loc">K[+70]</span>TTK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.96</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.30265.30265.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AANDAGYFNDEMAPIEV<span class="loc">K[+70]</span>TK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.95</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.45157.45157.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVFSGNLFQHQEDS<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>0.95</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.40576.40576.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LFQSDTNAMLG<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.38884.38884.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AQQHWGSGVGV<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.23172.23172.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GFCFITYTDEEPV<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.45451.45451.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVDIPDVNIEGPDA<span class="loc">K[+70]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.50824.50824.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DSINFLDHING<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>0.84</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.42123.42123.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTPTSAGPNSFNKG<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>0.84</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.23713.23713.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VNVEAPDVNLEGLGGKL<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.78</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.50799.50799.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>STGLELETPSLVPV<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.63</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.50277.50277.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITESVAETAQTI<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.60</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.32878.32878.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGIDTPDIDIHGPEGKL<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.55</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.41310.41310.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SGNLTEDD<span class="loc">K[+70]</span>HNNAK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>0.06</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.7465.7465.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DNSTMGYMAA<span class="loc">K[+70]</span>K<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>0.03</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.31738.31738.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FGTINIVHP<span class="loc">K[+70]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.01</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.42551.42551.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHVQSSSDSSDEPAEKR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.14022.14022.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANEKTESSSAQQVAVSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.17487.17487.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYSSGFGGKYGVQADR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.34758.34758.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IDLPAENSNSETIIITGKR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.45379.45379.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VQGGALEDSQLVAGVAFKK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.48801.48801.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DDSFLGKLGGTLAR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.57520.57520.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VSPASSVDSNIPSSQGYKK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.23262.23262.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLTANSNPSSPSAAKR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.19111.19111.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TQAYQDQKPGTSGLR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.24148.24148.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHVQSSSDSSDEPAEK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.20863.20863.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GETASKLQSEISR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.31261.31261.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DEPSVAAMVYPFTGDHKQK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.46432.46432.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLGEPAAGEGSAKR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.21382.21382.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>EDTEEHHLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.13823.13823.3</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+126.1078">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DVNAAIAAIK<span class="loc">T[+126]</span>K<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.51833.51833.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTVPDDAVEALAD<span class="loc">S[+126]</span>LGKK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.61622.61622.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLEEED<span class="loc">S[+126]</span>KLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.42161.42161.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LDEKENL<span class="loc">S[+126]</span>AK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.37380.37380.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DYSAPVNFI<span class="loc">S[+126]</span>AGLKK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.56914.56914.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GKENL<span class="loc">T[+126]</span>GK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.22010.22010.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQQELQ<span class="loc">T[+126]</span>AKK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.26373.26373.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>M<span class="loc">S[+126]</span>FVKGWGAEYR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.54968.54968.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ALLQAKA<span class="loc">S[+126]</span>GK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.38924.38924.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">S[+126]</span>KHLQEQLNELK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.35310.35310.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVEVPDV<span class="loc">S[+126]</span>LEGPEGKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.57015.57015.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DQEALMK<span class="loc">S[+126]</span>VK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.48519.48519.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>KFGVL<span class="loc">S[+126]</span>DNFK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.51574.51574.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TPNLYIY<span class="loc">S[+126]</span>KK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.54088.54088.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAIHFYNK<span class="loc">S[+126]</span>LAEHR<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.45510.45510.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">S[+126]</span>LFFGGKGAPLQR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.56224.56224.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YIEIYVQKVNP<span class="loc">S[+126]</span>R<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.51222.51222.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGEF<span class="loc">S[+126]</span>GANKEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.28038.28038.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSGPGGQNVNKVN<span class="loc">S[+126]</span>K<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.28028.28028.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">S[+126]</span>KLLFSNTAAQK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.47771.47771.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALASID<span class="loc">S[+126]</span>KLNQAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.46232.46232.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>L<span class="loc">T[+126]</span>EKELAEAASK<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.42119.42119.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">S[+126]</span>GKFTQQDIDEAK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.36562.36562.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ISALQGKL<span class="loc">S[+126]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.43436.43436.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>INNFSADIKD<span class="loc">S[+126]</span>K<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.43589.43589.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IV<span class="loc">S[+126]</span>GKDYNVTANSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.35279.35279.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLEQK<span class="loc">T[+126]</span>QESQK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.32275.32275.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GWLK<span class="loc">S[+126]</span>NVSDAVAQSTR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.51531.51531.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPN<span class="loc">S[+126]</span>KVESK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.39650.39650.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">S[+126]</span>LKLNTAEDAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.38184.38184.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQEKVE<span class="loc">S[+126]</span>AQSEQK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.32115.32115.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SNEEG<span class="loc">S[+126]</span>EEKGPEVR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.24142.24142.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANEK<span class="loc">T[+126]</span>ESSSAQQVAVSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.30435.30435.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DSSPTTN<span class="loc">S[+126]</span>KLSALQR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.44613.44613.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASNAAVKLAE<span class="loc">S[+126]</span>K<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.39971.39971.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DASTLQ<span class="loc">S[+126]</span>QKAEGTGDAK.-</td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.32553.32553.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLIVSTTPY<span class="loc">S[+126]</span>EKDTK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.49219.49219.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLLPGELAKHAV<span class="loc">S[+126]</span>EGTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.50980.50980.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTMLNTV<span class="loc">S[+126]</span>KIR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.53912.53912.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEDEVLT<span class="loc">S[+126]</span>KGDAWAK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.49451.49451.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GETA<span class="loc">S[+126]</span>KLQSEISR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.40521.40521.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TTEET<span class="loc">S[+126]</span>KPK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.97</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.26427.26427.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>STGLELETP<span class="loc">S[+126]</span>LVPVKK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.96</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.58301.58301.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DD<span class="loc">S[+126]</span>FLGKLGGTLAR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.61529.61529.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLEEEIQAPTS<span class="loc">S[+126]</span>KR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.43442.43442.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGPNASIISLK<span class="loc">S[+126]</span>DK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.88</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.48941.48941.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SQNTDMVQK<span class="loc">S[+126]</span>VSK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.87</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.29391.29391.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DE<span class="loc">S[+126]</span>FLGKLGGTLAR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.86</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.61421.61421.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDDES<span class="loc">S[+126]</span>QKDIK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.81</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.23570.23570.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">T[+126]</span>LQKQSVVYGGK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.79</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.41241.41241.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEEIVKEV<span class="loc">S[+126]</span>TYIK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.77</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.56734.56734.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPSDSGYSYE<span class="loc">T[+126]</span>IGKTTK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.72</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.35776.35776.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ITL<span class="loc">S[+126]</span>KHQNVQLPR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.61</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.39959.39959.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IIS<span class="loc">S[+126]</span>IEQKEENK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.56</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.46228.46228.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VETTVT<span class="loc">S[+126]</span>LKTK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.30</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.44637.44637.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TV<span class="loc">S[+126]</span>KVDDFLANEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.09</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.51371.51371.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSAYIKN<span class="loc">S[+126]</span>NPALNDNLEK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.05</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.48685.48685.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTI<span class="loc">S[+126]</span>APGKVVTAAAQAK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.03</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.45942.45942.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SD<span class="loc">S[+126]</span>GKPYYYNSQTK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.02</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.35751.35751.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VNVEAPDVNLEGLGGKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.52415.52415.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GFALVGVGSEASSKK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.47932.47932.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDVPDVNIEGPDAKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.51072.51072.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNLKNLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.60450.60450.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYSSGFGGKYGVQADR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.51576.51576.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQAAYAGDKADDIQK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.44001.44001.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSFAYKDQNENR<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.37203.37203.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPDEAYAIAKK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.36951.36951.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+198.1395">
+  <thead>
+    <tr style="text-align: right;">
+      <th>peptide</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>STGLELETPSLVPVKK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.43471.43471.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQDVSGQLSSSK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.23862.23862.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TESSSAQQVAVSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.16930.16930.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VNVEAPDVNLEGLGGKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.44562.44562.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEGPDVDVNLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.34202.34202.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTVPDDAVEALADSLGK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.58078.58078.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVEVPDVSLEGPEGKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.42983.42983.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPGNTSQPPAFFSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.34299.34299.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEGPDVDVSLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.35369.35369.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LIDVNHYAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.31044.31044.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FLQEFYQDDELGKK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.39025.39025.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVFSGNLFQHQEDSKK<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.35118.35118.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LMELHGEGSSSGK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.25633.25633.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VGTASVLQPVKK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.27980.27980.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GFALVGVGSEASSKK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.34266.34266.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VYIASSSGSTAIKK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.22626.22626.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPDEAYAIAKK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.24091.24091.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTVAENEAETK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.24599.24599.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VESAQSEQK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.6675.6675.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AAGPSLSHTSGGTQSK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.13871.13871.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FQVATDALK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.36789.36789.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDDFLANEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.37343.37343.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQQELQTAKK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.17006.17006.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DVNAAIAAIKTK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.40469.40469.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYNVTANSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.20159.20159.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGIDTPDIDIHGPEGKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.36875.36875.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TPNLYIYSKK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.32263.32263.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNLKNLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.50093.50093.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>EDTEEHHLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.8085.8085.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGEFSGANKEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.17771.17771.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>FDDTNPEKEEAK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.17568.17568.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPNSKVESK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.23547.23547.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GWGAEYR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.29327.29327.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VVTAAAQAK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.18579.18579.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>INNFSADIKDSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.29109.29109.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ATDDYHYEK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.15852.15852.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HAVSEGTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.5054.5054.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>NQVTATK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.9272.9272.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VFSIISSEKELK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.39571.39571.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VYIASSSGSTAIK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.27537.27537.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DYSAPVNFISAGLK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.53476.53476.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITESVAETAQTIKK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.30739.30739.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>STGLELETPSLVPVK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.50889.50889.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TTEETSKPK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.5922.5922.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNLK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.50679.50679.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TIDDLEEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.30838.30838.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLEEEDSKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.26841.26841.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SEASSEFAKK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.16508.16508.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TASVLVGAPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.31389.31389.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGEATVK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.11127.11127.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASNAAVKLAESK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.21747.21747.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YGVQADR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.19486.19486.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IISSIEQKEENK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.25381.25381.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AEGTGDAK.-</td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.5208.5208.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDDESSQKDIK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.10224.10224.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>QSVVYGGK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.21186.21186.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSGPGGQNVNKVNSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.11771.11771.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DFDTALKHYDK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.31366.31366.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TLDEILQEKK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.36841.36841.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SITHSTVGSKGEK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.9384.9384.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VSSSEELK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.19573.19573.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FQDLGVK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.32951.32951.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>APGFGDNR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.21424.21424.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPDEAYAIAK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_2xIT_2xHCD_R2.28152.28152.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQLEIDQKK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.30587.30587.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGDWKGYTGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.23116.23116.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VFIGNLNTLVVK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_3xHCD_R2.43169.43169.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTVPDDAVEALADSLGKK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.51299.51299.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVAEPR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GE2_3991_02_PTM_TrainKit_Kmod_Butyryl_200fmol_survey_R1.16778.16778.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+</div>
+
+<div id="meta">
+  <span class="note">Report created 19:52:50 March 05, 2021 with <a href="https://github.com/SimpleNumber/aa_stat">AA_stat</a> 2.1.5</span>
+</div>
+
+</body>
+<script type="text/javascript">
+  function getMassShift(elem) {
+    eid = elem.parentElement.id;
+    return document.getElementById(eid.replace("col1", "col0")).children[0].text;
+  };
+  function hideTablesAndLegend() {
+    var tables = document.getElementsByClassName('peptide_table');
+    for(j = 0; j < tables.length; j++) {
+        tables[j].style.display = 'none';
+      };
+    document.getElementById('legend').style.display = 'none';
+    // document.getElementById('table_header').textContent = "";
+  };
+  function showPic(src) {
+    hideTablesAndLegend();
+    var pic = document.getElementById('pic');
+    pic.src = src;
+    pic.style.display = 'block';
+    if (src == 'summary.png') {
+      pic.classList.add('summary');
+      pic.classList.remove('figure');
+    }
+    else {
+      pic.classList.remove('summary');
+      pic.classList.add('figure');
+    }
+  }
+
+  function showTable(elem) {
+    hideTablesAndLegend();
+    var ms = getMassShift(elem);
+    showPic(ms + '.png');
+    document.getElementById('peptides_'+ms).style.display = 'block';
+    // document.getElementById('table_header').textContent = "Mass shift " + ms + " (" + elem.text + " peptides)";
+  }
+
+  var shifts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col0');
+  for(i = 0; i < shifts.length; i++) {
+    shifts[i].children[0].onclick = function (e) {
+      showPic(e.target.text + '.png');
+      document.getElementById('legend').style.display = 'block';
+    }
+  }
+
+  var binh = document.getElementById('binh');
+  binh.onclick = function (e) {
+    showPic('summary.png');
+    hideTablesAndLegend();
+  }
+
+  var amounts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col1');
+  for(i = 0; i < amounts.length; i++) {
+    amounts[i].children[0].onclick = function (e) {
+      document.getElementById('pic').style.display = 'none';
+      showTable(e.target);
+    }
+  }
+
+  var reference = "+70.0443";
+  var table = document.getElementById("T_aa_stat_table");
+  for (var i = 0, row; row = table.rows[i]; i++) {
+    var ms = row.cells[0].innerText;
+    if (ms == reference) {
+      row.title = "Reference mass shift";
+      break;
+    }
+  }
+
+  var vmod_comb_i = [];
+  var vmod_comb_val = [];
+  var vmod_table = document.getElementById("T_rec_var_mod_table");
+
+  for (var i = 0; i < vmod_comb_i.length; i++) {
+    var cells = vmod_table.querySelectorAll('.data.col' + vmod_comb_i[i]);
+    cells.forEach(function(c) {
+      c.title = vmod_comb_val[i];
+      c.classList.add("highlighted", "combine_mod");
+      if (c.classList.contains("row1")) {
+        c.classList.add("has_tooltip");
+      }
+    });
+  }
+
+  var opp_mod_i = [];
+  var opp_mod_val = [];
+  for (var j = 0; j < opp_mod_i.length; j++) {
+    var ocells = vmod_table.querySelectorAll('.data.col' + opp_mod_i[j]);
+    ocells.forEach(function(c) {
+      c.title = opp_mod_val[j];
+      c.classList.add("opposite_mod", "highlighted");
+      if (c.classList.contains("row1")) {
+        c.classList.add("has_tooltip");
+      }
+    });
+  }
+
+  if (vmod_table.querySelector('.data.row0.col0').textContent == "isotope error") {
+    vmod_table.querySelectorAll('.data.col0').forEach(function(c) {
+      c.classList.add("isotope_error");
+      c.title = "This is the recommended value for search engine parameters such as 'isotope peak error', i.e. misassignment of monoisotopic peak.";
+      if (c.classList.contains("row0")) {
+        c.classList.add("has_tooltip");
+      }
+    })
+  }
+
+  var full_info = ['<span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=313">Lys-loss</a> (0% match)</span>', '<span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=253">Crotonaldehyde</a> (93% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=1289">Butyryl</a> (89% match)</span>, <span class="info_item sum" data-ref="[\'-128.0929\', \'+198.1395\']"><a href="http://www.unimod.org/modifications_view.php?editid1=313">Lys-loss</a> +198.1395</span>', '<span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=426">Octanoyl</a> (88% match)</span>', ''];
+
+  var table_rows = new Array();
+  for(i = 0; i < shifts.length; i++) {
+    table_rows[shifts[i].textContent] = shifts[i].parentElement;
+  }
+
+  function set_mouseover_handlers(elem) {
+    var info_spans = elem.querySelectorAll('span.info_item');
+    for (var i = info_spans.length - 1; i >= 0; i--) {
+      info_spans[i].onmouseover = function(e) {
+        var refs = eval(e.target.dataset.ref);
+        for(j = 0; j < refs.length; j++) {
+          table_rows[refs[j]].classList.add("highlighted");
+        }
+      }
+      info_spans[i].onmouseout = function(e) {
+        var refs = eval(e.target.dataset.ref);
+        for(j = 0; j < refs.length; j++) {
+          table_rows[refs[j]].classList.remove("highlighted");
+        }
+      }
+    }
+  }
+  set_mouseover_handlers(table);
+
+  var onclickCreator = function(i) {
+    return function(e) {
+      var td = e.target.parentElement.parentElement;
+      td.innerHTML = full_info[i];
+      set_mouseover_handlers(td);
+    };
+  };
+  for (var i = 0; i < full_info.length; i++) {
+    var info_cell = table.querySelector('.data.col29.row' + i);
+    var link = info_cell.querySelector('a.expand_info_link');
+    if (link) {
+      link.onclick = onclickCreator(i);
+    }
+  }
+
+</script>
+</html>

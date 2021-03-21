@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AA_stat report</title>
+    <style type="text/css">
+        #steps {
+          text-align: center;
+        }
+        .steplink {
+          margin: 3vw 3vw;
+        }
+        #mods_outer {
+          text-align: center;
+        }
+        #mod_container {
+          display: flex;
+          margin-top: 1vh;
+          margin-bottom: 1vh;
+          /*text-align: center;*/
+          justify-content: center;
+          align-items: center;
+        }
+        .modtable {
+          width: 30vw;
+        }
+        .modtable table {
+          border-collapse: collapse;
+        }
+        .modtable td, th {
+          border: 1px solid;
+          padding: 0.3rem;
+          text-align: center;
+        }
+        #aa_stat {
+          text-align: center;
+        }
+        #pic_container {
+          max-height: 80vh;
+          max-width: 85vw;
+          min-height: 25vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          overflow-x: auto;
+        }
+        #pic {
+          max-height: 80vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .figure {
+          max-width: 70vw;
+        }
+        #legend {
+          display: none;
+          overflow: auto;
+          margin: 0 auto;
+          width: 81vw;
+        }
+        table {
+          border: 1px solid black;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .legend.peptides {
+          color: #FF6600;
+        }
+        .legend.freq {
+          color: #88AA00;
+        }
+        .legend.localized {
+          color: #006688;
+        }
+        .loc {
+          color: #FF0000;
+        }
+        .vmod_loc {
+          color: #0000FF;
+        }
+        .nterm, .cterm {
+          color: #808080;
+        }
+        #legend p {
+          max-width: 25vw;
+          margin-left: 1vw;
+          margin-right: 1vw;
+          float: left;
+          text-align: justify;
+        }
+        #legend h2, #peptides h2 {
+          text-align: center;
+        }
+        .peptide_table {
+          display: none;
+          text-align: center;
+          width: fit-content;
+        }
+        #meta {
+          text-align: center;
+        }
+        .note, .expand_info {
+          font-size: 75%;
+        }
+        .isotope_error {
+          background-color: #e0e0e0;
+        }
+        .highlighted {
+          background-color: lightyellow;
+        }
+        .has_tooltip::after {
+          content: "\01F6C8";
+          vertical-align: super;
+          font-size: 75%;
+        }
+    </style>
+</head>
+<body>
+<div id="steps"></div>
+<div id="mods_outer">
+  <h3>Modifications</h3>
+  <div id="mod_container">
+    <div id="set_fmods" class="modtable">
+    Set modifications: none.
+    </div>
+    
+    <div id="rec_mods" class="modtable">
+    <style  type="text/css" >
+</style><table id="T_rec_fix_mod_table" ><caption>Recommended, fixed</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >K</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_rec_fix_mod_tablelevel0_row0" class="row_heading level0 row0" >value</th>
+                        <td id="T_rec_fix_mod_tablerow0_col0" class="data row0 col0" >+114.0451</td>
+            </tr>
+    </tbody></table>
+    </div>
+    <div id="rec_var_mods" class="modtable">
+    No variable modifications recommended.
+    </div>
+  </div>
+</div>
+<div id="aa_stat">
+  <h3>Amino acid statistics</h3>
+  <style  type="text/css" >
+    #T_aa_stat_table tr:hover {
+          background-color: lightyellow;
+    }    #T_aa_stat_table td, th {
+          text-align: center;
+    }    #T_aa_stat_table td, th {
+          border: 1px solid black;
+    }#T_aa_stat_tablerow0_col1{
+            width:  10em;
+             height:  80%;
+        }#T_aa_stat_tablerow1_col0,#T_aa_stat_tablerow1_col2,#T_aa_stat_tablerow1_col3,#T_aa_stat_tablerow1_col4,#T_aa_stat_tablerow1_col5,#T_aa_stat_tablerow1_col6,#T_aa_stat_tablerow1_col7,#T_aa_stat_tablerow1_col8,#T_aa_stat_tablerow1_col9,#T_aa_stat_tablerow1_col10,#T_aa_stat_tablerow1_col11,#T_aa_stat_tablerow1_col12,#T_aa_stat_tablerow1_col13,#T_aa_stat_tablerow1_col14,#T_aa_stat_tablerow1_col15,#T_aa_stat_tablerow1_col16,#T_aa_stat_tablerow1_col17,#T_aa_stat_tablerow1_col18,#T_aa_stat_tablerow1_col19,#T_aa_stat_tablerow1_col20,#T_aa_stat_tablerow1_col21,#T_aa_stat_tablerow1_col22,#T_aa_stat_tablerow1_col23,#T_aa_stat_tablerow1_col24,#T_aa_stat_tablerow1_col25,#T_aa_stat_tablerow1_col26,#T_aa_stat_tablerow1_col27,#T_aa_stat_tablerow1_col28,#T_aa_stat_tablerow1_col29{
+            background-color:  #cccccc;
+        }#T_aa_stat_tablerow1_col1{
+            background-color:  #cccccc;
+            width:  10em;
+             height:  80%;
+            background:  linear-gradient(90deg,#88AA00 100.0%, transparent 100.0%);
+        }</style><table id="T_aa_stat_table" ><thead>    <tr>        <th class="col_heading level0 col0" ><a id="binh" href="#">mass shift</a></th>        <th class="col_heading level0 col1" ># peptides in bin</th>        <th class="col_heading level0 col2" >M</th>        <th class="col_heading level0 col3" >D</th>        <th class="col_heading level0 col4" >Q</th>        <th class="col_heading level0 col5" >C</th>        <th class="col_heading level0 col6" >L</th>        <th class="col_heading level0 col7" >H</th>        <th class="col_heading level0 col8" >S</th>        <th class="col_heading level0 col9" >R</th>        <th class="col_heading level0 col10" >A</th>        <th class="col_heading level0 col11" >W</th>        <th class="col_heading level0 col12" >Y</th>        <th class="col_heading level0 col13" >P</th>        <th class="col_heading level0 col14" >F</th>        <th class="col_heading level0 col15" >V</th>        <th class="col_heading level0 col16" >N</th>        <th class="col_heading level0 col17" >T</th>        <th class="col_heading level0 col18" >E</th>        <th class="col_heading level0 col19" >G</th>        <th class="col_heading level0 col20" >I</th>        <th class="col_heading level0 col21" >K</th>        <th class="col_heading level0 col29" >Possible interpretations</th>    </tr></thead><tbody>
+                <tr>
+                                <td id="T_aa_stat_tablerow0_col0" class="data row0 col0" ><a href="#">-128.0931</a></td>
+                        <td id="T_aa_stat_tablerow0_col1" class="data row0 col1" ><a href="#">69</a></td>
+                        <td id="T_aa_stat_tablerow0_col2" class="data row0 col2" >0.857</td>
+                        <td id="T_aa_stat_tablerow0_col3" class="data row0 col3" >0.891</td>
+                        <td id="T_aa_stat_tablerow0_col4" class="data row0 col4" >1.016</td>
+                        <td id="T_aa_stat_tablerow0_col5" class="data row0 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow0_col6" class="data row0 col6" >1.020</td>
+                        <td id="T_aa_stat_tablerow0_col7" class="data row0 col7" >0.760</td>
+                        <td id="T_aa_stat_tablerow0_col8" class="data row0 col8" >0.945</td>
+                        <td id="T_aa_stat_tablerow0_col9" class="data row0 col9" >1.018</td>
+                        <td id="T_aa_stat_tablerow0_col10" class="data row0 col10" >1.033</td>
+                        <td id="T_aa_stat_tablerow0_col11" class="data row0 col11" >1.310</td>
+                        <td id="T_aa_stat_tablerow0_col12" class="data row0 col12" >1.257</td>
+                        <td id="T_aa_stat_tablerow0_col13" class="data row0 col13" >0.737</td>
+                        <td id="T_aa_stat_tablerow0_col14" class="data row0 col14" >0.839</td>
+                        <td id="T_aa_stat_tablerow0_col15" class="data row0 col15" >1.008</td>
+                        <td id="T_aa_stat_tablerow0_col16" class="data row0 col16" >1.215</td>
+                        <td id="T_aa_stat_tablerow0_col17" class="data row0 col17" >1.044</td>
+                        <td id="T_aa_stat_tablerow0_col18" class="data row0 col18" >0.970</td>
+                        <td id="T_aa_stat_tablerow0_col19" class="data row0 col19" >1.030</td>
+                        <td id="T_aa_stat_tablerow0_col20" class="data row0 col20" >0.855</td>
+                        <td id="T_aa_stat_tablerow0_col21" class="data row0 col21" >1.116</td>
+                                                                                <td id="T_aa_stat_tablerow0_col29" class="data row0 col29" ><span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=313">Lys-loss</a> (0% match)</span></td>
+            </tr>
+            <tr>
+                                <td id="T_aa_stat_tablerow1_col0" class="data row1 col0" ><a href="#">+114.0451</a></td>
+                        <td id="T_aa_stat_tablerow1_col1" class="data row1 col1" ><a href="#">192</a></td>
+                        <td id="T_aa_stat_tablerow1_col2" class="data row1 col2" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col3" class="data row1 col3" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col4" class="data row1 col4" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col5" class="data row1 col5" >0.000</td>
+                        <td id="T_aa_stat_tablerow1_col6" class="data row1 col6" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col7" class="data row1 col7" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col8" class="data row1 col8" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col9" class="data row1 col9" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col10" class="data row1 col10" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col11" class="data row1 col11" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col12" class="data row1 col12" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col13" class="data row1 col13" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col14" class="data row1 col14" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col15" class="data row1 col15" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col16" class="data row1 col16" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col17" class="data row1 col17" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col18" class="data row1 col18" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col19" class="data row1 col19" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col20" class="data row1 col20" >1.000</td>
+                        <td id="T_aa_stat_tablerow1_col21" class="data row1 col21" >1.000</td>
+                                                                                <td id="T_aa_stat_tablerow1_col29" class="data row1 col29" ><span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=121">GG</a> (92% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=1290">Dicarbamidomethyl</a> (83% match)</span></td>
+            </tr>
+    </tbody></table>
+</div>
+<div id="legend">
+  <h2>Figure Legend</h2>
+  <p>
+    <span class="legend freq">Relative AA abundance</span>: this value represents the difference in occurrence frequency
+    between peptides with the given mass shift and the peptides with unshifted masses.
+    The AA occurrence frequency is calculated for all mass shifts as follows: the AA is counted in all peptides without miscleavages,
+    then the AA count is divided by the total of all AA counts.
+    Each AA occurrence frequency for each shift is then divided by the occurrence frequency of the same AA at zero mass shift.
+    Thus, values below 1 mean that the AA is "depleted" and values above 1 mean that it is "enriched" at a certain mass shift.
+  </p>
+  <p>
+    <span class="legend peptides">Peptides with AA, %</span>: This is the percentage of peptides at the given mass shift that contain
+    at least one AA residue of a certain kind. This is useful to assess the meaning of the observed frequencies.
+  </p>
+  <p>
+    <span class="legend localized">Localization count</span>: if spectrum files are provided to AA_stat, each MS/MS spectrum of shifted peptides
+    is tested for localization of mass shifts. This axis counts successful localizations of mass shifts at each AA. The counts are not normalized.
+  </p>
+</div>
+<div id="pic_container">
+  <img id="pic" src="summary.png">
+</div>
+
+<div id="peptides">
+  <h2 id="table_header"></h2>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_-128.0931">
+  <thead>
+    <tr style="text-align: right;">
+      <th>peptide</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANEKTESSSAQQVAVSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.13511.13511.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANLEKAQAELVGTADEATR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.34928.34928.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVEKYGYTHLSAGELLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.39588.39588.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DASTLQSQKAEGTGDAK.-</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.15598.15598.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDSGKPYYYNSQTK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.18154.18154.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IVSGKDYNVTANSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.19023.19023.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSGPGGQNVNKVNSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.8776.8776.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSAYIKNSNPALNDNLEK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.36314.36314.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FELGKLMELHGEGSSSGK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.41424.41424.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TPGQNAQKWIPAR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.28349.28349.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GWLKSNVSDAVAQSTR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.45151.45151.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SGKFTQQDIDEAK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.21842.21842.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNLKNLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.47541.47541.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYSSGFGGKYGVQADR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.30714.30714.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TQAYQDQKPGTSGLR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.17828.17828.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VPTTEKPTVTVNFR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.34708.34708.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SNEEGSEEKGPEVR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.11033.11033.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IDEMPEAAVKSTANK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.25679.25679.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DFDTALKHYDK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.27991.27991.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPSDSGYSYETIGKTTK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.25367.25367.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGDDIAKATGDWK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.29409.29409.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTISAPGKVVTAAAQAK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.31530.31530.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DDSFLGKLGGTLAR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.47811.47811.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DESFLGKLGGTLAR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.47503.47503.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DLGKFQVATDALK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.46501.46501.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TVSKVDDFLANEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.41207.41207.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHNAENIQPGEQKYEYK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.20469.20469.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ITLSKHQNVQLPR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.24592.24592.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASNAAVKLAESK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.15594.15594.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SMSTEGLMKFVDSK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.40831.40831.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGNFSAAMKDLSGK<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.32030.32030.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LEEVTGKLQVAR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.30800.30800.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGPNASIISLKSDK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.33664.33664.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTSLNVKYNNDK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.25895.25895.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLLPGELAKHAVSEGTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.43656.43656.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AAINQKLIETGER<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.34826.34826.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GTITVSAQELKDNR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.28329.28329.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AANMLQQSGSKNTGAK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.14743.14743.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TLQKQSVVYGGK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.21881.21881.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGFKGEGPDVDVSLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.50843.50843.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGDWKGYTGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.19924.19924.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>FDDTNPEKEEAK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.16276.16276.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VTLEVGKVIQQGR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.35574.35574.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQEKVESAQSEQK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.10492.10492.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YIEIYVQKVNPSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.39752.39752.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LTEKELAEAASK<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.23610.23610.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GETASKLQSEISR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.24367.24367.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IISSIEQKEENK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.20801.20801.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPNSKVESK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.22787.22787.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALASIDSKLNQAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.29858.29858.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLEEEGAAHSGK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.9503.9503.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITGKNQVTATK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.8944.8944.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGEFSGANKEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.15180.15180.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VFSIISSEKELK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.42147.42147.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQTKAGEATVK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.10841.10841.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IGNSYFKEEK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.24249.24249.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LEKTIDDLEEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.31000.31000.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGLQVVAVKAPGFGDNR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.44162.44162.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTGEKLTVAENEAETK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.27111.27111.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGQKLIDVNHYAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.25659.25659.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ASEALLKQLK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.34150.34150.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNALKNLQVK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.31459.31459.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ILDLKTGTVK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.35774.35774.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LDEKENLSAK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.16497.16497.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAIHFYNK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.30864.30864.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGVEVPDVNIEGPEGK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.43958.43958.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DIVAAIQHNYKMSAFK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.49439.49439.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ALLQAKASGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.18867.18867.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLTWDVKDTLLR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.58638.58638.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+      <table border="1" class="dataframe peptide_table" id="peptides_+114.0451">
+  <thead>
+    <tr style="text-align: right;">
+      <th>top isoform</th>
+      <th>localization score</th>
+      <th>spectrum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-.MGERAGSPGTDQE<span class="loc">R[+114]</span><span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.24903.24903.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VNVEAPDVNLEGLGG<span class="loc">K[+114]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.43710.43710.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDVPDVNIEGPEG<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.41247.41247.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">K[+114]</span>YEEIDNAPEER<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.12924.12924.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLGEPAAGEG<span class="loc">S[+114]</span>AKR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.7863.7863.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDVPDVNIEGPDAKL<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.35961.35961.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGVEVPDVNIEGPEG<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.38644.38644.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGIDTPDIDIHGPEG<span class="loc">K[+114]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.33696.33696.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VNVEAPDVNLEGLGG<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.39265.39265.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITESVAE<span class="loc">T[+114]</span>AQTIKK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.23027.23027.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLFFGG<span class="loc">K[+114]</span>GAPLQR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.31991.31991.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">A[+114]</span>GQKLIDVNHYAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.18927.18927.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQEKVE<span class="loc">S[+114]</span>AQSEQK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.7198.7198.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGVEVPDVNIEGPEG<span class="loc">K[+114]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.38311.38311.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DYSSGFGG<span class="loc">K[+114]</span>YGVQADR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.22431.22431.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNL<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.42492.42492.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FELG<span class="loc">K[+114]</span>LMELHGEGSSSGK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.38287.38287.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGF<span class="loc">K[+114]</span>GEGPDVDVNLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.43190.43190.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGLQVVAV<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.33315.33315.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASNAAV<span class="loc">K[+114]</span>LAESK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.16768.16768.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSGPGGQNVN<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.4880.4880.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSGPGGQNVN<span class="loc">K[+114]</span>VNSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.3748.3748.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNAL<span class="loc">K[+114]</span>NLQVK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.22115.22115.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQAAYAGDKADDIQ<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.15869.15869.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAEAAEATAEGAL<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.27636.27636.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSMPGF<span class="loc">K[+114]</span>GEGPDVDVSLPK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.43967.43967.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>MSFV<span class="loc">K[+114]</span>GWGAEYR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.34844.34844.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AAINQ<span class="loc">K[+114]</span>LIETGER<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.25615.25615.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">K[+114]</span>FGVLSDNFK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.27349.27349.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SSFAY<span class="loc">K[+114]</span>DQNENR<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.9889.9889.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGLQVVAV<span class="loc">K[+114]</span>APGFGDNR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.41152.41152.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>MAQEL<span class="loc">K[+114]</span>YGDIVER<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.29844.29844.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>STGLELETPSLVPV<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.42120.42120.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ISSNFSSIIAE<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.37757.37757.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDAPDVSIEGPDA<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.36126.36126.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IISSIEQ<span class="loc">K[+114]</span>EENK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.14545.14545.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEEIV<span class="loc">K[+114]</span>EVSTYIK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.45330.45330.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IFVGGI<span class="loc">K[+114]</span>EDTEEHHLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.25816.25816.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AAQASDLE<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.10465.10465.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SD<span class="loc">S[+114]</span>GKPYYYNSQTK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.14236.14236.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ASEALL<span class="loc">K[+114]</span>QLK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.31132.31132.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LEQVE<span class="loc">K[+114]</span>ELLR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.26610.26610.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SNEEGSEE<span class="loc">K[+114]</span>GPEVR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.7931.7931.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTISAPG<span class="loc">K[+114]</span>VVTAAAQAK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.22471.22471.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANLE<span class="loc">K[+114]</span>AQAELVGTADEATR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.37158.37158.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVEVPDVSLEGPEG<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.39969.39969.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IGNSYF<span class="loc">K[+114]</span>EEK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.15822.15822.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQAAYAGD<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.13815.13815.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LDE<span class="loc">K[+114]</span>ENLSAK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.9742.9742.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>FDDTNPE<span class="loc">K[+114]</span>EEAK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.10010.10010.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TQAYQDQ<span class="loc">K[+114]</span>PGTSGLR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.13997.13997.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTSLNV<span class="loc">K[+114]</span>YNNDK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.17727.17727.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPSDSGYSYETIG<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.24902.24902.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITG<span class="loc">K[+114]</span>NQVTATK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.4277.4277.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>HAVSEGT<span class="loc">K[+114]</span>AVTK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.3858.3858.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAEAAEATAEGAL<span class="loc">K[+114]</span>AEK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.30875.30875.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLTANSNPS<span class="loc">S[+114]</span>PSAAKR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.8739.8739.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DDSFLG<span class="loc">K[+114]</span>LGGTLAR<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.39963.39963.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LTE<span class="loc">K[+114]</span>ELAEAASK<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.23620.23620.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLFSNTAAQ<span class="loc">K[+114]</span>LR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.28853.28853.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DLG<span class="loc">K[+114]</span>FQVATDALK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.38208.38208.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>INNFSADI<span class="loc">K[+114]</span>DSK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.19127.19127.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>YIEIYVQ<span class="loc">K[+114]</span>VNPSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.34989.34989.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GGNIGA<span class="loc">K[+114]</span>WTIDLK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.32948.32948.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGDW<span class="loc">K[+114]</span>GYTGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.13164.13164.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGFG<span class="loc">K[+114]</span>FER<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.17297.17297.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHVQSSSDS<span class="loc">S[+114]</span>DEPAEKR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.8011.8011.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DESFLG<span class="loc">K[+114]</span>LGGTLAR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.44946.44946.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GTITVSAQEL<span class="loc">K[+114]</span>DNR<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.20433.20433.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GEVQVSD<span class="loc">K[+114]</span>ER<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.5650.5650.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGEFSGAN<span class="loc">K[+114]</span>EK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.7695.7695.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SMSTEGLM<span class="loc">K[+114]</span>FVDSK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.41408.41408.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ALLQA<span class="loc">K[+114]</span>ASGK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.12063.12063.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TQDQISNI<span class="loc">K[+114]</span>YHEEFEK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.23704.23704.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ISALQG<span class="loc">K[+114]</span>LSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.21125.21125.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GTITVSAQEL<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.28686.28686.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IHNAENIQPGEQ<span class="loc">K[+114]</span>YEYK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.15279.15279.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IPIANTE<span class="loc">K[+114]</span>YMADK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.26513.26513.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TVS<span class="loc">K[+114]</span>VDDFLANEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.28451.28451.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IV<span class="loc">S[+114]</span>GKDYNVTANSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.12227.12227.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SGNFSAAM<span class="loc">K[+114]</span>DLSGK<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.30582.30582.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LEEVTG<span class="loc">K[+114]</span>LQVAR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.22217.22217.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ISSNFSSIIAE<span class="loc">K[+114]</span>LR<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.39434.39434.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TLQ<span class="loc">K[+114]</span>QSVVYGGK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.13065.13065.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LE<span class="loc">K[+114]</span>TIDDLEEK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.20955.20955.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GAE<span class="loc">K[+114]</span>TEVAEPR<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.6486.6486.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LDHLAE<span class="loc">K[+114]</span>FR<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.23643.23643.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLFSNTAAQ<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.29784.29784.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTPT<span class="loc">S[+114]</span>AGPNSFNKGK<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.11202.11202.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VQGGALEDSQLVAGVAF<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.40905.40905.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDAPDVSIEGPDA<span class="loc">K[+114]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.38324.38324.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPSDSGYSYETIG<span class="loc">K[+114]</span>TTK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.22773.22773.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DYSAPVNFISAGLK<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.37202.37202.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLLPGELA<span class="loc">K[+114]</span>HAVSEGTK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.35501.35501.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLIVSTTPYSE<span class="loc">K[+114]</span>DTK<span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.27960.27960.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LLEEEIQAPT<span class="loc">S[+114]</span>SKR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.25136.25136.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VFSIISSE<span class="loc">K[+114]</span>ELK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.34956.34956.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ATVASS<span class="loc">T[+114]</span>QKFQDLGVK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>1.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.28421.28421.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">T[+114]</span>PGQNAQKWIPAR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.24794.24794.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SL<span class="loc">K[+114]</span>LNTAEDAK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.13686.13686.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTMLNTVS<span class="loc">K[+114]</span>IR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.33007.33007.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLTWDV<span class="loc">K[+114]</span>DTLLR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.43210.43210.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ASDTSSETVFG<span class="loc">K[+114]</span>R<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.15410.15410.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLDSGAPI<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.21230.21230.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VYIASSSGSTAI<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.14261.14261.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VFIGNLNTLVV<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.44030.44030.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VGTASVLQPV<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.18269.18269.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DVNAAIAAI<span class="loc">K[+114]</span>TK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.33910.33910.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AAQASDLE<span class="loc">K[+114]</span>IHLDEK<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.29113.29113.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VETTVTSL<span class="loc">K[+114]</span>TK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.16949.16949.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQT<span class="loc">K[+114]</span>AGEATVK<span class="cterm">.<span class="next_aa">F</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.7966.7966.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DFDTAL<span class="loc">K[+114]</span>HYDK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.23212.23212.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLEEEDS<span class="loc">K[+114]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.17466.17466.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ILDL<span class="loc">K[+114]</span>TGTVK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.23294.23294.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLDSGAPI<span class="loc">K[+114]</span>IPVGPETLGR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.46507.46507.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SDDESSQ<span class="loc">K[+114]</span>DIK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.8847.8847.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLEQ<span class="loc">K[+114]</span>TQESQK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.6257.6257.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TLDEILQE<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.31236.31236.2</td>
+    </tr>
+    <tr>
+      <td>-.ALQSQA<span class="loc">S[+114]</span>EEAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.7207.7207.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IQQELQTA<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>0.99</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.8419.8419.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DQEALM<span class="loc">K[+114]</span>SVK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.20547.20547.2</td>
+    </tr>
+    <tr>
+      <td>-.PS<span class="loc">K[+114]</span>GPLQSVQVFGR.-</td>
+      <td>0.98</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.30625.30625.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SEASSEFA<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.6765.6765.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VNIGQGSHPQ<span class="loc">K[+114]</span>VK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.98</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.6521.6521.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span><span class="loc">H[+114]</span>AEMVHTGLKLER<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.97</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.18869.18869.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>MQQL<span class="loc">K[+114]</span>EQYR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.97</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.13779.13779.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TTGFYSGFSEVAE<span class="loc">K[+114]</span>R<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>0.96</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.35915.35915.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VSPASSVDSNIPSSQGY<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.95</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.21033.21033.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VGDDIA<span class="loc">K[+114]</span>ATGDWK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.95</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.26659.26659.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FGTINIVHP<span class="loc">K[+114]</span>LGSYTK<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>0.95</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.32874.32874.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>IVFSGNLFQHQEDS<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">W</span></span></td>
+      <td>0.95</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.32770.32770.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEDEVLTS<span class="loc">K[+114]</span>GDAWAK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.27077.27077.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AMEAASSL<span class="loc">K[+114]</span>SQAATK<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.16738.16738.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GETAS<span class="loc">K[+114]</span>LQSEISR<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.20760.20760.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LAEEEN<span class="loc">K[+114]</span>AK<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.5963.5963.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPN<span class="loc">S[+114]</span>KVESK<span class="cterm">.<span class="next_aa">C</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.16249.16249.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DSSPTTNSKL<span class="loc">S[+114]</span>ALQR<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.19473.19473.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>VTLEVGKVIQQG<span class="loc">R[+114]</span><span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.94</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.28228.28228.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DIVAAIQHNY<span class="loc">K[+114]</span>MSAFK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.93</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.39877.39877.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LGNDFHTN<span class="loc">K[+114]</span>R<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.6444.6444.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SG<span class="loc">K[+114]</span>FTQQDIDEAK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.14502.14502.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GGPGSTLSFVG<span class="loc">K[+114]</span>R<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.23529.23529.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDIDVPDVNIEGPEG<span class="loc">K[+114]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.43307.43307.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>MGS<span class="loc">K[+114]</span>SPGNTSQPPAFFSK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.27399.27399.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>T<span class="loc">K[+114]</span>MSAAQALK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.92</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.13738.13738.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SITHSTVG<span class="loc">S[+114]</span>KGEK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.2677.2677.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>S<span class="loc">K[+114]</span>LLFSNTAAQK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.23377.23377.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>TPNLYIYS<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.23178.23178.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LLIVSTTPYSE<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.91</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.36615.36615.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DAIHFYNK<span class="loc">S[+114]</span>LAEHR<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.90</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.23720.23720.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DASTLQSQ<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.90</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.8035.8035.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GSLE<span class="loc">K[+114]</span>GSPEDK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.90</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.4164.4164.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VFSIISSE<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.89</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.34619.34619.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TTEETS<span class="loc">K[+114]</span>PK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.89</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.9968.9968.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>YEQEHAAIQDKLFQVA<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td>0.89</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.31363.31363.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQLEIDQ<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.88</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.18738.18738.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>SLEEEGAAHSG<span class="loc">K[+114]</span>R<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.86</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.4729.4729.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ITQDLMA<span class="loc">K[+114]</span>VR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.84</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.26315.26315.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DTGEKL<span class="loc">T[+114]</span>VAENEAETK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.84</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.19886.19886.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FGTINIV<span class="loc">H[+114]</span>PK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.84</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.30083.30083.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TFG<span class="loc">K[+114]</span>AAGPSLSHTSGGTQSK<span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.81</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.13566.13566.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DSINFLDHING<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">H</span></span></td>
+      <td>0.80</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.33086.33086.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ALASIDS<span class="loc">K[+114]</span>LNQAK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.78</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.22384.22384.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>ANEKTES<span class="loc">S[+114]</span>SAQQVAVSR<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.65</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.10000.10000.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FLQEFYQDDELGK<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">Q</span></span></td>
+      <td>0.65</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.32331.32331.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DLSTVEALQNLKNL<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">S</span></span></td>
+      <td>0.65</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.40443.40443.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>DASTLQ<span class="loc">S[+114]</span>QKAEGTGDAK.-</td>
+      <td>0.63</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.9151.9151.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span><span class="loc">I[+114]</span>VEKYGYTHLSAGELLR<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td>0.61</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.32793.32793.4</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>ITLS<span class="loc">K[+114]</span>HQNVQLPR<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td>0.55</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.21256.21256.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>IDLPAENSNSETIII<span class="loc">T[+114]</span>GKR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.45</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.38407.38407.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VPTTEKP<span class="loc">T[+114]</span>VTVNFR<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.32</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.30983.30983.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>GWLKSNV<span class="loc">S[+114]</span>DAVAQSTR<span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>0.32</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.33803.33803.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GFALVGVGSEA<span class="loc">S[+114]</span>SKK<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.31</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.27267.27267.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AGPNASIISL<span class="loc">K[+114]</span>SDK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.26</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.29358.29358.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEDEVLTS<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.09</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.17633.17633.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LTMLNTVS<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">I</span></span></td>
+      <td>0.08</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.29949.29949.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>LQDVSGQLSSS<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td>0.06</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.19273.19273.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SPDEAYAIA<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.02</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.16538.16538.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>TEVLSPNS<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">V</span></span></td>
+      <td>0.02</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.15242.15242.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>LFQSDTNAMLGK<span class="loc">K[+114]</span><span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td>0.01</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.27290.27290.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">R</span>.</span>AQQHWGSGVGV<span class="loc">K[+114]</span>K<span class="cterm">.<span class="next_aa">L</span></span></td>
+      <td>0.01</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.10326.10326.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VTAAAMAGNK<span class="loc">S[+114]</span>TPR<span class="cterm">.<span class="next_aa">A</span></span></td>
+      <td>0.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.12058.12058.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVEVPDVSLEGPEG<span class="loc">K[+114]</span>LK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td>0.00</td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.35300.35300.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>FSAYIKNSNPALNDNLEK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.26822.26822.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>GTVPDDAVEALADSLGKK<span class="cterm">.<span class="next_aa">E</span></span></td>
+      <td></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.41642.41642.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DKALPLEAEVAPVK<span class="cterm">.<span class="next_aa">D</span></span></td>
+      <td></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.31148.31148.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SKHLQEQLNELK<span class="cterm">.<span class="next_aa">T</span></span></td>
+      <td></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_3xHCD_R1.18191.18191.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>AANMLQQSGSKNTGAK<span class="cterm">.<span class="next_aa">K</span></span></td>
+      <td></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.10542.10542.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VDVDIPDVNIEGPDAKLK<span class="cterm">.<span class="next_aa">G</span></span></td>
+      <td></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_2xIT_2xHCD_R1.43496.43496.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>SGNLTEDDKHNNAK<span class="cterm">.<span class="next_aa">Y</span></span></td>
+      <td></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.10371.10371.3</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>DTMGIADKTENTLER<span class="cterm">.<span class="next_aa">N</span></span></td>
+      <td></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.29538.29538.2</td>
+    </tr>
+    <tr>
+      <td><span class="nterm"><span class="prev_aa">K</span>.</span>VLTANSNPSSPSAAK<span class="cterm">.<span class="next_aa">R</span></span></td>
+      <td></td>
+      <td>02330a_GD3_3991_09_PTM_TrainKit_Kmod_Ubiquitinyl_200fmol_survey_R1.14292.14292.2</td>
+    </tr>
+  </tbody>
+</table>
+  
+</div>
+
+<div id="meta">
+  <span class="note">Report created 19:58:07 March 05, 2021 with <a href="https://github.com/SimpleNumber/aa_stat">AA_stat</a> 2.1.5</span>
+</div>
+
+</body>
+<script type="text/javascript">
+  function getMassShift(elem) {
+    eid = elem.parentElement.id;
+    return document.getElementById(eid.replace("col1", "col0")).children[0].text;
+  };
+  function hideTablesAndLegend() {
+    var tables = document.getElementsByClassName('peptide_table');
+    for(j = 0; j < tables.length; j++) {
+        tables[j].style.display = 'none';
+      };
+    document.getElementById('legend').style.display = 'none';
+    // document.getElementById('table_header').textContent = "";
+  };
+  function showPic(src) {
+    hideTablesAndLegend();
+    var pic = document.getElementById('pic');
+    pic.src = src;
+    pic.style.display = 'block';
+    if (src == 'summary.png') {
+      pic.classList.add('summary');
+      pic.classList.remove('figure');
+    }
+    else {
+      pic.classList.remove('summary');
+      pic.classList.add('figure');
+    }
+  }
+
+  function showTable(elem) {
+    hideTablesAndLegend();
+    var ms = getMassShift(elem);
+    showPic(ms + '.png');
+    document.getElementById('peptides_'+ms).style.display = 'block';
+    // document.getElementById('table_header').textContent = "Mass shift " + ms + " (" + elem.text + " peptides)";
+  }
+
+  var shifts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col0');
+  for(i = 0; i < shifts.length; i++) {
+    shifts[i].children[0].onclick = function (e) {
+      showPic(e.target.text + '.png');
+      document.getElementById('legend').style.display = 'block';
+    }
+  }
+
+  var binh = document.getElementById('binh');
+  binh.onclick = function (e) {
+    showPic('summary.png');
+    hideTablesAndLegend();
+  }
+
+  var amounts = document.getElementById('T_aa_stat_table').querySelectorAll('.data.col1');
+  for(i = 0; i < amounts.length; i++) {
+    amounts[i].children[0].onclick = function (e) {
+      document.getElementById('pic').style.display = 'none';
+      showTable(e.target);
+    }
+  }
+
+  var reference = "+114.0451";
+  var table = document.getElementById("T_aa_stat_table");
+  for (var i = 0, row; row = table.rows[i]; i++) {
+    var ms = row.cells[0].innerText;
+    if (ms == reference) {
+      row.title = "Reference mass shift";
+      break;
+    }
+  }
+
+  var vmod_comb_i = [];
+  var vmod_comb_val = [];
+  var vmod_table = document.getElementById("T_rec_var_mod_table");
+
+  for (var i = 0; i < vmod_comb_i.length; i++) {
+    var cells = vmod_table.querySelectorAll('.data.col' + vmod_comb_i[i]);
+    cells.forEach(function(c) {
+      c.title = vmod_comb_val[i];
+      c.classList.add("highlighted", "combine_mod");
+      if (c.classList.contains("row1")) {
+        c.classList.add("has_tooltip");
+      }
+    });
+  }
+
+  var opp_mod_i = [];
+  var opp_mod_val = [];
+  for (var j = 0; j < opp_mod_i.length; j++) {
+    var ocells = vmod_table.querySelectorAll('.data.col' + opp_mod_i[j]);
+    ocells.forEach(function(c) {
+      c.title = opp_mod_val[j];
+      c.classList.add("opposite_mod", "highlighted");
+      if (c.classList.contains("row1")) {
+        c.classList.add("has_tooltip");
+      }
+    });
+  }
+
+  if (vmod_table.querySelector('.data.row0.col0').textContent == "isotope error") {
+    vmod_table.querySelectorAll('.data.col0').forEach(function(c) {
+      c.classList.add("isotope_error");
+      c.title = "This is the recommended value for search engine parameters such as 'isotope peak error', i.e. misassignment of monoisotopic peak.";
+      if (c.classList.contains("row0")) {
+        c.classList.add("has_tooltip");
+      }
+    })
+  }
+
+  var full_info = ['<span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=313">Lys-loss</a> (0% match)</span>', '<span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=121">GG</a> (92% match)</span>, <span class="info_item unimod" data-ref="[]"><a href="http://www.unimod.org/modifications_view.php?editid1=1290">Dicarbamidomethyl</a> (83% match)</span>'];
+
+  var table_rows = new Array();
+  for(i = 0; i < shifts.length; i++) {
+    table_rows[shifts[i].textContent] = shifts[i].parentElement;
+  }
+
+  function set_mouseover_handlers(elem) {
+    var info_spans = elem.querySelectorAll('span.info_item');
+    for (var i = info_spans.length - 1; i >= 0; i--) {
+      info_spans[i].onmouseover = function(e) {
+        var refs = eval(e.target.dataset.ref);
+        for(j = 0; j < refs.length; j++) {
+          table_rows[refs[j]].classList.add("highlighted");
+        }
+      }
+      info_spans[i].onmouseout = function(e) {
+        var refs = eval(e.target.dataset.ref);
+        for(j = 0; j < refs.length; j++) {
+          table_rows[refs[j]].classList.remove("highlighted");
+        }
+      }
+    }
+  }
+  set_mouseover_handlers(table);
+
+  var onclickCreator = function(i) {
+    return function(e) {
+      var td = e.target.parentElement.parentElement;
+      td.innerHTML = full_info[i];
+      set_mouseover_handlers(td);
+    };
+  };
+  for (var i = 0; i < full_info.length; i++) {
+    var info_cell = table.querySelector('.data.col29.row' + i);
+    var link = info_cell.querySelector('a.expand_info_link');
+    if (link) {
+      link.onclick = onclickCreator(i);
+    }
+  }
+
+</script>
+</html>

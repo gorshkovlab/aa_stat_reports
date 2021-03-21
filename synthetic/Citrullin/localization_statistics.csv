@@ -1,0 +1,2 @@
+mass shift,# peptides in bin,is isotope,isotope index,sum of mass shifts,unimod candidates,unimod accessions,aa_stat candidates,all candidates,candidates for loc,localization
+0.9863735334953141,102,False,,,"{'Q', 'N', 'Protein N-term', 'R'}","{632, 621, 7}",[],"{'Q', 'N', 'Protein N-term', 'R'}","[{'+0.9864': {'Q', 'N', 'Protein N-term', 'R'}}]","{'R_+0.9864': 100, 'Q_+0.9864': 1, 'N-term_+0.9864': 10, 'C-term_+0.9864': 6, 'non-localized': 1}"

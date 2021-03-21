@@ -20,3 +20,30 @@ The list of datasets corresponds to Supplementary Table S1 in [this biorXiv prep
 16. [CPTAC colon cancer data from study S037 (sample 01)](01_CPTAC_COprospective_Proteome_VU_20150901/os_step_2/report.html)
 
 Additionally, we provide the AA_stat report on all of [CPTAC colon cancer data from study S037](CPTAC_Colon_Cancer_S037/report.html).
+
+## AA_stat results on synthetic modified peptides
+
+- [Acetyl](synthetic/Acetyl/report.html)
+- [Biotinyl](synthetic/Biotinyl/report.html)
+- [Butyryl](synthetic/Butyryl/report.html)
+- [Citrullin](synthetic/Citrullin/report.html)
+- [Crotonyl](synthetic/Crotonyl/report.html)
+- [Dimethyl](synthetic/Dimethyl/report.html)
+- [Dimethyl_200](synthetic/Dimethyl_200/report.html)
+- [Dimethyl_asymm](synthetic/Dimethyl_asymm/report.html)
+- [Dimethyl_symm](synthetic/Dimethyl_symm/report.html)
+- [Formyl](synthetic/Formyl/report.html)
+- [Glutaryl](synthetic/Glutaryl/report.html)
+- [Hydroxyisobutyryl](synthetic/Hydroxyisobutyryl/report.html)
+- [Hydroxyproline](synthetic/Hydroxyproline/report.html)
+- [Kmod_Methyl](synthetic/Kmod_Methyl/report.html)
+- [Malonyl](synthetic/Malonyl/report.html)
+- [Methyl](synthetic/Methyl/report.html)
+- [Nitrotyr](synthetic/Nitrotyr/report.html)
+- [Phospho](synthetic/Phospho/report.html)
+- [Propionyl](synthetic/Propionyl/report.html)
+- [Rmod_Methyl](synthetic/Rmod_Methyl/report.html)
+- [Succinyl](synthetic/Succinyl/report.html)
+- [Trimethyl](synthetic/Trimethyl/report.html)
+- [Ubiquitinyl](synthetic/Ubiquitinyl/report.html)
+- [Unmod](synthetic/Unmod/report.html)
