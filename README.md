@@ -4,9 +4,9 @@ The list of datasets corresponds to Supplementary Table S1 in [this biorXiv prep
 
 # | Dataset                                          | open search + AA_stat | open search w/ variable mods + AA_stat | closed search
 --|--------------------------------------------------|-----------------------|----------------------------------------|--------------
-1 | PXD014565 TMT subset 63                          | [view report](PXD014565/TMT/63/os_step_3/report.html) | |      | [peptide table](PXD014565/TMT/63/closed/QEXI22263_peptides.tsv)
-2 | PXD014565 TMT subset 61                          | [view report](PXD014565/TMT/61/os_step_3/report.html) | |      | [peptide table](PXD014565/TMT/63/closed/QEXI22261_peptides.tsv)
-3 | PXD009775 subset Exp1_Rep1                       | [view report](PXD009775/Exp1_Rep1/os_step_3/report.html)     | | [peptide table](PXD009775/Exp1_Rep1/closed/union_peptides.tsv)
+1 | PXD014565 TMT subset 63                          | [view report](PXD014565/TMT/63/os_step_3/report.html) |        | [peptide table](PXD014565/TMT/63/closed/QEXI22263_peptides.tsv)
+2 | PXD014565 TMT subset 61                          | [view report](PXD014565/TMT/61/os_step_3/report.html) |        | [peptide table](PXD014565/TMT/63/closed/QEXI22261_peptides.tsv)
+3 | PXD009775 subset Exp1_Rep1                       | [view report](PXD009775/Exp1_Rep1/os_step_3/report.html) |     | [peptide table](PXD009775/Exp1_Rep1/closed/union_peptides.tsv)
 4 | O-glycosylation dataset PXD009955, subset 140721 | [view report](o_glycosylation/PXD009955/140721/os_step_4/report.html) | [view report](o_glycosylation/PXD009955/140721/variable_mods/report.html)) | [peptide table](o_glycosylation/PXD009955/140721/closed/union_peptides.tsv)
 5 | O-glycosylation dataset PXD009955, subset 140718 | [view report](o_glycosylation/PXD009955/140718/os_step_4/report.html) | [view report](o_glycosylation/PXD009955/140718/variable_mods/report.html)) | [peptide table](o_glycosylation/PXD009955/140718/closed/union_peptides.tsv)
 6 | N-glycosylation dataset PXD003561, subset A301   | [view report](n_glycosylation/PXD003561/A301/os_step_3/report.html) | | [peptide table](n_glycosylation/PXD003561/A301/closed/union_peptides.tsv)
